@@ -218,3 +218,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# SignGuard generated cloud artifacts
+.venv/
+samples/
+audit.jsonl
+.ruff_cache/
