@@ -18,7 +18,8 @@ In a cloud checkout, install with `python -m pip install -e '.[dev]'`.
 Run `pytest -q`, `ruff check .`, and `python scripts/generate_samples.py`.
 Start the web UI in that environment with `streamlit run app.py --server.address 0.0.0.0`.
 Use `signguard samples/signed.pdf --audit audit.jsonl` for JSON output.
-The Actions workflow tests Python 3.11 and 3.12 on Ubuntu and uploads generated sample PDFs.
+The Python 3.12 dependency snapshot is in `requirements-cloud.txt`; Python 3.11 resolves
+compatible versions from project bounds. The Actions workflow tests Python 3.11 and 3.12 on Ubuntu and uploads generated sample PDFs.
 
 ## Python API
 
