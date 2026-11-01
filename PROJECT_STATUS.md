@@ -67,7 +67,10 @@ incomplete or outside this implementation. See RESULTS.md and ASSUMPTIONS.md for
 Published branch: `feature/phase2-forensic-evaluation`.
 Pull request: https://github.com/Saisathwik045/signguard/pull/2
 The Phase 2 workflow is configured for Python 3.11 and 3.12; cloud execution above used Python 3.12.
-The final task report records observed GitHub Actions outcomes.
+GitHub Actions run [41338928885](https://github.com/Saisathwik045/signguard/actions/runs/41338928885)
+passed on Python 3.11 and 3.12 for implementation/PDF-attribute commit `fe250fe`: dependency
+installation, Ruff, all 31 tests, four sample PDFs, 30-case benchmark smoke and artifact uploads.
+This status update changes documentation only; the final task report identifies the last checked run.
 
 ## Phase 2 exact file inventory
 
