@@ -18,6 +18,12 @@ jobs:
       - run: ruff check .
       - run: pytest -q
       - run: python scripts/generate_samples.py
+      - run: python -m benchmarks.evaluate --per-family 2 --output benchmark-output --check
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: benchmark-smoke-${{ matrix.python }}
+          path: benchmark-output/
       - uses: actions/upload-artifact@v4
         with:
           name: synthetic-pdfs-${{ matrix.python }}

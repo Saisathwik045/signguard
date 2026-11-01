@@ -1,55 +1,95 @@
 # SignGuard
 
-Python tooling and a Streamlit interface for offline PDF signature and visual tampering triage.
+Python and Streamlit tooling for offline PDF signature integrity and visual tampering triage.
+Phase 2 extends the merged Phase 1 implementation; the upload application remains undeployed.
 
-## What it does
+## Functionality
 
-- Classifies PDFs as cryptographically signed, unsigned, or containing visual candidates (embedded images). An image is not automatically a signature; vector handwriting is not classified.
-- Uses pyHanko to check CMS signatures, signed byte integrity, coverage, certificate trust, and modification policy. Certificate fetching is disabled. Library callers can supply ASN.1 certificate trust roots; the UI/CLI trust no certificates by default.
-- Resolves incremental revisions through the PDF xref chain and renders each signed revision against the final document with PyMuPDF. Reports changed pixels per page and added/removed pages. A user-supplied baseline can also be compared.
-- Computes JPEG error-level analysis (ELA) and ORB descriptor matches with RANSAC geometry on explicitly supplied signature crops.
-- Fuses evidence into `tampering_detected` for cryptographic failures, `review_required` for visual differences or verification errors, and `inconclusive` otherwise. Raw evidence remains available in the JSON report.
-- Offers an optional locked, fsynced SHA-256 audit chain through the Python API and CLI.
+- **Cryptography:** pyHanko checks CMS signatures, byte integrity, revision coverage, modification
+  policy and separately configured certificate trust. Validation is offline; the UI/CLI trust no
+  certificates by default. Library callers can supply ASN.1 trust roots.
+- **Automatic localization:** page rendering, native-text masking and non-text ink grouping propose
+  signature candidate boxes, including vector strokes, with explicit uncertainty. Users need not
+  crop signatures. Optional manual crops and reference images remain supported.
+- **Revision forensics:** actual xref sections establish revision boundaries, including PDFs with
+  misleading EOF text in streams. Adjacent revisions and signed-versus-current states are compared
+  at 144 DPI, with changed regions, text differences and annotation-free render attribution. A narrow
+  metadata allowlist distinguishes routine `/Info` updates from content or unexplained changes.
+  Intermediate changes remain visible even if the current appearance restores the original.
+- **Shadow-attack triage:** changed appearance/text with still-valid signed bytes produces a possible
+  shadow-attack finding. Controlled hidden-content reveal and overlay attacks are evaluated.
+- **Image evidence:** multi-quality ELA reports residual/tile statistics without asserting forgery.
+  ORB uses mutual ratio-filtered matches, RANSAC, minimum inliers, spatial coverage and geometric
+  checks. Repeated candidate regions generate review findings; legitimate reuse remains possible.
+- **Explainable fusion:** version 2 JSON contains typed finding codes, severities, evidence,
+  explanations, completeness state, revision analysis and localization uncertainty. Verdicts remain
+  `tampering_detected`, `review_required`, or `inconclusive`; none establishes signer authenticity.
+- **Audit:** optional POSIX-locked, fsynced SHA-256 chain. Save its returned head in a separate trusted
+  system to detect truncation. Documents and crops are not automatically persisted by the UI.
 
-## Cloud execution
+For Phase 1 API compatibility, broad `visual_candidate` classification can still mean image
+presence alone. `classification_basis` identifies that case; it must not be interpreted as a
+confirmed signature. Candidate localization and alert metrics are measured separately.
 
-The project runs in Codex Cloud and GitHub Actions; no local installation is required.
-In a cloud checkout, install with `python -m pip install -e '.[dev]'`.
-Run `pytest -q`, `ruff check .`, and `python scripts/generate_samples.py`.
-Start the web UI in that environment with `streamlit run app.py --server.address 0.0.0.0`.
-Use `signguard samples/signed.pdf --audit audit.jsonl` for JSON output.
-The Python 3.12 dependency snapshot is in `requirements-cloud.txt`; Python 3.11 resolves
-compatible versions from project bounds. The Actions workflow tests Python 3.11 and 3.12 on Ubuntu and uploads generated sample PDFs.
+## Cloud execution and evaluation
 
-## Python API
+All development and verification can run in Codex Cloud and GitHub Actions; no local execution is
+required. Commands below refer to the cloud checkout:
+
+```sh
+python -m pip install -c requirements-cloud.txt -e '.[dev]'
+pytest -q
+ruff check .
+python -m benchmarks.evaluate --output benchmark-output --check
+python scripts/generate_samples.py
+signguard samples/signed.pdf --audit audit.jsonl
+```
+
+`requirements-cloud.txt` captures the tested Python 3.12 environment. Python 3.11 resolves compatible
+versions from project bounds. GitHub Actions runs both versions, all regression tests and a
+30-document benchmark smoke evaluation, uploading measurements and synthetic PDFs as artifacts.
+The full benchmark constructs 150 PDFs across 15 families (140 unique hashes), using seed 20261102
+and immutable public signed/encrypted templates. Template keys were discarded. Do not run
+`scripts/create_benchmark_templates.py` when reproducing: it intentionally creates a new corpus version.
+
+See [RESULTS.md](RESULTS.md) for measured precision, recall, F1, confusion matrices, errors and
+unsupported cases. Raw source-hashed evidence is in `evaluation/summary.json`, `outcomes.json`,
+and `manifest.json`. `python scripts/render_results.py` regenerates RESULTS.md from that summary.
+Corpus generation imports no detector and labels are assigned by construction. Independent tests
+use literal PDF syntax, vector curves, annotations, restoration history and image transforms.
+These remain synthetic/development checks, not an external handwriting dataset evaluation.
+
+## Python API and development UI
 
 ```python
 from signguard import analyze_pdf
+report = analyze_pdf(pdf_bytes)  # localization and region-pair forensics run automatically
 report = analyze_pdf(pdf_bytes, baseline=known_original_bytes,
-                     signature_image=crop_bytes, reference_image=reference_bytes,
-                     audit_path="audit.jsonl")
+                     reference_image=reference_bytes, audit_path="audit.jsonl")
 ```
 
-Inputs are limited to 25 MiB, 50 pages, and page dimensions of 2000 PDF points.
-Images are limited to 16 megapixels. Encrypted PDFs are rejected. The UI keeps uploads
-in memory and does not persist documents or append audit events automatically.
+The prior `signature_image=` manual crop argument is retained. Reports preserve Phase 1 fields and
+add `revision_analysis`, `image_forensics.automatic`, `assessment.findings`, and `analysis_status`.
+Automatic candidate coordinates use rotated page points. Reuse alerts do not prove forgery.
 
-## Interpretation and limits
+`streamlit run app.py --server.address 0.0.0.0` starts the **development** interface inside an isolated
+cloud environment. This is not a deployment instruction or a public hosting configuration.
+Input limits and unsupported PDFs raise errors; the UI displays them instead of issuing a clean verdict.
+No public upload endpoint has been deployed.
 
-This is a research triage implementation, not a certified validator or handwriting identity model.
-Incremental updates can be legitimate. Visual revision changes flag possible shadow attacks but
-do not identify every shadow-attack technique; a hidden object that never changes rendering may
-escape detection. Rendering uses one engine at 72 DPI and can miss tiny changes or renderer
-inconsistencies. ELA depends on compression history and ORB similarity cannot prove authorship.
-No calibrated forgery probability is claimed. Certificate revocation evidence may be unavailable
-offline; mathematical validity and trust are reported separately. Invalid or unsupported inputs
-can fail analysis explicitly rather than receiving a clean verdict.
+## Limits and deployment requirements
 
-The audit chain detects edited entries and broken links. Save its returned head in a separate
-trusted system to detect truncation/replacement. It is not a signed or externally anchored ledger.
-File locking uses POSIX `fcntl`, matching the Linux cloud target. Untrusted documents should be
-processed in an isolated worker with external CPU/memory/time limits before public deployment;
-the Streamlit app is a development interface, with no authentication or hosted deployment included.
+ELA on rendered crops cannot recover source JPEG compression history. ORB cannot determine
+who signed or whether a repeated signature was authorized. Native-text masking can hide signatures
+encoded as text, while logos/scanned text can become candidates. Faint/tiny/vertical marks can be
+missed. One renderer cannot cover every PDF shadow attack or parser discrepancy. Legitimate
+metadata updates are allowlisted conservatively; other updates may need human review.
 
-Synthetic fixtures generate an ephemeral self-signed test identity and discard its private key.
-Generated PDFs are ignored by Git and available as CI artifacts.
+Internal limits include 25 MiB PDFs, 50 pages, 2000-point page dimensions, 16 revisions, 12 signatures,
+16-megapixel images, bounded rendering work, 24 candidates and 100 pair comparisons. A reached
+candidate/pair limit is explicitly marked partial. Limits cannot replace worker isolation.
+
+[ASSUMPTIONS.md](ASSUMPTIONS.md) defines trust and benchmark assumptions, exact application limits,
+and the **unmet public deployment gate**: disposable network-isolated workers, external CPU/memory/
+wall-clock/storage limits, authenticated tenant access, quotas, retention controls and patching.
+[PROJECT_STATUS.md](PROJECT_STATUS.md) records implementation and verification status.

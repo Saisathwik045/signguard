@@ -1,0 +1,2146 @@
+{
+  "cases": [
+    {
+      "expected_class": "cryptographic",
+      "family": "genuine_signed",
+      "id": "genuine_signed-00",
+      "malicious": false,
+      "path": "genuine_signed-00.pdf",
+      "sha256": "5ff630b9a436b620f99382a22ffcd07f2e83dea445bfa9ef19d3681d05ce1e04",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "genuine_signed",
+      "id": "genuine_signed-01",
+      "malicious": false,
+      "path": "genuine_signed-01.pdf",
+      "sha256": "cb9ebecb904a29584813f7d8db7e3b9369b9ca9371914a390184c7ae5d76b999",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "genuine_signed",
+      "id": "genuine_signed-02",
+      "malicious": false,
+      "path": "genuine_signed-02.pdf",
+      "sha256": "b461ef0bd6b9eaedf1a3dbdaaefb84673a8033aa5b120c18ac78926c50ab8bd0",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "genuine_signed",
+      "id": "genuine_signed-03",
+      "malicious": false,
+      "path": "genuine_signed-03.pdf",
+      "sha256": "ce3b959a904fbd413503c28c72173682d1a371e8edddce55fcdca0c42e8a226c",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "genuine_signed",
+      "id": "genuine_signed-04",
+      "malicious": false,
+      "path": "genuine_signed-04.pdf",
+      "sha256": "1c8d8ed4e7c9ce29ebcf681ba13d33fb3dd5fd39fb16de1f708ecbe449bf8ed0",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "genuine_signed",
+      "id": "genuine_signed-05",
+      "malicious": false,
+      "path": "genuine_signed-05.pdf",
+      "sha256": "2b4f954e889fdef95b612b67ddc3917de2789dcc4fba8861f36b445b093ec4e9",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "genuine_signed",
+      "id": "genuine_signed-06",
+      "malicious": false,
+      "path": "genuine_signed-06.pdf",
+      "sha256": "787e1d4c66bdbf0134ba56b3f5576c73b9d1563318640d4fd25633b8cd93afbb",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "genuine_signed",
+      "id": "genuine_signed-07",
+      "malicious": false,
+      "path": "genuine_signed-07.pdf",
+      "sha256": "2abda5bfb6d71f28ca1c990c7478273a69e0e618b854319169ca4c66d555a3e4",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "genuine_signed",
+      "id": "genuine_signed-08",
+      "malicious": false,
+      "path": "genuine_signed-08.pdf",
+      "sha256": "65685b75d034db5e5cc6900904ec93f95eb083fc3c1f3179d066c6a99947561e",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "genuine_signed",
+      "id": "genuine_signed-09",
+      "malicious": false,
+      "path": "genuine_signed-09.pdf",
+      "sha256": "21a8ccad8da8b930f0a67cc5ac098b4ef7518f44fbe66ac29959464b35012fe6",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "tampered_bytes",
+      "id": "tampered_bytes-00",
+      "malicious": true,
+      "path": "tampered_bytes-00.pdf",
+      "sha256": "cd5a0709335c9f03dd032a1a11e97c78512725c37df9fc610f375492cc2c3711",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "tampered_bytes",
+      "id": "tampered_bytes-01",
+      "malicious": true,
+      "path": "tampered_bytes-01.pdf",
+      "sha256": "58785d20e83ea2a90a43ddb454655f4dd2702a0ad0a272dd12a28a80e43f3438",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "tampered_bytes",
+      "id": "tampered_bytes-02",
+      "malicious": true,
+      "path": "tampered_bytes-02.pdf",
+      "sha256": "3843be5bf62b49668ca45813cc667742c6bbb65d9e512b8fd4e380aac4a768d3",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "tampered_bytes",
+      "id": "tampered_bytes-03",
+      "malicious": true,
+      "path": "tampered_bytes-03.pdf",
+      "sha256": "77b3fb5994cf3773730ad79dda9ba8e18b54debaf2975215df90e61371d58211",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "tampered_bytes",
+      "id": "tampered_bytes-04",
+      "malicious": true,
+      "path": "tampered_bytes-04.pdf",
+      "sha256": "d9e3c88fee166afa65003549a46be11d3ad38faddf6cba720f00f734cb8f71ea",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "tampered_bytes",
+      "id": "tampered_bytes-05",
+      "malicious": true,
+      "path": "tampered_bytes-05.pdf",
+      "sha256": "018cc9a38207c37c68ccccb9cc8fbb6c3f12e158a518b7952932cc70918d5487",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "tampered_bytes",
+      "id": "tampered_bytes-06",
+      "malicious": true,
+      "path": "tampered_bytes-06.pdf",
+      "sha256": "522d2b7b9c3787a84b9f4408ab651682e27eefc5a2114c2ca8dcf9003e0f487f",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "tampered_bytes",
+      "id": "tampered_bytes-07",
+      "malicious": true,
+      "path": "tampered_bytes-07.pdf",
+      "sha256": "57d220e43b479d2e310396c177b50a0472537151cdf4bfd5b3d7f9a20ee722be",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "tampered_bytes",
+      "id": "tampered_bytes-08",
+      "malicious": true,
+      "path": "tampered_bytes-08.pdf",
+      "sha256": "57202d7ff00fca969c78c94191780ee76aaab71c0715cbce5cbfb6f0c5ed1db6",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "tampered_bytes",
+      "id": "tampered_bytes-09",
+      "malicious": true,
+      "path": "tampered_bytes-09.pdf",
+      "sha256": "367673130929244e6ecc6705075ea63ada50b35ee9dde0f2af0c33d921b31e8f",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "appended_content",
+      "id": "appended_content-00",
+      "malicious": true,
+      "path": "appended_content-00.pdf",
+      "sha256": "150eb648006df3bc5966f02a08271a19e04f24f8fb333fc1ea4e2d08e6f90eb5",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "appended_content",
+      "id": "appended_content-01",
+      "malicious": true,
+      "path": "appended_content-01.pdf",
+      "sha256": "677b4d08e62c8b33f3cc96254630c927e1b7112a04cf76cb62ab8669b1c2a8a7",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "appended_content",
+      "id": "appended_content-02",
+      "malicious": true,
+      "path": "appended_content-02.pdf",
+      "sha256": "4c6c6d38f97a2bea2e5ac181227ff2a6e9bc69c753c6cdd3f02e4aa9a0f1c5d6",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "appended_content",
+      "id": "appended_content-03",
+      "malicious": true,
+      "path": "appended_content-03.pdf",
+      "sha256": "4f734201b87840c8b724190d273ab4b24d98bc65437614f23ee56195eaf5d888",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "appended_content",
+      "id": "appended_content-04",
+      "malicious": true,
+      "path": "appended_content-04.pdf",
+      "sha256": "0b5bf63532ef4256822d7caabb474fb3829e624cba2178cd15148a995cc9bdeb",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "appended_content",
+      "id": "appended_content-05",
+      "malicious": true,
+      "path": "appended_content-05.pdf",
+      "sha256": "64f5d3cc13d744698b2a546641c0cce21e90e7fb21f5ab9fa459f1b30e784239",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "appended_content",
+      "id": "appended_content-06",
+      "malicious": true,
+      "path": "appended_content-06.pdf",
+      "sha256": "ef07fa13ddf3fb089fb55096871d3ad8d89231c2aa171ca2267e490f5f34b953",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "appended_content",
+      "id": "appended_content-07",
+      "malicious": true,
+      "path": "appended_content-07.pdf",
+      "sha256": "2688b2cd93894c6253ef0f5822caeaa79a2627c41791c2ff4068e077aa646f28",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "appended_content",
+      "id": "appended_content-08",
+      "malicious": true,
+      "path": "appended_content-08.pdf",
+      "sha256": "e71d5e17e1671574ff75e0221be4fc2c47fdd20c46f5885f4863b1bc8db8705a",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "appended_content",
+      "id": "appended_content-09",
+      "malicious": true,
+      "path": "appended_content-09.pdf",
+      "sha256": "6e46a488f5ccc247ff93a3a98ddeb5dcfdc36a3438a4e9e5fad2d5ab64eaaac6",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "shadow_reveal",
+      "id": "shadow_reveal-00",
+      "malicious": true,
+      "path": "shadow_reveal-00.pdf",
+      "sha256": "273d38921f72b1cfdcae009ac83bbd8d9246c589fe6e0f8593e22a7d01ab8daa",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "shadow_reveal",
+      "id": "shadow_reveal-01",
+      "malicious": true,
+      "path": "shadow_reveal-01.pdf",
+      "sha256": "7d04cc60d3697e58535b7ebe6f42387f9c3746175c01bc71729450dbf1748154",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "shadow_reveal",
+      "id": "shadow_reveal-02",
+      "malicious": true,
+      "path": "shadow_reveal-02.pdf",
+      "sha256": "0f64d43202bffa4fb68318931f4ec60f0b934e49aef19acc84cbac7c3ccf7c2a",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "shadow_reveal",
+      "id": "shadow_reveal-03",
+      "malicious": true,
+      "path": "shadow_reveal-03.pdf",
+      "sha256": "4297daff014c700d1bb42a7e5f6adb59c56d4f8de3a57c55983dfb9ac7ac006f",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "shadow_reveal",
+      "id": "shadow_reveal-04",
+      "malicious": true,
+      "path": "shadow_reveal-04.pdf",
+      "sha256": "cb38b36d82fdc3914c54b4fbeb1c91a2fde547d08e1323ac18d522b128f12ceb",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "shadow_reveal",
+      "id": "shadow_reveal-05",
+      "malicious": true,
+      "path": "shadow_reveal-05.pdf",
+      "sha256": "275c883a775781aa936a55137096db2412e5ecf8eba6bb5f9d5682103580ccd7",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "shadow_reveal",
+      "id": "shadow_reveal-06",
+      "malicious": true,
+      "path": "shadow_reveal-06.pdf",
+      "sha256": "2dd77fd19957d8e72ee911a5f1631c5139e85d08f7128078f71c47f81da4ee1a",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "shadow_reveal",
+      "id": "shadow_reveal-07",
+      "malicious": true,
+      "path": "shadow_reveal-07.pdf",
+      "sha256": "a83a8bae062ae0421b3295cf42b25f9c9e8f3e75fa12a7cdd54ec614f99ddd5e",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "shadow_reveal",
+      "id": "shadow_reveal-08",
+      "malicious": true,
+      "path": "shadow_reveal-08.pdf",
+      "sha256": "a0c0445aa5d5866a1f4f323f8ff58ebae7a77b52e33ae7aae42cf26e1836cce3",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "shadow_reveal",
+      "id": "shadow_reveal-09",
+      "malicious": true,
+      "path": "shadow_reveal-09.pdf",
+      "sha256": "84e96476665d8171cf7ebd0c0f8be5c6338bf2c3abcae777b188f6aa42c14dd7",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "shadow_overlay",
+      "id": "shadow_overlay-00",
+      "malicious": true,
+      "path": "shadow_overlay-00.pdf",
+      "sha256": "2424e2b87576a4b8c4f28f76e8c6cb0a662bbddf622eb82b7db8ee88de3fe0d6",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "shadow_overlay",
+      "id": "shadow_overlay-01",
+      "malicious": true,
+      "path": "shadow_overlay-01.pdf",
+      "sha256": "73fb41c751c8416adad8fd6f619e8196327580bd49c2da40ce1fdb17a297b197",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "shadow_overlay",
+      "id": "shadow_overlay-02",
+      "malicious": true,
+      "path": "shadow_overlay-02.pdf",
+      "sha256": "c9d70d0bf46b5ec78273f04b0c9ba459c771baee04de9f2286ba709d3f76a978",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "shadow_overlay",
+      "id": "shadow_overlay-03",
+      "malicious": true,
+      "path": "shadow_overlay-03.pdf",
+      "sha256": "d5588c036606af70d7cd2c26ea73481c02f32470603c565a0424cc35aa27c27e",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "shadow_overlay",
+      "id": "shadow_overlay-04",
+      "malicious": true,
+      "path": "shadow_overlay-04.pdf",
+      "sha256": "43ff42f10ac003c4715b258bb8a02fb9152b89fcaf7c202b0b355525f55b2e66",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "shadow_overlay",
+      "id": "shadow_overlay-05",
+      "malicious": true,
+      "path": "shadow_overlay-05.pdf",
+      "sha256": "84fea1b57440b8ad41efccff9be7ae4dc6296f8413424e5688bedadd7a81848f",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "shadow_overlay",
+      "id": "shadow_overlay-06",
+      "malicious": true,
+      "path": "shadow_overlay-06.pdf",
+      "sha256": "dcad06df4f0a5131270ea6c3a1c97108db641b1c1c0eb1f5b6f7d91419ce167a",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "shadow_overlay",
+      "id": "shadow_overlay-07",
+      "malicious": true,
+      "path": "shadow_overlay-07.pdf",
+      "sha256": "c6960c4ba93ca07ca7a86f731b2b44bca3abe4504d12902037365af5c434141d",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "shadow_overlay",
+      "id": "shadow_overlay-08",
+      "malicious": true,
+      "path": "shadow_overlay-08.pdf",
+      "sha256": "9cf6b476dc21ec7c3428d0c987385ff7abf4b492d1d08cc4f25787011235d81a",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "shadow_overlay",
+      "id": "shadow_overlay-09",
+      "malicious": true,
+      "path": "shadow_overlay-09.pdf",
+      "sha256": "291a332745aebb116394670ff018a45ade7bba21c59f6a092c58d537fa35a145",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "benign_metadata",
+      "id": "benign_metadata-00",
+      "malicious": false,
+      "path": "benign_metadata-00.pdf",
+      "sha256": "9d5332eb2edfe30fa92259fc266abe17e9509d74bc56a1f34dafa3d063ff279f",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "benign_metadata",
+      "id": "benign_metadata-01",
+      "malicious": false,
+      "path": "benign_metadata-01.pdf",
+      "sha256": "1458dfbb6b692302b8f58f8ac2e6cd23f4428faf10c8c6f9934c9b4e5f6e60ba",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "benign_metadata",
+      "id": "benign_metadata-02",
+      "malicious": false,
+      "path": "benign_metadata-02.pdf",
+      "sha256": "c44ede4417a147373da73b433006cee759d57ac3c3083fdd732b7474fcc91d8a",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "benign_metadata",
+      "id": "benign_metadata-03",
+      "malicious": false,
+      "path": "benign_metadata-03.pdf",
+      "sha256": "f11d71b8e64e475f8d9664ae79dc6e8e4e1a74802e095e4840e911510d2a6a3a",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "benign_metadata",
+      "id": "benign_metadata-04",
+      "malicious": false,
+      "path": "benign_metadata-04.pdf",
+      "sha256": "9e16c394203b460414cdb51e947698fb6a15dc48a9e1eea53b270b52ed61cf76",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "benign_metadata",
+      "id": "benign_metadata-05",
+      "malicious": false,
+      "path": "benign_metadata-05.pdf",
+      "sha256": "fdb096a817e5459f334be5f1716707a9cd7208d53fd24f536cba7318304d96f9",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "benign_metadata",
+      "id": "benign_metadata-06",
+      "malicious": false,
+      "path": "benign_metadata-06.pdf",
+      "sha256": "2220eb757b02e8394c2996cff6cb8dd7e45626de3838af71dc3e8a8d8ef9fb15",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "benign_metadata",
+      "id": "benign_metadata-07",
+      "malicious": false,
+      "path": "benign_metadata-07.pdf",
+      "sha256": "4f42afa088d5bc6077120667f4955e97a98c576db351b9587bf068571f430f23",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "benign_metadata",
+      "id": "benign_metadata-08",
+      "malicious": false,
+      "path": "benign_metadata-08.pdf",
+      "sha256": "671589a5acadb532991127a447b229548e5d6c2badc4c373437eaaf89e9ebb05",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "cryptographic",
+      "family": "benign_metadata",
+      "id": "benign_metadata-09",
+      "malicious": false,
+      "path": "benign_metadata-09.pdf",
+      "sha256": "9af3b80df24257692b443608e2d9eff3732644106b3f93291d0b7415a042bc06",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "visual_signature",
+      "id": "visual_signature-00",
+      "malicious": false,
+      "path": "visual_signature-00.pdf",
+      "sha256": "4fd33aa825fbf3437f2eff07d0e329e85444dd86fd0cbf017614cd80b63746fb",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "visual_signature",
+      "id": "visual_signature-01",
+      "malicious": false,
+      "path": "visual_signature-01.pdf",
+      "sha256": "d376d99a5ce1056b547af0372b582b31b71c686be27b9531a04a835b49d571f1",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "visual_signature",
+      "id": "visual_signature-02",
+      "malicious": false,
+      "path": "visual_signature-02.pdf",
+      "sha256": "3f94678f1b36ea7d566024766bdc70e72426a0c131c865d139f19c7a7ad5a1c4",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "visual_signature",
+      "id": "visual_signature-03",
+      "malicious": false,
+      "path": "visual_signature-03.pdf",
+      "sha256": "6d317f93b971744b265f91ffa4dd06a802c954c394ef40b30c5cf1ececd1a8d3",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "visual_signature",
+      "id": "visual_signature-04",
+      "malicious": false,
+      "path": "visual_signature-04.pdf",
+      "sha256": "6067baa34595796f52f12e780382ac4f014df4fe9afdf7c393bbf50bbe5bdc2d",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "visual_signature",
+      "id": "visual_signature-05",
+      "malicious": false,
+      "path": "visual_signature-05.pdf",
+      "sha256": "8eec7e179fbb84d19607c39d083c4b5f0e7acda2162d2caa3989a4fc33403a4e",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "visual_signature",
+      "id": "visual_signature-06",
+      "malicious": false,
+      "path": "visual_signature-06.pdf",
+      "sha256": "bb67b460967b533cc01e3a7c76bd539fa1eb015de55a29a241f019b20ae058ef",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "visual_signature",
+      "id": "visual_signature-07",
+      "malicious": false,
+      "path": "visual_signature-07.pdf",
+      "sha256": "80f3cb38e76209c1ef4a20580c8d91ba921d50a978e79b4669eada1556ad2298",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "visual_signature",
+      "id": "visual_signature-08",
+      "malicious": false,
+      "path": "visual_signature-08.pdf",
+      "sha256": "127c77b2239ea982cfb882353533067d1e3ad3efb50531e00ecc0a2734012285",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "visual_signature",
+      "id": "visual_signature-09",
+      "malicious": false,
+      "path": "visual_signature-09.pdf",
+      "sha256": "5a0a30bf817bd340740eaed87532e9f83e0805e928364570bd8f00e1527863d0",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "copied_signature",
+      "id": "copied_signature-00",
+      "malicious": true,
+      "path": "copied_signature-00.pdf",
+      "sha256": "b285039c0faf26c7069c23e80ec8dba875ad3262c9e217f9c3865d80039750f7",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        },
+        {
+          "bbox": [
+            75,
+            200,
+            315,
+            280
+          ],
+          "page": 2
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "copied_signature",
+      "id": "copied_signature-01",
+      "malicious": true,
+      "path": "copied_signature-01.pdf",
+      "sha256": "0167db59b0e6f43f30bc8df87eb1d903c8e2453c6ba6ce452499de2fc33d6d56",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        },
+        {
+          "bbox": [
+            75,
+            200,
+            315,
+            280
+          ],
+          "page": 2
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "copied_signature",
+      "id": "copied_signature-02",
+      "malicious": true,
+      "path": "copied_signature-02.pdf",
+      "sha256": "369c1167d347ef74241e6395cb20e53b5d05d218758d03a07a7f05fea6265ad9",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        },
+        {
+          "bbox": [
+            75,
+            200,
+            315,
+            280
+          ],
+          "page": 2
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "copied_signature",
+      "id": "copied_signature-03",
+      "malicious": true,
+      "path": "copied_signature-03.pdf",
+      "sha256": "b775fd0bbddfb2d49b0b0499e788e19edd1cc7b7c065a3afda4bdfcf46e0f4f6",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        },
+        {
+          "bbox": [
+            75,
+            200,
+            315,
+            280
+          ],
+          "page": 2
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "copied_signature",
+      "id": "copied_signature-04",
+      "malicious": true,
+      "path": "copied_signature-04.pdf",
+      "sha256": "8d581a83c41bbc57635e02f32217ac022bd74bb5be26f4d9f11cb1825f0efaa6",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        },
+        {
+          "bbox": [
+            75,
+            200,
+            315,
+            280
+          ],
+          "page": 2
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "copied_signature",
+      "id": "copied_signature-05",
+      "malicious": true,
+      "path": "copied_signature-05.pdf",
+      "sha256": "fcd3dfec64c54f666b215e2e73394ea2500e84d36f012c3dc52388090c729a11",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        },
+        {
+          "bbox": [
+            75,
+            200,
+            315,
+            280
+          ],
+          "page": 2
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "copied_signature",
+      "id": "copied_signature-06",
+      "malicious": true,
+      "path": "copied_signature-06.pdf",
+      "sha256": "7de90ef94e9164e632f912872417faaf56f014735e09243efdd32c633c3c7be2",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        },
+        {
+          "bbox": [
+            75,
+            200,
+            315,
+            280
+          ],
+          "page": 2
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "copied_signature",
+      "id": "copied_signature-07",
+      "malicious": true,
+      "path": "copied_signature-07.pdf",
+      "sha256": "ddabf451e85e867929364d9ac3ae7b8c990544dfb34895164ef2ea5fb3ff4df5",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        },
+        {
+          "bbox": [
+            75,
+            200,
+            315,
+            280
+          ],
+          "page": 2
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "copied_signature",
+      "id": "copied_signature-08",
+      "malicious": true,
+      "path": "copied_signature-08.pdf",
+      "sha256": "125c727b8e6e676c12ff603b66354fff226f0b200678402faf0e7bfb2369634c",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        },
+        {
+          "bbox": [
+            75,
+            200,
+            315,
+            280
+          ],
+          "page": 2
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "copied_signature",
+      "id": "copied_signature-09",
+      "malicious": true,
+      "path": "copied_signature-09.pdf",
+      "sha256": "57b800b84538ce3b26d047e0c360dfa53f482bb857bac541dc8017594ec76ccb",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        },
+        {
+          "bbox": [
+            75,
+            200,
+            315,
+            280
+          ],
+          "page": 2
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "unsigned",
+      "id": "unsigned-00",
+      "malicious": false,
+      "path": "unsigned-00.pdf",
+      "sha256": "85a0c3a1c7439ebf5699864ffb755b0f738626553c4ff076f0f3eecb43e4779b",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "unsigned",
+      "id": "unsigned-01",
+      "malicious": false,
+      "path": "unsigned-01.pdf",
+      "sha256": "f23cf232df24bbabb0734cf456787957fad1e28ee65efebe91c4a9991acaeb86",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "unsigned",
+      "id": "unsigned-02",
+      "malicious": false,
+      "path": "unsigned-02.pdf",
+      "sha256": "dec6495a492c75be934c03e8807ebb83282f00f9e60b10b9be3f9caadaa89c21",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "unsigned",
+      "id": "unsigned-03",
+      "malicious": false,
+      "path": "unsigned-03.pdf",
+      "sha256": "87bd0e3711254261e891202ca2f20815553518223f5711da63e742f248d7a6df",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "unsigned",
+      "id": "unsigned-04",
+      "malicious": false,
+      "path": "unsigned-04.pdf",
+      "sha256": "837556c11f232e3cd9b639c88c059912b901021cc3bf9088d2613fdd34f95e9d",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "unsigned",
+      "id": "unsigned-05",
+      "malicious": false,
+      "path": "unsigned-05.pdf",
+      "sha256": "ab15222aeba17ab10e1ee8da3a962ff7e6f96ccabaaa6b41de1c7a1dfd0d9d09",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "unsigned",
+      "id": "unsigned-06",
+      "malicious": false,
+      "path": "unsigned-06.pdf",
+      "sha256": "392163303f8afe11576e23bc08f87cf8c50efda7bf6f22733e8f406ae092084f",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "unsigned",
+      "id": "unsigned-07",
+      "malicious": false,
+      "path": "unsigned-07.pdf",
+      "sha256": "606d7ee5036b76810cc79a5e2eaac12fc22b595a8c2c1ee80c4537f8f95ba342",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "unsigned",
+      "id": "unsigned-08",
+      "malicious": false,
+      "path": "unsigned-08.pdf",
+      "sha256": "1548b469ce08ad30340b999fdb09685bb909dd146054d72c6d845be5a252f801",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "unsigned",
+      "id": "unsigned-09",
+      "malicious": false,
+      "path": "unsigned-09.pdf",
+      "sha256": "75c5588b998256eed1e4c9432ddd70c3d9687b221b6b907324415017c17218c3",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_rules",
+      "id": "negative_rules-00",
+      "malicious": false,
+      "path": "negative_rules-00.pdf",
+      "sha256": "ce929d41795d41980ae662284c63e3c796f6efc76e7c5c979e1d6c34d3e7263e",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_rules",
+      "id": "negative_rules-01",
+      "malicious": false,
+      "path": "negative_rules-01.pdf",
+      "sha256": "862b6b2351550dd9e74034c13c3b89ae2ac6eeda0697965371ddbf453cf50634",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_rules",
+      "id": "negative_rules-02",
+      "malicious": false,
+      "path": "negative_rules-02.pdf",
+      "sha256": "63c7560829a787c535d36c6affca59763949258106e1f63486f55b9c28362c30",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_rules",
+      "id": "negative_rules-03",
+      "malicious": false,
+      "path": "negative_rules-03.pdf",
+      "sha256": "284532f5c3144d2aadb90fecacb62d9f4825f3577eb8fddd1f7d12e087710c13",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_rules",
+      "id": "negative_rules-04",
+      "malicious": false,
+      "path": "negative_rules-04.pdf",
+      "sha256": "73ffe2d0d56ecabe3b51b7c1f3485e214c95e3f932c900eced06c1f892b2b916",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_rules",
+      "id": "negative_rules-05",
+      "malicious": false,
+      "path": "negative_rules-05.pdf",
+      "sha256": "33ebaf96176ed2d0febdc2a0a1036ab55e9b1de1ed50eb86c96d94532a7a900a",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_rules",
+      "id": "negative_rules-06",
+      "malicious": false,
+      "path": "negative_rules-06.pdf",
+      "sha256": "748cd1d2890eaed302919b5256308e09bd369c653fd86921702c9a5403bcc158",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_rules",
+      "id": "negative_rules-07",
+      "malicious": false,
+      "path": "negative_rules-07.pdf",
+      "sha256": "215f2f68393d3b5014026555af3d7abecf03d856b6ed7114db438268838a5f1e",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_rules",
+      "id": "negative_rules-08",
+      "malicious": false,
+      "path": "negative_rules-08.pdf",
+      "sha256": "b9f7c34301065656c4584772f4d6d61c1a6b8c33c1bc921e6e3aecb65b7b1f3a",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_rules",
+      "id": "negative_rules-09",
+      "malicious": false,
+      "path": "negative_rules-09.pdf",
+      "sha256": "8abc94f6d9063d605baaf0ab3afe183659725729c9755481ed34f8f9920a1b34",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_logo",
+      "id": "negative_logo-00",
+      "malicious": false,
+      "path": "negative_logo-00.pdf",
+      "sha256": "a352f4db8464d846c1a61241b4d99f8105d05efa07e375c01e0175d2f0ffa9cc",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_logo",
+      "id": "negative_logo-01",
+      "malicious": false,
+      "path": "negative_logo-01.pdf",
+      "sha256": "a1594124fb863126cdc5b246ca109ff1cff990ce9accb362ba8128a73e8c2e2e",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_logo",
+      "id": "negative_logo-02",
+      "malicious": false,
+      "path": "negative_logo-02.pdf",
+      "sha256": "4c30a5cb0ff3d502263b49236fedb41fd4f9f6fc89846de560e9ea7342a632a3",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_logo",
+      "id": "negative_logo-03",
+      "malicious": false,
+      "path": "negative_logo-03.pdf",
+      "sha256": "a14ad3451fab50a781b0c8d1954784964193fca97f81e58d74c764e5cf8b98f6",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_logo",
+      "id": "negative_logo-04",
+      "malicious": false,
+      "path": "negative_logo-04.pdf",
+      "sha256": "8a3518834efee898d6b867a99edc1d55c3a320a4796ce4f4655587b589f3d0e6",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_logo",
+      "id": "negative_logo-05",
+      "malicious": false,
+      "path": "negative_logo-05.pdf",
+      "sha256": "eb8d08262aeec2554f75dd25ac3c1858e497ebc9c157ddabb90a72092fba62b0",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_logo",
+      "id": "negative_logo-06",
+      "malicious": false,
+      "path": "negative_logo-06.pdf",
+      "sha256": "6b54f5c552f35cc5766d53663d6c3623d291a20a8cf94227565d04b5918ab2c5",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_logo",
+      "id": "negative_logo-07",
+      "malicious": false,
+      "path": "negative_logo-07.pdf",
+      "sha256": "de1e316d80e7f4008dde1f3d354aee18523e8a116a88ee958e238323c8ba028b",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_logo",
+      "id": "negative_logo-08",
+      "malicious": false,
+      "path": "negative_logo-08.pdf",
+      "sha256": "af4757b9240a0ab70808a8e56bd133537be9cd0a4f2f44437b23ef40654749d3",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_logo",
+      "id": "negative_logo-09",
+      "malicious": false,
+      "path": "negative_logo-09.pdf",
+      "sha256": "5eb72f9697c76fcc99d4a93d8e7ef5dac0abd3a82e67f5d7f31b477691d4be66",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_repeated_logos",
+      "id": "negative_repeated_logos-00",
+      "malicious": false,
+      "path": "negative_repeated_logos-00.pdf",
+      "sha256": "2d0ae169ccaac14b74c4dc1f59309739484a09bc6fa60d2b65169ad140f3087a",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_repeated_logos",
+      "id": "negative_repeated_logos-01",
+      "malicious": false,
+      "path": "negative_repeated_logos-01.pdf",
+      "sha256": "f83cfb8728eb2498725330ab6edee74779afe1c328620d35cb6f84f79b89b6d9",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_repeated_logos",
+      "id": "negative_repeated_logos-02",
+      "malicious": false,
+      "path": "negative_repeated_logos-02.pdf",
+      "sha256": "26534f4f80025587f4857d5adb0c9f47212421078b5566074186f11e62f33bc3",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_repeated_logos",
+      "id": "negative_repeated_logos-03",
+      "malicious": false,
+      "path": "negative_repeated_logos-03.pdf",
+      "sha256": "e39412f12d0955d219454a391dbe230c4958909c4e0ac646e32a8f25084418b2",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_repeated_logos",
+      "id": "negative_repeated_logos-04",
+      "malicious": false,
+      "path": "negative_repeated_logos-04.pdf",
+      "sha256": "5aad9a75e0a686cedc2f76c230831e20c72a4b9f911aa14317622a823131a145",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_repeated_logos",
+      "id": "negative_repeated_logos-05",
+      "malicious": false,
+      "path": "negative_repeated_logos-05.pdf",
+      "sha256": "225e9dc05143e37cdeb86693d50f4131fd4c22a9fa61d6032de06d37e3b3d7c9",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_repeated_logos",
+      "id": "negative_repeated_logos-06",
+      "malicious": false,
+      "path": "negative_repeated_logos-06.pdf",
+      "sha256": "70d9c01472ae78c84e36eeefca16cc60d8383159e577bea4aea9266bfc725fd2",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_repeated_logos",
+      "id": "negative_repeated_logos-07",
+      "malicious": false,
+      "path": "negative_repeated_logos-07.pdf",
+      "sha256": "2bd0fedc5ad0cac9aa525a4069e43ba1fe91452738302b060ab3f68b4c3abcbb",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_repeated_logos",
+      "id": "negative_repeated_logos-08",
+      "malicious": false,
+      "path": "negative_repeated_logos-08.pdf",
+      "sha256": "c6d187bff1c633fb2ee49483116b9ed9e0e76f7568baa6fed39ba4fe470726f7",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "negative_repeated_logos",
+      "id": "negative_repeated_logos-09",
+      "malicious": false,
+      "path": "negative_repeated_logos-09.pdf",
+      "sha256": "0407c2efe55c672d3db0c4ab7ab52e91f95858c5ea4995f5c44bbdfaf5c3fb83",
+      "signature_rois": [],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "faint_signature",
+      "id": "faint_signature-00",
+      "malicious": false,
+      "path": "faint_signature-00.pdf",
+      "sha256": "29b0094a50a27e940ff8ae1e2eb1a427000a7a0909e632e6af04c815126d4b6c",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "faint_signature",
+      "id": "faint_signature-01",
+      "malicious": false,
+      "path": "faint_signature-01.pdf",
+      "sha256": "56c8ee4259fce2f0c0c355e1f235597987be50b7a9d33350f51c0fd69534c77e",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "faint_signature",
+      "id": "faint_signature-02",
+      "malicious": false,
+      "path": "faint_signature-02.pdf",
+      "sha256": "70b53621ce44715d42767b32ff1db4ebc97da8c5cb530957f1e60b0715c9c314",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "faint_signature",
+      "id": "faint_signature-03",
+      "malicious": false,
+      "path": "faint_signature-03.pdf",
+      "sha256": "6d0942d8c58f0497698c7bb94f64d1fddaa12a29254e183b6d0f9b6e25579c32",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "faint_signature",
+      "id": "faint_signature-04",
+      "malicious": false,
+      "path": "faint_signature-04.pdf",
+      "sha256": "d75f217e07eb6f9db51e47a5a52d3e439b3de91aa40e70c36823130d6c049722",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "faint_signature",
+      "id": "faint_signature-05",
+      "malicious": false,
+      "path": "faint_signature-05.pdf",
+      "sha256": "6df913c0d585f43e9715d932482d636dabafce606c0730d90f6200e92f58cd54",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "faint_signature",
+      "id": "faint_signature-06",
+      "malicious": false,
+      "path": "faint_signature-06.pdf",
+      "sha256": "dcfe6a497f0497b61f1ef5510dfec6b372189b310e4bb94c9a7f4619b4ba1f96",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "faint_signature",
+      "id": "faint_signature-07",
+      "malicious": false,
+      "path": "faint_signature-07.pdf",
+      "sha256": "af8dd27c9e2c27d5866019bbf1aba8dd1037bb6639db52e1486f79edf0d58775",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "faint_signature",
+      "id": "faint_signature-08",
+      "malicious": false,
+      "path": "faint_signature-08.pdf",
+      "sha256": "48a8b65a356b10ad064e795d9f15489374a41b36cb001ad2ae737fc474e58635",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "faint_signature",
+      "id": "faint_signature-09",
+      "malicious": false,
+      "path": "faint_signature-09.pdf",
+      "sha256": "9a1811bcf8e08d03aeb0e9f7b7b3c83856005fa68dbc9f102ed9de172d30cdbc",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": true,
+      "unsupported_reason": null
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "unsigned_forgery",
+      "id": "unsigned_forgery-00",
+      "malicious": true,
+      "path": "unsigned_forgery-00.pdf",
+      "sha256": "4fd33aa825fbf3437f2eff07d0e329e85444dd86fd0cbf017614cd80b63746fb",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": false,
+      "unsupported_reason": "Single reused signature has no reference or history"
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "unsigned_forgery",
+      "id": "unsigned_forgery-01",
+      "malicious": true,
+      "path": "unsigned_forgery-01.pdf",
+      "sha256": "d376d99a5ce1056b547af0372b582b31b71c686be27b9531a04a835b49d571f1",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": false,
+      "unsupported_reason": "Single reused signature has no reference or history"
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "unsigned_forgery",
+      "id": "unsigned_forgery-02",
+      "malicious": true,
+      "path": "unsigned_forgery-02.pdf",
+      "sha256": "3f94678f1b36ea7d566024766bdc70e72426a0c131c865d139f19c7a7ad5a1c4",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": false,
+      "unsupported_reason": "Single reused signature has no reference or history"
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "unsigned_forgery",
+      "id": "unsigned_forgery-03",
+      "malicious": true,
+      "path": "unsigned_forgery-03.pdf",
+      "sha256": "6d317f93b971744b265f91ffa4dd06a802c954c394ef40b30c5cf1ececd1a8d3",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": false,
+      "unsupported_reason": "Single reused signature has no reference or history"
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "unsigned_forgery",
+      "id": "unsigned_forgery-04",
+      "malicious": true,
+      "path": "unsigned_forgery-04.pdf",
+      "sha256": "6067baa34595796f52f12e780382ac4f014df4fe9afdf7c393bbf50bbe5bdc2d",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": false,
+      "unsupported_reason": "Single reused signature has no reference or history"
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "unsigned_forgery",
+      "id": "unsigned_forgery-05",
+      "malicious": true,
+      "path": "unsigned_forgery-05.pdf",
+      "sha256": "8eec7e179fbb84d19607c39d083c4b5f0e7acda2162d2caa3989a4fc33403a4e",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": false,
+      "unsupported_reason": "Single reused signature has no reference or history"
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "unsigned_forgery",
+      "id": "unsigned_forgery-06",
+      "malicious": true,
+      "path": "unsigned_forgery-06.pdf",
+      "sha256": "bb67b460967b533cc01e3a7c76bd539fa1eb015de55a29a241f019b20ae058ef",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": false,
+      "unsupported_reason": "Single reused signature has no reference or history"
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "unsigned_forgery",
+      "id": "unsigned_forgery-07",
+      "malicious": true,
+      "path": "unsigned_forgery-07.pdf",
+      "sha256": "80f3cb38e76209c1ef4a20580c8d91ba921d50a978e79b4669eada1556ad2298",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": false,
+      "unsupported_reason": "Single reused signature has no reference or history"
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "unsigned_forgery",
+      "id": "unsigned_forgery-08",
+      "malicious": true,
+      "path": "unsigned_forgery-08.pdf",
+      "sha256": "127c77b2239ea982cfb882353533067d1e3ad3efb50531e00ecc0a2734012285",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": false,
+      "unsupported_reason": "Single reused signature has no reference or history"
+    },
+    {
+      "expected_class": "visual_candidate",
+      "family": "unsigned_forgery",
+      "id": "unsigned_forgery-09",
+      "malicious": true,
+      "path": "unsigned_forgery-09.pdf",
+      "sha256": "5a0a30bf817bd340740eaed87532e9f83e0805e928364570bd8f00e1527863d0",
+      "signature_rois": [
+        {
+          "bbox": [
+            55,
+            170,
+            295,
+            250
+          ],
+          "page": 1
+        }
+      ],
+      "supported_alert_evaluation": false,
+      "unsupported_reason": "Single reused signature has no reference or history"
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "encrypted",
+      "id": "encrypted-00",
+      "malicious": false,
+      "path": "encrypted-00.pdf",
+      "sha256": "b35650fb248c77d877a9d6ccbbb4cb4c207a447a2b8d03ce0fd767f2542b5555",
+      "signature_rois": [],
+      "supported_alert_evaluation": false,
+      "unsupported_reason": "Password-protected PDF unsupported"
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "encrypted",
+      "id": "encrypted-01",
+      "malicious": false,
+      "path": "encrypted-01.pdf",
+      "sha256": "7043aa7307a38b58ea6fcfe3ec237241d95b4b87522417618b5098916d80fcce",
+      "signature_rois": [],
+      "supported_alert_evaluation": false,
+      "unsupported_reason": "Password-protected PDF unsupported"
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "encrypted",
+      "id": "encrypted-02",
+      "malicious": false,
+      "path": "encrypted-02.pdf",
+      "sha256": "f804595de3317e25911dfa53a9361426bbaab8a1731cdfbb3086103e7ff94dda",
+      "signature_rois": [],
+      "supported_alert_evaluation": false,
+      "unsupported_reason": "Password-protected PDF unsupported"
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "encrypted",
+      "id": "encrypted-03",
+      "malicious": false,
+      "path": "encrypted-03.pdf",
+      "sha256": "0206a14ff54981a0289ddc289279100ac33aa2d57407d9f9ecc016292c98130e",
+      "signature_rois": [],
+      "supported_alert_evaluation": false,
+      "unsupported_reason": "Password-protected PDF unsupported"
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "encrypted",
+      "id": "encrypted-04",
+      "malicious": false,
+      "path": "encrypted-04.pdf",
+      "sha256": "b83fdd22efe94152c698b9a029c91dbbf6c0a5f1f8866b12df82a8b874d9ed8e",
+      "signature_rois": [],
+      "supported_alert_evaluation": false,
+      "unsupported_reason": "Password-protected PDF unsupported"
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "encrypted",
+      "id": "encrypted-05",
+      "malicious": false,
+      "path": "encrypted-05.pdf",
+      "sha256": "c176ded9badcdedcfc3fa3784db29869053eb7a55bdf341c70bdf1fc12ea2de2",
+      "signature_rois": [],
+      "supported_alert_evaluation": false,
+      "unsupported_reason": "Password-protected PDF unsupported"
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "encrypted",
+      "id": "encrypted-06",
+      "malicious": false,
+      "path": "encrypted-06.pdf",
+      "sha256": "19fe45cd2daf71ac642112c14ed61c0bcd074e200941bbf3e0c11de72a8ae706",
+      "signature_rois": [],
+      "supported_alert_evaluation": false,
+      "unsupported_reason": "Password-protected PDF unsupported"
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "encrypted",
+      "id": "encrypted-07",
+      "malicious": false,
+      "path": "encrypted-07.pdf",
+      "sha256": "c546e931fb81824ae31c56b499e46b170ff864e505c590992cf924ef9ec7f762",
+      "signature_rois": [],
+      "supported_alert_evaluation": false,
+      "unsupported_reason": "Password-protected PDF unsupported"
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "encrypted",
+      "id": "encrypted-08",
+      "malicious": false,
+      "path": "encrypted-08.pdf",
+      "sha256": "32f5f5cb94747a60ad91c3aff289f9829fc192c8d2b1565b117c6a609f821ddf",
+      "signature_rois": [],
+      "supported_alert_evaluation": false,
+      "unsupported_reason": "Password-protected PDF unsupported"
+    },
+    {
+      "expected_class": "unsigned",
+      "family": "encrypted",
+      "id": "encrypted-09",
+      "malicious": false,
+      "path": "encrypted-09.pdf",
+      "sha256": "213af871206a99b73029b7c6361a55bbd40867cbfb514383efeda71ce6266cd8",
+      "signature_rois": [],
+      "supported_alert_evaluation": false,
+      "unsupported_reason": "Password-protected PDF unsupported"
+    }
+  ],
+  "seed": 20261102,
+  "version": 1
+}
