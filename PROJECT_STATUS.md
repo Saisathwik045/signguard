@@ -29,12 +29,15 @@ audit writers, audited reports, and initial Streamlit rendering.
 
 ## Limits and remaining deployment work
 
-The Actions matrix is configured; local cloud execution verified Python 3.12 only. UI rendering
+GitHub Actions run 41337450218 passed on Python 3.11 and 3.12, including lint, tests,
+sample generation and artifact uploads. Local Codex Cloud execution used Python 3.12. UI rendering
 was exercised with Streamlit AppTest; no public deployment was performed. Visual comparisons
 identify changes consistent with shadow attacks, not every attack family. Visual signatures
 require supplied image crops; embedded images are candidates only. ELA/ORB are not a trained
 forgery classifier or a biometric identity check. See README for rendering, trust, resource,
 and audit anchoring limits. Public deployment requires authentication and worker resource isolation.
+
+Published branch: `feature/signguard-analysis`. Pull request: https://github.com/Saisathwik045/signguard/pull/1
 
 ## Files created
 
