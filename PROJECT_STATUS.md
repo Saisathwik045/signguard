@@ -64,13 +64,16 @@ incomplete or outside this implementation. See RESULTS.md and ASSUMPTIONS.md for
 
 ## GitHub verification
 
-Feature branch and pull request publishing/check results are recorded in the final task report.
+Published branch: `feature/phase2-forensic-evaluation`.
+Pull request: https://github.com/Saisathwik045/signguard/pull/2
 The Phase 2 workflow is configured for Python 3.11 and 3.12; cloud execution above used Python 3.12.
+The final task report records observed GitHub Actions outcomes.
 
 ## Phase 2 exact file inventory
 
 Created:
 
+- `.gitattributes`
 - `.streamlit/config.toml`
 - `ASSUMPTIONS.md`
 - `RESULTS.md`
