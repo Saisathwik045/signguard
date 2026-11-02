@@ -161,7 +161,9 @@ def main():
             len(os.environ.get("SIGNGUARD_GATEWAY_TOKEN", "")) < 32):
         raise SystemExit("Private gateway requires isolated backend, confirmed private configuration and gateway secret")
     child = subprocess.Popen([sys.executable, "-m", "streamlit", "run", "app.py", "--server.address=127.0.0.1",
-                              "--server.port="+os.environ.get("SIGNGUARD_STREAMLIT_PORT", "8502"), "--server.headless=true"])
+                              "--server.port="+os.environ.get("SIGNGUARD_STREAMLIT_PORT", "8502"), "--server.headless=true",
+                              "--server.maxUploadSize=25", "--server.maxMessageSize=50",
+                              "--browser.gatherUsageStats=false"])
     try:
         uvicorn.run(app, host=os.environ.get("SIGNGUARD_WEB_HOST", "127.0.0.1"),
                     port=int(os.environ.get("SIGNGUARD_WEB_PORT", "8501")), access_log=False)
