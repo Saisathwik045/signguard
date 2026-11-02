@@ -1,0 +1,10 @@
+{
+  "detector": {
+    "images.py": "de82c83c8c8d05240eb360a9837d70384d77165acfb01aad3d7a2c81c0629e7c",
+    "localization.py": "79eb74f6ca28738766869a0f4a8d41e0d43493f4684fff0611c82bb2038ca698",
+    "pdf.py": "da665443b5019b8f676e7c5ac2c58f4504885c841caa4179350e1cf6713a97ba",
+    "pipeline.py": "1bc107d7ea416d9d72ff425c14714cf23d4e2d86cf830b761eb274b54593d74a"
+  },
+  "manifest_sha256": "cf1e76a58fce9c3f81ec5869709e46d1133f4b911f08029c3ee81d22cebc3284",
+  "generator_sha256": "2605e33cae6a9e7644ddbb63babeb4833e8cf16c5610979a8a5e8c2431babfc5"
+}

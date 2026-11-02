@@ -1,0 +1,4642 @@
+[
+  {
+    "alert": false,
+    "base_id": "holdout-0",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "signed",
+    "findings": [
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE"
+    ],
+    "id": "holdout-signed-0",
+    "malicious": false,
+    "path": "holdout-signed-0.pdf",
+    "process_high_water_rss_mib": 137.80859375,
+    "seconds": 0.596589645999984,
+    "sha256": "d343bf0406df2b478b5565ca42553701c3677fe66f5d6388db1ee6a751a97af9",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-1",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "signed",
+    "findings": [
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE"
+    ],
+    "id": "holdout-signed-1",
+    "malicious": false,
+    "path": "holdout-signed-1.pdf",
+    "process_high_water_rss_mib": 140.48828125,
+    "seconds": 0.1971397510001225,
+    "sha256": "a7c026240852743536bd48380794e02e453cbe3323a60894578bb36c902a609d",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-2",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "signed",
+    "findings": [
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE"
+    ],
+    "id": "holdout-signed-2",
+    "malicious": false,
+    "path": "holdout-signed-2.pdf",
+    "process_high_water_rss_mib": 141.4609375,
+    "seconds": 0.20160260500006189,
+    "sha256": "12d18bf4327691f160ec32750149f04444cd99aa9725fbc09004ada380323020",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-3",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "signed",
+    "findings": [
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE"
+    ],
+    "id": "holdout-signed-3",
+    "malicious": false,
+    "path": "holdout-signed-3.pdf",
+    "process_high_water_rss_mib": 142.50390625,
+    "seconds": 0.21512127899995903,
+    "sha256": "ecb972c28b59c8f059539b219e98c9300a7ebfe743d1e30670d08adf790022a8",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-4",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "signed",
+    "findings": [
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE"
+    ],
+    "id": "holdout-signed-4",
+    "malicious": false,
+    "path": "holdout-signed-4.pdf",
+    "process_high_water_rss_mib": 143.46875,
+    "seconds": 0.1992317599999751,
+    "sha256": "d60c20e67b1a1318c415104d976ba2d0d49a0429b06adf0881bdab461c16224a",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-0",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "byte_tamper",
+    "findings": [
+      "CRYPTOGRAPHIC_FAILURE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE"
+    ],
+    "id": "holdout-byte_tamper-0",
+    "malicious": true,
+    "path": "holdout-byte_tamper-0.pdf",
+    "process_high_water_rss_mib": 143.46875,
+    "seconds": 0.1715191139999206,
+    "sha256": "cc261f6cc81527d8a7ec6bd669c86bf0abc94a2cd229b21737357066104429e3",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "tampering_detected"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-1",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "byte_tamper",
+    "findings": [
+      "CRYPTOGRAPHIC_FAILURE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE"
+    ],
+    "id": "holdout-byte_tamper-1",
+    "malicious": true,
+    "path": "holdout-byte_tamper-1.pdf",
+    "process_high_water_rss_mib": 143.46875,
+    "seconds": 0.17655167199995958,
+    "sha256": "a3f30cbe41d4fec728a721714a2004b97de80443612d10cf0e014d99ba930340",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "tampering_detected"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-2",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "byte_tamper",
+    "findings": [
+      "CRYPTOGRAPHIC_FAILURE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE"
+    ],
+    "id": "holdout-byte_tamper-2",
+    "malicious": true,
+    "path": "holdout-byte_tamper-2.pdf",
+    "process_high_water_rss_mib": 143.46875,
+    "seconds": 0.1991197039999406,
+    "sha256": "cebb6b2ca56b19b9c8cb53e98e48aa42610c66168ce856d341d71a03c40a337b",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "tampering_detected"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-3",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "byte_tamper",
+    "findings": [
+      "CRYPTOGRAPHIC_FAILURE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE"
+    ],
+    "id": "holdout-byte_tamper-3",
+    "malicious": true,
+    "path": "holdout-byte_tamper-3.pdf",
+    "process_high_water_rss_mib": 143.46875,
+    "seconds": 0.20323142899997038,
+    "sha256": "8e5416d3f49d42bcac83e377601f97de6a7925352e4b48059d826dfecbe3d6c6",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "tampering_detected"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-4",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "byte_tamper",
+    "findings": [
+      "CRYPTOGRAPHIC_FAILURE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE"
+    ],
+    "id": "holdout-byte_tamper-4",
+    "malicious": true,
+    "path": "holdout-byte_tamper-4.pdf",
+    "process_high_water_rss_mib": 143.4921875,
+    "seconds": 0.20751737900013723,
+    "sha256": "bd9840b3166695e16d1ca4461bdd5c9483f6381dd36bf6e3980b6676ea422b53",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "tampering_detected"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-0",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "reveal",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "holdout-reveal-0",
+    "malicious": true,
+    "path": "holdout-reveal-0.pdf",
+    "process_high_water_rss_mib": 143.4921875,
+    "seconds": 0.23516495100011525,
+    "sha256": "8d3d4a8d1ae220f88de5be45624085dc22e7d6befefb41fb04e69ab225c93cde",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-1",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "reveal",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "holdout-reveal-1",
+    "malicious": true,
+    "path": "holdout-reveal-1.pdf",
+    "process_high_water_rss_mib": 143.4921875,
+    "seconds": 0.25056983900003615,
+    "sha256": "f1139d3df41bee5b954f25e27dc1e4d22cf30a7e68620ae244549eaac2529de9",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-2",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "reveal",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "holdout-reveal-2",
+    "malicious": true,
+    "path": "holdout-reveal-2.pdf",
+    "process_high_water_rss_mib": 143.4921875,
+    "seconds": 0.27657290599995576,
+    "sha256": "b346042a776d09df136507345a6765c2c4e9487a70b4b20f25001bd928a145d0",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-3",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "reveal",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "holdout-reveal-3",
+    "malicious": true,
+    "path": "holdout-reveal-3.pdf",
+    "process_high_water_rss_mib": 143.65625,
+    "seconds": 0.268222114000082,
+    "sha256": "f601484d911c358541f7583ae72d24920e268b4db1954630c401f55d067e88db",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-4",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "reveal",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "holdout-reveal-4",
+    "malicious": true,
+    "path": "holdout-reveal-4.pdf",
+    "process_high_water_rss_mib": 144.53125,
+    "seconds": 0.2911890719999519,
+    "sha256": "b04ca342b56f8bc9ca3bd0cbc5cb16dddf6a8a8985f96dafad473095f3eb3a87",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-0",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "overlay",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "holdout-overlay-0",
+    "malicious": true,
+    "path": "holdout-overlay-0.pdf",
+    "process_high_water_rss_mib": 144.53125,
+    "seconds": 0.23145274300009078,
+    "sha256": "53a0c9260538830fd117afc6bf2ccb8d07b5e66efeeb4b8a13bedd680121fb0b",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-1",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "overlay",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "holdout-overlay-1",
+    "malicious": true,
+    "path": "holdout-overlay-1.pdf",
+    "process_high_water_rss_mib": 144.53125,
+    "seconds": 0.2591000750001058,
+    "sha256": "8818309a4c8ca4dc6e2a68b57ec81d7c3cd0ec99ab991bca9d85cd1445ca29da",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-2",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "overlay",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "holdout-overlay-2",
+    "malicious": true,
+    "path": "holdout-overlay-2.pdf",
+    "process_high_water_rss_mib": 144.53125,
+    "seconds": 0.2581567820000146,
+    "sha256": "f066791d4acf191f03754a43653338e86d0e9f171dc4a3dc3a9be729a0d87fc0",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-3",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "overlay",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "holdout-overlay-3",
+    "malicious": true,
+    "path": "holdout-overlay-3.pdf",
+    "process_high_water_rss_mib": 144.53125,
+    "seconds": 0.2721346650000669,
+    "sha256": "9bf86f7eb91d71f8a6d36ec5d521c9aebb26a57c70e9b68dfedab476d3e68b39",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-4",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "overlay",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "holdout-overlay-4",
+    "malicious": true,
+    "path": "holdout-overlay-4.pdf",
+    "process_high_water_rss_mib": 145.1015625,
+    "seconds": 0.29419396599996617,
+    "sha256": "5844d52fc83f4e551b37324aea97f5629d32007702e5e9b0346a33febcd49ed2",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-0",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "annotation",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "ANNOTATION_UPDATE"
+    ],
+    "id": "holdout-annotation-0",
+    "malicious": true,
+    "path": "holdout-annotation-0.pdf",
+    "process_high_water_rss_mib": 145.1015625,
+    "seconds": 0.24852342200006206,
+    "sha256": "2ca0d41608579cd404df595bd7a08b1973fb5234dad50271474c21eb554b3a68",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-1",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "annotation",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "ANNOTATION_UPDATE"
+    ],
+    "id": "holdout-annotation-1",
+    "malicious": true,
+    "path": "holdout-annotation-1.pdf",
+    "process_high_water_rss_mib": 145.1015625,
+    "seconds": 0.2419683470000109,
+    "sha256": "8081e22fd2ce2cf5148024cd72b66c2e26d5603ef9c3bbcc876a09519a01ed9a",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-2",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "annotation",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "ANNOTATION_UPDATE"
+    ],
+    "id": "holdout-annotation-2",
+    "malicious": true,
+    "path": "holdout-annotation-2.pdf",
+    "process_high_water_rss_mib": 145.1015625,
+    "seconds": 0.2622937500000262,
+    "sha256": "81f2b26c9312e9a3a9099b99b132491fa6e7dfe015b65984d775fccc3463d203",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-3",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "annotation",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "ANNOTATION_UPDATE"
+    ],
+    "id": "holdout-annotation-3",
+    "malicious": true,
+    "path": "holdout-annotation-3.pdf",
+    "process_high_water_rss_mib": 145.45703125,
+    "seconds": 0.2931353690000833,
+    "sha256": "b69d1e9bdbe67a1fc90debc5dbc88e483f417f2b75255409e24b9fc8395a72c6",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-4",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "annotation",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "ANNOTATION_UPDATE"
+    ],
+    "id": "holdout-annotation-4",
+    "malicious": true,
+    "path": "holdout-annotation-4.pdf",
+    "process_high_water_rss_mib": 146.40234375,
+    "seconds": 0.3087986650000403,
+    "sha256": "f04f498014c6b8269f4bfc9916f2def7fc81ceaf1eeace8c5a47435f68f3f8a7",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-0",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "page_replace",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "holdout-page_replace-0",
+    "malicious": true,
+    "path": "holdout-page_replace-0.pdf",
+    "process_high_water_rss_mib": 146.40234375,
+    "seconds": 0.11721956299993508,
+    "sha256": "dfcf40246186586bd465c09e7cb9267e6ae5ca29d7ddc1483f57e1016ba9674e",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-1",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "page_replace",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "holdout-page_replace-1",
+    "malicious": true,
+    "path": "holdout-page_replace-1.pdf",
+    "process_high_water_rss_mib": 146.40234375,
+    "seconds": 0.11727142599988838,
+    "sha256": "063394112f2e9772d8de4108058a162a217e94626b09c8fd380baefd278c58e8",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-2",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "page_replace",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "holdout-page_replace-2",
+    "malicious": true,
+    "path": "holdout-page_replace-2.pdf",
+    "process_high_water_rss_mib": 146.40234375,
+    "seconds": 0.14590744399993127,
+    "sha256": "a2f0794e2c9c303c55442694c956ad0b6f196a4027be950f5dcb6d0dda625121",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-3",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "page_replace",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "holdout-page_replace-3",
+    "malicious": true,
+    "path": "holdout-page_replace-3.pdf",
+    "process_high_water_rss_mib": 146.40234375,
+    "seconds": 0.12798232199997983,
+    "sha256": "d23a338ae73862878d8d9f76838d4e6feb054713b9a7a7c602cc5ac5113c493e",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-4",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "page_replace",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "holdout-page_replace-4",
+    "malicious": true,
+    "path": "holdout-page_replace-4.pdf",
+    "process_high_water_rss_mib": 146.7421875,
+    "seconds": 0.15510923900001217,
+    "sha256": "6bfbb8811af18cb6fb7c25dd8c29d2fec21f72b826bb191048c8a04c4b462478",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-0",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "metadata",
+    "findings": [
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "METADATA_ONLY_UPDATE"
+    ],
+    "id": "holdout-metadata-0",
+    "malicious": false,
+    "path": "holdout-metadata-0.pdf",
+    "process_high_water_rss_mib": 146.7421875,
+    "seconds": 0.24999659699983567,
+    "sha256": "d7694dea283255cffd9bb0c4f2e1320ca7eaff72d1423bf403ab526c2c9eb7e9",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-1",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "metadata",
+    "findings": [
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "METADATA_ONLY_UPDATE"
+    ],
+    "id": "holdout-metadata-1",
+    "malicious": false,
+    "path": "holdout-metadata-1.pdf",
+    "process_high_water_rss_mib": 146.7421875,
+    "seconds": 0.25452847900010056,
+    "sha256": "2d1e68746c894f1ac9435a88183be73c97783a205852706b1b0d2e52eae418ee",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-2",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "metadata",
+    "findings": [
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "METADATA_ONLY_UPDATE"
+    ],
+    "id": "holdout-metadata-2",
+    "malicious": false,
+    "path": "holdout-metadata-2.pdf",
+    "process_high_water_rss_mib": 146.7421875,
+    "seconds": 0.2664943590000348,
+    "sha256": "30f6924531d30adb74f00fd9ede883a426f5a9504a25fdb1672ec22682cc4f54",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-3",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "metadata",
+    "findings": [
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "METADATA_ONLY_UPDATE"
+    ],
+    "id": "holdout-metadata-3",
+    "malicious": false,
+    "path": "holdout-metadata-3.pdf",
+    "process_high_water_rss_mib": 146.7421875,
+    "seconds": 0.26307184100005543,
+    "sha256": "ca2db82d6ed0b85bbfe7a65daf741504c8e6d7a82b0a51ac54986bd936cb4e24",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-4",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "metadata",
+    "findings": [
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "METADATA_ONLY_UPDATE"
+    ],
+    "id": "holdout-metadata-4",
+    "malicious": false,
+    "path": "holdout-metadata-4.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.2953382480000073,
+    "sha256": "16b3f06f5b73bd01392a7ac518a977e281d45590fc34b736f82d74db25e37b67",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-0",
+    "candidates": [
+      {
+        "bbox": [
+          70.67,
+          221.33,
+          326.0,
+          274.0
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.1730533650651595,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.063,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "visual",
+    "findings": [],
+    "id": "holdout-visual-0",
+    "malicious": false,
+    "path": "holdout-visual-0.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.044030947999999626,
+    "sha256": "f9ef7f6420fbb5469b90c768d32f29c3dc91ad88c79b98692a290877a457243a",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-1",
+    "candidates": [
+      {
+        "bbox": [
+          70.0,
+          218.0,
+          326.67,
+          262.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "visual",
+    "findings": [],
+    "id": "holdout-visual-1",
+    "malicious": false,
+    "path": "holdout-visual-1.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.028574093000088396,
+    "sha256": "bf5bfd6b3e39194b8886abce2040788b8a2c8fab85c56e2127b321bbfe70f541",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-2",
+    "candidates": [
+      {
+        "bbox": [
+          70.67,
+          228.0,
+          326.0,
+          278.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.0672,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "visual",
+    "findings": [],
+    "id": "holdout-visual-2",
+    "malicious": false,
+    "path": "holdout-visual-2.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.027704209000148694,
+    "sha256": "e8dc7eff1b37ac7b6a4edd08766ec44b4a7a546a43a3f6749553a12bd2e7fdfc",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-3",
+    "candidates": [
+      {
+        "bbox": [
+          70.0,
+          226.67,
+          326.67,
+          271.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.3096543257527242,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1011,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "visual",
+    "findings": [],
+    "id": "holdout-visual-3",
+    "malicious": false,
+    "path": "holdout-visual-3.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.032361922000063714,
+    "sha256": "0c02982123734d19a2483b952158c4d6c66ca83b544174b93ca1da586781791f",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-4",
+    "candidates": [
+      {
+        "bbox": [
+          70.67,
+          216.67,
+          326.0,
+          278.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.0536,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "visual",
+    "findings": [],
+    "id": "holdout-visual-4",
+    "malicious": false,
+    "path": "holdout-visual-4.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.03498537900009069,
+    "sha256": "22c65fa31d1f69010e82d886f9306b35263ec90e729b867fb50fbf6f289cd9bb",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-0",
+    "candidates": [
+      {
+        "bbox": [
+          70.67,
+          221.33,
+          326.0,
+          274.0
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.1730533650651595,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.063,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          70.67,
+          221.33,
+          326.0,
+          274.0
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.1730533650651595,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p2-c2",
+        "ink_density": 0.063,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 2,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "copied",
+    "findings": [
+      "REPEATED_VISUAL_REGION"
+    ],
+    "id": "holdout-copied-0",
+    "malicious": true,
+    "path": "holdout-copied-0.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.06154735100017206,
+    "sha256": "5a93ffefb62cd5b16c04b106b4d408c078774ae08ebccf1febd56b5f3336d1d9",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-1",
+    "candidates": [
+      {
+        "bbox": [
+          70.0,
+          218.0,
+          326.67,
+          262.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          70.0,
+          218.0,
+          326.67,
+          262.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p2-c2",
+        "ink_density": 0.1,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 2,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "copied",
+    "findings": [
+      "REPEATED_VISUAL_REGION"
+    ],
+    "id": "holdout-copied-1",
+    "malicious": true,
+    "path": "holdout-copied-1.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.05899889600004826,
+    "sha256": "1ff10ec819a1b5934663239e7a50f353979eb7e32c28a23611c8c67bdfa8c348",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-2",
+    "candidates": [
+      {
+        "bbox": [
+          70.67,
+          228.0,
+          326.0,
+          278.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.0672,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          70.67,
+          228.0,
+          326.0,
+          278.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p2-c2",
+        "ink_density": 0.0672,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 2,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "copied",
+    "findings": [
+      "REPEATED_VISUAL_REGION"
+    ],
+    "id": "holdout-copied-2",
+    "malicious": true,
+    "path": "holdout-copied-2.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.061086860999921555,
+    "sha256": "5b12d56d316893574c79f76206a6c9369f77289e7131f2858b3f8940a0581f82",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-3",
+    "candidates": [
+      {
+        "bbox": [
+          70.0,
+          226.67,
+          326.67,
+          271.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.3096543257527242,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1011,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          70.0,
+          226.67,
+          326.67,
+          271.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.3096543257527242,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p2-c2",
+        "ink_density": 0.1011,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 2,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "copied",
+    "findings": [
+      "REPEATED_VISUAL_REGION"
+    ],
+    "id": "holdout-copied-3",
+    "malicious": true,
+    "path": "holdout-copied-3.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.07609340399994835,
+    "sha256": "be16c4f77f0cffc2ba44151a1b817542c44c79f180d17781ce25463b889489f1",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "holdout-4",
+    "candidates": [
+      {
+        "bbox": [
+          70.67,
+          216.67,
+          326.0,
+          278.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.0536,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          70.67,
+          216.67,
+          326.0,
+          278.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p2-c2",
+        "ink_density": 0.0536,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 2,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "copied",
+    "findings": [
+      "REPEATED_VISUAL_REGION"
+    ],
+    "id": "holdout-copied-4",
+    "malicious": true,
+    "path": "holdout-copied-4.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.07506320800007416,
+    "sha256": "69644df85a72d2b189d3bad89c574480b6ec1a483ed97a22ff69a7f37c532477",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-0",
+    "candidates": [
+      {
+        "bbox": [
+          71.33,
+          221.33,
+          325.33,
+          274.0
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.12828515346418978,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.0547,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "faint",
+    "findings": [],
+    "id": "holdout-faint-0",
+    "malicious": false,
+    "path": "holdout-faint-0.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.02502616400010993,
+    "sha256": "d2542087ccf93ffc89d33b6482dd2221e7324f565df04ffa0ac398b714662841",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-1",
+    "candidates": [
+      {
+        "bbox": [
+          70.67,
+          218.67,
+          326.0,
+          262.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.0945,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "faint",
+    "findings": [],
+    "id": "holdout-faint-1",
+    "malicious": false,
+    "path": "holdout-faint-1.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.026038213999981963,
+    "sha256": "697c61656aaf9fd848c0b728fda76d569a9e2be262f0491a974d10fe7fb47d11",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-2",
+    "candidates": [
+      {
+        "bbox": [
+          71.33,
+          228.0,
+          325.33,
+          278.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.0586,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "faint",
+    "findings": [],
+    "id": "holdout-faint-2",
+    "malicious": false,
+    "path": "holdout-faint-2.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.03302341700009492,
+    "sha256": "2ac036db280c42ab90186f40aa24c2f1996db3ac71fc814f49cae0d2e6de94e0",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-3",
+    "candidates": [
+      {
+        "bbox": [
+          70.67,
+          226.67,
+          326.0,
+          271.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.0869,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "faint",
+    "findings": [],
+    "id": "holdout-faint-3",
+    "malicious": false,
+    "path": "holdout-faint-3.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.03240479000010055,
+    "sha256": "347346be68d113a2438bf621c045820b8f08b4c858a94585ac3f1d4b88f25df8",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-4",
+    "candidates": [
+      {
+        "bbox": [
+          71.33,
+          217.33,
+          325.33,
+          278.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.044,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "faint",
+    "findings": [],
+    "id": "holdout-faint-4",
+    "malicious": false,
+    "path": "holdout-faint-4.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.03160199199987801,
+    "sha256": "b2ab84c5d3a57b1bb3c0a4c36db0020cb7baadd7dfd70fe14b53f3bbf9a261e4",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-0",
+    "candidates": [
+      {
+        "bbox": [
+          20.67,
+          26.67,
+          194.67,
+          47.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 1.0,
+          "components": 9,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.3638,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          70.0,
+          220.67,
+          326.67,
+          274.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 1.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c2",
+        "ink_density": 0.0898,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "scan_lowres",
+    "findings": [],
+    "id": "holdout-scan_lowres-0",
+    "malicious": false,
+    "path": "holdout-scan_lowres-0.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.043992228999968574,
+    "sha256": "7244b1309ccef516244ea234053e4d993a2c8c45f52964b6edb3856c185e67db",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-1",
+    "candidates": [
+      {
+        "bbox": [
+          20.67,
+          26.67,
+          194.0,
+          47.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 1.0,
+          "components": 9,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.3565,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          70.0,
+          218.67,
+          326.67,
+          263.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c2",
+        "ink_density": 0.1302,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "scan_lowres",
+    "findings": [],
+    "id": "holdout-scan_lowres-1",
+    "malicious": false,
+    "path": "holdout-scan_lowres-1.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.03661292000015237,
+    "sha256": "fc75b36e54c53ee6fdd7371b783736c0c22acaa80de207fcac7b5e5a09c0ec36",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-2",
+    "candidates": [
+      {
+        "bbox": [
+          20.67,
+          26.67,
+          194.67,
+          47.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 1.0,
+          "components": 10,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.3631,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          70.0,
+          228.0,
+          326.67,
+          279.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c2",
+        "ink_density": 0.0954,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "scan_lowres",
+    "findings": [],
+    "id": "holdout-scan_lowres-2",
+    "malicious": false,
+    "path": "holdout-scan_lowres-2.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.04241637899986017,
+    "sha256": "1c529965e9adeb822f6917317a77dfc3b3d0ab34b1a1ac789ba4ad9e08c3947c",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-3",
+    "candidates": [
+      {
+        "bbox": [
+          20.67,
+          26.67,
+          194.67,
+          47.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 1.0,
+          "components": 10,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.3629,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          70.0,
+          226.67,
+          326.67,
+          273.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 1.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c2",
+        "ink_density": 0.1217,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "scan_lowres",
+    "findings": [],
+    "id": "holdout-scan_lowres-3",
+    "malicious": false,
+    "path": "holdout-scan_lowres-3.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.044772285000135525,
+    "sha256": "5570e29d7c61941fa538e4ac65b0f68e8d3ad76b8242af0557fbf3be72177e4f",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-4",
+    "candidates": [
+      {
+        "bbox": [
+          20.67,
+          26.67,
+          194.67,
+          46.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 1.0,
+          "components": 9,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.3822,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          70.0,
+          217.33,
+          326.67,
+          278.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 1.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c2",
+        "ink_density": 0.0785,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "scan_lowres",
+    "findings": [],
+    "id": "holdout-scan_lowres-4",
+    "malicious": false,
+    "path": "holdout-scan_lowres-4.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.04628219000005629,
+    "sha256": "d88b42502b1f0dbc225d0769438d570ff6cac0982f4c6870fc18f6591fdfa8d0",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-0",
+    "candidates": [
+      {
+        "bbox": [
+          70.67,
+          220.0,
+          326.67,
+          274.0
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.2613581983176872,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.0679,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "jpeg",
+    "findings": [],
+    "id": "holdout-jpeg-0",
+    "malicious": false,
+    "path": "holdout-jpeg-0.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.0329176949999237,
+    "sha256": "9e9aadb46fdeee5a2c9860cfeb36e282618af4ccee204108b6e379a6a6c19cec",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-1",
+    "candidates": [
+      {
+        "bbox": [
+          70.0,
+          218.0,
+          326.67,
+          262.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1033,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "jpeg",
+    "findings": [],
+    "id": "holdout-jpeg-1",
+    "malicious": false,
+    "path": "holdout-jpeg-1.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.027555189000167957,
+    "sha256": "3cff0474689e2e383444b116d0c48840e1fef7a079e03d4dcda4ded58c376282",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-2",
+    "candidates": [
+      {
+        "bbox": [
+          70.67,
+          228.0,
+          326.67,
+          278.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.0704,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "jpeg",
+    "findings": [],
+    "id": "holdout-jpeg-2",
+    "malicious": false,
+    "path": "holdout-jpeg-2.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.029242919999887818,
+    "sha256": "0463c2db1677f2f62ab292be9d26592e53ec61e0d6ceac82a5867da63d17b5cf",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-3",
+    "candidates": [
+      {
+        "bbox": [
+          70.0,
+          226.67,
+          326.67,
+          271.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1029,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "jpeg",
+    "findings": [],
+    "id": "holdout-jpeg-3",
+    "malicious": false,
+    "path": "holdout-jpeg-3.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.03242625300003965,
+    "sha256": "50839e3c8a5fc0c8935fd8143142dbc202f64fe534a40c8d2e868e6277f86c94",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-4",
+    "candidates": [
+      {
+        "bbox": [
+          70.67,
+          216.67,
+          326.0,
+          278.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.054,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "jpeg",
+    "findings": [],
+    "id": "holdout-jpeg-4",
+    "malicious": false,
+    "path": "holdout-jpeg-4.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.03544083999986469,
+    "sha256": "99a149c812774f90496215613d566e02ec0f15001f2eb24e8e266b0b367a83e7",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-0",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "repeated_logo",
+    "findings": [],
+    "id": "holdout-repeated_logo-0",
+    "malicious": false,
+    "path": "holdout-repeated_logo-0.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.041270525000072666,
+    "sha256": "3e197a90a5eefb4e222bf6c945fcf98b9f219d4f130c880fdfa8400a9cb4c7fe",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-1",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "repeated_logo",
+    "findings": [],
+    "id": "holdout-repeated_logo-1",
+    "malicious": false,
+    "path": "holdout-repeated_logo-1.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.04539258600016183,
+    "sha256": "d3a61eecf97de2599062a0dc5aa81928966b2daaca0961e247308254057c1dda",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-2",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "repeated_logo",
+    "findings": [],
+    "id": "holdout-repeated_logo-2",
+    "malicious": false,
+    "path": "holdout-repeated_logo-2.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.05169429400007175,
+    "sha256": "49098ebd174d10ebea70204721e75c8cd6e65bbb28a3f99f641bcddc7ddc58c9",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-3",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "repeated_logo",
+    "findings": [],
+    "id": "holdout-repeated_logo-3",
+    "malicious": false,
+    "path": "holdout-repeated_logo-3.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.05119812299994919,
+    "sha256": "91956d6f995990c9bcc4b7b7eafeb3872d81a421ee6e96b892a76f02795c6cd8",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-4",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "repeated_logo",
+    "findings": [],
+    "id": "holdout-repeated_logo-4",
+    "malicious": false,
+    "path": "holdout-repeated_logo-4.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.0456554849999975,
+    "sha256": "6f2dcaaaf6b000384ca38fbf42d88cc93fba0ddfae7473ce563dc7cfe89cae2d",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-0",
+    "candidates": [
+      {
+        "bbox": [
+          81.33,
+          206.67,
+          322.0,
+          282.0
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.22027640205901214,
+          "components": 2,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1117,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "unsigned",
+    "family": "stamp",
+    "findings": [],
+    "id": "holdout-stamp-0",
+    "malicious": false,
+    "path": "holdout-stamp-0.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.030822403999991366,
+    "sha256": "299ccc1d380f0df53f78267816bd440f311b292e5cce4f4fa7a673bc78dcccd0",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-1",
+    "candidates": [
+      {
+        "bbox": [
+          81.33,
+          206.67,
+          322.0,
+          282.0
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.22027640205901214,
+          "components": 2,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1117,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "unsigned",
+    "family": "stamp",
+    "findings": [],
+    "id": "holdout-stamp-1",
+    "malicious": false,
+    "path": "holdout-stamp-1.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.031524959999842395,
+    "sha256": "bad196a5ae558746c3c281628885c2298f1838f8c83cf0042cb54e0b09857e65",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-2",
+    "candidates": [
+      {
+        "bbox": [
+          81.33,
+          206.67,
+          322.0,
+          282.0
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.22027640205901214,
+          "components": 2,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1117,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "unsigned",
+    "family": "stamp",
+    "findings": [],
+    "id": "holdout-stamp-2",
+    "malicious": false,
+    "path": "holdout-stamp-2.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.03184246700016047,
+    "sha256": "ea14fa7dfefb24b72f233a5e5761e147e1c7e372ee17579f76cd6de901f0c823",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-3",
+    "candidates": [
+      {
+        "bbox": [
+          81.33,
+          206.67,
+          322.0,
+          282.0
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.22027640205901214,
+          "components": 2,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1117,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "unsigned",
+    "family": "stamp",
+    "findings": [],
+    "id": "holdout-stamp-3",
+    "malicious": false,
+    "path": "holdout-stamp-3.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.039148909000005006,
+    "sha256": "65122acfec09d5a02650d934ee21237783f6ab821b08e69a949a5408dcea451c",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-4",
+    "candidates": [
+      {
+        "bbox": [
+          81.33,
+          206.67,
+          322.0,
+          282.0
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.22027640205901214,
+          "components": 2,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1117,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "unsigned",
+    "family": "stamp",
+    "findings": [],
+    "id": "holdout-stamp-4",
+    "malicious": false,
+    "path": "holdout-stamp-4.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.03512321800008067,
+    "sha256": "4e58d934831bc09420de0b5f2ca39f11f37b76624d92ed57829cd774c7d37d62",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-0",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "printed_name",
+    "findings": [],
+    "id": "holdout-printed_name-0",
+    "malicious": false,
+    "path": "holdout-printed_name-0.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.021362818999932642,
+    "sha256": "0b3ba4ca73725d03c137128155fd28c14703b0f456a11f238aae4f0858551b04",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-1",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "printed_name",
+    "findings": [],
+    "id": "holdout-printed_name-1",
+    "malicious": false,
+    "path": "holdout-printed_name-1.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.019651661000125387,
+    "sha256": "f26b9551d27e1b43188d663139b1ed920ec9b7b9b6dfef9582b560ed79eea681",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-2",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "printed_name",
+    "findings": [],
+    "id": "holdout-printed_name-2",
+    "malicious": false,
+    "path": "holdout-printed_name-2.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.017375934000028792,
+    "sha256": "50d4ebb8f17ede954922afd50c846660ec716cdace3dda3056def5332cccedff",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-3",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "printed_name",
+    "findings": [],
+    "id": "holdout-printed_name-3",
+    "malicious": false,
+    "path": "holdout-printed_name-3.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.01930425299997296,
+    "sha256": "0f839ff90b30a1ca4919b4496e37b7a9786bd7308498135933b81ec6fe7eebe4",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-4",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "printed_name",
+    "findings": [],
+    "id": "holdout-printed_name-4",
+    "malicious": false,
+    "path": "holdout-printed_name-4.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.020603430000164735,
+    "sha256": "2708d54a56708c462c6142f02f55076d613493cf38f5f9079a3b5227fd1d3e6f",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-0",
+    "candidates": [
+      {
+        "bbox": [
+          144.0,
+          126.0,
+          399.33,
+          178.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.20027271154958695,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.0627,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "rotated",
+    "findings": [],
+    "id": "holdout-rotated-0",
+    "malicious": false,
+    "path": "holdout-rotated-0.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.02823808900006952,
+    "sha256": "f99225d82b5533246d9c77b5bdfc94ee378bb90e6243eca4f525eb01d684a17b",
+    "signature_rois": [
+      {
+        "bbox": [
+          125.0,
+          109.0,
+          405.0,
+          200.0
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-1",
+    "candidates": [
+      {
+        "bbox": [
+          150.67,
+          146.67,
+          406.67,
+          191.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1016,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "rotated",
+    "findings": [],
+    "id": "holdout-rotated-1",
+    "malicious": false,
+    "path": "holdout-rotated-1.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.027325174999987212,
+    "sha256": "7a1a1efed990df954389c82a16cfa75e274c9319c266a351b9c3c705d0845e91",
+    "signature_rois": [
+      {
+        "bbox": [
+          132.0,
+          118.0,
+          412.0,
+          209.0
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-2",
+    "candidates": [
+      {
+        "bbox": [
+          158.0,
+          139.33,
+          413.33,
+          190.0
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.0671,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "rotated",
+    "findings": [],
+    "id": "holdout-rotated-2",
+    "malicious": false,
+    "path": "holdout-rotated-2.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.034034559000019726,
+    "sha256": "27e8607be0083f57ef458524806f1f70a99014cf91c106991b781bc1c626fae3",
+    "signature_rois": [
+      {
+        "bbox": [
+          139.0,
+          127.0,
+          419.0,
+          218.0
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-3",
+    "candidates": [
+      {
+        "bbox": [
+          164.67,
+          156.0,
+          420.67,
+          200.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.5831914648237418,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1004,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "rotated",
+    "findings": [],
+    "id": "holdout-rotated-3",
+    "malicious": false,
+    "path": "holdout-rotated-3.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.030395370999940496,
+    "sha256": "de4d4af65c4920bc38deebac49af8fe067966f9a44377f34573cdeaa01364a77",
+    "signature_rois": [
+      {
+        "bbox": [
+          146.0,
+          136.0,
+          426.0,
+          227.0
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-4",
+    "candidates": [
+      {
+        "bbox": [
+          172.0,
+          157.33,
+          427.33,
+          219.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.18828080570515052,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.0536,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "rotated",
+    "findings": [],
+    "id": "holdout-rotated-4",
+    "malicious": false,
+    "path": "holdout-rotated-4.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.033518262999905346,
+    "sha256": "fa600333aa5bb710d9df7242ac12ac6ad831e8ce11ae96be330d588136c79b3c",
+    "signature_rois": [
+      {
+        "bbox": [
+          153.0,
+          145.0,
+          433.0,
+          236.0
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-0",
+    "candidates": [
+      {
+        "bbox": [
+          70.67,
+          221.33,
+          326.0,
+          274.0
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.1730533650651595,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.063,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          70.0,
+          220.67,
+          326.67,
+          266.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.3194083437113876,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p2-c2",
+        "ink_density": 0.0993,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 2,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "multiple",
+    "findings": [],
+    "id": "holdout-multiple-0",
+    "malicious": false,
+    "path": "holdout-multiple-0.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.07091534899996077,
+    "sha256": "31b33a9c07e64705a350c35a7643b8d858e492b9e8b72366dd4ca1fbf67ef958",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-1",
+    "candidates": [
+      {
+        "bbox": [
+          70.0,
+          218.0,
+          326.67,
+          262.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          70.0,
+          219.33,
+          326.0,
+          268.0
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p2-c2",
+        "ink_density": 0.0726,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 2,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "multiple",
+    "findings": [],
+    "id": "holdout-multiple-1",
+    "malicious": false,
+    "path": "holdout-multiple-1.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.07848315500018543,
+    "sha256": "ad620257b165d2a3cfd7961688d51fd8a01ab68486a4789196716d7fd5de0270",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-2",
+    "candidates": [
+      {
+        "bbox": [
+          70.67,
+          228.0,
+          326.0,
+          278.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.0672,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          70.0,
+          218.0,
+          326.67,
+          272.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p2-c2",
+        "ink_density": 0.0848,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 2,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "multiple",
+    "findings": [],
+    "id": "holdout-multiple-2",
+    "malicious": false,
+    "path": "holdout-multiple-2.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.07893408599989016,
+    "sha256": "f247c55246697cdb6ab8c1676fd390bf4f115207379103921c32fcc90afab259",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-3",
+    "candidates": [
+      {
+        "bbox": [
+          70.0,
+          226.67,
+          326.67,
+          271.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.3096543257527242,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1011,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          70.0,
+          213.33,
+          326.0,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p2-c2",
+        "ink_density": 0.0596,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 2,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "multiple",
+    "findings": [],
+    "id": "holdout-multiple-3",
+    "malicious": false,
+    "path": "holdout-multiple-3.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.0706644659999256,
+    "sha256": "f039daf5284bb779bf72d2b6bd9491afecdbb31132359e286eccaf665cf8e0f6",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-4",
+    "candidates": [
+      {
+        "bbox": [
+          70.67,
+          216.67,
+          326.0,
+          278.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.0536,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          70.0,
+          224.0,
+          326.0,
+          274.0
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p2-c2",
+        "ink_density": 0.0933,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 2,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "multiple",
+    "findings": [],
+    "id": "holdout-multiple-4",
+    "malicious": false,
+    "path": "holdout-multiple-4.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.06553011200003311,
+    "sha256": "9ac90cb1aef49aa7cb2ea974edad635ece9231f08e559d9d6905a72a147845c9",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-0",
+    "candidates": [],
+    "classification": "unsupported_error",
+    "error": "FileDataError",
+    "expected_class": "unsigned",
+    "family": "malformed",
+    "id": "holdout-malformed-0",
+    "malicious": false,
+    "path": "holdout-malformed-0.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.0002809329998854082,
+    "sha256": "dbdfcb830ef030a135e9f461881a12765eb5a3fa6105009c0232f6db891596d8",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": false
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-1",
+    "candidates": [],
+    "classification": "unsupported_error",
+    "error": "FileDataError",
+    "expected_class": "unsigned",
+    "family": "malformed",
+    "id": "holdout-malformed-1",
+    "malicious": false,
+    "path": "holdout-malformed-1.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 5.997200014462578e-05,
+    "sha256": "3c160999fb7c0589c0735bbbd1ed91d0223da232f986f58c5622e7c74d9df396",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": false
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-2",
+    "candidates": [],
+    "classification": "unsupported_error",
+    "error": "FileDataError",
+    "expected_class": "unsigned",
+    "family": "malformed",
+    "id": "holdout-malformed-2",
+    "malicious": false,
+    "path": "holdout-malformed-2.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 4.0983999952004524e-05,
+    "sha256": "a1e97cfc0b6c6400c8f0c4c72198b8a4a05831ccda7403c723909638c21dc370",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": false
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-3",
+    "candidates": [],
+    "classification": "unsupported_error",
+    "error": "FileDataError",
+    "expected_class": "unsigned",
+    "family": "malformed",
+    "id": "holdout-malformed-3",
+    "malicious": false,
+    "path": "holdout-malformed-3.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 3.614100000959297e-05,
+    "sha256": "0f6947d843d38464b2be9d650015d10b0ad2088288517688707bb641ec304263",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": false
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-4",
+    "candidates": [],
+    "classification": "unsupported_error",
+    "error": "FileDataError",
+    "expected_class": "unsigned",
+    "family": "malformed",
+    "id": "holdout-malformed-4",
+    "malicious": false,
+    "path": "holdout-malformed-4.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 3.2819000125527964e-05,
+    "sha256": "6dd858c58ecb524491343db3d73deb21c183c465ac33707acc245e39fe52797d",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": false
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-0",
+    "candidates": [],
+    "classification": "unsupported_error",
+    "error": "ValueError",
+    "expected_class": "unsigned",
+    "family": "encrypted",
+    "id": "holdout-encrypted-0",
+    "malicious": false,
+    "path": "holdout-encrypted-0.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.03421344699995643,
+    "sha256": "9a2eb64555889cc31c9a6f307807ef406aeb752db9b362bd3a9267f4e0927612",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": false
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-1",
+    "candidates": [],
+    "classification": "unsupported_error",
+    "error": "ValueError",
+    "expected_class": "unsigned",
+    "family": "encrypted",
+    "id": "holdout-encrypted-1",
+    "malicious": false,
+    "path": "holdout-encrypted-1.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.03602639599989743,
+    "sha256": "60fa6d7326958d7c18198acf32592b6677cb7ef0829fe8d47db2c5ff2ae63147",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": false
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-2",
+    "candidates": [],
+    "classification": "unsupported_error",
+    "error": "ValueError",
+    "expected_class": "unsigned",
+    "family": "encrypted",
+    "id": "holdout-encrypted-2",
+    "malicious": false,
+    "path": "holdout-encrypted-2.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.043433488000118814,
+    "sha256": "980efdbbaeca51f09b02059c313620c71b67343a8c928610efd657d4fb2ae04b",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": false
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-3",
+    "candidates": [],
+    "classification": "unsupported_error",
+    "error": "ValueError",
+    "expected_class": "unsigned",
+    "family": "encrypted",
+    "id": "holdout-encrypted-3",
+    "malicious": false,
+    "path": "holdout-encrypted-3.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.0335697870000331,
+    "sha256": "b4f39760368c2396e13d840cee1ed0598498ec6c92ae03c4427e62e728a77e6e",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": false
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-4",
+    "candidates": [],
+    "classification": "unsupported_error",
+    "error": "ValueError",
+    "expected_class": "unsigned",
+    "family": "encrypted",
+    "id": "holdout-encrypted-4",
+    "malicious": false,
+    "path": "holdout-encrypted-4.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.03851602199983972,
+    "sha256": "4060da685be2d45b36bcbf825272e92c33b4272522a0d09d33e0d2e71a6ad6df",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": false
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-0",
+    "candidates": [
+      {
+        "bbox": [
+          70.67,
+          221.33,
+          326.0,
+          274.0
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.1730533650651595,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.063,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "ambiguous_reuse",
+    "findings": [],
+    "id": "holdout-ambiguous_reuse-0",
+    "malicious": true,
+    "path": "holdout-ambiguous_reuse-0.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.030559448000076372,
+    "sha256": "f9ef7f6420fbb5469b90c768d32f29c3dc91ad88c79b98692a290877a457243a",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": false,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-1",
+    "candidates": [
+      {
+        "bbox": [
+          70.0,
+          218.0,
+          326.67,
+          262.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "ambiguous_reuse",
+    "findings": [],
+    "id": "holdout-ambiguous_reuse-1",
+    "malicious": true,
+    "path": "holdout-ambiguous_reuse-1.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.027550950999966517,
+    "sha256": "bf5bfd6b3e39194b8886abce2040788b8a2c8fab85c56e2127b321bbfe70f541",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": false,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-2",
+    "candidates": [
+      {
+        "bbox": [
+          70.67,
+          228.0,
+          326.0,
+          278.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.0672,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "ambiguous_reuse",
+    "findings": [],
+    "id": "holdout-ambiguous_reuse-2",
+    "malicious": true,
+    "path": "holdout-ambiguous_reuse-2.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.026734904000022652,
+    "sha256": "e8dc7eff1b37ac7b6a4edd08766ec44b4a7a546a43a3f6749553a12bd2e7fdfc",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": false,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-3",
+    "candidates": [
+      {
+        "bbox": [
+          70.0,
+          226.67,
+          326.67,
+          271.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.3096543257527242,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1011,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "ambiguous_reuse",
+    "findings": [],
+    "id": "holdout-ambiguous_reuse-3",
+    "malicious": true,
+    "path": "holdout-ambiguous_reuse-3.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.03607181899997158,
+    "sha256": "0c02982123734d19a2483b952158c4d6c66ca83b544174b93ca1da586781791f",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": false,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-4",
+    "candidates": [
+      {
+        "bbox": [
+          70.67,
+          216.67,
+          326.0,
+          278.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.0536,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "ambiguous_reuse",
+    "findings": [],
+    "id": "holdout-ambiguous_reuse-4",
+    "malicious": true,
+    "path": "holdout-ambiguous_reuse-4.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.03548287399985384,
+    "sha256": "22c65fa31d1f69010e82d886f9306b35263ec90e729b867fb50fbf6f289cd9bb",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": false,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-0",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "table",
+    "findings": [],
+    "id": "holdout-table-0",
+    "malicious": false,
+    "path": "holdout-table-0.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.01593061900007342,
+    "sha256": "ef5f73b2aad2b592959a9b2282ee6ac4d8d94a7f26b9850140a1bef7555e88d0",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-1",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "table",
+    "findings": [],
+    "id": "holdout-table-1",
+    "malicious": false,
+    "path": "holdout-table-1.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.021356395999873712,
+    "sha256": "cc4f480e6c3e1f4819338bd8703d579f8d1c560550e4fc2082cd952fefc776ad",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-2",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "table",
+    "findings": [],
+    "id": "holdout-table-2",
+    "malicious": false,
+    "path": "holdout-table-2.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.033920938000164824,
+    "sha256": "af30d20f344afc9723f8862e5449fc54754390f8508bb02d57706627e9b9f89e",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-3",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "table",
+    "findings": [],
+    "id": "holdout-table-3",
+    "malicious": false,
+    "path": "holdout-table-3.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.02770276199998989,
+    "sha256": "2e121036fb97e2ff71070ed9e036801c35dbbfa04d4c1b614218130462657043",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-4",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "table",
+    "findings": [],
+    "id": "holdout-table-4",
+    "malicious": false,
+    "path": "holdout-table-4.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.018700630000012097,
+    "sha256": "ce299c6665edbc5b9c21360313dad51605d35ee6af391261b90665a390cdee01",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-0",
+    "candidates": [
+      {
+        "bbox": [
+          20.67,
+          26.67,
+          194.67,
+          47.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 1.0,
+          "components": 9,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.3638,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "unsigned",
+    "family": "scan_printed",
+    "findings": [],
+    "id": "holdout-scan_printed-0",
+    "malicious": false,
+    "path": "holdout-scan_printed-0.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.01824021500010531,
+    "sha256": "d8b51ba7acd603ffa12eca83efca51615fe950db0d5bdcd4278172ec9b2bab7d",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-1",
+    "candidates": [
+      {
+        "bbox": [
+          20.67,
+          26.67,
+          194.0,
+          47.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 1.0,
+          "components": 9,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.3565,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "unsigned",
+    "family": "scan_printed",
+    "findings": [],
+    "id": "holdout-scan_printed-1",
+    "malicious": false,
+    "path": "holdout-scan_printed-1.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.024018382999884125,
+    "sha256": "7df4c88d9bb790044d6e07c58796439861a7a82241dd49aea14d7ee37ace5cd9",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-2",
+    "candidates": [
+      {
+        "bbox": [
+          20.67,
+          26.67,
+          194.67,
+          47.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 1.0,
+          "components": 10,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.3631,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "unsigned",
+    "family": "scan_printed",
+    "findings": [],
+    "id": "holdout-scan_printed-2",
+    "malicious": false,
+    "path": "holdout-scan_printed-2.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.022851254999977755,
+    "sha256": "5aff43b7eff9008058906551c7fc30a4dc04dc088b0893389e528b2e8f7e0f7b",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-3",
+    "candidates": [
+      {
+        "bbox": [
+          20.67,
+          26.67,
+          194.67,
+          47.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 1.0,
+          "components": 10,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.3629,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "unsigned",
+    "family": "scan_printed",
+    "findings": [],
+    "id": "holdout-scan_printed-3",
+    "malicious": false,
+    "path": "holdout-scan_printed-3.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.026047980999919673,
+    "sha256": "640c622bca124a53dc912bb58454bddad1acac41bef5d66a82653640577a82d5",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-4",
+    "candidates": [
+      {
+        "bbox": [
+          20.67,
+          26.67,
+          194.67,
+          46.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 1.0,
+          "components": 9,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.3822,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "unsigned",
+    "family": "scan_printed",
+    "findings": [],
+    "id": "holdout-scan_printed-4",
+    "malicious": false,
+    "path": "holdout-scan_printed-4.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.027143372999944404,
+    "sha256": "3c77b89d206390deb6e47b1247d98d44e520161401a29a517100cd69fc63fa6e",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-0",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "blank",
+    "findings": [],
+    "id": "holdout-blank-0",
+    "malicious": false,
+    "path": "holdout-blank-0.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.021567243000163216,
+    "sha256": "e396a488f0349c1fb86744d65c50bbe5f8551cfe6849689dbca4c931026e40bf",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-1",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "blank",
+    "findings": [],
+    "id": "holdout-blank-1",
+    "malicious": false,
+    "path": "holdout-blank-1.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.022404552999887528,
+    "sha256": "ba9b22c1147ffc4b996e02d9cbef0a9b43ec24acf748d4c7355e48845873da54",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-2",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "blank",
+    "findings": [],
+    "id": "holdout-blank-2",
+    "malicious": false,
+    "path": "holdout-blank-2.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.021964443000115352,
+    "sha256": "b468e6c0230c2f93df01ec62ff704a90a84d6cedc3d86b4c5c235114cbde69fe",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-3",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "blank",
+    "findings": [],
+    "id": "holdout-blank-3",
+    "malicious": false,
+    "path": "holdout-blank-3.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.018462217999967834,
+    "sha256": "99c37981857939b4971185889b657fdac1cf9c805e211e72a4b47729ea1fed0a",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-4",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "blank",
+    "findings": [],
+    "id": "holdout-blank-4",
+    "malicious": false,
+    "path": "holdout-blank-4.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.018714450000061333,
+    "sha256": "717164b249bca8661a3873235de69b6379d9a3c0f0fa234dc752ebf8457d59b2",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-0",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "diagram",
+    "findings": [],
+    "id": "holdout-diagram-0",
+    "malicious": false,
+    "path": "holdout-diagram-0.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.023385718999861638,
+    "sha256": "03a74faf03d4eac03ba5c7bbb7a542c38e2769e4f6c4a2f17e979dd31cbdcd6d",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-1",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "diagram",
+    "findings": [],
+    "id": "holdout-diagram-1",
+    "malicious": false,
+    "path": "holdout-diagram-1.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.0251013489998968,
+    "sha256": "56c46ec01a4d97a5e27f2020998e2fa6a2634f70b321170d53713bf60245bf60",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-2",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "diagram",
+    "findings": [],
+    "id": "holdout-diagram-2",
+    "malicious": false,
+    "path": "holdout-diagram-2.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.02393851000010727,
+    "sha256": "c2b272789815408bbc853b9ea1a9e725dc33108ffadd926c8334c9fb41a08c2e",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-3",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "diagram",
+    "findings": [],
+    "id": "holdout-diagram-3",
+    "malicious": false,
+    "path": "holdout-diagram-3.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.02358846599986464,
+    "sha256": "b74f568992d073c40369dc16b2e6099b72122264d98e823b0d2dcedb49727989",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "holdout-4",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "diagram",
+    "findings": [],
+    "id": "holdout-diagram-4",
+    "malicious": false,
+    "path": "holdout-diagram-4.pdf",
+    "process_high_water_rss_mib": 146.8125,
+    "seconds": 0.027656570999852192,
+    "sha256": "d7234d87b8fa15270843e13ad0be8d31c95d81b3c1f5e791d4790e474285d35c",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true,
+    "verdict": "inconclusive"
+  }
+]

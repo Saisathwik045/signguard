@@ -1,0 +1,7 @@
+{
+  "built": true,
+  "healthcheck": "passed",
+  "network": "none",
+  "public_port_published": false,
+  "image_id": "sha256:040296c6f898a3563cad817226b3ef3d3ff61dc7798d4d38c884eae39cce51ab"
+}

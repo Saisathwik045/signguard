@@ -46,6 +46,9 @@ def fuse(structure, comparisons, revisions=None, automatic=None):
                 "Signer identity is not established by configured offline trust roots")
     has_signature = bool(structure["signatures"])
     for revision in revisions:
+        if revision.get("active_content_keys"):
+            add("ACTIVE_CONTENT_CHANGE", "warning", revision["active_content_keys"],
+                "Incremental objects introduce or modify active content; authorization is unknown")
         if revision["category"] == "metadata_only":
             add("METADATA_ONLY_UPDATE", "info", {k: v for k, v in revision.items() if k != "pages"},
                 "Only allowlisted metadata objects changed; rendering and text are unchanged")
@@ -78,7 +81,9 @@ def fuse(structure, comparisons, revisions=None, automatic=None):
         "COMPARISON_UNSUPPORTED", "SIGNATURE_CHECK_INCOMPLETE", "FORENSIC_BUDGET_REACHED"}]
     return {"verdict": verdict, "alert": alert, "reasons": reasons, "findings": findings,
             "analysis_status": "partial" if unsupported else "completed",
-            "unsupported_checks": unsupported, "authenticity_established": False}
+            "unsupported_checks": unsupported, "authenticity_established": False,
+            "identity_decision": "abstain", "authorization_decision": "inconclusive",
+            "abstention_reason": "Visual matches alone cannot establish unauthorized identity reuse"}
 
 
 def analyze_pdf(data, baseline=None, signature_image=None, reference_image=None, audit_path=None,
@@ -97,7 +102,10 @@ def analyze_pdf(data, baseline=None, signature_image=None, reference_image=None,
     if structure["classification"] == "unsigned" and automatic["localization"]["candidates"]:
         structure["classification"] = "visual_candidate"
         structure["classification_basis"] = "localized_nontext_ink"
-    report = {"schema_version": 2, "sha256": hashlib.sha256(data).hexdigest(),
+    structure["refined_classification"] = ("cryptographic" if structure["signatures"] else
+        "visual_candidate" if automatic["localization"]["candidates"] else "unsigned")
+    structure["classification_uncertainty"] = "Candidate/no-evidence classification, not signer identity"
+    report = {"schema_version": 3, "sha256": hashlib.sha256(data).hexdigest(),
               "structure": structure, "revision_analysis": revisions,
               "visual_comparisons": comparisons, "image_forensics": forensic,
               "assessment": fuse(structure, comparisons, revisions, automatic)}

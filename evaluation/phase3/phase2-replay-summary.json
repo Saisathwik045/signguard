@@ -1,0 +1,371 @@
+{
+  "alert_all_cases_including_unsupported": {
+    "accuracy": 0.9333333333333333,
+    "axes": "rows actual [negative, positive]; columns predicted",
+    "confusion_matrix": [
+      [
+        90,
+        0
+      ],
+      [
+        10,
+        50
+      ]
+    ],
+    "f1": 0.9090909090909091,
+    "fn": 10,
+    "fp": 0,
+    "n": 150,
+    "precision": 1.0,
+    "recall": 0.8333333333333334,
+    "tn": 90,
+    "tp": 50
+  },
+  "alert_supported": {
+    "accuracy": 1.0,
+    "axes": "rows actual [negative, positive]; columns predicted",
+    "confusion_matrix": [
+      [
+        80,
+        0
+      ],
+      [
+        0,
+        50
+      ]
+    ],
+    "f1": 1.0,
+    "fn": 0,
+    "fp": 0,
+    "n": 130,
+    "precision": 1.0,
+    "recall": 1.0,
+    "tn": 80,
+    "tp": 50
+  },
+  "benchmark_version": 1,
+  "by_family": {
+    "appended_content": {
+      "alerts": 10,
+      "errors": 0,
+      "n": 10,
+      "supported": true
+    },
+    "benign_metadata": {
+      "alerts": 0,
+      "errors": 0,
+      "n": 10,
+      "supported": true
+    },
+    "copied_signature": {
+      "alerts": 10,
+      "errors": 0,
+      "n": 10,
+      "supported": true
+    },
+    "encrypted": {
+      "alerts": 0,
+      "errors": 10,
+      "n": 10,
+      "supported": false
+    },
+    "faint_signature": {
+      "alerts": 0,
+      "errors": 0,
+      "n": 10,
+      "supported": true
+    },
+    "genuine_signed": {
+      "alerts": 0,
+      "errors": 0,
+      "n": 10,
+      "supported": true
+    },
+    "negative_logo": {
+      "alerts": 0,
+      "errors": 0,
+      "n": 10,
+      "supported": true
+    },
+    "negative_repeated_logos": {
+      "alerts": 0,
+      "errors": 0,
+      "n": 10,
+      "supported": true
+    },
+    "negative_rules": {
+      "alerts": 0,
+      "errors": 0,
+      "n": 10,
+      "supported": true
+    },
+    "shadow_overlay": {
+      "alerts": 10,
+      "errors": 0,
+      "n": 10,
+      "supported": true
+    },
+    "shadow_reveal": {
+      "alerts": 10,
+      "errors": 0,
+      "n": 10,
+      "supported": true
+    },
+    "tampered_bytes": {
+      "alerts": 10,
+      "errors": 0,
+      "n": 10,
+      "supported": true
+    },
+    "unsigned": {
+      "alerts": 0,
+      "errors": 0,
+      "n": 10,
+      "supported": true
+    },
+    "unsigned_forgery": {
+      "alerts": 0,
+      "errors": 0,
+      "n": 10,
+      "supported": false
+    },
+    "visual_signature": {
+      "alerts": 0,
+      "errors": 0,
+      "n": 10,
+      "supported": true
+    }
+  },
+  "classification": {
+    "accuracy": 0.9333333333333333,
+    "confusion_matrix": {
+      "cryptographic": {
+        "cryptographic": 60
+      },
+      "unsigned": {
+        "unsigned": 40,
+        "unsupported_error": 10
+      },
+      "visual_candidate": {
+        "visual_candidate": 40
+      }
+    },
+    "macro_f1": 0.9629629629629629,
+    "per_class": {
+      "cryptographic": {
+        "accuracy": 1.0,
+        "axes": "rows actual [negative, positive]; columns predicted",
+        "confusion_matrix": [
+          [
+            90,
+            0
+          ],
+          [
+            0,
+            60
+          ]
+        ],
+        "f1": 1.0,
+        "fn": 0,
+        "fp": 0,
+        "n": 150,
+        "precision": 1.0,
+        "recall": 1.0,
+        "tn": 90,
+        "tp": 60
+      },
+      "unsigned": {
+        "accuracy": 0.9333333333333333,
+        "axes": "rows actual [negative, positive]; columns predicted",
+        "confusion_matrix": [
+          [
+            100,
+            0
+          ],
+          [
+            10,
+            40
+          ]
+        ],
+        "f1": 0.8888888888888888,
+        "fn": 10,
+        "fp": 0,
+        "n": 150,
+        "precision": 1.0,
+        "recall": 0.8,
+        "tn": 100,
+        "tp": 40
+      },
+      "visual_candidate": {
+        "accuracy": 1.0,
+        "axes": "rows actual [negative, positive]; columns predicted",
+        "confusion_matrix": [
+          [
+            110,
+            0
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "f1": 1.0,
+        "fn": 0,
+        "fp": 0,
+        "n": 150,
+        "precision": 1.0,
+        "recall": 1.0,
+        "tn": 110,
+        "tp": 40
+      }
+    }
+  },
+  "classification_definition": "Uses refined_classification when available; legacy image-presence class retained per outcome. Labels/populations unchanged.",
+  "environment": {
+    "Pillow": "13.0.0",
+    "PyMuPDF": "1.28.2",
+    "numpy": "2.5.4",
+    "opencv-python-headless": "4.14.0.94",
+    "pyHanko": "0.35.2",
+    "python": "3.12.14"
+  },
+  "false_negatives": [],
+  "false_positives": [],
+  "localization": {
+    "f1": 1.0,
+    "fn": 0,
+    "fp": 0,
+    "iou_threshold": 0.3,
+    "precision": 1.0,
+    "recall": 1.0,
+    "tp": 50
+  },
+  "metric_definition": "Alert=review_required or tampering_detected; inconclusive is no alert, not genuine. Expected unsupported cases excluded from supported metrics, included in all-case metrics. Unexpected errors count as no alert; positives then count as false negatives. Broad classification mistakes are scored on all cases; localization scores all ROIs, including faint ink.",
+  "seed": 20261102,
+  "source_sha256": {
+    "benchmarks/__init__.py": "b10884ebe29cf3c759f968e865650f6b4c0ec14201c5a09d295d90b1bc728c22",
+    "benchmarks/evaluate.py": "c10c19b9a0178c840571b296bdba33d22f1ba9b6fdb1af00eb0873343e804b3c",
+    "benchmarks/generate.py": "2636865e46d8c6374413a37636a5805243eb6e2c13c68a477907dbb27c3c20f9",
+    "benchmarks/phase3.py": "2605e33cae6a9e7644ddbb63babeb4833e8cf16c5610979a8a5e8c2431babfc5",
+    "src/signguard/__init__.py": "d2abef701e22227f29f2d3e14351074e8851527358adce3c7d726fc1a1bad6fd",
+    "src/signguard/audit.py": "cdb179277ac343c789eb023cc8d0662160518d1004dd84ede829d83ce2a8010d",
+    "src/signguard/broker.py": "d227fabc3edbee6c744a25e848a74c0f91509ff9339678806f9452e38ac13f5c",
+    "src/signguard/cli.py": "2cc81c164db4472d12c0f374252dc641fcb39c475dac67efe40bcf4d87c93911",
+    "src/signguard/client.py": "099e075dcf6481d59e85f29452d392118df9a9f4de65446c4dc4e1bc55941bfb",
+    "src/signguard/container_runner.py": "4deda8dd5a385c8fd7c91f4bbf31e44792e5a53b41c5b97954d4d7f3f3a94665",
+    "src/signguard/images.py": "de82c83c8c8d05240eb360a9837d70384d77165acfb01aad3d7a2c81c0629e7c",
+    "src/signguard/independent.py": "585df41766c422753724baaf826873b8c7f11966f720e690a7a59f09319c662b",
+    "src/signguard/limits.py": "ffdc68a4d31d3142d58b745b5af5f2b5c7171766380b8abe0a5b23c20b48606d",
+    "src/signguard/localization.py": "79eb74f6ca28738766869a0f4a8d41e0d43493f4684fff0611c82bb2038ca698",
+    "src/signguard/pdf.py": "da665443b5019b8f676e7c5ac2c58f4504885c841caa4179350e1cf6713a97ba",
+    "src/signguard/pipeline.py": "1bc107d7ea416d9d72ff425c14714cf23d4e2d86cf830b761eb274b54593d74a",
+    "src/signguard/supervisor.py": "57b688cfbb1ba67f76c7c8c24911db89ac11d8ec2a90f71c1e6f57ef8a602634",
+    "src/signguard/worker.py": "1d804e55c91b098118a4756c5f291fd851fa859bdab1d0c52b79ccbd2115d606"
+  },
+  "template_manifest_sha256": "ef1436f3e8830b9ffea1dad04f3e1ddbaa96b5939c037c00507a2462571dc4ab",
+  "total": 150,
+  "unexpected_errors": [],
+  "unique_pdfs": 140,
+  "unsupported": [
+    {
+      "error": null,
+      "id": "unsigned_forgery-00",
+      "reason": "Single reused signature has no reference or history"
+    },
+    {
+      "error": null,
+      "id": "unsigned_forgery-01",
+      "reason": "Single reused signature has no reference or history"
+    },
+    {
+      "error": null,
+      "id": "unsigned_forgery-02",
+      "reason": "Single reused signature has no reference or history"
+    },
+    {
+      "error": null,
+      "id": "unsigned_forgery-03",
+      "reason": "Single reused signature has no reference or history"
+    },
+    {
+      "error": null,
+      "id": "unsigned_forgery-04",
+      "reason": "Single reused signature has no reference or history"
+    },
+    {
+      "error": null,
+      "id": "unsigned_forgery-05",
+      "reason": "Single reused signature has no reference or history"
+    },
+    {
+      "error": null,
+      "id": "unsigned_forgery-06",
+      "reason": "Single reused signature has no reference or history"
+    },
+    {
+      "error": null,
+      "id": "unsigned_forgery-07",
+      "reason": "Single reused signature has no reference or history"
+    },
+    {
+      "error": null,
+      "id": "unsigned_forgery-08",
+      "reason": "Single reused signature has no reference or history"
+    },
+    {
+      "error": null,
+      "id": "unsigned_forgery-09",
+      "reason": "Single reused signature has no reference or history"
+    },
+    {
+      "error": "ValueError: Encrypted PDFs and documents outside 1\u201350 pages are unsupported",
+      "id": "encrypted-00",
+      "reason": "Password-protected PDF unsupported"
+    },
+    {
+      "error": "ValueError: Encrypted PDFs and documents outside 1\u201350 pages are unsupported",
+      "id": "encrypted-01",
+      "reason": "Password-protected PDF unsupported"
+    },
+    {
+      "error": "ValueError: Encrypted PDFs and documents outside 1\u201350 pages are unsupported",
+      "id": "encrypted-02",
+      "reason": "Password-protected PDF unsupported"
+    },
+    {
+      "error": "ValueError: Encrypted PDFs and documents outside 1\u201350 pages are unsupported",
+      "id": "encrypted-03",
+      "reason": "Password-protected PDF unsupported"
+    },
+    {
+      "error": "ValueError: Encrypted PDFs and documents outside 1\u201350 pages are unsupported",
+      "id": "encrypted-04",
+      "reason": "Password-protected PDF unsupported"
+    },
+    {
+      "error": "ValueError: Encrypted PDFs and documents outside 1\u201350 pages are unsupported",
+      "id": "encrypted-05",
+      "reason": "Password-protected PDF unsupported"
+    },
+    {
+      "error": "ValueError: Encrypted PDFs and documents outside 1\u201350 pages are unsupported",
+      "id": "encrypted-06",
+      "reason": "Password-protected PDF unsupported"
+    },
+    {
+      "error": "ValueError: Encrypted PDFs and documents outside 1\u201350 pages are unsupported",
+      "id": "encrypted-07",
+      "reason": "Password-protected PDF unsupported"
+    },
+    {
+      "error": "ValueError: Encrypted PDFs and documents outside 1\u201350 pages are unsupported",
+      "id": "encrypted-08",
+      "reason": "Password-protected PDF unsupported"
+    },
+    {
+      "error": "ValueError: Encrypted PDFs and documents outside 1\u201350 pages are unsupported",
+      "id": "encrypted-09",
+      "reason": "Password-protected PDF unsupported"
+    }
+  ]
+}

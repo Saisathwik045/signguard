@@ -1,0 +1,13 @@
+{
+  "controls": {
+    "elapsed_seconds": 8.16245266299984,
+    "isolation": "docker_disposable",
+    "network_isolation": true,
+    "filesystem_isolation": true
+  },
+  "measurements": {
+    "analysis_seconds": 0.02065622300005998,
+    "process_peak_rss_mib": 130.359375
+  },
+  "image_id": "sha256:c411ee34f804be78cca3f0030cb5aecb0054d8dec2c76fcf61e8fcc3615b7593"
+}

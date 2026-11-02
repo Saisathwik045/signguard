@@ -47,15 +47,20 @@ def inspect_pdf(data, trust_roots=None):
     signatures = []
     context = ValidationContext(trust_roots=trust_roots or [], allow_fetching=False)
     for sig in reader.embedded_signatures:
-        item = {"field": sig.field_name, "signed_revision": sig.signed_revision}
+        item = {"field": sig.field_name, "signed_revision": sig.signed_revision,
+                "byte_range_check": check_byte_range(sig.byte_range, len(data)),
+                "trust_mode": "offline_explicit_roots", "revocation_state": "not_established_offline"}
         try:
             status = validate_pdf_signature(sig, signer_validation_context=context)
             item.update(intact=status.intact, valid=status.valid, trusted=status.trusted,
                         coverage=status.coverage.name if status.coverage else None,
                         modification_level=status.modification_level.name if status.modification_level else None,
-                        summary=status.summary())
+                        summary=status.summary(), trust_state="trusted" if status.trusted else "untrusted_or_unavailable")
         except Exception as exc:  # noqa: BLE001 -- report per-signature validator failures
-            item.update(error=f"{type(exc).__name__}: {exc}", intact=None, valid=None, trusted=False)
+            item.update(error=f"{type(exc).__name__}: {exc}", intact=None, valid=None, trusted=False,
+                        trust_state="validation_error")
+        if not item["byte_range_check"]["valid"]:
+            item["intact"] = False
         signatures.append(item)
     fields = list(reader.embedded_signatures)
     classification = "cryptographic" if fields else "visual_candidate" if images else "unsigned"
@@ -115,6 +120,9 @@ def signed_revision_comparisons(data):
         if revision in seen:
             continue
         seen.add(revision)
+        if not check_byte_range(signature.byte_range, len(data))["valid"]:
+            comparisons.append({"signed_revision": revision, "pages": [], "error": "Invalid ByteRange"})
+            continue
         coverage = signature.evaluate_signature_coverage().name
         if coverage not in {"ENTIRE_FILE", "ENTIRE_REVISION"}:
             comparisons.append({"signed_revision": revision, "pages": [],
@@ -194,10 +202,33 @@ def analyze_revisions(data):
             category = "annotation_change"
         else:
             category = "nonvisual_structural_change"
+        refs = reader.xrefs.explicit_refs_in_revision(revision)
+        if len(refs) > 4096:
+            raise ValueError("Modified object budget exceeded")
+        active = set()
+        types = []
+        resolver = reader.get_historical_resolver(revision)
+        for ref in sorted(refs, key=lambda r: (r.idnum, r.generation)):
+            obj = resolver.get_object(ref)
+            if isinstance(obj, generic.DictionaryObject):
+                active.update(set(obj) & {"/JS", "/JavaScript", "/OpenAction", "/AA", "/Launch", "/RichMedia"})
+                if str(obj.get("/S", "")) in {"/JavaScript", "/Launch"}:
+                    active.add(str(obj["/S"]))
+                if len(types) < 64:
+                    types.append({"object": ref.idnum, "type": str(obj.get("/Type", "untyped"))})
         findings.append({"revision": revision, "category": category, "pages": pages,
+                         "modified_object_types": types, "active_content_keys": sorted(active),
                          "changed_objects": len(reader.xrefs.explicit_refs_in_revision(revision)),
                          "freed_objects": len(reader.xrefs.refs_freed_in_revision(revision)),
                          "interpretation": "Narrow metadata-only allowlist" if metadata_only else
                          "Requires signature policy and document context; not proof of attack"})
         previous = current
     return findings
+
+
+def check_byte_range(values, length):
+    valid = (len(values) == 4 and all(isinstance(v, int) and not isinstance(v, bool) for v in values)
+             and values[0] == 0 and values[1] > 0 and values[2] > values[1] and values[3] > 0
+             and values[2]+values[3] <= length)
+    return {"valid": bool(valid), "reason": "ordered_in_bounds" if valid else "malformed_overlapping_or_out_of_bounds",
+            "limitation": "CMS Contents gap and revision coverage are checked separately by pyHanko"}

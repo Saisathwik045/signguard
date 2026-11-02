@@ -1,0 +1,46 @@
+# Prepared private single-host architecture; no public upload endpoint or auto-deploy.
+services:
+  ui:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.ui
+    ports: ["127.0.0.1:8501:8501"]
+    user: "65532:65532"
+    read_only: true
+    tmpfs: ["/tmp:size=64m,noexec,nosuid"]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 512m
+    cpus: 1
+    pids_limit: 64
+    environment:
+      SIGNGUARD_REQUIRE_AUTH: "true"
+      SIGNGUARD_BACKEND: broker
+      SIGNGUARD_BROKER_URL: http://controller:8080
+      SIGNGUARD_BROKER_TOKEN: ${SIGNGUARD_BROKER_TOKEN:?Set private service token}
+      SIGNGUARD_ALLOWED_EMAILS: ${SIGNGUARD_ALLOWED_EMAILS:?Set explicit verified-email allowlist}
+    volumes:
+      - ${SIGNGUARD_OIDC_SECRETS:?Provide Streamlit OIDC secrets}:/opt/signguard/.streamlit/secrets.toml:ro
+    networks: [control]
+  controller:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.controller
+    user: "65532:65532"
+    group_add: ["${DOCKER_SOCKET_GID:?Provide restricted worker daemon socket group}"]
+    read_only: true
+    tmpfs: ["/tmp:size=256m,noexec,nosuid"]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 512m
+    cpus: 1
+    pids_limit: 64
+    environment:
+      SIGNGUARD_BROKER_TOKEN: ${SIGNGUARD_BROKER_TOKEN:?Set private service token}
+      SIGNGUARD_WORKER_IMAGE: ${SIGNGUARD_WORKER_IMAGE:-signguard-worker:phase3}
+    volumes: ["/var/run/docker.sock:/var/run/docker.sock"]
+    networks: [control]
+networks:
+  control:
+    # UI needs OIDC outbound connectivity; controller's workers always have network=none.
+    driver: bridge

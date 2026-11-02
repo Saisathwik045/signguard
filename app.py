@@ -1,9 +1,10 @@
 """Streamlit cloud interface. Uploaded documents are not persisted."""
 import json
+import os
 
 import streamlit as st
 
-from signguard import analyze_pdf
+from signguard.client import analyze_upload, authorized
 
 st.set_page_config(page_title="SignGuard", page_icon="🛡️")
 st.title("SignGuard")
@@ -16,8 +17,17 @@ candidate = st.file_uploader("Optional manual crop override (automatic localizat
 reference = st.file_uploader("Optional reference signature crop", type=["png", "jpg", "jpeg"])
 if st.button("Analyze", disabled=pdf is None):
     try:
+        if os.environ.get("SIGNGUARD_REQUIRE_AUTH") == "true":
+            allowed = set(filter(None, os.environ.get("SIGNGUARD_ALLOWED_EMAILS", "").split(",")))
+            if not st.user.is_logged_in:
+                st.warning("Sign in through the configured identity provider to continue.")
+                st.login()
+                st.stop()
+            if not authorized(dict(st.user), allowed):
+                st.error("This verified identity is not authorized.")
+                st.stop()
         with st.spinner("Checking signatures and rendered revisions…"):
-            result = analyze_pdf(pdf.getvalue(), baseline=baseline.getvalue() if baseline else None,
+            result = analyze_upload(pdf.getvalue(), baseline=baseline.getvalue() if baseline else None,
                                  signature_image=candidate.getvalue() if candidate else None,
                                  reference_image=reference.getvalue() if reference else None)
         st.subheader(result["assessment"]["verdict"].replace("_", " ").title())
@@ -29,5 +39,5 @@ if st.button("Analyze", disabled=pdf is None):
         st.json(result)
         st.download_button("Download evidence report", json.dumps(result, indent=2),
                            file_name="signguard-report.json", mime="application/json")
-    except Exception as exc:  # noqa: BLE001 -- UI must surface parser failures
-        st.error(f"Analysis could not complete: {type(exc).__name__}: {exc}")
+    except Exception:  # noqa: BLE001 -- UI must surface parser failures
+        st.error("Analysis could not complete: unsupported input, worker limit, or service configuration error.")
