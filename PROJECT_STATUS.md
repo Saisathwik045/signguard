@@ -60,6 +60,34 @@ vulnerabilities across 88 installed dependencies. The Docker isolation suite pas
 the full regression suite passed 67 tests with 14 expected skips and one Starlette deprecation
 warning. No upload service was started and no ports were opened.
 
+## Private preview verification — 2026-11-02
+
+The deployable worker target was rebuilt from `deploy/Dockerfile.worker` as
+`signguard-worker:phase4` and scanned with Trivy 0.76.1. The raw report,
+`evaluation/phase4/os-scan-worker-phase4-2026-11-02.json`, is bound to image ID
+`sha256:f411b4c2e269c1dcf334f2082e00b9654de48427c7b91bdb46ac580d2e87602d` (Debian 12.15):
+2 CRITICAL and 41 HIGH findings. The earlier `os-scan-codespace-preview-2026-11-02.json` instead
+reports `signguard-worker:phase3` and does not establish the scan status of the deployable phase4
+image. Zero critical/high source-review findings do not establish zero image vulnerabilities.
+
+The worker image build passed. The Docker isolation suite passed 17 tests against the phase4 tag;
+`ruff check .` passed and `pytest -q` passed 67 tests with 14 expected skips and one Starlette
+deprecation warning. Five synthetic PDFs were generated at runtime and analyzed by phase4
+disposable workers: genuine signed and unsigned were inconclusive, byte tampering was detected,
+shadow reveal required review, and visual-only signature evidence remained inconclusive. Every
+report included a generated PDF report and `docker_disposable`/network-isolation controls; no
+worker containers remained. Gateway authentication-denial, raw-upload/media-route protection, and
+worker report-generation tests passed. The full browser workflow (including authenticated report
+downloads) was not run against this image.
+
+The full browser stack was not started: the restricted executor account/service/socket and its
+required mount configuration are absent, all required private-preview/broker environment variables
+are unset, and the Codespaces ports API returned HTTP 404 for the available environment token while
+`gh` is unauthenticated. No private port forward or browser URL could be verified.
+`.devcontainer/devcontainer.json` requests notification-based forwarding and PRIVATE visibility for
+8501; 8080 remains ignored. This configuration is not proof of an active forward. No public port or
+PDF upload service was opened.
+
 The Codex browser run uses a non-root host UI process because the 7.9 GiB VFS disk cannot keep all
 runtime images live together. That process shares the trusted test UID/filesystem and is NOT proof of
 UI sandboxing. Controller and PDF workers are containers. CI uses containers for all tiers and must
@@ -68,9 +96,10 @@ or user-reachable private preview URLs. Only synthetic documents are used in scr
 
 ## Security release blockers — not waived
 
-- Completed Debian 12 OS scan: 36 HIGH, 2 CRITICAL findings; no fixed package versions listed for
-  those findings. An evaluated Debian 13 alternative had 45 HIGH findings and was not adopted.
-  Both raw reports are retained. No exceptions or hidden/ignored findings were used to enable ingress.
+- Exact deployable Debian 12 worker scan: 41 HIGH and 2 CRITICAL findings. The earlier phase3
+  Codespace scan recorded 36 HIGH and 2 CRITICAL; it is retained as historical evidence, not as the
+  phase4 deployable image result. An evaluated Debian 13 alternative had 45 HIGH findings and was
+  not adopted. No exceptions or hidden/ignored findings were used to enable ingress.
 - Real cloud private routing/TLS and authenticated external browser probes are unavailable. Current
   proxy denies CONNECT to `api.github.com`; no verified Codespaces/hosting identity is bound. GitHub
   repository connector access works, but does not authorize Codespaces management or a paid host.

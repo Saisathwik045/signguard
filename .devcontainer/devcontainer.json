@@ -7,7 +7,7 @@
   },
   "forwardPorts": [],
   "portsAttributes": {
-    "8501": {"label": "SignGuard — keep PRIVATE", "onAutoForward": "ignore"},
+    "8501": {"label": "SignGuard — keep PRIVATE", "onAutoForward": "notify", "visibility": "private"},
     "8080": {"onAutoForward": "ignore"}
   },
   "postCreateCommand": "python -m venv .venv && .venv/bin/python -m pip install 'pip>=26.2,<27' && .venv/bin/python -m pip install -c requirements-cloud.txt '.[dev]'",
