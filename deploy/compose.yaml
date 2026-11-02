@@ -27,7 +27,7 @@ services:
       context: ..
       dockerfile: deploy/Dockerfile.controller
     user: "65532:65532"
-    group_add: ["${DOCKER_SOCKET_GID:?Provide restricted worker daemon socket group}"]
+    group_add: ["${SIGNGUARD_EXECUTOR_GID:?Provide executor socket group}"]
     read_only: true
     tmpfs: ["/tmp:size=256m,noexec,nosuid"]
     cap_drop: [ALL]
@@ -37,8 +37,12 @@ services:
     pids_limit: 64
     environment:
       SIGNGUARD_BROKER_TOKEN: ${SIGNGUARD_BROKER_TOKEN:?Set private service token}
-      SIGNGUARD_WORKER_IMAGE: ${SIGNGUARD_WORKER_IMAGE:-signguard-worker:phase3}
-    volumes: ["/var/run/docker.sock:/var/run/docker.sock"]
+      SIGNGUARD_EXECUTOR_SOCKET: /run/signguard/executor.sock
+      SIGNGUARD_AUDIT_PATH: /var/lib/signguard/audit.jsonl
+      SIGNGUARD_REQUESTS_PER_MINUTE: '10'
+    volumes:
+      - ${SIGNGUARD_EXECUTOR_DIRECTORY:?Provide restricted RPC directory}:/run/signguard:ro
+      - ${SIGNGUARD_AUDIT_DIRECTORY:?Provide private audit directory}:/var/lib/signguard
     networks: [control]
 networks:
   control:

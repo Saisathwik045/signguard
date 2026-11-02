@@ -1,0 +1,16 @@
+{
+  "os_gate_passed": false,
+  "blocking_findings": 38,
+  "severity_counts": {
+    "LOW": 105,
+    "HIGH": 36,
+    "MEDIUM": 116,
+    "CRITICAL": 2,
+    "UNKNOWN": 9
+  },
+  "external_ingress_enabled": false,
+  "reports": [
+    "os-scan-bookworm.json"
+  ],
+  "note": "Functional CI success is not release approval; complete private-route/auth/TLS evidence is also mandatory"
+}

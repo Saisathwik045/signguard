@@ -26,6 +26,8 @@ def main():
     pdf = decoded.pop("pdf")
     started = time.perf_counter()
     report = analyze_pdf(pdf, **decoded)
+    from .reporting import attach_reports
+    attach_reports(pdf, report)
     report["worker_measurements"] = {"analysis_seconds": time.perf_counter()-started,
                                      "process_peak_rss_mib": resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/1024}
     result = json.dumps(report, allow_nan=False).encode()

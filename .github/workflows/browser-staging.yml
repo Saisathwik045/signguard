@@ -1,0 +1,49 @@
+name: Private staging integration
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  browser-isolated-stack:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'pip>=26.2,<27'
+      - run: pip install -c requirements-cloud.txt -e '.[dev]'
+      - run: python -m playwright install --with-deps chromium
+      - run: docker build -f deploy/Dockerfile.worker -t signguard-worker:phase4 -t signguard-worker:phase3 .
+      - run: docker build -f deploy/Dockerfile.ui -t signguard-ui:phase4 .
+      - run: docker build -f deploy/Dockerfile.controller -t signguard-controller:phase4 .
+      - name: Drive authenticated browser flow
+        run: |
+          trap 'test ! -f browser-artifacts/http-errors.jsonl || cat browser-artifacts/http-errors.jsonl' EXIT
+          SIGNGUARD_BROWSER_TESTS=1 pytest -x -q tests/browser/test_live_flow.py --junitxml=browser-artifacts/browser-junit.xml
+      - name: Scan OS images and record release admission
+        run: |
+          mkdir -p browser-artifacts/os-cache
+          for target in worker ui controller; do
+            docker run --rm --user "$(id -u):$(id -g)" --group-add "$(stat -c %g /var/run/docker.sock)" --cap-drop=ALL --security-opt=no-new-privileges --memory=3g -v /var/run/docker.sock:/var/run/docker.sock:ro -v "$PWD/browser-artifacts:/out" aquasec/trivy@sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c image --cache-dir /out/os-cache --db-repository ghcr.io/aquasecurity/trivy-db:2 --scanners vuln --pkg-types os --format json --output "/out/os-$target.json" "signguard-$target:phase4"
+          done
+          python scripts/check_os_release.py browser-artifacts/os-worker.json browser-artifacts/os-ui.json browser-artifacts/os-controller.json --output browser-artifacts/release-admission.json
+          rm -rf browser-artifacts/os-cache
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: authenticated-browser-evidence
+          path: |
+            browser-artifacts/
+            !browser-artifacts/os-cache/**
+          retention-days: 7
+  release-gate-default-denial:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -e '.[ui]'
+      - run: python -c "from pathlib import Path; from signguard.release_gate import REQUIRED; import json; p=Path('deploy/release.example.json'); m=json.loads(p.read_text()); assert all(m[k] is False for k in REQUIRED)"
+# No external ingress or paid provisioning. A complete verified release evidence bundle is mandatory.

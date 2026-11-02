@@ -90,3 +90,30 @@ Do not run `--create-templates` during reproduction: it creates new randomized s
 templates and defines a new corpus version. Public synthetic templates contain no private keys.
 Runtime versions are stored in `evaluation/phase3/environment.json`. This evaluation is not a
 certificate of safety, comprehensive attack coverage, or evidence of human handwriting identity.
+
+## Phase 4 integration evidence (no benchmark retuning)
+
+The Phase 3 detector fingerprint still matches its pre-holdout seal. No scoring population, threshold
+or benchmark result was changed for Phase 4. This phase measures integration rather than accuracy.
+
+A real remote Chromium run passed 11 end-to-end checks: anonymous/invalid login denial; signed,
+byte-tampered, shadow-revealed, visual-only and unsigned uploads; evidence images; JSON/PDF downloads;
+unsupported input; oversized upload rejection; logout; concurrent/quota handling; audit chain; and
+broker-outage fail-closed behavior. Eleven screenshots and report artifacts were captured.
+
+Codex used a non-root UI process due to its VFS disk limit, plus a containerized controller and
+network-isolated disposable workers. The CI browser job uses all three containerized tiers. Its final
+observed result is recorded in PROJECT_STATUS.md/the task report. The tested cloud loopback URL is not
+a live user-accessible preview, and external OIDC/TLS/private forwarding remain unverified.
+
+The first integration attempts found real routing and Unix-socket group-permission defects; these
+were fixed before the successful run. Successful reports include verified digest/audit receipts,
+worker isolation controls and a signed/current evidence pair for the shadow case. PDF downloads were
+reopened and checked; no PDF report is offered when the analysis fails. Raw evidence is retained in
+`evaluation/phase4/` and GitHub Actions artifacts. The OS scan is a separate unresolved release gate.
+
+Final implementation verification: 70 non-browser tests and 11 remote gateway browser tests passed.
+GitHub Actions run 41413174237 passed the full all-container UI/controller/executor/worker flow,
+including direct anonymous/post-logout download denial, screenshots, downloads and OS scan collection.
+Cloud tests run 41413174218 passed both Python versions and the isolated-worker/static/dependency job.
+OS release admission remained blocked despite successful functional CI. The private live URL is absent.

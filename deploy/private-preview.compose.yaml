@@ -1,0 +1,42 @@
+# Private/TLS route verification is mandatory before publishing beyond loopback.
+services:
+  ui:
+    image: signguard-ui:phase4
+    entrypoint: [python, -m, signguard.preview_web]
+    ports: ["127.0.0.1:8501:8501"]
+    user: "65532:65532"
+    read_only: true
+    tmpfs: ["/tmp:size=64m,noexec,nosuid"]
+    mem_limit: 1g
+    pids_limit: 64
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    environment:
+      SIGNGUARD_REQUIRE_AUTH: 'true'
+      SIGNGUARD_AUTH_MODE: gateway
+      SIGNGUARD_WEB_HOST: 0.0.0.0
+      SIGNGUARD_COOKIE_SECURE: 'true'
+      SIGNGUARD_PREVIEW_PRIVATE_CONFIRMED: 'true'
+      SIGNGUARD_PREVIEW_PASSWORD_HASH: ${SIGNGUARD_PREVIEW_PASSWORD_HASH:?Set salted private credential hash}
+      SIGNGUARD_GATEWAY_TOKEN: ${SIGNGUARD_GATEWAY_TOKEN:?Set internal random gateway secret}
+      SIGNGUARD_BACKEND: broker
+      SIGNGUARD_BROKER_URL: http://controller:8080
+      SIGNGUARD_BROKER_TOKEN: ${SIGNGUARD_BROKER_TOKEN:?Set private service token}
+  controller:
+    image: signguard-controller:phase4
+    user: "65532:65532"
+    group_add: ["${SIGNGUARD_EXECUTOR_GID:?Set executor socket group}"]
+    read_only: true
+    tmpfs: ["/tmp:size=64m,noexec,nosuid"]
+    mem_limit: 512m
+    pids_limit: 64
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    environment:
+      SIGNGUARD_BROKER_TOKEN: ${SIGNGUARD_BROKER_TOKEN:?Set private service token}
+      SIGNGUARD_EXECUTOR_SOCKET: /run/signguard/executor.sock
+      SIGNGUARD_AUDIT_PATH: /var/lib/signguard/audit.jsonl
+      SIGNGUARD_REQUESTS_PER_MINUTE: '10'
+    volumes:
+      - ${SIGNGUARD_EXECUTOR_DIRECTORY:?Set restricted RPC directory}:/run/signguard:ro
+      - ${SIGNGUARD_AUDIT_DIRECTORY:?Set private audit directory}:/var/lib/signguard

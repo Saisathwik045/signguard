@@ -11,7 +11,7 @@ def authorized(claims, allowlist):
     return bool(claims.get("email_verified") is True and claims.get("email") in allowlist)
 
 
-def analyze_upload(pdf, **optional):
+def analyze_upload(pdf, *, principal="private-session", **optional):
     if os.environ.get("SIGNGUARD_BACKEND", "limited") != "broker":
         if os.environ.get("SIGNGUARD_REQUIRE_AUTH") == "true":
             raise RuntimeError("Production requires isolated broker backend")
@@ -33,7 +33,7 @@ def analyze_upload(pdf, **optional):
 
     request = urllib.request.Request(url+"/analyze", data=encode_request(pdf, **optional),
                                      headers={"Authorization": "Bearer "+token,
-                                              "Content-Type": "application/json"})
+                                              "Content-Type": "application/json", "X-SignGuard-Principal": principal})
     with urllib.request.build_opener(NoRedirect()).open(request, timeout=70) as response:
         body = response.read(MAX_OUTPUT+1)
     if len(body) > MAX_OUTPUT:

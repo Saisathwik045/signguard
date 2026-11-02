@@ -1,0 +1,14 @@
+{
+  "preview_url": "",
+  "private_route_verified": false,
+  "authentication_verified": false,
+  "authorization_verified": false,
+  "tls_verified": false,
+  "restricted_executor_verified": false,
+  "resource_limits_verified": false,
+  "quotas_verified": false,
+  "secrets_isolation_verified": false,
+  "temporary_cleanup_verified": false,
+  "artifacts": {},
+  "all_routes_authentication_verified": false
+}
