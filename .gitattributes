@@ -1,0 +1,2 @@
+# PDFs contain byte offsets, signed ranges and ciphertext; never normalize or text-diff them.
+*.pdf binary

@@ -1,0 +1,374 @@
+{
+  "alert_all_cases_including_unsupported": {
+    "accuracy": 0.8666666666666667,
+    "axes": "rows actual [negative, positive]; columns predicted",
+    "confusion_matrix": [
+      [
+        80,
+        10
+      ],
+      [
+        10,
+        50
+      ]
+    ],
+    "f1": 0.8333333333333334,
+    "fn": 10,
+    "fp": 10,
+    "n": 150,
+    "precision": 0.8333333333333334,
+    "recall": 0.8333333333333334,
+    "tn": 80,
+    "tp": 50
+  },
+  "alert_supported": {
+    "accuracy": 0.9230769230769231,
+    "axes": "rows actual [negative, positive]; columns predicted",
+    "confusion_matrix": [
+      [
+        70,
+        10
+      ],
+      [
+        0,
+        50
+      ]
+    ],
+    "f1": 0.9090909090909091,
+    "fn": 0,
+    "fp": 10,
+    "n": 130,
+    "precision": 0.8333333333333334,
+    "recall": 1.0,
+    "tn": 70,
+    "tp": 50
+  },
+  "benchmark_version": 1,
+  "by_family": {
+    "appended_content": {
+      "alerts": 10,
+      "errors": 0,
+      "n": 10,
+      "supported": true
+    },
+    "benign_metadata": {
+      "alerts": 0,
+      "errors": 0,
+      "n": 10,
+      "supported": true
+    },
+    "copied_signature": {
+      "alerts": 10,
+      "errors": 0,
+      "n": 10,
+      "supported": true
+    },
+    "encrypted": {
+      "alerts": 0,
+      "errors": 10,
+      "n": 10,
+      "supported": false
+    },
+    "faint_signature": {
+      "alerts": 0,
+      "errors": 0,
+      "n": 10,
+      "supported": true
+    },
+    "genuine_signed": {
+      "alerts": 0,
+      "errors": 0,
+      "n": 10,
+      "supported": true
+    },
+    "negative_logo": {
+      "alerts": 0,
+      "errors": 0,
+      "n": 10,
+      "supported": true
+    },
+    "negative_repeated_logos": {
+      "alerts": 10,
+      "errors": 0,
+      "n": 10,
+      "supported": true
+    },
+    "negative_rules": {
+      "alerts": 0,
+      "errors": 0,
+      "n": 10,
+      "supported": true
+    },
+    "shadow_overlay": {
+      "alerts": 10,
+      "errors": 0,
+      "n": 10,
+      "supported": true
+    },
+    "shadow_reveal": {
+      "alerts": 10,
+      "errors": 0,
+      "n": 10,
+      "supported": true
+    },
+    "tampered_bytes": {
+      "alerts": 10,
+      "errors": 0,
+      "n": 10,
+      "supported": true
+    },
+    "unsigned": {
+      "alerts": 0,
+      "errors": 0,
+      "n": 10,
+      "supported": true
+    },
+    "unsigned_forgery": {
+      "alerts": 0,
+      "errors": 0,
+      "n": 10,
+      "supported": false
+    },
+    "visual_signature": {
+      "alerts": 0,
+      "errors": 0,
+      "n": 10,
+      "supported": true
+    }
+  },
+  "classification": {
+    "accuracy": 0.8,
+    "confusion_matrix": {
+      "cryptographic": {
+        "cryptographic": 60
+      },
+      "unsigned": {
+        "unsigned": 20,
+        "unsupported_error": 10,
+        "visual_candidate": 20
+      },
+      "visual_candidate": {
+        "visual_candidate": 40
+      }
+    },
+    "macro_f1": 0.7904761904761904,
+    "per_class": {
+      "cryptographic": {
+        "accuracy": 1.0,
+        "axes": "rows actual [negative, positive]; columns predicted",
+        "confusion_matrix": [
+          [
+            90,
+            0
+          ],
+          [
+            0,
+            60
+          ]
+        ],
+        "f1": 1.0,
+        "fn": 0,
+        "fp": 0,
+        "n": 150,
+        "precision": 1.0,
+        "recall": 1.0,
+        "tn": 90,
+        "tp": 60
+      },
+      "unsigned": {
+        "accuracy": 0.8,
+        "axes": "rows actual [negative, positive]; columns predicted",
+        "confusion_matrix": [
+          [
+            100,
+            0
+          ],
+          [
+            30,
+            20
+          ]
+        ],
+        "f1": 0.5714285714285714,
+        "fn": 30,
+        "fp": 0,
+        "n": 150,
+        "precision": 1.0,
+        "recall": 0.4,
+        "tn": 100,
+        "tp": 20
+      },
+      "visual_candidate": {
+        "accuracy": 0.8666666666666667,
+        "axes": "rows actual [negative, positive]; columns predicted",
+        "confusion_matrix": [
+          [
+            90,
+            20
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "f1": 0.8,
+        "fn": 0,
+        "fp": 20,
+        "n": 150,
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "tn": 90,
+        "tp": 40
+      }
+    }
+  },
+  "environment": {
+    "Pillow": "12.3.0",
+    "PyMuPDF": "1.28.2",
+    "numpy": "2.5.4",
+    "opencv-python-headless": "4.14.0.94",
+    "pyHanko": "0.35.2",
+    "python": "3.12.14"
+  },
+  "false_negatives": [],
+  "false_positives": [
+    "negative_repeated_logos-00",
+    "negative_repeated_logos-01",
+    "negative_repeated_logos-02",
+    "negative_repeated_logos-03",
+    "negative_repeated_logos-04",
+    "negative_repeated_logos-05",
+    "negative_repeated_logos-06",
+    "negative_repeated_logos-07",
+    "negative_repeated_logos-08",
+    "negative_repeated_logos-09"
+  ],
+  "localization": {
+    "f1": 0.6666666666666666,
+    "fn": 10,
+    "fp": 30,
+    "iou_threshold": 0.3,
+    "precision": 0.5714285714285714,
+    "recall": 0.8,
+    "tp": 40
+  },
+  "metric_definition": "Alert=review_required or tampering_detected; inconclusive is no alert, not genuine. Expected unsupported cases excluded from supported metrics, included in all-case metrics. Unexpected errors count as no alert; positives then count as false negatives. Broad classification mistakes are scored on all cases; localization scores all ROIs, including faint ink.",
+  "seed": 20261102,
+  "source_sha256": {
+    "benchmarks/__init__.py": "b10884ebe29cf3c759f968e865650f6b4c0ec14201c5a09d295d90b1bc728c22",
+    "benchmarks/evaluate.py": "7db1c5a0fcc56e14381ab6e2d9d4d4ec85a074f274303de57529e68b5ce2c48c",
+    "benchmarks/generate.py": "2636865e46d8c6374413a37636a5805243eb6e2c13c68a477907dbb27c3c20f9",
+    "src/signguard/__init__.py": "ededf252aa0ab77d6391d50ac10525b25314573f9d77cdb421228ac63145ea9a",
+    "src/signguard/audit.py": "cdb179277ac343c789eb023cc8d0662160518d1004dd84ede829d83ce2a8010d",
+    "src/signguard/cli.py": "2cc81c164db4472d12c0f374252dc641fcb39c475dac67efe40bcf4d87c93911",
+    "src/signguard/images.py": "de82c83c8c8d05240eb360a9837d70384d77165acfb01aad3d7a2c81c0629e7c",
+    "src/signguard/localization.py": "5d7535e09d9c638ae53e69d23bf32947ec6a6cf9567f10a15b364fdd74f636d2",
+    "src/signguard/pdf.py": "9459816c34b79f07739e13be56a5cfb37133f6382408a795e5a79fb02600a3f7",
+    "src/signguard/pipeline.py": "6f559b307fece8769967227f5d41c7076bb46697caadb8287112b1ab05d6eb74"
+  },
+  "template_manifest_sha256": "ef1436f3e8830b9ffea1dad04f3e1ddbaa96b5939c037c00507a2462571dc4ab",
+  "total": 150,
+  "unexpected_errors": [],
+  "unique_pdfs": 140,
+  "unsupported": [
+    {
+      "error": null,
+      "id": "unsigned_forgery-00",
+      "reason": "Single reused signature has no reference or history"
+    },
+    {
+      "error": null,
+      "id": "unsigned_forgery-01",
+      "reason": "Single reused signature has no reference or history"
+    },
+    {
+      "error": null,
+      "id": "unsigned_forgery-02",
+      "reason": "Single reused signature has no reference or history"
+    },
+    {
+      "error": null,
+      "id": "unsigned_forgery-03",
+      "reason": "Single reused signature has no reference or history"
+    },
+    {
+      "error": null,
+      "id": "unsigned_forgery-04",
+      "reason": "Single reused signature has no reference or history"
+    },
+    {
+      "error": null,
+      "id": "unsigned_forgery-05",
+      "reason": "Single reused signature has no reference or history"
+    },
+    {
+      "error": null,
+      "id": "unsigned_forgery-06",
+      "reason": "Single reused signature has no reference or history"
+    },
+    {
+      "error": null,
+      "id": "unsigned_forgery-07",
+      "reason": "Single reused signature has no reference or history"
+    },
+    {
+      "error": null,
+      "id": "unsigned_forgery-08",
+      "reason": "Single reused signature has no reference or history"
+    },
+    {
+      "error": null,
+      "id": "unsigned_forgery-09",
+      "reason": "Single reused signature has no reference or history"
+    },
+    {
+      "error": "ValueError: Encrypted PDFs and documents outside 1\u201350 pages are unsupported",
+      "id": "encrypted-00",
+      "reason": "Password-protected PDF unsupported"
+    },
+    {
+      "error": "ValueError: Encrypted PDFs and documents outside 1\u201350 pages are unsupported",
+      "id": "encrypted-01",
+      "reason": "Password-protected PDF unsupported"
+    },
+    {
+      "error": "ValueError: Encrypted PDFs and documents outside 1\u201350 pages are unsupported",
+      "id": "encrypted-02",
+      "reason": "Password-protected PDF unsupported"
+    },
+    {
+      "error": "ValueError: Encrypted PDFs and documents outside 1\u201350 pages are unsupported",
+      "id": "encrypted-03",
+      "reason": "Password-protected PDF unsupported"
+    },
+    {
+      "error": "ValueError: Encrypted PDFs and documents outside 1\u201350 pages are unsupported",
+      "id": "encrypted-04",
+      "reason": "Password-protected PDF unsupported"
+    },
+    {
+      "error": "ValueError: Encrypted PDFs and documents outside 1\u201350 pages are unsupported",
+      "id": "encrypted-05",
+      "reason": "Password-protected PDF unsupported"
+    },
+    {
+      "error": "ValueError: Encrypted PDFs and documents outside 1\u201350 pages are unsupported",
+      "id": "encrypted-06",
+      "reason": "Password-protected PDF unsupported"
+    },
+    {
+      "error": "ValueError: Encrypted PDFs and documents outside 1\u201350 pages are unsupported",
+      "id": "encrypted-07",
+      "reason": "Password-protected PDF unsupported"
+    },
+    {
+      "error": "ValueError: Encrypted PDFs and documents outside 1\u201350 pages are unsupported",
+      "id": "encrypted-08",
+      "reason": "Password-protected PDF unsupported"
+    },
+    {
+      "error": "ValueError: Encrypted PDFs and documents outside 1\u201350 pages are unsupported",
+      "id": "encrypted-09",
+      "reason": "Password-protected PDF unsupported"
+    }
+  ]
+}

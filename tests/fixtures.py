@@ -21,7 +21,7 @@ def unsigned():
         return doc.tobytes()
 
 
-def signed():
+def signed(data=None):
     key = rsa.generate_private_key(public_exponent=65537, key_size=2048)
     name = x509.Name([x509.NameAttribute(NameOID.COMMON_NAME, "SignGuard TEST ONLY")])
     now = datetime.now(UTC)
@@ -38,7 +38,7 @@ def signed():
                                                serialization.NoEncryption())),
         cert_registry=SimpleCertificateStore())
     output = BytesIO()
-    signers.sign_pdf(IncrementalPdfFileWriter(BytesIO(unsigned())),
+    signers.sign_pdf(IncrementalPdfFileWriter(BytesIO(unsigned() if data is None else data)),
                      signers.PdfSignatureMetadata(field_name="TestSignature"), signer=signer, output=output)
     return output.getvalue(), certificate
 

@@ -12,7 +12,7 @@ st.info("Visual similarity and compression artifacts cannot establish who signed
         "Certificate validation is offline; no trust roots are configured in this interface.")
 pdf = st.file_uploader("PDF to inspect (up to 25 MiB, 50 pages)", type="pdf")
 baseline = st.file_uploader("Optional known baseline PDF", type="pdf")
-candidate = st.file_uploader("Optional signature crop", type=["png", "jpg", "jpeg"])
+candidate = st.file_uploader("Optional manual crop override (automatic localization runs by default)", type=["png", "jpg", "jpeg"])
 reference = st.file_uploader("Optional reference signature crop", type=["png", "jpg", "jpeg"])
 if st.button("Analyze", disabled=pdf is None):
     try:
@@ -23,6 +23,9 @@ if st.button("Analyze", disabled=pdf is None):
         st.subheader(result["assessment"]["verdict"].replace("_", " ").title())
         for reason in result["assessment"]["reasons"]:
             st.write(reason)
+        automatic = result["image_forensics"]["automatic"]
+        st.write(f"Automatic candidate regions: {len(automatic['localization']['candidates'])}")
+        st.caption("Candidate boxes are unverified regions in rotated page points. Logos and diagrams may appear.")
         st.json(result)
         st.download_button("Download evidence report", json.dumps(result, indent=2),
                            file_name="signguard-report.json", mime="application/json")

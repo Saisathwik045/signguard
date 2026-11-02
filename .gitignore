@@ -224,3 +224,4 @@ __marimo__/
 samples/
 audit.jsonl
 .ruff_cache/
+benchmark-output/
