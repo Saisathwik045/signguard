@@ -17,7 +17,10 @@ jobs:
       - run: docker build -f deploy/Dockerfile.worker -t signguard-worker:phase4 -t signguard-worker:phase3 .
       - run: docker build -f deploy/Dockerfile.ui -t signguard-ui:phase4 .
       - run: docker build -f deploy/Dockerfile.controller -t signguard-controller:phase4 .
-      - run: SIGNGUARD_BROWSER_TESTS=1 pytest -q tests/browser/test_live_flow.py --junitxml=browser-artifacts/browser-junit.xml
+      - name: Drive authenticated browser flow
+        run: |
+          trap 'test ! -f browser-artifacts/http-errors.jsonl || cat browser-artifacts/http-errors.jsonl' EXIT
+          SIGNGUARD_BROWSER_TESTS=1 pytest -x -q tests/browser/test_live_flow.py --junitxml=browser-artifacts/browser-junit.xml
       - name: Scan OS images and record release admission
         run: |
           mkdir -p browser-artifacts/os-cache

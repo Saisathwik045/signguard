@@ -163,6 +163,7 @@ def main():
     child = subprocess.Popen([sys.executable, "-m", "streamlit", "run", "app.py", "--server.address=127.0.0.1",
                               "--server.port="+os.environ.get("SIGNGUARD_STREAMLIT_PORT", "8502"), "--server.headless=true",
                               "--server.maxUploadSize=25", "--server.maxMessageSize=50",
+                              "--server.enableXsrfProtection=true", "--server.xsrfCookieSameSite=lax",
                               "--browser.gatherUsageStats=false"])
     try:
         uvicorn.run(app, host=os.environ.get("SIGNGUARD_WEB_HOST", "127.0.0.1"),
