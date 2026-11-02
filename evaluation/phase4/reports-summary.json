@@ -1,0 +1,72 @@
+[
+  {
+    "case": "shadow_reveal-report",
+    "verdict": "review_required",
+    "classification": "cryptographic",
+    "evidence_images": 2,
+    "controls": {
+      "elapsed_seconds": 13.59927284999958,
+      "isolation": "docker_disposable",
+      "network_isolation": true,
+      "filesystem_isolation": true,
+      "executor_boundary": "restricted_unix_rpc"
+    },
+    "audit_head": "473a741dd7f2843d69ca23538b52983db1e03f270b7fda9e85eb1c799d0e7077"
+  },
+  {
+    "case": "visual_signature-report",
+    "verdict": "inconclusive",
+    "classification": "visual_candidate",
+    "evidence_images": 1,
+    "controls": {
+      "elapsed_seconds": 11.79429109099965,
+      "isolation": "docker_disposable",
+      "network_isolation": true,
+      "filesystem_isolation": true,
+      "executor_boundary": "restricted_unix_rpc"
+    },
+    "audit_head": "d0dafb41b18922e8f4c6ec4d44c0ddf8bb5301e1578d13c2618442d3a5bab4e0"
+  },
+  {
+    "case": "tampered_bytes-report",
+    "verdict": "tampering_detected",
+    "classification": "cryptographic",
+    "evidence_images": 1,
+    "controls": {
+      "elapsed_seconds": 18.71209442700001,
+      "isolation": "docker_disposable",
+      "network_isolation": true,
+      "filesystem_isolation": true,
+      "executor_boundary": "restricted_unix_rpc"
+    },
+    "audit_head": "0922f70d4538608704bb88f3bd1699f6c2aa266947b61a92740126228eeb5579"
+  },
+  {
+    "case": "unsigned-report",
+    "verdict": "inconclusive",
+    "classification": "unsigned",
+    "evidence_images": 1,
+    "controls": {
+      "elapsed_seconds": 16.085395473000062,
+      "isolation": "docker_disposable",
+      "network_isolation": true,
+      "filesystem_isolation": true,
+      "executor_boundary": "restricted_unix_rpc"
+    },
+    "audit_head": "d9fcb64e599f5913a8b4ada61af2ab389e1b693d0b2cf586363cd035a7b8549c"
+  },
+  {
+    "case": "genuine_signed-report",
+    "verdict": "inconclusive",
+    "classification": "cryptographic",
+    "evidence_images": 1,
+    "controls": {
+      "elapsed_seconds": 16.871008434000032,
+      "isolation": "docker_disposable",
+      "network_isolation": true,
+      "filesystem_isolation": true,
+      "executor_boundary": "restricted_unix_rpc"
+    },
+    "audit_head": "bf91123187423ec04173be02e6fe1a731dedd76219d35e5e0edfb4a3626cedb7"
+  }
+]

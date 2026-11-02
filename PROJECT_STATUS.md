@@ -1,4 +1,76 @@
-# Project status — Phase 3
+# Project status — Phase 4
+
+Started from merged main `24d12ac`; PR #3 was confirmed merged and its checks passed.
+Feature branch: `feature/phase4-private-integration`. All execution is remote. No paid infrastructure,
+public ingress or user-accessible preview URL was created.
+
+## Delivered integration
+
+- Authentication before upload controls, session-backed verdicts, worker-generated bounded PNG
+  evidence and downloadable JSON/PDF reports, signed/current images, clear unsupported/error states.
+- Private controller -> group-restricted Unix executor RPC -> disposable Docker worker. The controller
+  has no Docker CLI/socket; requests cannot supply images, commands, environment or mounts. The host
+  executor remains trusted/privileged. The UI has no privileged socket in the container architecture.
+- Bounded concurrency, per-principal quotas, protocol validation, local audit receipts with report
+  digest verification, and explicit denial rather than unsafe parsing fallback during service outage.
+- Additional private-preview HTTP/WebSocket gateway with opaque HttpOnly sessions, logout/expiry
+  revocation, protected raw uploads/media routes, internal assertions and preserved Streamlit XSRF.
+  Production OIDC remains separate; the preview gateway is single-owner, not multi-tenant SSO.
+- Real Chromium automation, screenshots, synthetic reports, audit chain, separate loopback scope
+  evidence, all-container CI, OS scans, and a false-by-default evidence-backed release validator.
+- Browser-only Codespaces preparation, host executor service/Compose definitions, and DEMO_GUIDE.md.
+
+## Actual verification and defects found
+
+The initial remote loopback browser run passed 11 tests across signed, tampered, shadow-modified,
+visual-only, unsigned, unsupported and oversized inputs, downloads, login/logout, quota/concurrency,
+audit and outage handling. The new gateway adds direct anonymous/post-logout media denial tests;
+its final browser result and GitHub Actions checks are recorded in the final task report.
+
+The non-browser suite and additional gateway contracts were executed in cloud; all 60 prior tests
+remain present. Explicit resource tests still exercise Docker CPU/memory/network/read-only behavior.
+The final suite counts are reported from JUnit, not inferred from static test collection.
+
+Real integration defects fixed: internal-only network prevented published loopback routing; umask
+made the executor directory owner-only; health forwarding dropped Streamlit's XSRF cookie; fixed host
+upstream ports collided across test runs; result state disappeared on rerun/download. Image layering
+was reduced after the cloud VFS disk filled. A descendant-kill test now waits a bounded two seconds
+for asynchronous SIGKILL delivery instead of racing the scheduler. Slow-worker quota tests use an
+explicit longer window and invalid-request admission, preserving deployed defaults.
+
+The Codex browser run uses a non-root host UI process because the 7.9 GiB VFS disk cannot keep all
+runtime images live together. That process shares the trusted test UID/filesystem and is NOT proof of
+UI sandboxing. Controller and PDF workers are containers. CI uses containers for all tiers and must
+pass before claiming full containerized UI separation. Test URLs are real loopback URLs, not public
+or user-reachable private preview URLs. Only synthetic documents are used in screenshots/artifacts.
+
+## Security release blockers — not waived
+
+- Completed Debian 12 OS scan: 36 HIGH, 2 CRITICAL findings; no fixed package versions listed for
+  those findings. An evaluated Debian 13 alternative had 45 HIGH findings and was not adopted.
+  Both raw reports are retained. No exceptions or hidden/ignored findings were used to enable ingress.
+- Real cloud private routing/TLS and authenticated external browser probes are unavailable. Current
+  proxy denies CONNECT to `api.github.com`; no verified Codespaces/hosting identity is bound. GitHub
+  repository connector access works, but does not authorize Codespaces management or a paid host.
+- Production OIDC/tenant integration, dedicated restricted/rootless executor-host authority, durable
+  audit anchoring/retention and deployment-specific adversarial/load review remain open.
+- Shared password preview login is single-owner only; Secure cookies are disabled ONLY in ephemeral
+  HTTP loopback tests. Real staging requires TLS, Secure cookies and protection of all service paths.
+
+## Evidence and reproducibility
+
+`evaluation/phase4/` retains screenshots, representative JSON/PDF, JUnit, audit chain, report/isolation
+summaries and OS findings. GitHub's authenticated-browser artifact additionally retains all downloads
+and fixtures. `Private staging integration` builds/tests the complete stack; OS admission is reported
+separately from functional success. No action publishes an ingress or provisions hosting.
+
+The Phase 3 forensic detector still matches its pre-holdout source seal. No benchmark population,
+label, score, or detector threshold was modified. See RESULTS.md, SECURITY.md, DEPLOYMENT.md and
+DEMO_GUIDE.md for measured scope and the minimum browser-authorized cloud handoff.
+
+---
+
+# Phase 3 historical record
 
 Started from merged main `481a939` on `feature/phase3-reliability-hardening`, in the existing
 Codex Cloud environment. Verified on 2026-11-02 (Asia/Calcutta). No public deployment performed.

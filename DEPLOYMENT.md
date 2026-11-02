@@ -74,3 +74,34 @@ Still needed: hosting/account authorization, dedicated worker infrastructure, re
 sandbox service, domain/TLS, OIDC client registration and secrets, verified-user policy, gateway
 quotas, retention policy, OS vulnerability review and staging/load-test approval. No provider account
 was provisioned, no public endpoint was created, and no production secrets were requested or installed.
+
+## Phase 4 integration update
+
+The controller no longer has a Docker CLI or daemon socket. A trusted host executor exposes only a
+bounded analysis RPC on a group-restricted Unix socket; image, executable, mounts, UID, networking and
+resource flags cannot be supplied by a request. `deploy/signguard-executor.service` prepares that host
+boundary. The executor retains privileged daemon access and belongs on a dedicated/restricted host.
+The UI receives only the private HTTP controller endpoint and service token, never either socket.
+Compose now mounts the RPC directory read-only into the controller and a separate private audit sink.
+
+Authentication precedes uploads. Production keeps OIDC/verified-email authorization. The explicit
+single-owner private-preview mode uses a salted scrypt credential, 15-minute in-memory sessions,
+server login rate limiting, and no implicit trust in forwarded identity headers. It requires the
+isolated broker backend and an explicitly confirmed private environment. This flag alone is not
+proof that a real cloud URL is private; the release attestation and external route probes are separate.
+
+`Private staging integration` builds all images and drives Chromium through the complete stack,
+retaining screenshots, JSON/PDF downloads and audit evidence. It creates no external ingress.
+`release.example.json` defaults all controls to false. The release validator requires successful
+browser tests, verified private HTTPS routing, matching artifact hashes and clean OS/dependency scans.
+A passing loopback integration test is insufficient authorization to publish a port.
+
+See DEMO_GUIDE.md for the browser-only handoff. Codespaces creation/access was unavailable from this
+runtime; the Codespaces API is blocked by its proxy and no provider identity is bound. No live preview
+URL has been tested, no paid hosting was created, and production OIDC/TLS remains unverified.
+
+The Codex loopback browser run used a host UI process sharing the trusted test UID/filesystem;
+it is not proof that the UI itself is sandboxed. Its PDF workers were isolated and no external
+route was opened. The CI all-container path must pass before claiming UI filesystem separation.
+Application widget authorization alone does not protect every Streamlit HTTP endpoint: an authenticated
+private gateway must protect uploads, WebSockets and downloads before any untrusted-user ingress.

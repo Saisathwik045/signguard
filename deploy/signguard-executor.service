@@ -1,0 +1,28 @@
+# Prepared host service; install only on an authorized dedicated worker host.
+[Unit]
+Description=SignGuard restricted executor
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=simple
+User=signguard-executor
+Group=signguard-control
+SupplementaryGroups=docker
+Environment=SIGNGUARD_EXECUTOR_SOCKET=/run/signguard/executor.sock
+EnvironmentFile=/etc/signguard/executor.env
+RuntimeDirectory=signguard
+RuntimeDirectoryMode=0750
+UMask=0007
+ExecStart=/opt/signguard/venv/bin/python -m signguard.executor
+Restart=on-failure
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+MemoryMax=512M
+TasksMax=64
+LimitNOFILE=128
+
+[Install]
+WantedBy=multi-user.target

@@ -1,6 +1,12 @@
-ARG WORKER_IMAGE=signguard-worker:phase3
+# syntax=docker/dockerfile:1
+ARG WORKER_IMAGE=signguard-worker:phase4
 FROM ${WORKER_IMAGE}
+USER 0
 COPY --chown=65532:65532 app.py ./app.py
+RUN --mount=type=secret,id=proxy_ca \
+    if [ -f /run/secrets/proxy_ca ]; then export PIP_CERT=/run/secrets/proxy_ca; fi; \
+    pip install --no-cache-dir -c requirements-cloud.txt '.[ui]'
+USER 65532:65532
 ENV SIGNGUARD_REQUIRE_AUTH=true SIGNGUARD_BACKEND=broker
 HEALTHCHECK --interval=30s --timeout=3s CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8501/_stcore/health',timeout=2)"
 ENTRYPOINT ["streamlit", "run", "app.py", "--server.address=0.0.0.0", "--server.maxUploadSize=25", "--server.maxMessageSize=50", "--browser.gatherUsageStats=false"]

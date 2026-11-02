@@ -1,0 +1,11 @@
+{
+  "url": "http://127.0.0.1:55117",
+  "scope": "cloud_loopback_only",
+  "user_accessible_preview": false,
+  "ui_runtime": "nonroot_cloud_process",
+  "controller_has_docker_socket": false,
+  "ui_has_executor_socket": null,
+  "worker_image": "signguard-worker:phase4",
+  "ui_filesystem_isolated": false,
+  "host_ui_limitation": "Trusted test UID shares host filesystem"
+}

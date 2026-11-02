@@ -67,3 +67,40 @@ No OS/base-image CVE scan, penetration test, or software supply-chain attestatio
 
 Report security problems privately to the repository owner through GitHub's private vulnerability
 reporting if enabled. Do not publish real signed documents or credential material in issues.
+
+## Phase 4 verified boundary and release status
+
+The complete browser path now exercises the restricted Unix executor RPC; the controller has no
+Docker socket or Docker CLI, and the UI has neither privileged socket. RPC accepts only the four
+bounded analysis byte fields and rejects operation/image/command injection before any worker starts.
+The host executor is still privileged and requires a dedicated restricted daemon/host in deployment.
+A restrictive umask initially made its group directory inaccessible; explicit directory/socket modes
+fixed this integration defect and are exercised by actual controller-to-executor browser tests.
+
+Uploads are unavailable before application authentication. Preview credentials use salted scrypt,
+constant-time comparison, bounded attempts and a 15-minute session. Controller concurrency is one
+active job, four connection threads, backlog four, and ten authenticated-principal attempts/minute.
+These are single-instance controls, not distributed quotas. Browser tests exercise incorrect login,
+logout, oversized uploads, unsupported inputs, concurrent requests, quotas and fail-closed outage.
+
+Generated PNG/PDF evidence is produced inside the worker, bounded by the JSON/media limits and returned
+in-memory to the authenticated session. JSON/PDF downloads persist across reruns. The controller
+appends a local hash-chain receipt without retaining source uploads or logging document contents.
+External audit anchoring, durable retention policy and production identity integration remain gates.
+
+An actual Trivy OS scan was added. Initial scanner startup failures (cache permissions and its own
+1 GiB memory cap) were not treated as successful scans. The completed Debian 12 scan contains high
+and critical findings without published fixed package versions, so release remains blocked. This
+is separate from passing Python dependency/static scans and from the PDF workers' unchanged limits.
+No claim of safe external deployment follows from successful functional tests or screenshots.
+
+The Codex loopback browser run used a host UI process sharing the trusted test UID/filesystem;
+it is not proof that the UI itself is sandboxed. Its PDF workers were isolated and no external
+route was opened. The CI all-container path must pass before claiming UI filesystem separation.
+Application widget authorization alone does not protect every Streamlit HTTP endpoint: an authenticated
+private gateway must protect uploads, WebSockets and downloads before any untrusted-user ingress.
+
+Quota integration canaries use a 600-second window so slow VFS worker startups do not roll the window
+during the test; the deployed default remains ten attempts per 60 seconds. Invalid authenticated
+requests also consume quota and are used to check admission without timing-dependent extra workers.
+The regression test separately checks default-window expiry. No forensic thresholds were changed.

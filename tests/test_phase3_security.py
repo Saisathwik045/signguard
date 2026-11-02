@@ -131,4 +131,14 @@ def test_timeout_terminates_descendant_group(tmp_path):
         run_limited([sys.executable, "-c", program], limits=Limits(wall=.5))
     pid = int(pid_file.read_text())
     status = Path(f"/proc/{pid}/stat")
-    assert not status.exists() or status.read_text().split()[2] == "Z"
+    # SIGKILL delivery is asynchronous; observe bounded termination rather than a scheduler race.
+    import time
+    deadline = time.monotonic()+2
+    while time.monotonic() < deadline:
+        try:
+            if status.read_text().split()[2] == "Z":
+                return
+        except FileNotFoundError:
+            return
+        time.sleep(.01)
+    pytest.fail("Descendant remained live after process-group termination")

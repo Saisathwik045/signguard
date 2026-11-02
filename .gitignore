@@ -228,3 +228,5 @@ benchmark-output/
 phase3-output/
 .env
 .streamlit/secrets.toml
+browser-artifacts/
+.integration-tmp/

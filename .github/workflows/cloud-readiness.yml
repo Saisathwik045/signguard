@@ -9,10 +9,10 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
-      - run: docker build -f deploy/Dockerfile.worker -t signguard-worker:phase3 .
-      - run: docker build -f deploy/Dockerfile.ui -t signguard-ui:phase3 .
-      - run: docker build -f deploy/Dockerfile.controller -t signguard-controller:phase3 .
-      - run: docker save signguard-worker:phase3 signguard-ui:phase3 signguard-controller:phase3 | gzip > private-candidates.tar.gz
+      - run: docker build -f deploy/Dockerfile.worker -t signguard-worker:phase4 .
+      - run: docker build -f deploy/Dockerfile.ui -t signguard-ui:phase4 .
+      - run: docker build -f deploy/Dockerfile.controller -t signguard-controller:phase4 .
+      - run: docker save signguard-worker:phase4 signguard-ui:phase4 signguard-controller:phase4 | gzip > private-candidates.tar.gz
       - uses: actions/upload-artifact@v4
         with:
           name: private-candidates
