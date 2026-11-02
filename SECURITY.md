@@ -104,3 +104,9 @@ Quota integration canaries use a 600-second window so slow VFS worker startups d
 during the test; the deployed default remains ten attempts per 60 seconds. Invalid authenticated
 requests also consume quota and are used to check admission without timing-dependent extra workers.
 The regression test separately checks default-window expiry. No forensic thresholds were changed.
+
+Static-scan review: Bandit B103 is explicitly scoped on the Unix socket's `0660` mode. Group write
+is required for the dedicated controller group to connect; the parent is `0750`, world access is
+absent, and production group membership is restricted. Changing it to owner-only breaks the tested
+UID boundary. This is a documented context-specific permission finding, not a global scanner skip
+or an OS-vulnerability waiver. The unsuppressed finding is retained in reviewed scan evidence.

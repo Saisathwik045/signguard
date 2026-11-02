@@ -75,7 +75,7 @@ def main():
     if path.exists():
         raise SystemExit("Refusing to replace an existing executor socket")
     server = socketserver.UnixStreamServer(str(path), ExecutorHandler)
-    os.chmod(path, 0o660)
+    os.chmod(path, 0o660)  # nosec B103 -- dedicated controller group only; parent is 0750, no world access
     try:
         server.serve_forever()
     finally:
