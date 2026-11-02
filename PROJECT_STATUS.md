@@ -62,13 +62,20 @@ warning. No upload service was started and no ports were opened.
 
 ## Private preview verification — 2026-11-02
 
-The deployable worker target was rebuilt from `deploy/Dockerfile.worker` as
-`signguard-worker:phase4` and scanned with Trivy 0.76.1. The raw report,
-`evaluation/phase4/os-scan-worker-phase4-2026-11-02.json`, is bound to image ID
-`sha256:f411b4c2e269c1dcf334f2082e00b9654de48427c7b91bdb46ac580d2e87602d` (Debian 12.15):
-2 CRITICAL and 41 HIGH findings. The earlier `os-scan-codespace-preview-2026-11-02.json` instead
-reports `signguard-worker:phase3` and does not establish the scan status of the deployable phase4
-image. Zero critical/high source-review findings do not establish zero image vulnerabilities.
+The deployable worker target was rebuilt without cache from `deploy/Dockerfile.worker` as
+`signguard-worker:phase4`, image ID
+`sha256:55db3e12417e6eff8015447632313acad08f2980ec59a911d010c30fbb0cdf69` (Debian 12.15).
+Pinned Trivy 0.76.1's OS-only scan is preserved at
+`evaluation/phase4/os-scan-worker-phase4-reassessment-2026-11-02.json`: 2 CRITICAL and 36 HIGH
+findings, none with a published fix. This is the deployment blocker; a zero-critical/high
+source-review result does not clear an OS-image gate.
+
+The earlier all-package scan reported five Python HIGH findings from an inaccurate third-party
+SBOM (for example, msgpack and setuptools are absent from this image, and its installed urllib3 is
+2.8.0). Trivy warned that the SBOM can be inaccurate. `pip-audit --skip-editable -r
+requirements-cloud.txt` found no known Python dependency vulnerabilities. Keep these results
+distinct: OS CVEs block image admission; the SBOM's stale language entries are not treated as
+installed packages or as evidence that the OS scan passed.
 
 The worker image build passed. The Docker isolation suite passed 17 tests against the phase4 tag;
 `ruff check .` passed and `pytest -q` passed 67 tests with 14 expected skips and one Starlette
@@ -80,13 +87,25 @@ worker containers remained. Gateway authentication-denial, raw-upload/media-rout
 worker report-generation tests passed. The full browser workflow (including authenticated report
 downloads) was not run against this image.
 
-The full browser stack was not started: the restricted executor account/service/socket and its
-required mount configuration are absent, all required private-preview/broker environment variables
-are unset, and the Codespaces ports API returned HTTP 404 for the available environment token while
-`gh` is unauthenticated. No private port forward or browser URL could be verified.
-`.devcontainer/devcontainer.json` requests notification-based forwarding and PRIVATE visibility for
-8501; 8080 remains ignored. This configuration is not proof of an active forward. No public port or
-PDF upload service was opened.
+On the final reassessment, the no-cache phase4 worker rebuild and UI/controller image builds passed.
+The 17 Docker isolation tests passed again against the rebuilt worker; `ruff check .`, the 67-pass
+regression suite (14 expected skips), Bandit (0 MEDIUM/HIGH), and the locked `pip-audit` scan also
+passed. The OS admission script still reports 38 blockers (2 CRITICAL, 36 HIGH). The three images
+were built but no service was started.
+
+The full browser stack was not started: the restricted RPC executor/socket and required mount
+configuration are absent, preview and broker secrets are unset, and the Codespaces ports API
+returned HTTP 404 while `gh` is unauthenticated. No private port forward or browser URL could be
+verified. `.devcontainer/devcontainer.json` requests notification-based forwarding and PRIVATE
+visibility for 8501; 8080 remains ignored. This setting does not prove an active private route.
+No listener or upload service was started.
+
+Even a synthetic-only preview must meet the image gate: the upload UI does not technically restrict
+input to generated fixtures. It also needs a verified GitHub-authenticated PRIVATE/TLS route, the
+authenticated gateway on every upload/media/WebSocket/download path, bounded worker execution via
+the restricted RPC boundary, and runtime-only credentials. Production-only gates remain the real
+OIDC/tenant integration, a dedicated restricted/rootless executor host, distributed abuse quotas,
+durable audit anchoring/retention, image provenance and deployment-domain operations.
 
 The Codex browser run uses a non-root host UI process because the 7.9 GiB VFS disk cannot keep all
 runtime images live together. That process shares the trusted test UID/filesystem and is NOT proof of
@@ -96,10 +115,10 @@ or user-reachable private preview URLs. Only synthetic documents are used in scr
 
 ## Security release blockers — not waived
 
-- Exact deployable Debian 12 worker scan: 41 HIGH and 2 CRITICAL findings. The earlier phase3
-  Codespace scan recorded 36 HIGH and 2 CRITICAL; it is retained as historical evidence, not as the
-  phase4 deployable image result. An evaluated Debian 13 alternative had 45 HIGH findings and was
-  not adopted. No exceptions or hidden/ignored findings were used to enable ingress.
+- Exact deployable Debian 12 worker OS scan: 36 HIGH and 2 CRITICAL findings. The earlier phase3
+  Codespace report and phase4 all-package report are retained as historical evidence, not substitutes
+  for the current phase4 OS-only scan. An evaluated Debian 13 alternative had 45 HIGH findings and
+  was not adopted. No exceptions or hidden/ignored findings were used to enable ingress.
 - Real cloud private routing/TLS and authenticated external browser probes are unavailable. Current
   proxy denies CONNECT to `api.github.com`; no verified Codespaces/hosting identity is bound. GitHub
   repository connector access works, but does not authorize Codespaces management or a paid host.
