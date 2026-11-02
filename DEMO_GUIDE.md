@@ -27,18 +27,47 @@ available environment token, so port visibility and a browser URL cannot be veri
 The devcontainer now requests notification-based forwarding with PRIVATE visibility for 8501;
 controller port 8080 remains ignored. No public port or development endpoint was opened.
 
-The preview was not started: the exact rebuilt deployable `signguard-worker:phase4` image
-(`sha256:f411b4c2e269c1dcf334f2082e00b9654de48427c7b91bdb46ac580d2e87602d`, Debian 12.15) scans
-with Trivy 0.76.1 findings of 2 CRITICAL and 41 HIGH. See
-`evaluation/phase4/os-scan-worker-phase4-2026-11-02.json`; the earlier Codespace preview scan is
-for `signguard-worker:phase3` and is not evidence for the final deployable tag. This Codespace also
-has no restricted executor account/service/socket or the executor and audit mount configuration
-required by the private stack. The `SIGNGUARD_*` preview and broker secrets are unset. Do not
-replace the executor boundary with direct Docker access or bypass these blockers.
+### Readiness gates: private development demo vs. production
 
-For a browser-only next step, the owner may open GitHub's Codespaces creation wizard for this branch,
-using an existing/free-quota environment only, and attach that environment to Codex. No local terminal,
-Python or Docker is needed. Do not approve paid provisioning as part of this workflow.
+The worker was rebuilt without cache as `signguard-worker:phase4`
+(`sha256:55db3e12417e6eff8015447632313acad08f2980ec59a911d010c30fbb0cdf69`). The pinned Trivy
+0.76.1 OS-only scan reports Debian 12.15 with 2 CRITICAL and 36 HIGH findings, none with a
+published fixed version. The exact report is
+`evaluation/phase4/os-scan-worker-phase4-reassessment-2026-11-02.json`. A separate all-package
+Trivy scan emitted Python findings from an inaccurate third-party SBOM (including packages absent
+from the image); the locked requirements audit found no known Python vulnerabilities. The OS scan
+still fails the repository's zero-HIGH/CRITICAL admission gate.
+
+Controls required even for a synthetic-only private preview:
+
+- The Codespaces route must actually be PRIVATE and TLS-protected, with GitHub account access and
+  the application gateway authenticating uploads, WebSockets, and report downloads. The devcontainer
+  setting is only a default; it does not prove an active private route. Never forward controller
+  port 8080.
+- PDF processing must use the existing bounded Unix RPC and disposable worker controls (non-root,
+  no network, read-only filesystem, no credentials, CPU/memory/PID/time/input/output limits and
+  cleanup). The UI/controller must not receive Docker access. The required executor socket/service
+  and mount configuration are absent here.
+- The clean OS-image admission gate remains required: “synthetic-only” is not enforced by the upload
+  UI, which accepts arbitrary PDFs. No critical/high OS finding may be waived for this preview.
+- The single-owner preview credential, gateway/service tokens, and private audit directory must be
+  provisioned at runtime. They are currently unset.
+
+Production-only requirements include real OIDC registration and tenant policy, a dedicated
+restricted/rootless executor host and service identity, distributed quotas/abuse and load controls,
+durable audit anchoring/retention, signed image provenance, and deployment-domain/TLS operations.
+These are not substitutes for the preview gates above.
+
+**Decision: do not start the preview.** In addition to the worker OS gate, Codespaces port visibility
+cannot be confirmed (the CLI is unauthenticated and the ports API returned HTTP 404), and this
+Codespace lacks the configured RPC executor/socket and runtime secrets. No route, listener, or
+public upload endpoint was created.
+
+**Next browser-only action:** open this existing Codespace in the GitHub/VS Code browser and inspect
+its Ports panel. If port 8501 is present, verify visibility is **Private**; do not forward 8080.
+This only verifies route configuration—it does not make the preview safe to start. Wait for the
+worker OS gate to clear and the RPC executor/runtime configuration to be provided. No local terminal,
+Python or Docker is needed.
 
 ## Before enabling a preview port
 
@@ -78,8 +107,8 @@ private gateway must protect uploads, WebSockets and downloads before any untrus
 `deploy/private-preview.compose.yaml` wires the authenticated gateway without requiring an external
 OIDC registration. It still binds only loopback and needs the privileged host executor, private audit
 permissions and release-gate clearance. A real externally reachable route has not been verified.
-The alternative Debian 13 scan still had 45 high findings; it was not adopted to hide the baseline's
-41 high and 2 critical findings. No vulnerability exceptions or release gates were waived.
+The alternative Debian 13 scan still had 45 high findings; it was not adopted to hide the current
+worker's 36 high and 2 critical OS findings. No vulnerability exceptions or release gates were waived.
 
 ## Verified remote evidence
 

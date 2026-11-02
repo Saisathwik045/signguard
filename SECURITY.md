@@ -46,7 +46,8 @@ Bandit reports no medium/high findings. Low-severity subprocess/exec findings re
 arguments are fixed except privately generated paths, and the Docker image/name are controlled
 by trusted deployment code. The launcher intentionally executes a trusted command after setting
 rlimits. These primitives remain privileged and require review whenever command construction changes.
-No OS/base-image CVE scan, penetration test, or software supply-chain attestation was completed.
+An exact phase4 worker OS scan is recorded below. A penetration test and software supply-chain
+attestation remain incomplete.
 
 ## Mandatory production gates still open
 
@@ -89,9 +90,12 @@ appends a local hash-chain receipt without retaining source uploads or logging d
 External audit anchoring, durable retention policy and production identity integration remain gates.
 
 An actual Trivy OS scan was added. Initial scanner startup failures (cache permissions and its own
-1 GiB memory cap) were not treated as successful scans. The completed Debian 12 scan contains high
-and critical findings without published fixed package versions, so release remains blocked. This
-is separate from passing Python dependency/static scans and from the PDF workers' unchanged limits.
+1 GiB memory cap) were not treated as successful scans. The fresh, no-cache phase4 Debian 12.15
+worker scan found 2 CRITICAL and 36 HIGH OS findings without published fixes. See
+`evaluation/phase4/os-scan-worker-phase4-reassessment-2026-11-02.json`. The separate locked
+Python dependency audit found no known vulnerabilities; a Trivy all-package pass also read stale
+third-party SBOM language entries that do not match installed packages and is not used to override
+the OS gate. Release remains blocked. This is separate from the PDF workers' unchanged limits.
 No claim of safe external deployment follows from successful functional tests or screenshots.
 
 The Codex loopback browser run used a host UI process sharing the trusted test UID/filesystem;
