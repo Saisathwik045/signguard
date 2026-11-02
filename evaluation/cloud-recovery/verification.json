@@ -1,0 +1,68 @@
+{
+  "base_main": "1afd8536efcaf88430335123127b68a6c31e2137",
+  "recovered_original_commits": [
+    "e8a4410",
+    "dda26f0",
+    "a3c82d3",
+    "2a89352"
+  ],
+  "nonbrowser_tests": {
+    "passed": 84,
+    "browser_skipped": 12
+  },
+  "synthetic_browser": {
+    "passed_tests": 1,
+    "examples": 5,
+    "screenshots": 5,
+    "scope": "Codex Cloud loopback process; GitHub Actions separately verifies container UI"
+  },
+  "os_worker": {
+    "critical": 2,
+    "high": 36,
+    "report": "os-final-worker.json"
+  },
+  "installed_python_audit": {
+    "dependencies": 21,
+    "known_vulnerabilities": 0
+  },
+  "external_url": null,
+  "external_ingress_enabled": false,
+  "worker_image_id": "sha256:976add9a3c886c519c2333f248d300eb27bd0961ea0f14201038055502dc8437",
+  "notes": [
+    "No inaccessible/unpushed work assumed recovered",
+    "Docker/dependency changes absent from the four original commits",
+    "All forensic detector sources byte-identical to merged main",
+    "OS updates did not remove high/critical findings",
+    "Container probe verified five bundled reports and absence of parser/backend modules",
+    "Cloud VFS disk failures and slow container creation fixed/handled before successful reruns"
+  ],
+  "github_actions": {
+    "verified_implementation_commit": "dfcba8bc07c01b576f62254ba79f8f926aa2727d",
+    "all_completed_success": true,
+    "cloud_tests": 41495818019,
+    "private_staging_integration": 41495817821,
+    "synthetic_only_cloud_demo": 41495817951,
+    "distinct_cases_passed": 96,
+    "authenticated_browser": {
+      "passed": 11,
+      "seconds": 58.17
+    },
+    "synthetic_container_browser": {
+      "passed": 1,
+      "examples": 5,
+      "seconds": 5.95
+    },
+    "synthetic_focused_checks": 31,
+    "synthetic_artifact_id": 13166068310,
+    "synthetic_artifact_sha256": "771d7ba7a1434247177cd11277de311b98b3ade758a862eae85b5da2c672c69b",
+    "worker_and_viewer_os_aggregate": {
+      "critical": 4,
+      "high": 72
+    },
+    "production_stack_os_aggregate": {
+      "critical": 6,
+      "high": 108
+    },
+    "external_admission": "BLOCKED"
+  }
+}

@@ -1,4 +1,64 @@
-# Project status — Phase 4
+# Project status — Codex Cloud integration and synthetic demo
+
+## Current recovery — 2026-11-02 UTC
+
+Integration branch `feature/cloud-synthetic-demo` starts at merged main `1afd853` (PR #4 merged).
+All four Codespaces commits were reviewed and cherry-picked, preserving their original authors:
+
+| Published commit | Recovered integration commit | Scope |
+| --- | --- | --- |
+| `e8a4410` | `fa9a53a` | Virtual environment and interpreter configuration |
+| `dda26f0` | `33bb6a9` | Historical worker checks and raw scan evidence |
+| `a3c82d3` | `499b11d` | Explicit worker-image selection, CI and readiness evidence |
+| `2a89352` | `86f805b` | Deployment assessment and historical final-image scan |
+
+The branch was initially unavailable, then was published and successfully fetched. No unpushed
+Codespaces files or runtime-only image changes can be recovered or inferred. These four commits
+contain no Dockerfile/dependency version changes. The inherited dependency constraints are retained;
+major newer parser releases were not adopted without a compatibility/security reason. Notification-based
+port forwarding was changed back to `ignore`; private visibility defaults and venv settings remain.
+Codespaces is optional historical configuration, not a required development platform.
+
+The worker Dockerfile now applies available OS updates and copies runtime modules without bundling
+demo PDFs/reports. Final worker ID: `sha256:976add9a3c886c519c2333f248d300eb27bd0961ea0f14201038055502dc8437`.
+Fresh pinned Trivy evidence matches this ID: **2 CRITICAL, 36 HIGH**, so external admission is blocked.
+Installed-image Python dependency audit is clean. `evaluation/cloud-recovery/` contains fresh raw
+scan, image identity, audit, JUnit and release-admission evidence; recovered Codespaces scans are
+historical only. Scanner disk failures were resolved using a bounded ephemeral database mount;
+failed attempts were not counted as successful scans.
+
+The new `synthetic_demo.py` has no arbitrary input and no live analysis/privileged backend. Five trusted
+bundled PDFs are analyzed automatically by disposable workers during generation/CI. Hash-checked
+reports include actual images, current/signed comparison and downloadable JSON/PDF triage reports.
+Bundled synthetic fixtures are explicitly requested for this demo; no private key or real document
+is stored. Production `app.py`, authentication, broker and release gates remain separate.
+
+Final-image regression run: **84 passed**, 12 explicit browser cases skipped, one existing Starlette
+deprecation warning. This includes actual memory enforcement, non-root/read-only/network checks,
+CPU/PID/memory/tmpfs settings, credential isolation and failed-worker cleanup. Real Chromium demo
+and authenticated-stack verification are recorded separately with their JUnit/artifacts and CI runs.
+The real Codex Chromium scenario passed all five demo examples, ten report downloads and actual image
+decoding, producing five screenshots. It uses the cloud-process viewer; Actions verifies the container
+browser path separately. A real container probe verified five bundles and absence of parser/backend
+modules. Slow VFS container creation exposed a harness cleanup race; creation is now awaited before
+health polling and cleanup. The exact final worker was archived/restored to test within the disk cap.
+No benchmark detector was changed or tuned; prior measured results remain historical evidence.
+
+Implementation commit `dfcba8b` passed all three PR workflows: Cloud tests [41495818019](https://github.com/Saisathwik045/signguard/actions/runs/41495818019),
+Private staging integration [41495817821](https://github.com/Saisathwik045/signguard/actions/runs/41495817821),
+and Synthetic-only cloud demo [41495817951](https://github.com/Saisathwik045/signguard/actions/runs/41495817951).
+That verifies **96 distinct test cases** across the overlapping suites: 84 regression/isolation,
+11 authenticated browser, and one five-example synthetic browser scenario. The synthetic workflow
+passed 31 focused unit/isolation checks and its real **container-hosted** browser test (5.95 seconds),
+then retained 27 evidence files. Fresh aggregate scans still blocked admission: 76 high/critical
+findings across worker+viewer images; 114 across worker+production UI+controller. These aggregate
+counts must not be confused with the exact Codex worker's 38 findings. No image gate was waived.
+
+No external URL or ingress exists. Remaining upload-service release requirements are remediation of
+the OS findings, an authorized private runtime/TLS route and signed-in/out browser probes, production
+OIDC/tenant policy, restricted executor authority, durable audit anchoring and deployment operations.
+
+## Historical Phase 4 implementation record
 
 Started from merged main `24d12ac`; PR #3 was confirmed merged and its checks passed.
 Feature branch: `feature/phase4-private-integration`. All execution is remote. No paid infrastructure,
@@ -45,6 +105,68 @@ was reduced after the cloud VFS disk filled. A descendant-kill test now waits a 
 for asynchronous SIGKILL delivery instead of racing the scheduler. Slow-worker quota tests use an
 explicit longer window and invalid-request admission, preserving deployed defaults.
 
+## Codespace resumption verification — 2026-11-02
+
+The resumed `feature/codespace-private-readiness` worktree was clean and had no active build, scan,
+or test process. A cached worker image and earlier scan reports were present. The worker image was
+rebuilt successfully as `signguard-worker:phase3` (manifest
+`sha256:90fce9b77e24c327fe9977b6bba23f4e8de39dce2e92b56a20633ece2a5dcee2`), then scanned with the
+workflow-pinned Trivy image. The raw current-image report is
+`evaluation/phase4/os-scan-codespace-2026-11-02.json`: Debian 12.15 has 2 CRITICAL and 36 HIGH
+findings, all without a published fixed version. These remain release blockers.
+
+`ruff check .` passed. Bandit reported 0 MEDIUM/HIGH and 14 LOW findings; pip-audit found no known
+vulnerabilities across 88 installed dependencies. The Docker isolation suite passed 17 tests, and
+the full regression suite passed 67 tests with 14 expected skips and one Starlette deprecation
+warning. No upload service was started and no ports were opened.
+
+## Private preview verification — 2026-11-02
+
+The deployable worker target was rebuilt without cache from `deploy/Dockerfile.worker` as
+`signguard-worker:phase4`, image ID
+`sha256:55db3e12417e6eff8015447632313acad08f2980ec59a911d010c30fbb0cdf69` (Debian 12.15).
+Pinned Trivy 0.76.1's OS-only scan is preserved at
+`evaluation/phase4/os-scan-worker-phase4-reassessment-2026-11-02.json`: 2 CRITICAL and 36 HIGH
+findings, none with a published fix. This is the deployment blocker; a zero-critical/high
+source-review result does not clear an OS-image gate.
+
+The earlier all-package scan reported five Python HIGH findings from an inaccurate third-party
+SBOM (for example, msgpack and setuptools are absent from this image, and its installed urllib3 is
+2.8.0). Trivy warned that the SBOM can be inaccurate. `pip-audit --skip-editable -r
+requirements-cloud.txt` found no known Python dependency vulnerabilities. Keep these results
+distinct: OS CVEs block image admission; the SBOM's stale language entries are not treated as
+installed packages or as evidence that the OS scan passed.
+
+The worker image build passed. The Docker isolation suite passed 17 tests against the phase4 tag;
+`ruff check .` passed and `pytest -q` passed 67 tests with 14 expected skips and one Starlette
+deprecation warning. Five synthetic PDFs were generated at runtime and analyzed by phase4
+disposable workers: genuine signed and unsigned were inconclusive, byte tampering was detected,
+shadow reveal required review, and visual-only signature evidence remained inconclusive. Every
+report included a generated PDF report and `docker_disposable`/network-isolation controls; no
+worker containers remained. Gateway authentication-denial, raw-upload/media-route protection, and
+worker report-generation tests passed. The full browser workflow (including authenticated report
+downloads) was not run against this image.
+
+On the final reassessment, the no-cache phase4 worker rebuild and UI/controller image builds passed.
+The 17 Docker isolation tests passed again against the rebuilt worker; `ruff check .`, the 67-pass
+regression suite (14 expected skips), Bandit (0 MEDIUM/HIGH), and the locked `pip-audit` scan also
+passed. The OS admission script still reports 38 blockers (2 CRITICAL, 36 HIGH). The three images
+were built but no service was started.
+
+The full browser stack was not started: the restricted RPC executor/socket and required mount
+configuration are absent, preview and broker secrets are unset, and the Codespaces ports API
+returned HTTP 404 while `gh` is unauthenticated. No private port forward or browser URL could be
+verified. `.devcontainer/devcontainer.json` requests notification-based forwarding and PRIVATE
+visibility for 8501; 8080 remains ignored. This setting does not prove an active private route.
+No listener or upload service was started.
+
+Even a synthetic-only preview must meet the image gate: the upload UI does not technically restrict
+input to generated fixtures. It also needs a verified GitHub-authenticated PRIVATE/TLS route, the
+authenticated gateway on every upload/media/WebSocket/download path, bounded worker execution via
+the restricted RPC boundary, and runtime-only credentials. Production-only gates remain the real
+OIDC/tenant integration, a dedicated restricted/rootless executor host, distributed abuse quotas,
+durable audit anchoring/retention, image provenance and deployment-domain operations.
+
 The Codex browser run uses a non-root host UI process because the 7.9 GiB VFS disk cannot keep all
 runtime images live together. That process shares the trusted test UID/filesystem and is NOT proof of
 UI sandboxing. Controller and PDF workers are containers. CI uses containers for all tiers and must
@@ -53,9 +175,10 @@ or user-reachable private preview URLs. Only synthetic documents are used in scr
 
 ## Security release blockers — not waived
 
-- Completed Debian 12 OS scan: 36 HIGH, 2 CRITICAL findings; no fixed package versions listed for
-  those findings. An evaluated Debian 13 alternative had 45 HIGH findings and was not adopted.
-  Both raw reports are retained. No exceptions or hidden/ignored findings were used to enable ingress.
+- Exact deployable Debian 12 worker OS scan: 36 HIGH and 2 CRITICAL findings. The earlier phase3
+  Codespace report and phase4 all-package report are retained as historical evidence, not substitutes
+  for the current phase4 OS-only scan. An evaluated Debian 13 alternative had 45 HIGH findings and
+  was not adopted. No exceptions or hidden/ignored findings were used to enable ingress.
 - Real cloud private routing/TLS and authenticated external browser probes are unavailable. Current
   proxy denies CONNECT to `api.github.com`; no verified Codespaces/hosting identity is bound. GitHub
   repository connector access works, but does not authorize Codespaces management or a paid host.

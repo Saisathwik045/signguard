@@ -1,0 +1,9 @@
+{
+  "image_id": "sha256:976add9a3c886c519c2333f248d300eb27bd0961ea0f14201038055502dc8437",
+  "created": "2026-11-02T17:38:24.104158932Z",
+  "user": "65532:65532",
+  "size_bytes": 512843927,
+  "scan_matches_image": true,
+  "base": "python:3.12-slim-bookworm",
+  "source_scope": "runtime Python modules only; demo fixtures and reports excluded"
+}

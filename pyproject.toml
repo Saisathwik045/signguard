@@ -22,3 +22,6 @@ pythonpath = ["src", "."]
 
 [tool.ruff]
 line-length = 110
+
+[tool.setuptools.package-data]
+signguard = ["demo_assets/*.json", "demo_assets/*.pdf"]

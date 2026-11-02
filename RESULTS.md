@@ -1,4 +1,47 @@
-# Phase 3 results
+# Results — preserved forensic evaluation and cloud integration
+
+## Codex recovery verification — 2026-11-02 UTC
+
+No detector or benchmark-score tuning was performed. All four Codespaces commits through `2a89352`
+were integrated from the published branch onto merged main `1afd853`. Fresh evidence is in
+`evaluation/cloud-recovery/`; the recovered Codespaces scan files remain explicitly historical.
+
+The final worker `sha256:976add9a3c886c519c2333f248d300eb27bd0961ea0f14201038055502dc8437`
+was built in Codex Cloud with available OS updates and freshly scanned using pinned Trivy 0.76.1:
+**2 CRITICAL, 36 HIGH, 116 MEDIUM, 105 LOW, 8 UNKNOWN** OS package findings. The scan's image ID
+matches the tested image. No findings were suppressed; OS release admission is blocked.
+The audit of packages actually installed in this worker found no known Python vulnerabilities.
+
+Regression and enabled Docker controls: **84 passed, 12 explicit browser cases skipped**, with one
+existing Starlette TestClient deprecation warning. Thirteen new demo checks cover all five actual
+report classifications, digest/path rejection, PDF readability and no analysis-backend invocation.
+The Docker checks also verify memory/PID/CPU configuration, tmpfs bounds, zero effective capabilities,
+no-new-privileges and cleanup after a real worker failure. Real Chromium tests are separate; their
+JUnit and screenshot artifacts distinguish cloud-process and container-hosted scope.
+The Codex demo browser scenario passed in 14.63 seconds: five selections, ten actual report downloads,
+decoded evidence images, no file inputs and five reviewed screenshots. Its viewer ran as a cloud
+process; the full container browser scenario is assigned to Actions. A separate real demo-container
+probe validated all bundles and absence of parser/backend modules. Cloud VFS disk exhaustion and
+slow-start cleanup races were not counted as passes; the harness and cache usage were corrected.
+
+The five synthetic demo examples produce the same verdicts listed in DEMO_GUIDE.md. They are
+curated integration examples, not independent statistical evaluation or improved accuracy claims.
+The viewer serves automatically generated snapshots and has no upload/URL/path interface.
+No external URL, TLS route or hosted release is claimed by these tests.
+
+Implementation commit `dfcba8b` also passed GitHub Actions runs
+[41495818019](https://github.com/Saisathwik045/signguard/actions/runs/41495818019) (Python 3.11/3.12,
+benchmark smoke, isolated-worker/static/dependency checks),
+[41495817821](https://github.com/Saisathwik045/signguard/actions/runs/41495817821) (11 authenticated
+container-stack browser tests in 58.17 seconds and all three image scans), and
+[41495817951](https://github.com/Saisathwik045/signguard/actions/runs/41495817951) (31 focused checks,
+one five-example **container-hosted** browser test in 5.95 seconds, worker/viewer scans and installed
+dependency audit). Across overlapping suites, **96 distinct tests passed**. Fresh scans still block
+admission: worker+viewer combined 4 CRITICAL/72 HIGH; worker+production UI+controller combined
+6 CRITICAL/108 HIGH. These are aggregate image-package findings, not unique CVEs or the single
+Codex worker count above. Functional workflow success is not security release approval.
+
+## Historical Phase 3 results
 
 Measured in Codex Cloud on 2026-11-02 (Asia/Calcutta).
 

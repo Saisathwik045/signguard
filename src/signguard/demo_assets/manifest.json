@@ -1,0 +1,32 @@
+{
+  "cases": {
+    "genuine_signed": {
+      "pdf_sha256": "5ff630b9a436b620f99382a22ffcd07f2e83dea445bfa9ef19d3681d05ce1e04",
+      "report_sha256": "af4d5c1f46181edc4323c548cc14994df0da0bad7577392dc57ccac998a17072",
+      "source": "Trusted generated synthetic; no private key or user document"
+    },
+    "shadow_modified": {
+      "pdf_sha256": "273d38921f72b1cfdcae009ac83bbd8d9246c589fe6e0f8593e22a7d01ab8daa",
+      "report_sha256": "40ee644eb89a589854d0b21a6493c928a52e703015c4048f0b554b5f09639c21",
+      "source": "Trusted generated synthetic; no private key or user document"
+    },
+    "tampered": {
+      "pdf_sha256": "cd5a0709335c9f03dd032a1a11e97c78512725c37df9fc610f375492cc2c3711",
+      "report_sha256": "3f19663070a92a8ee85c8e7b7ba23a7c3b05e2d4797dd8a267b1a42ded163e64",
+      "source": "Trusted generated synthetic; no private key or user document"
+    },
+    "unsigned": {
+      "pdf_sha256": "85a0c3a1c7439ebf5699864ffb755b0f738626553c4ff076f0f3eecb43e4779b",
+      "report_sha256": "18ecb98c52aceb469291e8f21150e21ebf5cfa1d4ed96e94cc1f0d5fa21dd886",
+      "source": "Trusted generated synthetic; no private key or user document"
+    },
+    "visual_only": {
+      "pdf_sha256": "23ded928d6fa6a70afe162b308f54b5722884460d30bdb957cf59055b6318013",
+      "report_sha256": "6ef095f00e9e7ccc211dc4d4bc956da446afc5a4d80f212dc213ce356aa47870",
+      "source": "Trusted generated synthetic; no private key or user document"
+    }
+  },
+  "generated_at": "2026-11-02T17:40:49.230843+00:00",
+  "schema_version": 1,
+  "worker_image_id": "sha256:976add9a3c886c519c2333f248d300eb27bd0961ea0f14201038055502dc8437"
+}

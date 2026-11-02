@@ -1,5 +1,25 @@
 # Private cloud deployment preparation — not deployed
 
+## Separate synthetic-only build candidate
+
+`deploy/Dockerfile.demo` packages only the Streamlit viewer and verified synthetic catalogue.
+`deploy/synthetic-demo.compose.yaml` defines a non-root/read-only viewer with dropped capabilities,
+no-new-privileges, bounded CPU/memory/PIDs/tmpfs and a loopback-only port. It has no uploads,
+production broker credentials, executor socket or Docker access. This is separate from the existing
+private upload-service definitions; it does not replace their authentication or worker boundary.
+
+The **Synthetic-only cloud demo** workflow automatically builds the final worker, reanalyzes all
+bundled PDFs in disposable containers, builds the viewer, verifies absence of parser/executor modules,
+drives container-hosted Chromium smoke tests and retains reports/screenshots/JUnit/scan artifacts.
+Fresh worker and viewer OS scans produce explicit release-admission evidence; green functional CI
+never approves external ingress. Installed worker Python packages are audited independently of SBOMs.
+
+No Codespaces, local execution, public port or paid provisioning is required for this workflow.
+No external demonstration URL is available. The current final worker scan has 2 CRITICAL and
+36 HIGH OS findings. External upload ingress remains blocked pending remediation, private TLS
+routing, authentication/authorization probes, restricted executor authority and durable audit storage.
+The synthetic viewer also needs its own image and private-host/TLS assessment before external use.
+
 ## Architecture
 
 A cost-conscious starting point is a small dedicated Linux VM, sized for at least one 1 GiB worker

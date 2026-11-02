@@ -230,3 +230,6 @@ phase3-output/
 .streamlit/secrets.toml
 browser-artifacts/
 .integration-tmp/
+demo-artifacts/
+evaluation/cloud-recovery/trivy-cache/
+evaluation/cloud-recovery/*.log

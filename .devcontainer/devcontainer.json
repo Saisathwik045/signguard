@@ -7,9 +7,16 @@
   },
   "forwardPorts": [],
   "portsAttributes": {
-    "8501": {"label": "SignGuard — keep PRIVATE", "onAutoForward": "ignore"},
+    "8501": {"label": "SignGuard — keep PRIVATE", "onAutoForward": "ignore", "visibility": "private"},
     "8080": {"onAutoForward": "ignore"}
   },
-  "postCreateCommand": "python -m pip install 'pip>=26.2,<27' && python -m pip install -c requirements-cloud.txt -e '.[dev]'",
+  "postCreateCommand": "python -m venv .venv && .venv/bin/python -m pip install 'pip>=26.2,<27' && .venv/bin/python -m pip install -c requirements-cloud.txt '.[dev]'",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python"
+      }
+    }
+  },
   "remoteUser": "vscode"
 }

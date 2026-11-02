@@ -1,0 +1,13 @@
+{
+  "scope": "cloud_loopback_only",
+  "deployed_external_url": null,
+  "cases": [
+    "genuine_signed",
+    "tampered",
+    "shadow_modified",
+    "visual_only",
+    "unsigned"
+  ],
+  "uploads_enabled": false,
+  "runtime": "cloud_process"
+}
