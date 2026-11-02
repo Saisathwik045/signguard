@@ -72,3 +72,20 @@ OIDC registration. It still binds only loopback and needs the privileged host ex
 permissions and release-gate clearance. A real externally reachable route has not been verified.
 The alternative Debian 13 scan still had 45 high findings; it was not adopted to hide the baseline's
 36 high and 2 critical findings. No vulnerability exceptions or release gates were waived.
+
+## Verified remote evidence
+
+[All-container browser run](https://github.com/Saisathwik045/signguard/actions/runs/41413174237)
+and [regression/security run](https://github.com/Saisathwik045/signguard/actions/runs/41413174218)
+passed for implementation commit `711a2c4`. This is verified cloud integration, not deployment approval.
+
+![Shadow-attack browser result](evaluation/phase4/screenshots/03-shadow_reveal.png)
+
+The image above is a real Chromium capture using only synthetic documents. Additional screenshots
+are browsable in `evaluation/phase4/screenshots/` on GitHub without local commands or installations.
+All downloads and scan artifacts remain in the Actions run.
+
+To continue toward a live URL, the minimum missing access is a browser-authorized private Codespace
+or existing staging host (existing/free quota only). Connecting it does not waive the OS findings.
+The current runtime cannot manage Codespaces because its API path is blocked and no provider identity
+is bound. Do not paste tokens or secrets into chat; use the cloud provider's protected connection UI.

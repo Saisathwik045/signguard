@@ -776,19 +776,19 @@
     "limitations": "Forensic triage only; JSON carries the controller audit receipt"
   },
   "worker_measurements": {
-    "analysis_seconds": 0.44093624699962675,
-    "process_peak_rss_mib": 148.33203125
+    "analysis_seconds": 0.2827844080002251,
+    "process_peak_rss_mib": 148.2890625
   },
   "execution_controls": {
-    "elapsed_seconds": 13.59927284999958,
+    "elapsed_seconds": 9.820484986001247,
     "isolation": "docker_disposable",
     "network_isolation": true,
     "filesystem_isolation": true,
     "executor_boundary": "restricted_unix_rpc"
   },
   "audit_receipt": {
-    "head": "473a741dd7f2843d69ca23538b52983db1e03f270b7fda9e85eb1c799d0e7077",
-    "report_digest": "56cb761a67dfadd31e6a6c9c2925196df85c9e798c8d9bdd67263db431e99e7f",
+    "head": "3a6659e46a955f5f398d8d0931fe13852bc90c0fddc2e16a1de7e888b5c4c143",
+    "report_digest": "c66890e0684d216bd15a1f7422d4c40953eaa814b50d3750c83ce394452ead69",
     "anchoring": "controller_local_head_not_externally_anchored"
   }
 }

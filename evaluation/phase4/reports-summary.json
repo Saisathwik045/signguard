@@ -5,13 +5,13 @@
     "classification": "cryptographic",
     "evidence_images": 2,
     "controls": {
-      "elapsed_seconds": 13.59927284999958,
+      "elapsed_seconds": 9.820484986001247,
       "isolation": "docker_disposable",
       "network_isolation": true,
       "filesystem_isolation": true,
       "executor_boundary": "restricted_unix_rpc"
     },
-    "audit_head": "473a741dd7f2843d69ca23538b52983db1e03f270b7fda9e85eb1c799d0e7077"
+    "audit_head": "3a6659e46a955f5f398d8d0931fe13852bc90c0fddc2e16a1de7e888b5c4c143"
   },
   {
     "case": "visual_signature-report",
@@ -19,13 +19,13 @@
     "classification": "visual_candidate",
     "evidence_images": 1,
     "controls": {
-      "elapsed_seconds": 11.79429109099965,
+      "elapsed_seconds": 9.765147747999436,
       "isolation": "docker_disposable",
       "network_isolation": true,
       "filesystem_isolation": true,
       "executor_boundary": "restricted_unix_rpc"
     },
-    "audit_head": "d0dafb41b18922e8f4c6ec4d44c0ddf8bb5301e1578d13c2618442d3a5bab4e0"
+    "audit_head": "86380c3848885d11f617439361814cf9fabd3bf8e6a2eac0c84154886f122d98"
   },
   {
     "case": "tampered_bytes-report",
@@ -33,13 +33,13 @@
     "classification": "cryptographic",
     "evidence_images": 1,
     "controls": {
-      "elapsed_seconds": 18.71209442700001,
+      "elapsed_seconds": 11.754732691000754,
       "isolation": "docker_disposable",
       "network_isolation": true,
       "filesystem_isolation": true,
       "executor_boundary": "restricted_unix_rpc"
     },
-    "audit_head": "0922f70d4538608704bb88f3bd1699f6c2aa266947b61a92740126228eeb5579"
+    "audit_head": "7740ad55caf76e77e08893f29f73b36d34ff17b28d15aa11c4e3a4a38cd1f4c1"
   },
   {
     "case": "unsigned-report",
@@ -47,13 +47,13 @@
     "classification": "unsigned",
     "evidence_images": 1,
     "controls": {
-      "elapsed_seconds": 16.085395473000062,
+      "elapsed_seconds": 10.874528987998929,
       "isolation": "docker_disposable",
       "network_isolation": true,
       "filesystem_isolation": true,
       "executor_boundary": "restricted_unix_rpc"
     },
-    "audit_head": "d9fcb64e599f5913a8b4ada61af2ab389e1b693d0b2cf586363cd035a7b8549c"
+    "audit_head": "9a9e83007c985807ab949e63734bfc96f19049020acc8cd37fd808d6093f8b0d"
   },
   {
     "case": "genuine_signed-report",
@@ -61,12 +61,12 @@
     "classification": "cryptographic",
     "evidence_images": 1,
     "controls": {
-      "elapsed_seconds": 16.871008434000032,
+      "elapsed_seconds": 9.792994217999876,
       "isolation": "docker_disposable",
       "network_isolation": true,
       "filesystem_isolation": true,
       "executor_boundary": "restricted_unix_rpc"
     },
-    "audit_head": "bf91123187423ec04173be02e6fe1a731dedd76219d35e5e0edfb4a3626cedb7"
+    "audit_head": "2698003a03c9fa67ce42d5249339909408f08e1e73ffdf57cfa57a6e7da2c1a4"
   }
 ]

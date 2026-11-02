@@ -113,3 +113,15 @@ candidate/pair limit is explicitly marked partial. Limits cannot replace worker 
 and the **unmet public deployment gate**: disposable network-isolated workers, external CPU/memory/
 wall-clock/storage limits, authenticated tenant access, quotas, retention controls and patching.
 [PROJECT_STATUS.md](PROJECT_STATUS.md) records implementation and verification status.
+
+## Phase 4 private demonstration
+
+The browser flow now uses a private authenticated gateway, a controller with no Docker socket, a narrow
+Unix executor, and disposable PDF workers. It returns actual annotated evidence and downloadable
+JSON/PDF reports. UI dependencies are in `.[ui]` (and included in `.[dev]`); the worker image stays lean.
+See [DEMO_GUIDE.md](DEMO_GUIDE.md) for browser-only access to screenshots and CI evidence.
+
+**No user-accessible live URL is deployed.** Functional tests pass, but OS scan findings and missing
+browser-authorized private hosting/TLS access keep external ingress blocked. The Codespaces template
+automatically forwards no ports. Release checks require private-route/authentication evidence and
+clean OS/dependency scans; no paid infrastructure or vulnerable endpoint was provisioned.

@@ -111,3 +111,9 @@ were fixed before the successful run. Successful reports include verified digest
 worker isolation controls and a signed/current evidence pair for the shadow case. PDF downloads were
 reopened and checked; no PDF report is offered when the analysis fails. Raw evidence is retained in
 `evaluation/phase4/` and GitHub Actions artifacts. The OS scan is a separate unresolved release gate.
+
+Final implementation verification: 70 non-browser tests and 11 remote gateway browser tests passed.
+GitHub Actions run 41413174237 passed the full all-container UI/controller/executor/worker flow,
+including direct anonymous/post-logout download denial, screenshots, downloads and OS scan collection.
+Cloud tests run 41413174218 passed both Python versions and the isolated-worker/static/dependency job.
+OS release admission remained blocked despite successful functional CI. The private live URL is absent.

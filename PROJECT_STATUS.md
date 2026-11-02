@@ -22,13 +22,20 @@ public ingress or user-accessible preview URL was created.
 
 ## Actual verification and defects found
 
-The initial remote loopback browser run passed 11 tests across signed, tampered, shadow-modified,
+The final authenticated-gateway remote loopback browser run passed 11 tests across signed, tampered, shadow-modified,
 visual-only, unsigned, unsupported and oversized inputs, downloads, login/logout, quota/concurrency,
-audit and outage handling. The new gateway adds direct anonymous/post-logout media denial tests;
-its final browser result and GitHub Actions checks are recorded in the final task report.
+audit and outage handling. The gateway tests include direct anonymous/post-logout media denial. Cloud JUnit records 70 passing
+non-browser tests (11 browser cases explicitly skipped in that command) and 11 passing browser cases
+in the separate live stack run: 81 distinct tested cases. GitHub Actions verification is recorded
+below and in the final task report.
 
 The non-browser suite and additional gateway contracts were executed in cloud; all 60 prior tests
-remain present. Explicit resource tests still exercise Docker CPU/memory/network/read-only behavior.
+remain present. Final measured cloud results: 70 non-browser checks passed, plus 11 passing browser
+checks (81 distinct cases). The browser run includes anonymous and post-logout direct download denial.
+Implementation commit `711a2c4` passed all GitHub Actions checks: Cloud tests run 41413174218 and
+Private staging integration run 41413174237. The latter built all three containers, passed all browser
+cases, completed all OS scans and uploaded artifacts. Functional green status does NOT override the
+separately blocked release admission. Documentation/evidence refresh follows those verified checks. Explicit resource tests still exercise Docker CPU/memory/network/read-only behavior.
 The final suite counts are reported from JUnit, not inferred from static test collection.
 
 Real integration defects fixed: internal-only network prevented published loopback routing; umask

@@ -1,19 +1,19 @@
 {
   "errors": [],
-  "generated_at": "2026-11-02T07:39:31Z",
+  "generated_at": "2026-11-02T08:20:16Z",
   "metrics": {
     "_totals": {
-      "CONFIDENCE.HIGH": 12,
+      "CONFIDENCE.HIGH": 13,
       "CONFIDENCE.LOW": 0,
       "CONFIDENCE.MEDIUM": 1,
       "CONFIDENCE.UNDEFINED": 0,
       "SEVERITY.HIGH": 0,
-      "SEVERITY.LOW": 12,
-      "SEVERITY.MEDIUM": 1,
+      "SEVERITY.LOW": 14,
+      "SEVERITY.MEDIUM": 0,
       "SEVERITY.UNDEFINED": 0,
-      "loc": 1148,
+      "loc": 1297,
       "nosec": 0,
-      "skipped_tests": 0
+      "skipped_tests": 1
     },
     "src/signguard/__init__.py": {
       "CONFIDENCE.HIGH": 0,
@@ -94,17 +94,17 @@
       "skipped_tests": 0
     },
     "src/signguard/executor.py": {
-      "CONFIDENCE.HIGH": 1,
+      "CONFIDENCE.HIGH": 0,
       "CONFIDENCE.LOW": 0,
       "CONFIDENCE.MEDIUM": 0,
       "CONFIDENCE.UNDEFINED": 0,
       "SEVERITY.HIGH": 0,
       "SEVERITY.LOW": 0,
-      "SEVERITY.MEDIUM": 1,
+      "SEVERITY.MEDIUM": 0,
       "SEVERITY.UNDEFINED": 0,
       "loc": 73,
       "nosec": 0,
-      "skipped_tests": 0
+      "skipped_tests": 1
     },
     "src/signguard/images.py": {
       "CONFIDENCE.HIGH": 0,
@@ -197,6 +197,19 @@
       "nosec": 0,
       "skipped_tests": 0
     },
+    "src/signguard/preview_web.py": {
+      "CONFIDENCE.HIGH": 2,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 2,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 149,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
     "src/signguard/release_gate.py": {
       "CONFIDENCE.HIGH": 0,
       "CONFIDENCE.LOW": 0,
@@ -250,26 +263,5 @@
       "skipped_tests": 0
     }
   },
-  "results": [
-    {
-      "code": "77     server = socketserver.UnixStreamServer(str(path), ExecutorHandler)\n78     os.chmod(path, 0o660)\n79     try:\n",
-      "col_offset": 4,
-      "end_col_offset": 25,
-      "filename": "src/signguard/executor.py",
-      "issue_confidence": "HIGH",
-      "issue_cwe": {
-        "id": 732,
-        "link": "https://cwe.mitre.org/data/definitions/732.html"
-      },
-      "issue_severity": "MEDIUM",
-      "issue_text": "Chmod setting a permissive mask 0o660 on file (path).",
-      "line_number": 78,
-      "line_range": [
-        78
-      ],
-      "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b103_set_bad_file_permissions.html",
-      "test_id": "B103",
-      "test_name": "set_bad_file_permissions"
-    }
-  ]
+  "results": []
 }
