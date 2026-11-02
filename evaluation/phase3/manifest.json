@@ -1,0 +1,5792 @@
+[
+  {
+    "base_id": "development-0",
+    "expected_class": "cryptographic",
+    "family": "signed",
+    "id": "development-signed-0",
+    "malicious": false,
+    "path": "development-signed-0.pdf",
+    "sha256": "62709e694359dda5a2973b54afd8880a833a103757325413e8c319eceec64cbe",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-1",
+    "expected_class": "cryptographic",
+    "family": "signed",
+    "id": "development-signed-1",
+    "malicious": false,
+    "path": "development-signed-1.pdf",
+    "sha256": "dd6da605f03b80260d684b65f012520d9fa5d63e0b3261bfa1590d534da98761",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-2",
+    "expected_class": "cryptographic",
+    "family": "signed",
+    "id": "development-signed-2",
+    "malicious": false,
+    "path": "development-signed-2.pdf",
+    "sha256": "eb3958a6fbe159702b773d274a69e9e165a3edc57985e6de0c084d9b6992eaca",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-3",
+    "expected_class": "cryptographic",
+    "family": "signed",
+    "id": "development-signed-3",
+    "malicious": false,
+    "path": "development-signed-3.pdf",
+    "sha256": "9d3f2066f6137bd248188c98dd4d3ccc9858ebf67afba69709074b4e9b082cb7",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-4",
+    "expected_class": "cryptographic",
+    "family": "signed",
+    "id": "development-signed-4",
+    "malicious": false,
+    "path": "development-signed-4.pdf",
+    "sha256": "36787a69493104eb34349d5c89ed2d7dfb7475846e607421a5db62e20e9b954f",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-0",
+    "expected_class": "cryptographic",
+    "family": "byte_tamper",
+    "id": "development-byte_tamper-0",
+    "malicious": true,
+    "path": "development-byte_tamper-0.pdf",
+    "sha256": "8ab4a5fb0f133303ab77f36f9ce94127c065884edb6f183c5acc9426680f230f",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-1",
+    "expected_class": "cryptographic",
+    "family": "byte_tamper",
+    "id": "development-byte_tamper-1",
+    "malicious": true,
+    "path": "development-byte_tamper-1.pdf",
+    "sha256": "ff40183b859228ddc23cdbb3544ec497e54efb74b2b1c799969e8a5af020ba61",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-2",
+    "expected_class": "cryptographic",
+    "family": "byte_tamper",
+    "id": "development-byte_tamper-2",
+    "malicious": true,
+    "path": "development-byte_tamper-2.pdf",
+    "sha256": "7978e306e20d9f80349a408fbd1988026bd57799c88cdccdca080bc8936755f7",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-3",
+    "expected_class": "cryptographic",
+    "family": "byte_tamper",
+    "id": "development-byte_tamper-3",
+    "malicious": true,
+    "path": "development-byte_tamper-3.pdf",
+    "sha256": "8177c2bbd3a2087e30b488bc6f24b475abd9fac0c5abec544bbb0a8f2f3824c9",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-4",
+    "expected_class": "cryptographic",
+    "family": "byte_tamper",
+    "id": "development-byte_tamper-4",
+    "malicious": true,
+    "path": "development-byte_tamper-4.pdf",
+    "sha256": "e161ea0d720327281e8637996e3ff3d204d5ed986ed829a31b894940dcabb310",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-0",
+    "expected_class": "cryptographic",
+    "family": "reveal",
+    "id": "development-reveal-0",
+    "malicious": true,
+    "path": "development-reveal-0.pdf",
+    "sha256": "a649cd99650b77c2633208e8919bfb0b9168bc6aeee38da5b1f70cdcf17f5c5e",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-1",
+    "expected_class": "cryptographic",
+    "family": "reveal",
+    "id": "development-reveal-1",
+    "malicious": true,
+    "path": "development-reveal-1.pdf",
+    "sha256": "301e45b88a10526e98289983ee5e2d4eaa8f92140ad49dd92ab93f1e488fef55",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-2",
+    "expected_class": "cryptographic",
+    "family": "reveal",
+    "id": "development-reveal-2",
+    "malicious": true,
+    "path": "development-reveal-2.pdf",
+    "sha256": "f905a14ee212c8df9e48656274e99fb05b13e31fcbf4a82a187f3ef63f03ab19",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-3",
+    "expected_class": "cryptographic",
+    "family": "reveal",
+    "id": "development-reveal-3",
+    "malicious": true,
+    "path": "development-reveal-3.pdf",
+    "sha256": "3f75ec86f2f57d6d3da4a9cfe454c8a4b53d24ecd21455d251c47cc4e087be29",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-4",
+    "expected_class": "cryptographic",
+    "family": "reveal",
+    "id": "development-reveal-4",
+    "malicious": true,
+    "path": "development-reveal-4.pdf",
+    "sha256": "d392bb690a3092b5218d721d60c3058b9a68d2192beb28de3d45701c8806dc81",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-0",
+    "expected_class": "cryptographic",
+    "family": "overlay",
+    "id": "development-overlay-0",
+    "malicious": true,
+    "path": "development-overlay-0.pdf",
+    "sha256": "97b2fbf5aff0538abf6c17300951ac5a811223acb934e76f64dc922ef5669ef6",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-1",
+    "expected_class": "cryptographic",
+    "family": "overlay",
+    "id": "development-overlay-1",
+    "malicious": true,
+    "path": "development-overlay-1.pdf",
+    "sha256": "9a05db51096f712e9d7acb069225f5206ca379f3a73e1e81dfabdb8e30dee1f9",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-2",
+    "expected_class": "cryptographic",
+    "family": "overlay",
+    "id": "development-overlay-2",
+    "malicious": true,
+    "path": "development-overlay-2.pdf",
+    "sha256": "ee847ad8dcb1061dc49a6daca528c8240ad9e4349ebc69e3f2d9c76751c4d1fe",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-3",
+    "expected_class": "cryptographic",
+    "family": "overlay",
+    "id": "development-overlay-3",
+    "malicious": true,
+    "path": "development-overlay-3.pdf",
+    "sha256": "05833b1b5c750d1390c490e4904992dc16b72a5a03582502aa79e3a9848ae8b7",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-4",
+    "expected_class": "cryptographic",
+    "family": "overlay",
+    "id": "development-overlay-4",
+    "malicious": true,
+    "path": "development-overlay-4.pdf",
+    "sha256": "ff99c68d8e818d4498533d93ffda5960eae49b60d9379a18672cd5687e0932a4",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-0",
+    "expected_class": "cryptographic",
+    "family": "annotation",
+    "id": "development-annotation-0",
+    "malicious": true,
+    "path": "development-annotation-0.pdf",
+    "sha256": "50ffad3e7c1cf9f4f679e0a12891ac1a650837471da6a8e91cc8150e804e9c5a",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-1",
+    "expected_class": "cryptographic",
+    "family": "annotation",
+    "id": "development-annotation-1",
+    "malicious": true,
+    "path": "development-annotation-1.pdf",
+    "sha256": "fa3c614fe8c65cb7ea0e6dd52991f3638622ce6b4e8e1db1477870f291a94374",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-2",
+    "expected_class": "cryptographic",
+    "family": "annotation",
+    "id": "development-annotation-2",
+    "malicious": true,
+    "path": "development-annotation-2.pdf",
+    "sha256": "92b2f5ff6b73a50fd204202411ed4d3fb2e6e734f07bcefdf281353edac92936",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-3",
+    "expected_class": "cryptographic",
+    "family": "annotation",
+    "id": "development-annotation-3",
+    "malicious": true,
+    "path": "development-annotation-3.pdf",
+    "sha256": "272e7c9b0ee9a1415a7120141230623da597ba9318b5855f677071de3addcb50",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-4",
+    "expected_class": "cryptographic",
+    "family": "annotation",
+    "id": "development-annotation-4",
+    "malicious": true,
+    "path": "development-annotation-4.pdf",
+    "sha256": "b0c1d803aa97ab5f9ba6f8151f077e734c709486bd83bf3e2895b34e0768467c",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-0",
+    "expected_class": "cryptographic",
+    "family": "page_replace",
+    "id": "development-page_replace-0",
+    "malicious": true,
+    "path": "development-page_replace-0.pdf",
+    "sha256": "3c52aa49c1d5af7bbac69957c5a6047a78dda6348dd20427553385f53b0c1562",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-1",
+    "expected_class": "cryptographic",
+    "family": "page_replace",
+    "id": "development-page_replace-1",
+    "malicious": true,
+    "path": "development-page_replace-1.pdf",
+    "sha256": "476e5a0b18cc836a7220b989b1974cc59fe0a8a31a64fc3dd7e850a80d0a036a",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-2",
+    "expected_class": "cryptographic",
+    "family": "page_replace",
+    "id": "development-page_replace-2",
+    "malicious": true,
+    "path": "development-page_replace-2.pdf",
+    "sha256": "4e89769f1206e11584a56bacc460d1b4b1637c8852142cf43b0d2b1b8440f74b",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-3",
+    "expected_class": "cryptographic",
+    "family": "page_replace",
+    "id": "development-page_replace-3",
+    "malicious": true,
+    "path": "development-page_replace-3.pdf",
+    "sha256": "0d8e29e70bbdd388dbc0e0e73097bdb5c51cf6258bf0aa906ce69db9b0ce0298",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-4",
+    "expected_class": "cryptographic",
+    "family": "page_replace",
+    "id": "development-page_replace-4",
+    "malicious": true,
+    "path": "development-page_replace-4.pdf",
+    "sha256": "dc11f478864653aee31f615ce923fa34318c7aa985dc5eb9e7abb5a44f41d857",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-0",
+    "expected_class": "cryptographic",
+    "family": "metadata",
+    "id": "development-metadata-0",
+    "malicious": false,
+    "path": "development-metadata-0.pdf",
+    "sha256": "c32dc3b5ee7a26873b4d103565b55b59c696476bd16c8cfad21561223c985194",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-1",
+    "expected_class": "cryptographic",
+    "family": "metadata",
+    "id": "development-metadata-1",
+    "malicious": false,
+    "path": "development-metadata-1.pdf",
+    "sha256": "ea5427315ea815879b7eac9cf91ba884bc2b42e535dc8bba3a6dff9da94bb2ac",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-2",
+    "expected_class": "cryptographic",
+    "family": "metadata",
+    "id": "development-metadata-2",
+    "malicious": false,
+    "path": "development-metadata-2.pdf",
+    "sha256": "70a5228f5e7262a7fb73813a940f2a5e714e85192f257207ed955e1a8f72f529",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-3",
+    "expected_class": "cryptographic",
+    "family": "metadata",
+    "id": "development-metadata-3",
+    "malicious": false,
+    "path": "development-metadata-3.pdf",
+    "sha256": "e5eee5a1d0f4282794b138ccf675cf49d0042053d19257a78413d18bbf2dec76",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-4",
+    "expected_class": "cryptographic",
+    "family": "metadata",
+    "id": "development-metadata-4",
+    "malicious": false,
+    "path": "development-metadata-4.pdf",
+    "sha256": "8932793a3345a795dd475f1660d310a8dedcd2397fd0cf56a60617b3c6d89557",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-0",
+    "expected_class": "visual_candidate",
+    "family": "visual",
+    "id": "development-visual-0",
+    "malicious": false,
+    "path": "development-visual-0.pdf",
+    "sha256": "f27df59b7e1d136a6f235d50704d1b244f252d9a14a2b2496863bf1c392416e5",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-1",
+    "expected_class": "visual_candidate",
+    "family": "visual",
+    "id": "development-visual-1",
+    "malicious": false,
+    "path": "development-visual-1.pdf",
+    "sha256": "ddbf75e02cd0e2b3f7a87d39fdde0d8dc5a473744a101c9d765499373685fb85",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-2",
+    "expected_class": "visual_candidate",
+    "family": "visual",
+    "id": "development-visual-2",
+    "malicious": false,
+    "path": "development-visual-2.pdf",
+    "sha256": "3f0fea06bef6625b7a77e6576c8dca1a1547019da2897c7bd743792e9fa41476",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-3",
+    "expected_class": "visual_candidate",
+    "family": "visual",
+    "id": "development-visual-3",
+    "malicious": false,
+    "path": "development-visual-3.pdf",
+    "sha256": "b2a0ee9ac234f0733871dd9ba0d29e1e6a4d9ba171ba8f4bc74a68a4e7ab30bd",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-4",
+    "expected_class": "visual_candidate",
+    "family": "visual",
+    "id": "development-visual-4",
+    "malicious": false,
+    "path": "development-visual-4.pdf",
+    "sha256": "b7c087443f48dfb20a6e880d46fba10add4a8dcae6e2be1c53a9b3424cf18b3e",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-0",
+    "expected_class": "visual_candidate",
+    "family": "copied",
+    "id": "development-copied-0",
+    "malicious": true,
+    "path": "development-copied-0.pdf",
+    "sha256": "32a8f23db037a9fdb98ce6d6fa9d6783981d9939cd5bb19a169eef74a90b6d73",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-1",
+    "expected_class": "visual_candidate",
+    "family": "copied",
+    "id": "development-copied-1",
+    "malicious": true,
+    "path": "development-copied-1.pdf",
+    "sha256": "599ec0d9d9eee11eee74ed480559119ce224ad62814d3e60edadcf9ef03c2686",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-2",
+    "expected_class": "visual_candidate",
+    "family": "copied",
+    "id": "development-copied-2",
+    "malicious": true,
+    "path": "development-copied-2.pdf",
+    "sha256": "d6929c3c183795300c504ed5a65c5ffd4ed4171c9c84f42ccf18b70bf6f08cc3",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-3",
+    "expected_class": "visual_candidate",
+    "family": "copied",
+    "id": "development-copied-3",
+    "malicious": true,
+    "path": "development-copied-3.pdf",
+    "sha256": "28bc3debfbd4663308b6c510b835033454855ce24624b54587e129f97a924780",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-4",
+    "expected_class": "visual_candidate",
+    "family": "copied",
+    "id": "development-copied-4",
+    "malicious": true,
+    "path": "development-copied-4.pdf",
+    "sha256": "b1acc8ad3ea50a772b198a2786f3e80d4195b00846dace136f18972847294b90",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-0",
+    "expected_class": "visual_candidate",
+    "family": "faint",
+    "id": "development-faint-0",
+    "malicious": false,
+    "path": "development-faint-0.pdf",
+    "sha256": "67ea5c03568f721f476fbe172a70e3bf76b1a2d926e1c351500093bb37a01d15",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-1",
+    "expected_class": "visual_candidate",
+    "family": "faint",
+    "id": "development-faint-1",
+    "malicious": false,
+    "path": "development-faint-1.pdf",
+    "sha256": "66f10cc6a5cbda53cd81373fe5b3ca07d0c445abf0c9c727baa3ee085f3a8176",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-2",
+    "expected_class": "visual_candidate",
+    "family": "faint",
+    "id": "development-faint-2",
+    "malicious": false,
+    "path": "development-faint-2.pdf",
+    "sha256": "44528c033be695f8920a33370983d95d40698c1245f1152c9280c4521ee39e13",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-3",
+    "expected_class": "visual_candidate",
+    "family": "faint",
+    "id": "development-faint-3",
+    "malicious": false,
+    "path": "development-faint-3.pdf",
+    "sha256": "3f06f80cfa7263d86d9b3b334c26626475bbf49c7f9f52357245b2f62f1e2338",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-4",
+    "expected_class": "visual_candidate",
+    "family": "faint",
+    "id": "development-faint-4",
+    "malicious": false,
+    "path": "development-faint-4.pdf",
+    "sha256": "3027e4f8827dc8f524298ac81abd31e0d500f50d909edb9ddfc39f1e96c241f2",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-0",
+    "expected_class": "visual_candidate",
+    "family": "scan_lowres",
+    "id": "development-scan_lowres-0",
+    "malicious": false,
+    "path": "development-scan_lowres-0.pdf",
+    "sha256": "ceb94f8bdcd267862f04c38b01322e2e3a8bb8daa2f067ebeb8bd71154103983",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-1",
+    "expected_class": "visual_candidate",
+    "family": "scan_lowres",
+    "id": "development-scan_lowres-1",
+    "malicious": false,
+    "path": "development-scan_lowres-1.pdf",
+    "sha256": "d3d738dea92932f4492fafd0b49ea38beaf813359741f0466fb27f5aa4100271",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-2",
+    "expected_class": "visual_candidate",
+    "family": "scan_lowres",
+    "id": "development-scan_lowres-2",
+    "malicious": false,
+    "path": "development-scan_lowres-2.pdf",
+    "sha256": "f581c70e261b09c347dd802f3d5dbce5e5923dedfb3e8c0697b461088a438c7c",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-3",
+    "expected_class": "visual_candidate",
+    "family": "scan_lowres",
+    "id": "development-scan_lowres-3",
+    "malicious": false,
+    "path": "development-scan_lowres-3.pdf",
+    "sha256": "8be1ca7a229fcde837e6613f24274e2173777008e95f3b0d763a355056433a00",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-4",
+    "expected_class": "visual_candidate",
+    "family": "scan_lowres",
+    "id": "development-scan_lowres-4",
+    "malicious": false,
+    "path": "development-scan_lowres-4.pdf",
+    "sha256": "030333bf9ae46fea3546a96d206477ee341a149d46605ba31abe9963ea9396c2",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-0",
+    "expected_class": "visual_candidate",
+    "family": "jpeg",
+    "id": "development-jpeg-0",
+    "malicious": false,
+    "path": "development-jpeg-0.pdf",
+    "sha256": "b0c076ccaf5bb4ec81a8b25f88547633e0fe15e3283c56700b16969ec55f470e",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-1",
+    "expected_class": "visual_candidate",
+    "family": "jpeg",
+    "id": "development-jpeg-1",
+    "malicious": false,
+    "path": "development-jpeg-1.pdf",
+    "sha256": "7ff16351a3930593db7a4978dcd15b9d9b720db7b513d864aa739a0480c99601",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-2",
+    "expected_class": "visual_candidate",
+    "family": "jpeg",
+    "id": "development-jpeg-2",
+    "malicious": false,
+    "path": "development-jpeg-2.pdf",
+    "sha256": "71adbb5a8f8c46181dfe70fd54af15fedb59772452b422ff4f21606558d2afdb",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-3",
+    "expected_class": "visual_candidate",
+    "family": "jpeg",
+    "id": "development-jpeg-3",
+    "malicious": false,
+    "path": "development-jpeg-3.pdf",
+    "sha256": "eb5181dc86495b54484e4b59e0c106df3684cf832f20b030b50e92de5b0daf9c",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-4",
+    "expected_class": "visual_candidate",
+    "family": "jpeg",
+    "id": "development-jpeg-4",
+    "malicious": false,
+    "path": "development-jpeg-4.pdf",
+    "sha256": "5fd34cefca9506d3b2be573735d6d39a37524e20becacb9c00ebe69576de1faa",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-0",
+    "expected_class": "unsigned",
+    "family": "repeated_logo",
+    "id": "development-repeated_logo-0",
+    "malicious": false,
+    "path": "development-repeated_logo-0.pdf",
+    "sha256": "ac7ce0c6ccf12712809a82822e48bee12b39ccea51fcb98c54235e898f9d9b1e",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-1",
+    "expected_class": "unsigned",
+    "family": "repeated_logo",
+    "id": "development-repeated_logo-1",
+    "malicious": false,
+    "path": "development-repeated_logo-1.pdf",
+    "sha256": "32468ce29ab15f46db0ff46cb6967ade7d0deff502f6381ef9385f11c4857f97",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-2",
+    "expected_class": "unsigned",
+    "family": "repeated_logo",
+    "id": "development-repeated_logo-2",
+    "malicious": false,
+    "path": "development-repeated_logo-2.pdf",
+    "sha256": "61d5b5dca6226360273a2ddea058a2f38cce0af1d108195cb00a2bdaeb7098c0",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-3",
+    "expected_class": "unsigned",
+    "family": "repeated_logo",
+    "id": "development-repeated_logo-3",
+    "malicious": false,
+    "path": "development-repeated_logo-3.pdf",
+    "sha256": "5fbbb453171218fb3ae031ac48f43399269af244ddeae88d2a4975899d91f5c0",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-4",
+    "expected_class": "unsigned",
+    "family": "repeated_logo",
+    "id": "development-repeated_logo-4",
+    "malicious": false,
+    "path": "development-repeated_logo-4.pdf",
+    "sha256": "012023a99ee730ac6317d26a55d567ea87ff370deaf5beeceb132deb797f6244",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-0",
+    "expected_class": "unsigned",
+    "family": "stamp",
+    "id": "development-stamp-0",
+    "malicious": false,
+    "path": "development-stamp-0.pdf",
+    "sha256": "3924bcf47429c32bbce3ba7795c6aa6bd6e272e636b96e105b0e58ceecacd150",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-1",
+    "expected_class": "unsigned",
+    "family": "stamp",
+    "id": "development-stamp-1",
+    "malicious": false,
+    "path": "development-stamp-1.pdf",
+    "sha256": "ec97506a0ebef4fdfe87c4e671172ef18981208a9dd42afd96fe05f832b7730b",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-2",
+    "expected_class": "unsigned",
+    "family": "stamp",
+    "id": "development-stamp-2",
+    "malicious": false,
+    "path": "development-stamp-2.pdf",
+    "sha256": "55db5a3d6d561678f646544f55f44930238b83fb47896569b3abdb26ba4792cc",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-3",
+    "expected_class": "unsigned",
+    "family": "stamp",
+    "id": "development-stamp-3",
+    "malicious": false,
+    "path": "development-stamp-3.pdf",
+    "sha256": "ac2d5ed4db0b59ec94b8e2a622718fb06a06a0e09c2905a012269c69cb75e1d1",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-4",
+    "expected_class": "unsigned",
+    "family": "stamp",
+    "id": "development-stamp-4",
+    "malicious": false,
+    "path": "development-stamp-4.pdf",
+    "sha256": "ccd88044186fb55dc0efae1d80e6bd4d43414a6c40b4fb7179e4d8cf6dfe718b",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-0",
+    "expected_class": "unsigned",
+    "family": "printed_name",
+    "id": "development-printed_name-0",
+    "malicious": false,
+    "path": "development-printed_name-0.pdf",
+    "sha256": "be80ebdbb80db09701acc86d8db9e4762f3eaa74e05e40f24df6308fa17fb5ab",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-1",
+    "expected_class": "unsigned",
+    "family": "printed_name",
+    "id": "development-printed_name-1",
+    "malicious": false,
+    "path": "development-printed_name-1.pdf",
+    "sha256": "0dabe65395ec6ebb2b9afa4b0517f06015a32e06126167406202940b0d0f3571",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-2",
+    "expected_class": "unsigned",
+    "family": "printed_name",
+    "id": "development-printed_name-2",
+    "malicious": false,
+    "path": "development-printed_name-2.pdf",
+    "sha256": "67e295754cda45b629da366c70d097bb9b201905debc06713a0c196b44d11276",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-3",
+    "expected_class": "unsigned",
+    "family": "printed_name",
+    "id": "development-printed_name-3",
+    "malicious": false,
+    "path": "development-printed_name-3.pdf",
+    "sha256": "1d8b5d12ec69d46e41a12fd742f1bfbd465e5f44a3bbe2cdee058967be937637",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-4",
+    "expected_class": "unsigned",
+    "family": "printed_name",
+    "id": "development-printed_name-4",
+    "malicious": false,
+    "path": "development-printed_name-4.pdf",
+    "sha256": "cd9f91159bb49e5630c1f71abbb8acf22bfc53f61d6a11352802f091ef2390df",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-0",
+    "expected_class": "visual_candidate",
+    "family": "rotated",
+    "id": "development-rotated-0",
+    "malicious": false,
+    "path": "development-rotated-0.pdf",
+    "sha256": "904c6e16f1d267075745d8d0173d4dc6395b87f5f04639925275129891af2632",
+    "signature_rois": [
+      {
+        "bbox": [
+          125.0,
+          109.0,
+          405.0,
+          200.0
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-1",
+    "expected_class": "visual_candidate",
+    "family": "rotated",
+    "id": "development-rotated-1",
+    "malicious": false,
+    "path": "development-rotated-1.pdf",
+    "sha256": "84fe74d38ac9041aae3e8b86b37fc6a0a5e396df29c6ac380390c37984e5323a",
+    "signature_rois": [
+      {
+        "bbox": [
+          132.0,
+          118.0,
+          412.0,
+          209.0
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-2",
+    "expected_class": "visual_candidate",
+    "family": "rotated",
+    "id": "development-rotated-2",
+    "malicious": false,
+    "path": "development-rotated-2.pdf",
+    "sha256": "07a28ea20a1e37eb1af3327b776ff02aabac0dc0a623f5ec57a8fe9390819f03",
+    "signature_rois": [
+      {
+        "bbox": [
+          139.0,
+          127.0,
+          419.0,
+          218.0
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-3",
+    "expected_class": "visual_candidate",
+    "family": "rotated",
+    "id": "development-rotated-3",
+    "malicious": false,
+    "path": "development-rotated-3.pdf",
+    "sha256": "11c2dcd8a04e5e154d18c85727e143cae19006e0b31a8c02c94ab65449f1fbd4",
+    "signature_rois": [
+      {
+        "bbox": [
+          146.0,
+          136.0,
+          426.0,
+          227.0
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-4",
+    "expected_class": "visual_candidate",
+    "family": "rotated",
+    "id": "development-rotated-4",
+    "malicious": false,
+    "path": "development-rotated-4.pdf",
+    "sha256": "0e54eb95b6584d71372430b4009570d55b397d022283fdd0c706a414c4ac7aee",
+    "signature_rois": [
+      {
+        "bbox": [
+          153.0,
+          145.0,
+          433.0,
+          236.0
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-0",
+    "expected_class": "visual_candidate",
+    "family": "multiple",
+    "id": "development-multiple-0",
+    "malicious": false,
+    "path": "development-multiple-0.pdf",
+    "sha256": "9bb83e080683b77514d72d8ed2297ec199fbdc96e0b249ce62ea965af545c3aa",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-1",
+    "expected_class": "visual_candidate",
+    "family": "multiple",
+    "id": "development-multiple-1",
+    "malicious": false,
+    "path": "development-multiple-1.pdf",
+    "sha256": "1f5ea66594f815fd0d05611e3fae00ba31ce1fe4cb59d3dc308807aeb242affb",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-2",
+    "expected_class": "visual_candidate",
+    "family": "multiple",
+    "id": "development-multiple-2",
+    "malicious": false,
+    "path": "development-multiple-2.pdf",
+    "sha256": "c179cbb0341717df6687cdaf5c51fecfa9872377e176fe4ca92ff570ecedff5c",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-3",
+    "expected_class": "visual_candidate",
+    "family": "multiple",
+    "id": "development-multiple-3",
+    "malicious": false,
+    "path": "development-multiple-3.pdf",
+    "sha256": "60abe18502f58248268344fe771b3a2100a3789a3acd2267c3d0e8f11f83f6ad",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-4",
+    "expected_class": "visual_candidate",
+    "family": "multiple",
+    "id": "development-multiple-4",
+    "malicious": false,
+    "path": "development-multiple-4.pdf",
+    "sha256": "5a55c75440e3c2b6e7185429abed95782b12b7269c38b0ee8afad1c9c15713bd",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-0",
+    "expected_class": "unsigned",
+    "family": "malformed",
+    "id": "development-malformed-0",
+    "malicious": false,
+    "path": "development-malformed-0.pdf",
+    "sha256": "5468c0ae151621d66fc2a9cf68400706137099683934686ddcbbc4c9b9b76290",
+    "signature_rois": [],
+    "split": "development",
+    "supported": false
+  },
+  {
+    "base_id": "development-1",
+    "expected_class": "unsigned",
+    "family": "malformed",
+    "id": "development-malformed-1",
+    "malicious": false,
+    "path": "development-malformed-1.pdf",
+    "sha256": "e55a9a5ab2b7912394da686436f53c0041b89a3c4bad88225a0b2ef40a016588",
+    "signature_rois": [],
+    "split": "development",
+    "supported": false
+  },
+  {
+    "base_id": "development-2",
+    "expected_class": "unsigned",
+    "family": "malformed",
+    "id": "development-malformed-2",
+    "malicious": false,
+    "path": "development-malformed-2.pdf",
+    "sha256": "860ff3eed9e47142dd67529a320c32fbe57e5dd923a259e0e691cf8b6eda8561",
+    "signature_rois": [],
+    "split": "development",
+    "supported": false
+  },
+  {
+    "base_id": "development-3",
+    "expected_class": "unsigned",
+    "family": "malformed",
+    "id": "development-malformed-3",
+    "malicious": false,
+    "path": "development-malformed-3.pdf",
+    "sha256": "4dba4beacfccba82d0444f7da669abed2a946d03dd111d50518f5a28b2288463",
+    "signature_rois": [],
+    "split": "development",
+    "supported": false
+  },
+  {
+    "base_id": "development-4",
+    "expected_class": "unsigned",
+    "family": "malformed",
+    "id": "development-malformed-4",
+    "malicious": false,
+    "path": "development-malformed-4.pdf",
+    "sha256": "73132ae5bacfe4d244cac8d3fa07537032d2e8b7e5ccebfa0d9e710784f15d8a",
+    "signature_rois": [],
+    "split": "development",
+    "supported": false
+  },
+  {
+    "base_id": "development-0",
+    "expected_class": "unsigned",
+    "family": "encrypted",
+    "id": "development-encrypted-0",
+    "malicious": false,
+    "path": "development-encrypted-0.pdf",
+    "sha256": "1602ebe1d149c7cf99d514df13107c235736590ff2f54e59e04bb28fdb2986ac",
+    "signature_rois": [],
+    "split": "development",
+    "supported": false
+  },
+  {
+    "base_id": "development-1",
+    "expected_class": "unsigned",
+    "family": "encrypted",
+    "id": "development-encrypted-1",
+    "malicious": false,
+    "path": "development-encrypted-1.pdf",
+    "sha256": "d47e75ecdbb55649619b8f2d4473618d2637a328bc2e8a8f6512aa3334821f28",
+    "signature_rois": [],
+    "split": "development",
+    "supported": false
+  },
+  {
+    "base_id": "development-2",
+    "expected_class": "unsigned",
+    "family": "encrypted",
+    "id": "development-encrypted-2",
+    "malicious": false,
+    "path": "development-encrypted-2.pdf",
+    "sha256": "dda9595e1a12a7606c57a7d2923566316c02a090246d007cdff2e9b3a987ceee",
+    "signature_rois": [],
+    "split": "development",
+    "supported": false
+  },
+  {
+    "base_id": "development-3",
+    "expected_class": "unsigned",
+    "family": "encrypted",
+    "id": "development-encrypted-3",
+    "malicious": false,
+    "path": "development-encrypted-3.pdf",
+    "sha256": "08cb48be98cd70115ce4095cf2515bc1653565a59e5c4cf97af9b22029c0290b",
+    "signature_rois": [],
+    "split": "development",
+    "supported": false
+  },
+  {
+    "base_id": "development-4",
+    "expected_class": "unsigned",
+    "family": "encrypted",
+    "id": "development-encrypted-4",
+    "malicious": false,
+    "path": "development-encrypted-4.pdf",
+    "sha256": "3ddc1d96c370e375ebeb631ba7c230a01d58471f0d90e449b8f77ede267b0a12",
+    "signature_rois": [],
+    "split": "development",
+    "supported": false
+  },
+  {
+    "base_id": "development-0",
+    "expected_class": "visual_candidate",
+    "family": "ambiguous_reuse",
+    "id": "development-ambiguous_reuse-0",
+    "malicious": true,
+    "path": "development-ambiguous_reuse-0.pdf",
+    "sha256": "f27df59b7e1d136a6f235d50704d1b244f252d9a14a2b2496863bf1c392416e5",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": false
+  },
+  {
+    "base_id": "development-1",
+    "expected_class": "visual_candidate",
+    "family": "ambiguous_reuse",
+    "id": "development-ambiguous_reuse-1",
+    "malicious": true,
+    "path": "development-ambiguous_reuse-1.pdf",
+    "sha256": "ddbf75e02cd0e2b3f7a87d39fdde0d8dc5a473744a101c9d765499373685fb85",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": false
+  },
+  {
+    "base_id": "development-2",
+    "expected_class": "visual_candidate",
+    "family": "ambiguous_reuse",
+    "id": "development-ambiguous_reuse-2",
+    "malicious": true,
+    "path": "development-ambiguous_reuse-2.pdf",
+    "sha256": "3f0fea06bef6625b7a77e6576c8dca1a1547019da2897c7bd743792e9fa41476",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": false
+  },
+  {
+    "base_id": "development-3",
+    "expected_class": "visual_candidate",
+    "family": "ambiguous_reuse",
+    "id": "development-ambiguous_reuse-3",
+    "malicious": true,
+    "path": "development-ambiguous_reuse-3.pdf",
+    "sha256": "b2a0ee9ac234f0733871dd9ba0d29e1e6a4d9ba171ba8f4bc74a68a4e7ab30bd",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": false
+  },
+  {
+    "base_id": "development-4",
+    "expected_class": "visual_candidate",
+    "family": "ambiguous_reuse",
+    "id": "development-ambiguous_reuse-4",
+    "malicious": true,
+    "path": "development-ambiguous_reuse-4.pdf",
+    "sha256": "b7c087443f48dfb20a6e880d46fba10add4a8dcae6e2be1c53a9b3424cf18b3e",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "development",
+    "supported": false
+  },
+  {
+    "base_id": "development-0",
+    "expected_class": "unsigned",
+    "family": "table",
+    "id": "development-table-0",
+    "malicious": false,
+    "path": "development-table-0.pdf",
+    "sha256": "dcbe4d772248623b3c27c600b8daea47d702617cc564648cac03041543d394aa",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-1",
+    "expected_class": "unsigned",
+    "family": "table",
+    "id": "development-table-1",
+    "malicious": false,
+    "path": "development-table-1.pdf",
+    "sha256": "0708d94e207492cd2ec2628ca0cfb0f3f0163e8dddda9d27ef08483d2faf48e6",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-2",
+    "expected_class": "unsigned",
+    "family": "table",
+    "id": "development-table-2",
+    "malicious": false,
+    "path": "development-table-2.pdf",
+    "sha256": "d3fe643b82cd8e970ed4aa93e6d66d45735f5ef99c43216a4997c8c516e2deca",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-3",
+    "expected_class": "unsigned",
+    "family": "table",
+    "id": "development-table-3",
+    "malicious": false,
+    "path": "development-table-3.pdf",
+    "sha256": "de06c8285b1c9bd21eeb9713b48d63f980698ae61cf2e96ec221eacaca66a61f",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-4",
+    "expected_class": "unsigned",
+    "family": "table",
+    "id": "development-table-4",
+    "malicious": false,
+    "path": "development-table-4.pdf",
+    "sha256": "3cf248d6e47e2910ab7c733d8466177a65533ce5b7e8adf00d8f9bba005eef36",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-0",
+    "expected_class": "unsigned",
+    "family": "scan_printed",
+    "id": "development-scan_printed-0",
+    "malicious": false,
+    "path": "development-scan_printed-0.pdf",
+    "sha256": "35e75ee559b17db4a1ba91f20cc09d53ad8dc9e93cb57607d38b979d83b8e350",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-1",
+    "expected_class": "unsigned",
+    "family": "scan_printed",
+    "id": "development-scan_printed-1",
+    "malicious": false,
+    "path": "development-scan_printed-1.pdf",
+    "sha256": "c9b9d08bed4980869a82245e9e2a110034d826959a4d6b1a6e3483fa3fabc0bc",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-2",
+    "expected_class": "unsigned",
+    "family": "scan_printed",
+    "id": "development-scan_printed-2",
+    "malicious": false,
+    "path": "development-scan_printed-2.pdf",
+    "sha256": "1f39290a12e14add268929c30b67f548dcdbd597733308824be66a6261f10dc5",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-3",
+    "expected_class": "unsigned",
+    "family": "scan_printed",
+    "id": "development-scan_printed-3",
+    "malicious": false,
+    "path": "development-scan_printed-3.pdf",
+    "sha256": "79d9d97dd041d1c62ae597c203f27c4ff9a803354f1c92f0f0b9f5dc1b229cfc",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-4",
+    "expected_class": "unsigned",
+    "family": "scan_printed",
+    "id": "development-scan_printed-4",
+    "malicious": false,
+    "path": "development-scan_printed-4.pdf",
+    "sha256": "c2447da84965e71470a4cd92692fe6df24413b948e4984a3a5cccc6b6b45cdea",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-0",
+    "expected_class": "unsigned",
+    "family": "blank",
+    "id": "development-blank-0",
+    "malicious": false,
+    "path": "development-blank-0.pdf",
+    "sha256": "9d7eda2b1e6a25833cfb0c081e2ffaf66c6042ff3de66a8dbb81b5a984966110",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-1",
+    "expected_class": "unsigned",
+    "family": "blank",
+    "id": "development-blank-1",
+    "malicious": false,
+    "path": "development-blank-1.pdf",
+    "sha256": "38d2a950059202801d9edb481e473f2d9ce7a3490f04eb22a89c8586fcbfa48a",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-2",
+    "expected_class": "unsigned",
+    "family": "blank",
+    "id": "development-blank-2",
+    "malicious": false,
+    "path": "development-blank-2.pdf",
+    "sha256": "bfb42dc880cc42f20f9be8ff611ab453be546aca6137f5750a79f1e7c0a9b32b",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-3",
+    "expected_class": "unsigned",
+    "family": "blank",
+    "id": "development-blank-3",
+    "malicious": false,
+    "path": "development-blank-3.pdf",
+    "sha256": "39b286cafdbe83cd6205246cb9d935015e871c6f22f3eaa0799a1b3c693a8edb",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-4",
+    "expected_class": "unsigned",
+    "family": "blank",
+    "id": "development-blank-4",
+    "malicious": false,
+    "path": "development-blank-4.pdf",
+    "sha256": "8ce7b9bf26ccbfce0c0b07e3315d773c9b36ed5871cc25c8daae3836ccba3381",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-0",
+    "expected_class": "unsigned",
+    "family": "diagram",
+    "id": "development-diagram-0",
+    "malicious": false,
+    "path": "development-diagram-0.pdf",
+    "sha256": "2dec97afcfab03a299d88fc0e8c08d70922e74491b5d3fcc5c37049cb24150f1",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-1",
+    "expected_class": "unsigned",
+    "family": "diagram",
+    "id": "development-diagram-1",
+    "malicious": false,
+    "path": "development-diagram-1.pdf",
+    "sha256": "ee62bb178e0c10a69673b0eae971cc2748d4085dc4cc090cf999fc4c9b0176e3",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-2",
+    "expected_class": "unsigned",
+    "family": "diagram",
+    "id": "development-diagram-2",
+    "malicious": false,
+    "path": "development-diagram-2.pdf",
+    "sha256": "e9303fa7e15717b6654380b9cbd688df6da624a701a66c17a9ec819690671cc7",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-3",
+    "expected_class": "unsigned",
+    "family": "diagram",
+    "id": "development-diagram-3",
+    "malicious": false,
+    "path": "development-diagram-3.pdf",
+    "sha256": "609d917235b8d2e08ab3265d870bbaa9e48513e658f91ea4b810c7e02cd9d496",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "development-4",
+    "expected_class": "unsigned",
+    "family": "diagram",
+    "id": "development-diagram-4",
+    "malicious": false,
+    "path": "development-diagram-4.pdf",
+    "sha256": "0257287a7aa0351e453ca0fb3d62901124da1ab7821a31b868d82b49b6f2d623",
+    "signature_rois": [],
+    "split": "development",
+    "supported": true
+  },
+  {
+    "base_id": "regression-0",
+    "expected_class": "cryptographic",
+    "family": "signed",
+    "id": "regression-signed-0",
+    "malicious": false,
+    "path": "regression-signed-0.pdf",
+    "sha256": "4bff19486c9fcd0eba7fd0ef58570b9b12b91bb5d84b737b8ce4d6f9e891db9d",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-1",
+    "expected_class": "cryptographic",
+    "family": "signed",
+    "id": "regression-signed-1",
+    "malicious": false,
+    "path": "regression-signed-1.pdf",
+    "sha256": "7f98ed27f883ce2186529882a8b1e97d979db607b1225dd75e8ce1f200fb3196",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-2",
+    "expected_class": "cryptographic",
+    "family": "signed",
+    "id": "regression-signed-2",
+    "malicious": false,
+    "path": "regression-signed-2.pdf",
+    "sha256": "9f72624aad8f604238f4efaf80d114948213e80cc37a9d9bb39b3052c56faaee",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-3",
+    "expected_class": "cryptographic",
+    "family": "signed",
+    "id": "regression-signed-3",
+    "malicious": false,
+    "path": "regression-signed-3.pdf",
+    "sha256": "5a9409a96281696abae9710d9661055ed25e5b97ffc1c4e08edff31f4ab656e9",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-4",
+    "expected_class": "cryptographic",
+    "family": "signed",
+    "id": "regression-signed-4",
+    "malicious": false,
+    "path": "regression-signed-4.pdf",
+    "sha256": "4695d9a38dcf1b6d40797a15e37780dd2797dd2a1a46ab83c279fb20e88ab1e0",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-0",
+    "expected_class": "cryptographic",
+    "family": "byte_tamper",
+    "id": "regression-byte_tamper-0",
+    "malicious": true,
+    "path": "regression-byte_tamper-0.pdf",
+    "sha256": "17f995d63840d7590a1697bcb6c67373e60778d46bb34f565eb33e0988145790",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-1",
+    "expected_class": "cryptographic",
+    "family": "byte_tamper",
+    "id": "regression-byte_tamper-1",
+    "malicious": true,
+    "path": "regression-byte_tamper-1.pdf",
+    "sha256": "b9f3610d421821ba5b7d107a9a95fbc94f0aa80c8e803abf83d03b7a110101c6",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-2",
+    "expected_class": "cryptographic",
+    "family": "byte_tamper",
+    "id": "regression-byte_tamper-2",
+    "malicious": true,
+    "path": "regression-byte_tamper-2.pdf",
+    "sha256": "64bec743371b5920c6a21d9cd49c377b836924e9fc6de612189b3340ecc3b764",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-3",
+    "expected_class": "cryptographic",
+    "family": "byte_tamper",
+    "id": "regression-byte_tamper-3",
+    "malicious": true,
+    "path": "regression-byte_tamper-3.pdf",
+    "sha256": "62a8b0219262d56ce60f993915913aa7d7f57b0055de2c2c5cfaa8e81c8f637d",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-4",
+    "expected_class": "cryptographic",
+    "family": "byte_tamper",
+    "id": "regression-byte_tamper-4",
+    "malicious": true,
+    "path": "regression-byte_tamper-4.pdf",
+    "sha256": "662658e41de145d7beb990aca851f17d8d137c7df922871c1ae56da9f755a64a",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-0",
+    "expected_class": "cryptographic",
+    "family": "reveal",
+    "id": "regression-reveal-0",
+    "malicious": true,
+    "path": "regression-reveal-0.pdf",
+    "sha256": "d5c72acfab71561f5e3ce6090bf48844c8a8ab61578b6bfd96d479f520102164",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-1",
+    "expected_class": "cryptographic",
+    "family": "reveal",
+    "id": "regression-reveal-1",
+    "malicious": true,
+    "path": "regression-reveal-1.pdf",
+    "sha256": "50e840dd05daa41434d625288dd8b80fc2e030e478888123d03723bf3386224b",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-2",
+    "expected_class": "cryptographic",
+    "family": "reveal",
+    "id": "regression-reveal-2",
+    "malicious": true,
+    "path": "regression-reveal-2.pdf",
+    "sha256": "c5f36a21a9b5aefc04b0847453c4cc5998069c271b2bcf61d1031045626fe92e",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-3",
+    "expected_class": "cryptographic",
+    "family": "reveal",
+    "id": "regression-reveal-3",
+    "malicious": true,
+    "path": "regression-reveal-3.pdf",
+    "sha256": "ad0355f877877e8a884e6ecedfafe0c420f082857f19f45e8d5a6731f7bdf511",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-4",
+    "expected_class": "cryptographic",
+    "family": "reveal",
+    "id": "regression-reveal-4",
+    "malicious": true,
+    "path": "regression-reveal-4.pdf",
+    "sha256": "214193481684fc6475aa019a09765fd6de8baeb3a8aa6d2ccb74dbf899159108",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-0",
+    "expected_class": "cryptographic",
+    "family": "overlay",
+    "id": "regression-overlay-0",
+    "malicious": true,
+    "path": "regression-overlay-0.pdf",
+    "sha256": "b018b393b2785ddb798d783a0a7fec8b1ef817666789097310491f8b98039980",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-1",
+    "expected_class": "cryptographic",
+    "family": "overlay",
+    "id": "regression-overlay-1",
+    "malicious": true,
+    "path": "regression-overlay-1.pdf",
+    "sha256": "f0605855cf42448f2615ebb9b656d1d21d9f7910be102cea8f8cf8b26f1ae3f8",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-2",
+    "expected_class": "cryptographic",
+    "family": "overlay",
+    "id": "regression-overlay-2",
+    "malicious": true,
+    "path": "regression-overlay-2.pdf",
+    "sha256": "9e4b8e4c305c20cd1cf6d97af61a79936924efb0624a02755a668fbd2d0677a0",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-3",
+    "expected_class": "cryptographic",
+    "family": "overlay",
+    "id": "regression-overlay-3",
+    "malicious": true,
+    "path": "regression-overlay-3.pdf",
+    "sha256": "5b950f245229f16717519448f214b66580642ea6e7a0369543d79309e2a46b18",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-4",
+    "expected_class": "cryptographic",
+    "family": "overlay",
+    "id": "regression-overlay-4",
+    "malicious": true,
+    "path": "regression-overlay-4.pdf",
+    "sha256": "13f2742cb78e92f15a63b2be821a85e6a48c37d7f8dcb8edfe4b8d072089882e",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-0",
+    "expected_class": "cryptographic",
+    "family": "annotation",
+    "id": "regression-annotation-0",
+    "malicious": true,
+    "path": "regression-annotation-0.pdf",
+    "sha256": "7e01984ebfd4a53b088f53545f6f461263aa823f9f68ba61ad686d682a344aec",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-1",
+    "expected_class": "cryptographic",
+    "family": "annotation",
+    "id": "regression-annotation-1",
+    "malicious": true,
+    "path": "regression-annotation-1.pdf",
+    "sha256": "15af2fa47d8d9d908e01cd7db57dfaad2c043bdffc5a86ed02723ae34cb02cd5",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-2",
+    "expected_class": "cryptographic",
+    "family": "annotation",
+    "id": "regression-annotation-2",
+    "malicious": true,
+    "path": "regression-annotation-2.pdf",
+    "sha256": "f290edb9ed0e2a766415ab5a73d4ba636056154436b643686519138fb8a90d73",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-3",
+    "expected_class": "cryptographic",
+    "family": "annotation",
+    "id": "regression-annotation-3",
+    "malicious": true,
+    "path": "regression-annotation-3.pdf",
+    "sha256": "fd0bfe9af7eb1581116e3b13302870c01c5dbb4fd7b80a6ec4efb48b4a5bb145",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-4",
+    "expected_class": "cryptographic",
+    "family": "annotation",
+    "id": "regression-annotation-4",
+    "malicious": true,
+    "path": "regression-annotation-4.pdf",
+    "sha256": "f1738e5951997bd4300957e9669e952d884bcd35436e2cc6436ce7005384da5d",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-0",
+    "expected_class": "cryptographic",
+    "family": "page_replace",
+    "id": "regression-page_replace-0",
+    "malicious": true,
+    "path": "regression-page_replace-0.pdf",
+    "sha256": "6633cf5a3e23c650c048a4f731b308ce8c37f3a77e8a121dd9c583dc9935ff03",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-1",
+    "expected_class": "cryptographic",
+    "family": "page_replace",
+    "id": "regression-page_replace-1",
+    "malicious": true,
+    "path": "regression-page_replace-1.pdf",
+    "sha256": "2a5e3834fb4d986cfcad9e481b6e7cfbf54b15a14e509f0444db6ad74558417c",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-2",
+    "expected_class": "cryptographic",
+    "family": "page_replace",
+    "id": "regression-page_replace-2",
+    "malicious": true,
+    "path": "regression-page_replace-2.pdf",
+    "sha256": "6be72c6b39947f902f49195470d1bfe20aecebee461ca8bec036951c340a0f77",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-3",
+    "expected_class": "cryptographic",
+    "family": "page_replace",
+    "id": "regression-page_replace-3",
+    "malicious": true,
+    "path": "regression-page_replace-3.pdf",
+    "sha256": "f852fb28b9daa2272b28392cef93324172aefcb0eaf374bc46019d3f59ce7bae",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-4",
+    "expected_class": "cryptographic",
+    "family": "page_replace",
+    "id": "regression-page_replace-4",
+    "malicious": true,
+    "path": "regression-page_replace-4.pdf",
+    "sha256": "26d2da34b86eef5c2321a9b9e2788c3b414667eadb6798a9c2a6fbff344e49af",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-0",
+    "expected_class": "cryptographic",
+    "family": "metadata",
+    "id": "regression-metadata-0",
+    "malicious": false,
+    "path": "regression-metadata-0.pdf",
+    "sha256": "8388ca4ddcefcf6f9a475636e2a51a962f583370581902122990da5442bc4308",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-1",
+    "expected_class": "cryptographic",
+    "family": "metadata",
+    "id": "regression-metadata-1",
+    "malicious": false,
+    "path": "regression-metadata-1.pdf",
+    "sha256": "8259bcb4922bd19ec13946643b49ebe0a76ad89a889cb466454cf002379751ed",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-2",
+    "expected_class": "cryptographic",
+    "family": "metadata",
+    "id": "regression-metadata-2",
+    "malicious": false,
+    "path": "regression-metadata-2.pdf",
+    "sha256": "e6dc830a0ab8387f5888fd80a4a0f84fd4fcbb345b3a924858c5b65554e54253",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-3",
+    "expected_class": "cryptographic",
+    "family": "metadata",
+    "id": "regression-metadata-3",
+    "malicious": false,
+    "path": "regression-metadata-3.pdf",
+    "sha256": "5133d83caffd81c803e4d6045f0290d2c35263928342b70bc4b97fbcd10812d9",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-4",
+    "expected_class": "cryptographic",
+    "family": "metadata",
+    "id": "regression-metadata-4",
+    "malicious": false,
+    "path": "regression-metadata-4.pdf",
+    "sha256": "cfbccca627bca9e55d434cb1329c6fc67b41d6948574f2128c5ca3a865c735b9",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-0",
+    "expected_class": "visual_candidate",
+    "family": "visual",
+    "id": "regression-visual-0",
+    "malicious": false,
+    "path": "regression-visual-0.pdf",
+    "sha256": "f0366189c90212e71462cc4edb5fa4684dd94ec6d8732207441291db7b2fed12",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-1",
+    "expected_class": "visual_candidate",
+    "family": "visual",
+    "id": "regression-visual-1",
+    "malicious": false,
+    "path": "regression-visual-1.pdf",
+    "sha256": "369fb0052093c59b9c7bbc23702f64e251c881f595a83301af1dcf2f710a9f7b",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-2",
+    "expected_class": "visual_candidate",
+    "family": "visual",
+    "id": "regression-visual-2",
+    "malicious": false,
+    "path": "regression-visual-2.pdf",
+    "sha256": "a814f0c27f49332eb88b90404bd1804e040c4df2769c6313e786608152d711d8",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-3",
+    "expected_class": "visual_candidate",
+    "family": "visual",
+    "id": "regression-visual-3",
+    "malicious": false,
+    "path": "regression-visual-3.pdf",
+    "sha256": "500cbd4839e952ddf9be9319b20d99b342472e2b478f65b2570d8516699ff70f",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-4",
+    "expected_class": "visual_candidate",
+    "family": "visual",
+    "id": "regression-visual-4",
+    "malicious": false,
+    "path": "regression-visual-4.pdf",
+    "sha256": "f012196a01c9111a0216e62141ccfb07df62355ae0f61dc08eddcf3993c64d31",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-0",
+    "expected_class": "visual_candidate",
+    "family": "copied",
+    "id": "regression-copied-0",
+    "malicious": true,
+    "path": "regression-copied-0.pdf",
+    "sha256": "a7d84638a8aafd750497a569c950d524541c79654b9700b52a262c06fab2052b",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-1",
+    "expected_class": "visual_candidate",
+    "family": "copied",
+    "id": "regression-copied-1",
+    "malicious": true,
+    "path": "regression-copied-1.pdf",
+    "sha256": "f01e50f47717e52944501c5a6c2e40157b593a02c2035c2b80520df09bc9100d",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-2",
+    "expected_class": "visual_candidate",
+    "family": "copied",
+    "id": "regression-copied-2",
+    "malicious": true,
+    "path": "regression-copied-2.pdf",
+    "sha256": "ead6bd1732ca589603e7759e8504e4e7713314bb7b3e7c57447e69cb228887c5",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-3",
+    "expected_class": "visual_candidate",
+    "family": "copied",
+    "id": "regression-copied-3",
+    "malicious": true,
+    "path": "regression-copied-3.pdf",
+    "sha256": "8f907c8298d8b38d512e90ef49f30a09a67588f973468376b193f468ae6568ff",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-4",
+    "expected_class": "visual_candidate",
+    "family": "copied",
+    "id": "regression-copied-4",
+    "malicious": true,
+    "path": "regression-copied-4.pdf",
+    "sha256": "32fa31a631adeb8ab7d10c59bd9e10750ae881c76682a4feabdc904a5fae69d0",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-0",
+    "expected_class": "visual_candidate",
+    "family": "faint",
+    "id": "regression-faint-0",
+    "malicious": false,
+    "path": "regression-faint-0.pdf",
+    "sha256": "0d8aed000196317f3d698a198b736519b29a5d894afb130f7cb737d878b30aa3",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-1",
+    "expected_class": "visual_candidate",
+    "family": "faint",
+    "id": "regression-faint-1",
+    "malicious": false,
+    "path": "regression-faint-1.pdf",
+    "sha256": "fe4e6f5ff5f2ea96a5ec30d99ae173c49f83b2c3a66927ea8d426e6cd385789d",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-2",
+    "expected_class": "visual_candidate",
+    "family": "faint",
+    "id": "regression-faint-2",
+    "malicious": false,
+    "path": "regression-faint-2.pdf",
+    "sha256": "9a0b9873af2342a9342845c332a53398dac0f752be69fd3841cc2b9d032c928b",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-3",
+    "expected_class": "visual_candidate",
+    "family": "faint",
+    "id": "regression-faint-3",
+    "malicious": false,
+    "path": "regression-faint-3.pdf",
+    "sha256": "ae09c9fe910641a1e719c481092ac7ee97a2dbe2befb82550fdb0678e3a67252",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-4",
+    "expected_class": "visual_candidate",
+    "family": "faint",
+    "id": "regression-faint-4",
+    "malicious": false,
+    "path": "regression-faint-4.pdf",
+    "sha256": "1281965ca927f5f3733f672265c0186c176aff67c492b6d229951f4f40b7f141",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-0",
+    "expected_class": "visual_candidate",
+    "family": "scan_lowres",
+    "id": "regression-scan_lowres-0",
+    "malicious": false,
+    "path": "regression-scan_lowres-0.pdf",
+    "sha256": "f7cdd4e2645c73b5e645b34bf4baeb881214f86d6630c2d800cb0bd9aa11b41e",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-1",
+    "expected_class": "visual_candidate",
+    "family": "scan_lowres",
+    "id": "regression-scan_lowres-1",
+    "malicious": false,
+    "path": "regression-scan_lowres-1.pdf",
+    "sha256": "294cbe62c10218286baad33fbe650f65ffef54f7e8136d34d6ea205b685b6c11",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-2",
+    "expected_class": "visual_candidate",
+    "family": "scan_lowres",
+    "id": "regression-scan_lowres-2",
+    "malicious": false,
+    "path": "regression-scan_lowres-2.pdf",
+    "sha256": "d97fbf9cd6472a5538f065de7ac293ed669d30fce8b6d3c7538f1f1a67a1827c",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-3",
+    "expected_class": "visual_candidate",
+    "family": "scan_lowres",
+    "id": "regression-scan_lowres-3",
+    "malicious": false,
+    "path": "regression-scan_lowres-3.pdf",
+    "sha256": "2688e4eb922d5e2d009895769298185ab1b93e1eb062cbbd3a20323cdeeef6fa",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-4",
+    "expected_class": "visual_candidate",
+    "family": "scan_lowres",
+    "id": "regression-scan_lowres-4",
+    "malicious": false,
+    "path": "regression-scan_lowres-4.pdf",
+    "sha256": "2d55d764a10575cf9364a43a8fa073d2ca7744d75ab6950bf84769e81b256d1f",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-0",
+    "expected_class": "visual_candidate",
+    "family": "jpeg",
+    "id": "regression-jpeg-0",
+    "malicious": false,
+    "path": "regression-jpeg-0.pdf",
+    "sha256": "0d1e52304abcc149f17cb491a46b1e57ad1c1f2727b79e49d93d989bcad527a5",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-1",
+    "expected_class": "visual_candidate",
+    "family": "jpeg",
+    "id": "regression-jpeg-1",
+    "malicious": false,
+    "path": "regression-jpeg-1.pdf",
+    "sha256": "4b47f3407ac0a96ad84195c8968585562843a8798da19e44e2a53be6c705e008",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-2",
+    "expected_class": "visual_candidate",
+    "family": "jpeg",
+    "id": "regression-jpeg-2",
+    "malicious": false,
+    "path": "regression-jpeg-2.pdf",
+    "sha256": "14fd40cff7b2ae668e14bca14138b65216dc74b421088a59faa9d60eb8c402e9",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-3",
+    "expected_class": "visual_candidate",
+    "family": "jpeg",
+    "id": "regression-jpeg-3",
+    "malicious": false,
+    "path": "regression-jpeg-3.pdf",
+    "sha256": "03761d5e2f873e21574d738ebb7fdc565d7b3c984fc61e3d1fb26a491beee80f",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-4",
+    "expected_class": "visual_candidate",
+    "family": "jpeg",
+    "id": "regression-jpeg-4",
+    "malicious": false,
+    "path": "regression-jpeg-4.pdf",
+    "sha256": "71ca3928583b7d8e0bd631e3150e64c99101e23d9295991589f7ad84a0e55dde",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-0",
+    "expected_class": "unsigned",
+    "family": "repeated_logo",
+    "id": "regression-repeated_logo-0",
+    "malicious": false,
+    "path": "regression-repeated_logo-0.pdf",
+    "sha256": "11a55873c01031c1187dbdc8cebf246e90a7d324f91fb4ede89af9c472944b21",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-1",
+    "expected_class": "unsigned",
+    "family": "repeated_logo",
+    "id": "regression-repeated_logo-1",
+    "malicious": false,
+    "path": "regression-repeated_logo-1.pdf",
+    "sha256": "7a2dd8fb521bb70fc61eb78890376b1e03ed8d7e8c5940bf5b8a513845a0e06a",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-2",
+    "expected_class": "unsigned",
+    "family": "repeated_logo",
+    "id": "regression-repeated_logo-2",
+    "malicious": false,
+    "path": "regression-repeated_logo-2.pdf",
+    "sha256": "7f3569f9b0e73838827c15c9388d2f6908cf475bc007f06a2d4cd7fd72690c15",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-3",
+    "expected_class": "unsigned",
+    "family": "repeated_logo",
+    "id": "regression-repeated_logo-3",
+    "malicious": false,
+    "path": "regression-repeated_logo-3.pdf",
+    "sha256": "db86b36e86cbf9cbb13e225a7e55fa52c89e8d4c9caf85604894ce2a17868268",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-4",
+    "expected_class": "unsigned",
+    "family": "repeated_logo",
+    "id": "regression-repeated_logo-4",
+    "malicious": false,
+    "path": "regression-repeated_logo-4.pdf",
+    "sha256": "6097d9066ebf51e76c0e8fae475b2a665ea1b2588718a8b68ef9cf2e4e5c8d8d",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-0",
+    "expected_class": "unsigned",
+    "family": "stamp",
+    "id": "regression-stamp-0",
+    "malicious": false,
+    "path": "regression-stamp-0.pdf",
+    "sha256": "fb15ed850481f0b7baff0cc01516e51fd1a478af6ec7db2663602b1fd7b29e48",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-1",
+    "expected_class": "unsigned",
+    "family": "stamp",
+    "id": "regression-stamp-1",
+    "malicious": false,
+    "path": "regression-stamp-1.pdf",
+    "sha256": "65b540f41e22f4def3bfc8dfadcf89fc31c25274c93c4d1276f0376a60e50427",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-2",
+    "expected_class": "unsigned",
+    "family": "stamp",
+    "id": "regression-stamp-2",
+    "malicious": false,
+    "path": "regression-stamp-2.pdf",
+    "sha256": "2fea776def98e70e13b916c35cb600730deb82700489e7e34176a920fda436de",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-3",
+    "expected_class": "unsigned",
+    "family": "stamp",
+    "id": "regression-stamp-3",
+    "malicious": false,
+    "path": "regression-stamp-3.pdf",
+    "sha256": "d0db5c76595e421054940c59f3a6ae6e47568cbcae6236c6fc4128d33ab18008",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-4",
+    "expected_class": "unsigned",
+    "family": "stamp",
+    "id": "regression-stamp-4",
+    "malicious": false,
+    "path": "regression-stamp-4.pdf",
+    "sha256": "cadad4710616abd81bd85fe1b55aa5248c351933a79b033bd1d969fc95b084bc",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-0",
+    "expected_class": "unsigned",
+    "family": "printed_name",
+    "id": "regression-printed_name-0",
+    "malicious": false,
+    "path": "regression-printed_name-0.pdf",
+    "sha256": "17d9206989909f8ffd63b52ba52162b1257c6a862dfc27d5c6c60a61a7554e40",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-1",
+    "expected_class": "unsigned",
+    "family": "printed_name",
+    "id": "regression-printed_name-1",
+    "malicious": false,
+    "path": "regression-printed_name-1.pdf",
+    "sha256": "1929a7f870a1b3b1021f2563073d2dffad651f275e38d52e58f0afdd8d2805c4",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-2",
+    "expected_class": "unsigned",
+    "family": "printed_name",
+    "id": "regression-printed_name-2",
+    "malicious": false,
+    "path": "regression-printed_name-2.pdf",
+    "sha256": "1644f695205b1f8715e072aa8c29ca16b16bce30b054e30e4ac5aa3e0675be8d",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-3",
+    "expected_class": "unsigned",
+    "family": "printed_name",
+    "id": "regression-printed_name-3",
+    "malicious": false,
+    "path": "regression-printed_name-3.pdf",
+    "sha256": "1663da50ca44b301115ee7a14b39d4c6d0465ccb3c0e99dff79ca5b8ec96f14f",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-4",
+    "expected_class": "unsigned",
+    "family": "printed_name",
+    "id": "regression-printed_name-4",
+    "malicious": false,
+    "path": "regression-printed_name-4.pdf",
+    "sha256": "5453de4c3189a5fa2d4c9c9a09f05f977d037e002b834861f7debde275319839",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-0",
+    "expected_class": "visual_candidate",
+    "family": "rotated",
+    "id": "regression-rotated-0",
+    "malicious": false,
+    "path": "regression-rotated-0.pdf",
+    "sha256": "4a0a1381d0d65e855911357f8415b95f1e97a710c912ec784c8dee08c4d66bd4",
+    "signature_rois": [
+      {
+        "bbox": [
+          125.0,
+          109.0,
+          405.0,
+          200.0
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-1",
+    "expected_class": "visual_candidate",
+    "family": "rotated",
+    "id": "regression-rotated-1",
+    "malicious": false,
+    "path": "regression-rotated-1.pdf",
+    "sha256": "49e540515bb7863aaa1fdb74aa6490398777638ea1cf148801b753406e11900c",
+    "signature_rois": [
+      {
+        "bbox": [
+          132.0,
+          118.0,
+          412.0,
+          209.0
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-2",
+    "expected_class": "visual_candidate",
+    "family": "rotated",
+    "id": "regression-rotated-2",
+    "malicious": false,
+    "path": "regression-rotated-2.pdf",
+    "sha256": "9232c313e9359d9345ad0de7005a97141609a74bbaf94b7cc85ccf924f732f9f",
+    "signature_rois": [
+      {
+        "bbox": [
+          139.0,
+          127.0,
+          419.0,
+          218.0
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-3",
+    "expected_class": "visual_candidate",
+    "family": "rotated",
+    "id": "regression-rotated-3",
+    "malicious": false,
+    "path": "regression-rotated-3.pdf",
+    "sha256": "185eca5ff0bb654ae259b4690eda94753ab291cb713d3bd78b400ec0c516d9e8",
+    "signature_rois": [
+      {
+        "bbox": [
+          146.0,
+          136.0,
+          426.0,
+          227.0
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-4",
+    "expected_class": "visual_candidate",
+    "family": "rotated",
+    "id": "regression-rotated-4",
+    "malicious": false,
+    "path": "regression-rotated-4.pdf",
+    "sha256": "605e90d285d196a6224e7263de63c9f85e6576e29e4b7cc815aef39a9f6d682b",
+    "signature_rois": [
+      {
+        "bbox": [
+          153.0,
+          145.0,
+          433.0,
+          236.0
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-0",
+    "expected_class": "visual_candidate",
+    "family": "multiple",
+    "id": "regression-multiple-0",
+    "malicious": false,
+    "path": "regression-multiple-0.pdf",
+    "sha256": "2821d2df27a14c7dea6e157d14fefff632f58083b4b4570b64f95c1a6f3ba438",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-1",
+    "expected_class": "visual_candidate",
+    "family": "multiple",
+    "id": "regression-multiple-1",
+    "malicious": false,
+    "path": "regression-multiple-1.pdf",
+    "sha256": "657e19b7a448d21c80694e7bc2f454a3d12a74ca4f7131e44f166dee9ee183fd",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-2",
+    "expected_class": "visual_candidate",
+    "family": "multiple",
+    "id": "regression-multiple-2",
+    "malicious": false,
+    "path": "regression-multiple-2.pdf",
+    "sha256": "85ce1dcee29ec2224e8b7f4b17d1b5cc5f865c58a553caabc83cb57d0687a95a",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-3",
+    "expected_class": "visual_candidate",
+    "family": "multiple",
+    "id": "regression-multiple-3",
+    "malicious": false,
+    "path": "regression-multiple-3.pdf",
+    "sha256": "1cbdf7414f2861dc96fb36d9e01f1d0809c905571d57a72df7293078f381d6bc",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-4",
+    "expected_class": "visual_candidate",
+    "family": "multiple",
+    "id": "regression-multiple-4",
+    "malicious": false,
+    "path": "regression-multiple-4.pdf",
+    "sha256": "bfd927dab5df03019c3268977e7ab3958c54dca56365db56c6126db6eb13fb56",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-0",
+    "expected_class": "unsigned",
+    "family": "malformed",
+    "id": "regression-malformed-0",
+    "malicious": false,
+    "path": "regression-malformed-0.pdf",
+    "sha256": "32c32c80fc0c1104125da98029788a14119e8ce57051e122962fcc6d6a16b07a",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": false
+  },
+  {
+    "base_id": "regression-1",
+    "expected_class": "unsigned",
+    "family": "malformed",
+    "id": "regression-malformed-1",
+    "malicious": false,
+    "path": "regression-malformed-1.pdf",
+    "sha256": "b1e9d6f84e2686bd5b31e229790194655b8abaa239b5883070eaf4f300c217d0",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": false
+  },
+  {
+    "base_id": "regression-2",
+    "expected_class": "unsigned",
+    "family": "malformed",
+    "id": "regression-malformed-2",
+    "malicious": false,
+    "path": "regression-malformed-2.pdf",
+    "sha256": "a47537dd1f7f25182cf7b862b7ecef0ff37925fc1859c482c9fecfe2fb242edc",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": false
+  },
+  {
+    "base_id": "regression-3",
+    "expected_class": "unsigned",
+    "family": "malformed",
+    "id": "regression-malformed-3",
+    "malicious": false,
+    "path": "regression-malformed-3.pdf",
+    "sha256": "c623df10c5e4b53b16495966965cf366aae8f88f973efef237dad92c289e2068",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": false
+  },
+  {
+    "base_id": "regression-4",
+    "expected_class": "unsigned",
+    "family": "malformed",
+    "id": "regression-malformed-4",
+    "malicious": false,
+    "path": "regression-malformed-4.pdf",
+    "sha256": "2388b881a4af28ce7277b0061a6530b547b262a7af7d8e9918da80b680c9f7c8",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": false
+  },
+  {
+    "base_id": "regression-0",
+    "expected_class": "unsigned",
+    "family": "encrypted",
+    "id": "regression-encrypted-0",
+    "malicious": false,
+    "path": "regression-encrypted-0.pdf",
+    "sha256": "864cfac64ab0863d639afa6ffbbd2640c2f8d38728f05b88629a0bb8ca0c59c5",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": false
+  },
+  {
+    "base_id": "regression-1",
+    "expected_class": "unsigned",
+    "family": "encrypted",
+    "id": "regression-encrypted-1",
+    "malicious": false,
+    "path": "regression-encrypted-1.pdf",
+    "sha256": "7f74128c345cf5d38e6c6e75c0833fb7a9c6ddcc9e739aa0ba14b408f2bf810e",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": false
+  },
+  {
+    "base_id": "regression-2",
+    "expected_class": "unsigned",
+    "family": "encrypted",
+    "id": "regression-encrypted-2",
+    "malicious": false,
+    "path": "regression-encrypted-2.pdf",
+    "sha256": "2d81b830123d0af35b9b9168c47f36b4127e5cdd9e00512279bbfedb20c8e074",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": false
+  },
+  {
+    "base_id": "regression-3",
+    "expected_class": "unsigned",
+    "family": "encrypted",
+    "id": "regression-encrypted-3",
+    "malicious": false,
+    "path": "regression-encrypted-3.pdf",
+    "sha256": "c809c1ec16627accd53571c76e2a4e68af4e0367e771a399494a04fa4f88449b",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": false
+  },
+  {
+    "base_id": "regression-4",
+    "expected_class": "unsigned",
+    "family": "encrypted",
+    "id": "regression-encrypted-4",
+    "malicious": false,
+    "path": "regression-encrypted-4.pdf",
+    "sha256": "61bbbfb031a2352512f0b3caccd82845f831c492e90bae48c2e69bf2fc54453a",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": false
+  },
+  {
+    "base_id": "regression-0",
+    "expected_class": "visual_candidate",
+    "family": "ambiguous_reuse",
+    "id": "regression-ambiguous_reuse-0",
+    "malicious": true,
+    "path": "regression-ambiguous_reuse-0.pdf",
+    "sha256": "f0366189c90212e71462cc4edb5fa4684dd94ec6d8732207441291db7b2fed12",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": false
+  },
+  {
+    "base_id": "regression-1",
+    "expected_class": "visual_candidate",
+    "family": "ambiguous_reuse",
+    "id": "regression-ambiguous_reuse-1",
+    "malicious": true,
+    "path": "regression-ambiguous_reuse-1.pdf",
+    "sha256": "369fb0052093c59b9c7bbc23702f64e251c881f595a83301af1dcf2f710a9f7b",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": false
+  },
+  {
+    "base_id": "regression-2",
+    "expected_class": "visual_candidate",
+    "family": "ambiguous_reuse",
+    "id": "regression-ambiguous_reuse-2",
+    "malicious": true,
+    "path": "regression-ambiguous_reuse-2.pdf",
+    "sha256": "a814f0c27f49332eb88b90404bd1804e040c4df2769c6313e786608152d711d8",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": false
+  },
+  {
+    "base_id": "regression-3",
+    "expected_class": "visual_candidate",
+    "family": "ambiguous_reuse",
+    "id": "regression-ambiguous_reuse-3",
+    "malicious": true,
+    "path": "regression-ambiguous_reuse-3.pdf",
+    "sha256": "500cbd4839e952ddf9be9319b20d99b342472e2b478f65b2570d8516699ff70f",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": false
+  },
+  {
+    "base_id": "regression-4",
+    "expected_class": "visual_candidate",
+    "family": "ambiguous_reuse",
+    "id": "regression-ambiguous_reuse-4",
+    "malicious": true,
+    "path": "regression-ambiguous_reuse-4.pdf",
+    "sha256": "f012196a01c9111a0216e62141ccfb07df62355ae0f61dc08eddcf3993c64d31",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": false
+  },
+  {
+    "base_id": "regression-0",
+    "expected_class": "unsigned",
+    "family": "table",
+    "id": "regression-table-0",
+    "malicious": false,
+    "path": "regression-table-0.pdf",
+    "sha256": "9a774f52e028ad3e6285c58a86a34b3cf97104f5e6a0bdeb8397e58c59b215a9",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-1",
+    "expected_class": "unsigned",
+    "family": "table",
+    "id": "regression-table-1",
+    "malicious": false,
+    "path": "regression-table-1.pdf",
+    "sha256": "0e30d4ab88121192ebcda180c06c31358073a1dcec92631ceea823e79c31578c",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-2",
+    "expected_class": "unsigned",
+    "family": "table",
+    "id": "regression-table-2",
+    "malicious": false,
+    "path": "regression-table-2.pdf",
+    "sha256": "e2b55c33d8ccbe7000650d1b27d3f6d04cff0ba5a3a52828aa8fb11eaa823154",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-3",
+    "expected_class": "unsigned",
+    "family": "table",
+    "id": "regression-table-3",
+    "malicious": false,
+    "path": "regression-table-3.pdf",
+    "sha256": "51e0e7c4d660855c03682468fc1ab5dc3500766cb80385e08c4223bbc7c33b7b",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-4",
+    "expected_class": "unsigned",
+    "family": "table",
+    "id": "regression-table-4",
+    "malicious": false,
+    "path": "regression-table-4.pdf",
+    "sha256": "fae97499a20011721ac0902b9d9b3a705fbe0d6a138bc70b18174a50882eaca0",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-0",
+    "expected_class": "unsigned",
+    "family": "scan_printed",
+    "id": "regression-scan_printed-0",
+    "malicious": false,
+    "path": "regression-scan_printed-0.pdf",
+    "sha256": "82b3122234f89dcd88cd22fe0833bdd5e8cf48d830abd2ddc3bc75ea16ad1410",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-1",
+    "expected_class": "unsigned",
+    "family": "scan_printed",
+    "id": "regression-scan_printed-1",
+    "malicious": false,
+    "path": "regression-scan_printed-1.pdf",
+    "sha256": "f3814026b68c3a921a01d4bc663b7842f2320b697388fa6f5297498849f91d36",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-2",
+    "expected_class": "unsigned",
+    "family": "scan_printed",
+    "id": "regression-scan_printed-2",
+    "malicious": false,
+    "path": "regression-scan_printed-2.pdf",
+    "sha256": "8d50f1103b309d2e2de187e7344f1aa5f5362ecaa5e13000ceaf0b2174ab7394",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-3",
+    "expected_class": "unsigned",
+    "family": "scan_printed",
+    "id": "regression-scan_printed-3",
+    "malicious": false,
+    "path": "regression-scan_printed-3.pdf",
+    "sha256": "fdb9f99f85baebcc8e0e34440f6c840bfa616348c160a7c3eab74a9442c8132a",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-4",
+    "expected_class": "unsigned",
+    "family": "scan_printed",
+    "id": "regression-scan_printed-4",
+    "malicious": false,
+    "path": "regression-scan_printed-4.pdf",
+    "sha256": "def4ebb4e72021e90f8bc0fbc05e2cebe51aaab8fdc61111bc7061b4bd08eb18",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-0",
+    "expected_class": "unsigned",
+    "family": "blank",
+    "id": "regression-blank-0",
+    "malicious": false,
+    "path": "regression-blank-0.pdf",
+    "sha256": "909713dec909cf7b0593ed2d3f1c38ed251dbe3635496daa4990c7b59b572e6d",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-1",
+    "expected_class": "unsigned",
+    "family": "blank",
+    "id": "regression-blank-1",
+    "malicious": false,
+    "path": "regression-blank-1.pdf",
+    "sha256": "20398172db30b935eef9fdddbe1bf5c08490bddc3a6e5b07e635394eba8f3d73",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-2",
+    "expected_class": "unsigned",
+    "family": "blank",
+    "id": "regression-blank-2",
+    "malicious": false,
+    "path": "regression-blank-2.pdf",
+    "sha256": "faeff37693b4149dca5f8b8042212761ea79287ca7771a22f89a7c938c78ea34",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-3",
+    "expected_class": "unsigned",
+    "family": "blank",
+    "id": "regression-blank-3",
+    "malicious": false,
+    "path": "regression-blank-3.pdf",
+    "sha256": "c3618954529ab6367ee5c732becf49e7bac699f9c0ada72834cb925988e83a0c",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-4",
+    "expected_class": "unsigned",
+    "family": "blank",
+    "id": "regression-blank-4",
+    "malicious": false,
+    "path": "regression-blank-4.pdf",
+    "sha256": "daed6af1d0f66520fbac328b9280d3439f3080af2826e89136cb60d16dd6c2b5",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-0",
+    "expected_class": "unsigned",
+    "family": "diagram",
+    "id": "regression-diagram-0",
+    "malicious": false,
+    "path": "regression-diagram-0.pdf",
+    "sha256": "92153fe9731ec1f1726338dc95dc2138ba9477838306a3ba443b110f1d91c4cb",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-1",
+    "expected_class": "unsigned",
+    "family": "diagram",
+    "id": "regression-diagram-1",
+    "malicious": false,
+    "path": "regression-diagram-1.pdf",
+    "sha256": "095fcc2672b0a74a9fe1d14caaa65cd8996b4c986da3526d7502d6d905e6bd67",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-2",
+    "expected_class": "unsigned",
+    "family": "diagram",
+    "id": "regression-diagram-2",
+    "malicious": false,
+    "path": "regression-diagram-2.pdf",
+    "sha256": "0fc7c47bc94d88c872625b15166a0dd994da9c43541107cdcced1a7072e92e03",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-3",
+    "expected_class": "unsigned",
+    "family": "diagram",
+    "id": "regression-diagram-3",
+    "malicious": false,
+    "path": "regression-diagram-3.pdf",
+    "sha256": "56f7bfdfd6f95d9526a443097c208181c5549b238f1e3ed6ad9d50beeff8fdd1",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "regression-4",
+    "expected_class": "unsigned",
+    "family": "diagram",
+    "id": "regression-diagram-4",
+    "malicious": false,
+    "path": "regression-diagram-4.pdf",
+    "sha256": "053becd9b97d86ef5ca8ad59d2e14c7329810fc66ae24763b42c414b5c10d0ea",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-0",
+    "expected_class": "cryptographic",
+    "family": "signed",
+    "id": "holdout-signed-0",
+    "malicious": false,
+    "path": "holdout-signed-0.pdf",
+    "sha256": "d343bf0406df2b478b5565ca42553701c3677fe66f5d6388db1ee6a751a97af9",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-1",
+    "expected_class": "cryptographic",
+    "family": "signed",
+    "id": "holdout-signed-1",
+    "malicious": false,
+    "path": "holdout-signed-1.pdf",
+    "sha256": "a7c026240852743536bd48380794e02e453cbe3323a60894578bb36c902a609d",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-2",
+    "expected_class": "cryptographic",
+    "family": "signed",
+    "id": "holdout-signed-2",
+    "malicious": false,
+    "path": "holdout-signed-2.pdf",
+    "sha256": "12d18bf4327691f160ec32750149f04444cd99aa9725fbc09004ada380323020",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-3",
+    "expected_class": "cryptographic",
+    "family": "signed",
+    "id": "holdout-signed-3",
+    "malicious": false,
+    "path": "holdout-signed-3.pdf",
+    "sha256": "ecb972c28b59c8f059539b219e98c9300a7ebfe743d1e30670d08adf790022a8",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-4",
+    "expected_class": "cryptographic",
+    "family": "signed",
+    "id": "holdout-signed-4",
+    "malicious": false,
+    "path": "holdout-signed-4.pdf",
+    "sha256": "d60c20e67b1a1318c415104d976ba2d0d49a0429b06adf0881bdab461c16224a",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-0",
+    "expected_class": "cryptographic",
+    "family": "byte_tamper",
+    "id": "holdout-byte_tamper-0",
+    "malicious": true,
+    "path": "holdout-byte_tamper-0.pdf",
+    "sha256": "cc261f6cc81527d8a7ec6bd669c86bf0abc94a2cd229b21737357066104429e3",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-1",
+    "expected_class": "cryptographic",
+    "family": "byte_tamper",
+    "id": "holdout-byte_tamper-1",
+    "malicious": true,
+    "path": "holdout-byte_tamper-1.pdf",
+    "sha256": "a3f30cbe41d4fec728a721714a2004b97de80443612d10cf0e014d99ba930340",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-2",
+    "expected_class": "cryptographic",
+    "family": "byte_tamper",
+    "id": "holdout-byte_tamper-2",
+    "malicious": true,
+    "path": "holdout-byte_tamper-2.pdf",
+    "sha256": "cebb6b2ca56b19b9c8cb53e98e48aa42610c66168ce856d341d71a03c40a337b",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-3",
+    "expected_class": "cryptographic",
+    "family": "byte_tamper",
+    "id": "holdout-byte_tamper-3",
+    "malicious": true,
+    "path": "holdout-byte_tamper-3.pdf",
+    "sha256": "8e5416d3f49d42bcac83e377601f97de6a7925352e4b48059d826dfecbe3d6c6",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-4",
+    "expected_class": "cryptographic",
+    "family": "byte_tamper",
+    "id": "holdout-byte_tamper-4",
+    "malicious": true,
+    "path": "holdout-byte_tamper-4.pdf",
+    "sha256": "bd9840b3166695e16d1ca4461bdd5c9483f6381dd36bf6e3980b6676ea422b53",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-0",
+    "expected_class": "cryptographic",
+    "family": "reveal",
+    "id": "holdout-reveal-0",
+    "malicious": true,
+    "path": "holdout-reveal-0.pdf",
+    "sha256": "8d3d4a8d1ae220f88de5be45624085dc22e7d6befefb41fb04e69ab225c93cde",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-1",
+    "expected_class": "cryptographic",
+    "family": "reveal",
+    "id": "holdout-reveal-1",
+    "malicious": true,
+    "path": "holdout-reveal-1.pdf",
+    "sha256": "f1139d3df41bee5b954f25e27dc1e4d22cf30a7e68620ae244549eaac2529de9",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-2",
+    "expected_class": "cryptographic",
+    "family": "reveal",
+    "id": "holdout-reveal-2",
+    "malicious": true,
+    "path": "holdout-reveal-2.pdf",
+    "sha256": "b346042a776d09df136507345a6765c2c4e9487a70b4b20f25001bd928a145d0",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-3",
+    "expected_class": "cryptographic",
+    "family": "reveal",
+    "id": "holdout-reveal-3",
+    "malicious": true,
+    "path": "holdout-reveal-3.pdf",
+    "sha256": "f601484d911c358541f7583ae72d24920e268b4db1954630c401f55d067e88db",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-4",
+    "expected_class": "cryptographic",
+    "family": "reveal",
+    "id": "holdout-reveal-4",
+    "malicious": true,
+    "path": "holdout-reveal-4.pdf",
+    "sha256": "b04ca342b56f8bc9ca3bd0cbc5cb16dddf6a8a8985f96dafad473095f3eb3a87",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-0",
+    "expected_class": "cryptographic",
+    "family": "overlay",
+    "id": "holdout-overlay-0",
+    "malicious": true,
+    "path": "holdout-overlay-0.pdf",
+    "sha256": "53a0c9260538830fd117afc6bf2ccb8d07b5e66efeeb4b8a13bedd680121fb0b",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-1",
+    "expected_class": "cryptographic",
+    "family": "overlay",
+    "id": "holdout-overlay-1",
+    "malicious": true,
+    "path": "holdout-overlay-1.pdf",
+    "sha256": "8818309a4c8ca4dc6e2a68b57ec81d7c3cd0ec99ab991bca9d85cd1445ca29da",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-2",
+    "expected_class": "cryptographic",
+    "family": "overlay",
+    "id": "holdout-overlay-2",
+    "malicious": true,
+    "path": "holdout-overlay-2.pdf",
+    "sha256": "f066791d4acf191f03754a43653338e86d0e9f171dc4a3dc3a9be729a0d87fc0",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-3",
+    "expected_class": "cryptographic",
+    "family": "overlay",
+    "id": "holdout-overlay-3",
+    "malicious": true,
+    "path": "holdout-overlay-3.pdf",
+    "sha256": "9bf86f7eb91d71f8a6d36ec5d521c9aebb26a57c70e9b68dfedab476d3e68b39",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-4",
+    "expected_class": "cryptographic",
+    "family": "overlay",
+    "id": "holdout-overlay-4",
+    "malicious": true,
+    "path": "holdout-overlay-4.pdf",
+    "sha256": "5844d52fc83f4e551b37324aea97f5629d32007702e5e9b0346a33febcd49ed2",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-0",
+    "expected_class": "cryptographic",
+    "family": "annotation",
+    "id": "holdout-annotation-0",
+    "malicious": true,
+    "path": "holdout-annotation-0.pdf",
+    "sha256": "2ca0d41608579cd404df595bd7a08b1973fb5234dad50271474c21eb554b3a68",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-1",
+    "expected_class": "cryptographic",
+    "family": "annotation",
+    "id": "holdout-annotation-1",
+    "malicious": true,
+    "path": "holdout-annotation-1.pdf",
+    "sha256": "8081e22fd2ce2cf5148024cd72b66c2e26d5603ef9c3bbcc876a09519a01ed9a",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-2",
+    "expected_class": "cryptographic",
+    "family": "annotation",
+    "id": "holdout-annotation-2",
+    "malicious": true,
+    "path": "holdout-annotation-2.pdf",
+    "sha256": "81f2b26c9312e9a3a9099b99b132491fa6e7dfe015b65984d775fccc3463d203",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-3",
+    "expected_class": "cryptographic",
+    "family": "annotation",
+    "id": "holdout-annotation-3",
+    "malicious": true,
+    "path": "holdout-annotation-3.pdf",
+    "sha256": "b69d1e9bdbe67a1fc90debc5dbc88e483f417f2b75255409e24b9fc8395a72c6",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-4",
+    "expected_class": "cryptographic",
+    "family": "annotation",
+    "id": "holdout-annotation-4",
+    "malicious": true,
+    "path": "holdout-annotation-4.pdf",
+    "sha256": "f04f498014c6b8269f4bfc9916f2def7fc81ceaf1eeace8c5a47435f68f3f8a7",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-0",
+    "expected_class": "cryptographic",
+    "family": "page_replace",
+    "id": "holdout-page_replace-0",
+    "malicious": true,
+    "path": "holdout-page_replace-0.pdf",
+    "sha256": "dfcf40246186586bd465c09e7cb9267e6ae5ca29d7ddc1483f57e1016ba9674e",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-1",
+    "expected_class": "cryptographic",
+    "family": "page_replace",
+    "id": "holdout-page_replace-1",
+    "malicious": true,
+    "path": "holdout-page_replace-1.pdf",
+    "sha256": "063394112f2e9772d8de4108058a162a217e94626b09c8fd380baefd278c58e8",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-2",
+    "expected_class": "cryptographic",
+    "family": "page_replace",
+    "id": "holdout-page_replace-2",
+    "malicious": true,
+    "path": "holdout-page_replace-2.pdf",
+    "sha256": "a2f0794e2c9c303c55442694c956ad0b6f196a4027be950f5dcb6d0dda625121",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-3",
+    "expected_class": "cryptographic",
+    "family": "page_replace",
+    "id": "holdout-page_replace-3",
+    "malicious": true,
+    "path": "holdout-page_replace-3.pdf",
+    "sha256": "d23a338ae73862878d8d9f76838d4e6feb054713b9a7a7c602cc5ac5113c493e",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-4",
+    "expected_class": "cryptographic",
+    "family": "page_replace",
+    "id": "holdout-page_replace-4",
+    "malicious": true,
+    "path": "holdout-page_replace-4.pdf",
+    "sha256": "6bfbb8811af18cb6fb7c25dd8c29d2fec21f72b826bb191048c8a04c4b462478",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-0",
+    "expected_class": "cryptographic",
+    "family": "metadata",
+    "id": "holdout-metadata-0",
+    "malicious": false,
+    "path": "holdout-metadata-0.pdf",
+    "sha256": "d7694dea283255cffd9bb0c4f2e1320ca7eaff72d1423bf403ab526c2c9eb7e9",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-1",
+    "expected_class": "cryptographic",
+    "family": "metadata",
+    "id": "holdout-metadata-1",
+    "malicious": false,
+    "path": "holdout-metadata-1.pdf",
+    "sha256": "2d1e68746c894f1ac9435a88183be73c97783a205852706b1b0d2e52eae418ee",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-2",
+    "expected_class": "cryptographic",
+    "family": "metadata",
+    "id": "holdout-metadata-2",
+    "malicious": false,
+    "path": "holdout-metadata-2.pdf",
+    "sha256": "30f6924531d30adb74f00fd9ede883a426f5a9504a25fdb1672ec22682cc4f54",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-3",
+    "expected_class": "cryptographic",
+    "family": "metadata",
+    "id": "holdout-metadata-3",
+    "malicious": false,
+    "path": "holdout-metadata-3.pdf",
+    "sha256": "ca2db82d6ed0b85bbfe7a65daf741504c8e6d7a82b0a51ac54986bd936cb4e24",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-4",
+    "expected_class": "cryptographic",
+    "family": "metadata",
+    "id": "holdout-metadata-4",
+    "malicious": false,
+    "path": "holdout-metadata-4.pdf",
+    "sha256": "16b3f06f5b73bd01392a7ac518a977e281d45590fc34b736f82d74db25e37b67",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-0",
+    "expected_class": "visual_candidate",
+    "family": "visual",
+    "id": "holdout-visual-0",
+    "malicious": false,
+    "path": "holdout-visual-0.pdf",
+    "sha256": "f9ef7f6420fbb5469b90c768d32f29c3dc91ad88c79b98692a290877a457243a",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-1",
+    "expected_class": "visual_candidate",
+    "family": "visual",
+    "id": "holdout-visual-1",
+    "malicious": false,
+    "path": "holdout-visual-1.pdf",
+    "sha256": "bf5bfd6b3e39194b8886abce2040788b8a2c8fab85c56e2127b321bbfe70f541",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-2",
+    "expected_class": "visual_candidate",
+    "family": "visual",
+    "id": "holdout-visual-2",
+    "malicious": false,
+    "path": "holdout-visual-2.pdf",
+    "sha256": "e8dc7eff1b37ac7b6a4edd08766ec44b4a7a546a43a3f6749553a12bd2e7fdfc",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-3",
+    "expected_class": "visual_candidate",
+    "family": "visual",
+    "id": "holdout-visual-3",
+    "malicious": false,
+    "path": "holdout-visual-3.pdf",
+    "sha256": "0c02982123734d19a2483b952158c4d6c66ca83b544174b93ca1da586781791f",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-4",
+    "expected_class": "visual_candidate",
+    "family": "visual",
+    "id": "holdout-visual-4",
+    "malicious": false,
+    "path": "holdout-visual-4.pdf",
+    "sha256": "22c65fa31d1f69010e82d886f9306b35263ec90e729b867fb50fbf6f289cd9bb",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-0",
+    "expected_class": "visual_candidate",
+    "family": "copied",
+    "id": "holdout-copied-0",
+    "malicious": true,
+    "path": "holdout-copied-0.pdf",
+    "sha256": "5a93ffefb62cd5b16c04b106b4d408c078774ae08ebccf1febd56b5f3336d1d9",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-1",
+    "expected_class": "visual_candidate",
+    "family": "copied",
+    "id": "holdout-copied-1",
+    "malicious": true,
+    "path": "holdout-copied-1.pdf",
+    "sha256": "1ff10ec819a1b5934663239e7a50f353979eb7e32c28a23611c8c67bdfa8c348",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-2",
+    "expected_class": "visual_candidate",
+    "family": "copied",
+    "id": "holdout-copied-2",
+    "malicious": true,
+    "path": "holdout-copied-2.pdf",
+    "sha256": "5b12d56d316893574c79f76206a6c9369f77289e7131f2858b3f8940a0581f82",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-3",
+    "expected_class": "visual_candidate",
+    "family": "copied",
+    "id": "holdout-copied-3",
+    "malicious": true,
+    "path": "holdout-copied-3.pdf",
+    "sha256": "be16c4f77f0cffc2ba44151a1b817542c44c79f180d17781ce25463b889489f1",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-4",
+    "expected_class": "visual_candidate",
+    "family": "copied",
+    "id": "holdout-copied-4",
+    "malicious": true,
+    "path": "holdout-copied-4.pdf",
+    "sha256": "69644df85a72d2b189d3bad89c574480b6ec1a483ed97a22ff69a7f37c532477",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-0",
+    "expected_class": "visual_candidate",
+    "family": "faint",
+    "id": "holdout-faint-0",
+    "malicious": false,
+    "path": "holdout-faint-0.pdf",
+    "sha256": "d2542087ccf93ffc89d33b6482dd2221e7324f565df04ffa0ac398b714662841",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-1",
+    "expected_class": "visual_candidate",
+    "family": "faint",
+    "id": "holdout-faint-1",
+    "malicious": false,
+    "path": "holdout-faint-1.pdf",
+    "sha256": "697c61656aaf9fd848c0b728fda76d569a9e2be262f0491a974d10fe7fb47d11",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-2",
+    "expected_class": "visual_candidate",
+    "family": "faint",
+    "id": "holdout-faint-2",
+    "malicious": false,
+    "path": "holdout-faint-2.pdf",
+    "sha256": "2ac036db280c42ab90186f40aa24c2f1996db3ac71fc814f49cae0d2e6de94e0",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-3",
+    "expected_class": "visual_candidate",
+    "family": "faint",
+    "id": "holdout-faint-3",
+    "malicious": false,
+    "path": "holdout-faint-3.pdf",
+    "sha256": "347346be68d113a2438bf621c045820b8f08b4c858a94585ac3f1d4b88f25df8",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-4",
+    "expected_class": "visual_candidate",
+    "family": "faint",
+    "id": "holdout-faint-4",
+    "malicious": false,
+    "path": "holdout-faint-4.pdf",
+    "sha256": "b2ab84c5d3a57b1bb3c0a4c36db0020cb7baadd7dfd70fe14b53f3bbf9a261e4",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-0",
+    "expected_class": "visual_candidate",
+    "family": "scan_lowres",
+    "id": "holdout-scan_lowres-0",
+    "malicious": false,
+    "path": "holdout-scan_lowres-0.pdf",
+    "sha256": "7244b1309ccef516244ea234053e4d993a2c8c45f52964b6edb3856c185e67db",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-1",
+    "expected_class": "visual_candidate",
+    "family": "scan_lowres",
+    "id": "holdout-scan_lowres-1",
+    "malicious": false,
+    "path": "holdout-scan_lowres-1.pdf",
+    "sha256": "fc75b36e54c53ee6fdd7371b783736c0c22acaa80de207fcac7b5e5a09c0ec36",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-2",
+    "expected_class": "visual_candidate",
+    "family": "scan_lowres",
+    "id": "holdout-scan_lowres-2",
+    "malicious": false,
+    "path": "holdout-scan_lowres-2.pdf",
+    "sha256": "1c529965e9adeb822f6917317a77dfc3b3d0ab34b1a1ac789ba4ad9e08c3947c",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-3",
+    "expected_class": "visual_candidate",
+    "family": "scan_lowres",
+    "id": "holdout-scan_lowres-3",
+    "malicious": false,
+    "path": "holdout-scan_lowres-3.pdf",
+    "sha256": "5570e29d7c61941fa538e4ac65b0f68e8d3ad76b8242af0557fbf3be72177e4f",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-4",
+    "expected_class": "visual_candidate",
+    "family": "scan_lowres",
+    "id": "holdout-scan_lowres-4",
+    "malicious": false,
+    "path": "holdout-scan_lowres-4.pdf",
+    "sha256": "d88b42502b1f0dbc225d0769438d570ff6cac0982f4c6870fc18f6591fdfa8d0",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-0",
+    "expected_class": "visual_candidate",
+    "family": "jpeg",
+    "id": "holdout-jpeg-0",
+    "malicious": false,
+    "path": "holdout-jpeg-0.pdf",
+    "sha256": "9e9aadb46fdeee5a2c9860cfeb36e282618af4ccee204108b6e379a6a6c19cec",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-1",
+    "expected_class": "visual_candidate",
+    "family": "jpeg",
+    "id": "holdout-jpeg-1",
+    "malicious": false,
+    "path": "holdout-jpeg-1.pdf",
+    "sha256": "3cff0474689e2e383444b116d0c48840e1fef7a079e03d4dcda4ded58c376282",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-2",
+    "expected_class": "visual_candidate",
+    "family": "jpeg",
+    "id": "holdout-jpeg-2",
+    "malicious": false,
+    "path": "holdout-jpeg-2.pdf",
+    "sha256": "0463c2db1677f2f62ab292be9d26592e53ec61e0d6ceac82a5867da63d17b5cf",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-3",
+    "expected_class": "visual_candidate",
+    "family": "jpeg",
+    "id": "holdout-jpeg-3",
+    "malicious": false,
+    "path": "holdout-jpeg-3.pdf",
+    "sha256": "50839e3c8a5fc0c8935fd8143142dbc202f64fe534a40c8d2e868e6277f86c94",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-4",
+    "expected_class": "visual_candidate",
+    "family": "jpeg",
+    "id": "holdout-jpeg-4",
+    "malicious": false,
+    "path": "holdout-jpeg-4.pdf",
+    "sha256": "99a149c812774f90496215613d566e02ec0f15001f2eb24e8e266b0b367a83e7",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-0",
+    "expected_class": "unsigned",
+    "family": "repeated_logo",
+    "id": "holdout-repeated_logo-0",
+    "malicious": false,
+    "path": "holdout-repeated_logo-0.pdf",
+    "sha256": "3e197a90a5eefb4e222bf6c945fcf98b9f219d4f130c880fdfa8400a9cb4c7fe",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-1",
+    "expected_class": "unsigned",
+    "family": "repeated_logo",
+    "id": "holdout-repeated_logo-1",
+    "malicious": false,
+    "path": "holdout-repeated_logo-1.pdf",
+    "sha256": "d3a61eecf97de2599062a0dc5aa81928966b2daaca0961e247308254057c1dda",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-2",
+    "expected_class": "unsigned",
+    "family": "repeated_logo",
+    "id": "holdout-repeated_logo-2",
+    "malicious": false,
+    "path": "holdout-repeated_logo-2.pdf",
+    "sha256": "49098ebd174d10ebea70204721e75c8cd6e65bbb28a3f99f641bcddc7ddc58c9",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-3",
+    "expected_class": "unsigned",
+    "family": "repeated_logo",
+    "id": "holdout-repeated_logo-3",
+    "malicious": false,
+    "path": "holdout-repeated_logo-3.pdf",
+    "sha256": "91956d6f995990c9bcc4b7b7eafeb3872d81a421ee6e96b892a76f02795c6cd8",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-4",
+    "expected_class": "unsigned",
+    "family": "repeated_logo",
+    "id": "holdout-repeated_logo-4",
+    "malicious": false,
+    "path": "holdout-repeated_logo-4.pdf",
+    "sha256": "6f2dcaaaf6b000384ca38fbf42d88cc93fba0ddfae7473ce563dc7cfe89cae2d",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-0",
+    "expected_class": "unsigned",
+    "family": "stamp",
+    "id": "holdout-stamp-0",
+    "malicious": false,
+    "path": "holdout-stamp-0.pdf",
+    "sha256": "299ccc1d380f0df53f78267816bd440f311b292e5cce4f4fa7a673bc78dcccd0",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-1",
+    "expected_class": "unsigned",
+    "family": "stamp",
+    "id": "holdout-stamp-1",
+    "malicious": false,
+    "path": "holdout-stamp-1.pdf",
+    "sha256": "bad196a5ae558746c3c281628885c2298f1838f8c83cf0042cb54e0b09857e65",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-2",
+    "expected_class": "unsigned",
+    "family": "stamp",
+    "id": "holdout-stamp-2",
+    "malicious": false,
+    "path": "holdout-stamp-2.pdf",
+    "sha256": "ea14fa7dfefb24b72f233a5e5761e147e1c7e372ee17579f76cd6de901f0c823",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-3",
+    "expected_class": "unsigned",
+    "family": "stamp",
+    "id": "holdout-stamp-3",
+    "malicious": false,
+    "path": "holdout-stamp-3.pdf",
+    "sha256": "65122acfec09d5a02650d934ee21237783f6ab821b08e69a949a5408dcea451c",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-4",
+    "expected_class": "unsigned",
+    "family": "stamp",
+    "id": "holdout-stamp-4",
+    "malicious": false,
+    "path": "holdout-stamp-4.pdf",
+    "sha256": "4e58d934831bc09420de0b5f2ca39f11f37b76624d92ed57829cd774c7d37d62",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-0",
+    "expected_class": "unsigned",
+    "family": "printed_name",
+    "id": "holdout-printed_name-0",
+    "malicious": false,
+    "path": "holdout-printed_name-0.pdf",
+    "sha256": "0b3ba4ca73725d03c137128155fd28c14703b0f456a11f238aae4f0858551b04",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-1",
+    "expected_class": "unsigned",
+    "family": "printed_name",
+    "id": "holdout-printed_name-1",
+    "malicious": false,
+    "path": "holdout-printed_name-1.pdf",
+    "sha256": "f26b9551d27e1b43188d663139b1ed920ec9b7b9b6dfef9582b560ed79eea681",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-2",
+    "expected_class": "unsigned",
+    "family": "printed_name",
+    "id": "holdout-printed_name-2",
+    "malicious": false,
+    "path": "holdout-printed_name-2.pdf",
+    "sha256": "50d4ebb8f17ede954922afd50c846660ec716cdace3dda3056def5332cccedff",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-3",
+    "expected_class": "unsigned",
+    "family": "printed_name",
+    "id": "holdout-printed_name-3",
+    "malicious": false,
+    "path": "holdout-printed_name-3.pdf",
+    "sha256": "0f839ff90b30a1ca4919b4496e37b7a9786bd7308498135933b81ec6fe7eebe4",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-4",
+    "expected_class": "unsigned",
+    "family": "printed_name",
+    "id": "holdout-printed_name-4",
+    "malicious": false,
+    "path": "holdout-printed_name-4.pdf",
+    "sha256": "2708d54a56708c462c6142f02f55076d613493cf38f5f9079a3b5227fd1d3e6f",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-0",
+    "expected_class": "visual_candidate",
+    "family": "rotated",
+    "id": "holdout-rotated-0",
+    "malicious": false,
+    "path": "holdout-rotated-0.pdf",
+    "sha256": "f99225d82b5533246d9c77b5bdfc94ee378bb90e6243eca4f525eb01d684a17b",
+    "signature_rois": [
+      {
+        "bbox": [
+          125.0,
+          109.0,
+          405.0,
+          200.0
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-1",
+    "expected_class": "visual_candidate",
+    "family": "rotated",
+    "id": "holdout-rotated-1",
+    "malicious": false,
+    "path": "holdout-rotated-1.pdf",
+    "sha256": "7a1a1efed990df954389c82a16cfa75e274c9319c266a351b9c3c705d0845e91",
+    "signature_rois": [
+      {
+        "bbox": [
+          132.0,
+          118.0,
+          412.0,
+          209.0
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-2",
+    "expected_class": "visual_candidate",
+    "family": "rotated",
+    "id": "holdout-rotated-2",
+    "malicious": false,
+    "path": "holdout-rotated-2.pdf",
+    "sha256": "27e8607be0083f57ef458524806f1f70a99014cf91c106991b781bc1c626fae3",
+    "signature_rois": [
+      {
+        "bbox": [
+          139.0,
+          127.0,
+          419.0,
+          218.0
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-3",
+    "expected_class": "visual_candidate",
+    "family": "rotated",
+    "id": "holdout-rotated-3",
+    "malicious": false,
+    "path": "holdout-rotated-3.pdf",
+    "sha256": "de4d4af65c4920bc38deebac49af8fe067966f9a44377f34573cdeaa01364a77",
+    "signature_rois": [
+      {
+        "bbox": [
+          146.0,
+          136.0,
+          426.0,
+          227.0
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-4",
+    "expected_class": "visual_candidate",
+    "family": "rotated",
+    "id": "holdout-rotated-4",
+    "malicious": false,
+    "path": "holdout-rotated-4.pdf",
+    "sha256": "fa600333aa5bb710d9df7242ac12ac6ad831e8ce11ae96be330d588136c79b3c",
+    "signature_rois": [
+      {
+        "bbox": [
+          153.0,
+          145.0,
+          433.0,
+          236.0
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-0",
+    "expected_class": "visual_candidate",
+    "family": "multiple",
+    "id": "holdout-multiple-0",
+    "malicious": false,
+    "path": "holdout-multiple-0.pdf",
+    "sha256": "31b33a9c07e64705a350c35a7643b8d858e492b9e8b72366dd4ca1fbf67ef958",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-1",
+    "expected_class": "visual_candidate",
+    "family": "multiple",
+    "id": "holdout-multiple-1",
+    "malicious": false,
+    "path": "holdout-multiple-1.pdf",
+    "sha256": "ad620257b165d2a3cfd7961688d51fd8a01ab68486a4789196716d7fd5de0270",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-2",
+    "expected_class": "visual_candidate",
+    "family": "multiple",
+    "id": "holdout-multiple-2",
+    "malicious": false,
+    "path": "holdout-multiple-2.pdf",
+    "sha256": "f247c55246697cdb6ab8c1676fd390bf4f115207379103921c32fcc90afab259",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-3",
+    "expected_class": "visual_candidate",
+    "family": "multiple",
+    "id": "holdout-multiple-3",
+    "malicious": false,
+    "path": "holdout-multiple-3.pdf",
+    "sha256": "f039daf5284bb779bf72d2b6bd9491afecdbb31132359e286eccaf665cf8e0f6",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-4",
+    "expected_class": "visual_candidate",
+    "family": "multiple",
+    "id": "holdout-multiple-4",
+    "malicious": false,
+    "path": "holdout-multiple-4.pdf",
+    "sha256": "9ac90cb1aef49aa7cb2ea974edad635ece9231f08e559d9d6905a72a147845c9",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-0",
+    "expected_class": "unsigned",
+    "family": "malformed",
+    "id": "holdout-malformed-0",
+    "malicious": false,
+    "path": "holdout-malformed-0.pdf",
+    "sha256": "dbdfcb830ef030a135e9f461881a12765eb5a3fa6105009c0232f6db891596d8",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": false
+  },
+  {
+    "base_id": "holdout-1",
+    "expected_class": "unsigned",
+    "family": "malformed",
+    "id": "holdout-malformed-1",
+    "malicious": false,
+    "path": "holdout-malformed-1.pdf",
+    "sha256": "3c160999fb7c0589c0735bbbd1ed91d0223da232f986f58c5622e7c74d9df396",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": false
+  },
+  {
+    "base_id": "holdout-2",
+    "expected_class": "unsigned",
+    "family": "malformed",
+    "id": "holdout-malformed-2",
+    "malicious": false,
+    "path": "holdout-malformed-2.pdf",
+    "sha256": "a1e97cfc0b6c6400c8f0c4c72198b8a4a05831ccda7403c723909638c21dc370",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": false
+  },
+  {
+    "base_id": "holdout-3",
+    "expected_class": "unsigned",
+    "family": "malformed",
+    "id": "holdout-malformed-3",
+    "malicious": false,
+    "path": "holdout-malformed-3.pdf",
+    "sha256": "0f6947d843d38464b2be9d650015d10b0ad2088288517688707bb641ec304263",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": false
+  },
+  {
+    "base_id": "holdout-4",
+    "expected_class": "unsigned",
+    "family": "malformed",
+    "id": "holdout-malformed-4",
+    "malicious": false,
+    "path": "holdout-malformed-4.pdf",
+    "sha256": "6dd858c58ecb524491343db3d73deb21c183c465ac33707acc245e39fe52797d",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": false
+  },
+  {
+    "base_id": "holdout-0",
+    "expected_class": "unsigned",
+    "family": "encrypted",
+    "id": "holdout-encrypted-0",
+    "malicious": false,
+    "path": "holdout-encrypted-0.pdf",
+    "sha256": "9a2eb64555889cc31c9a6f307807ef406aeb752db9b362bd3a9267f4e0927612",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": false
+  },
+  {
+    "base_id": "holdout-1",
+    "expected_class": "unsigned",
+    "family": "encrypted",
+    "id": "holdout-encrypted-1",
+    "malicious": false,
+    "path": "holdout-encrypted-1.pdf",
+    "sha256": "60fa6d7326958d7c18198acf32592b6677cb7ef0829fe8d47db2c5ff2ae63147",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": false
+  },
+  {
+    "base_id": "holdout-2",
+    "expected_class": "unsigned",
+    "family": "encrypted",
+    "id": "holdout-encrypted-2",
+    "malicious": false,
+    "path": "holdout-encrypted-2.pdf",
+    "sha256": "980efdbbaeca51f09b02059c313620c71b67343a8c928610efd657d4fb2ae04b",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": false
+  },
+  {
+    "base_id": "holdout-3",
+    "expected_class": "unsigned",
+    "family": "encrypted",
+    "id": "holdout-encrypted-3",
+    "malicious": false,
+    "path": "holdout-encrypted-3.pdf",
+    "sha256": "b4f39760368c2396e13d840cee1ed0598498ec6c92ae03c4427e62e728a77e6e",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": false
+  },
+  {
+    "base_id": "holdout-4",
+    "expected_class": "unsigned",
+    "family": "encrypted",
+    "id": "holdout-encrypted-4",
+    "malicious": false,
+    "path": "holdout-encrypted-4.pdf",
+    "sha256": "4060da685be2d45b36bcbf825272e92c33b4272522a0d09d33e0d2e71a6ad6df",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": false
+  },
+  {
+    "base_id": "holdout-0",
+    "expected_class": "visual_candidate",
+    "family": "ambiguous_reuse",
+    "id": "holdout-ambiguous_reuse-0",
+    "malicious": true,
+    "path": "holdout-ambiguous_reuse-0.pdf",
+    "sha256": "f9ef7f6420fbb5469b90c768d32f29c3dc91ad88c79b98692a290877a457243a",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": false
+  },
+  {
+    "base_id": "holdout-1",
+    "expected_class": "visual_candidate",
+    "family": "ambiguous_reuse",
+    "id": "holdout-ambiguous_reuse-1",
+    "malicious": true,
+    "path": "holdout-ambiguous_reuse-1.pdf",
+    "sha256": "bf5bfd6b3e39194b8886abce2040788b8a2c8fab85c56e2127b321bbfe70f541",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": false
+  },
+  {
+    "base_id": "holdout-2",
+    "expected_class": "visual_candidate",
+    "family": "ambiguous_reuse",
+    "id": "holdout-ambiguous_reuse-2",
+    "malicious": true,
+    "path": "holdout-ambiguous_reuse-2.pdf",
+    "sha256": "e8dc7eff1b37ac7b6a4edd08766ec44b4a7a546a43a3f6749553a12bd2e7fdfc",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": false
+  },
+  {
+    "base_id": "holdout-3",
+    "expected_class": "visual_candidate",
+    "family": "ambiguous_reuse",
+    "id": "holdout-ambiguous_reuse-3",
+    "malicious": true,
+    "path": "holdout-ambiguous_reuse-3.pdf",
+    "sha256": "0c02982123734d19a2483b952158c4d6c66ca83b544174b93ca1da586781791f",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": false
+  },
+  {
+    "base_id": "holdout-4",
+    "expected_class": "visual_candidate",
+    "family": "ambiguous_reuse",
+    "id": "holdout-ambiguous_reuse-4",
+    "malicious": true,
+    "path": "holdout-ambiguous_reuse-4.pdf",
+    "sha256": "22c65fa31d1f69010e82d886f9306b35263ec90e729b867fb50fbf6f289cd9bb",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "holdout",
+    "supported": false
+  },
+  {
+    "base_id": "holdout-0",
+    "expected_class": "unsigned",
+    "family": "table",
+    "id": "holdout-table-0",
+    "malicious": false,
+    "path": "holdout-table-0.pdf",
+    "sha256": "ef5f73b2aad2b592959a9b2282ee6ac4d8d94a7f26b9850140a1bef7555e88d0",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-1",
+    "expected_class": "unsigned",
+    "family": "table",
+    "id": "holdout-table-1",
+    "malicious": false,
+    "path": "holdout-table-1.pdf",
+    "sha256": "cc4f480e6c3e1f4819338bd8703d579f8d1c560550e4fc2082cd952fefc776ad",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-2",
+    "expected_class": "unsigned",
+    "family": "table",
+    "id": "holdout-table-2",
+    "malicious": false,
+    "path": "holdout-table-2.pdf",
+    "sha256": "af30d20f344afc9723f8862e5449fc54754390f8508bb02d57706627e9b9f89e",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-3",
+    "expected_class": "unsigned",
+    "family": "table",
+    "id": "holdout-table-3",
+    "malicious": false,
+    "path": "holdout-table-3.pdf",
+    "sha256": "2e121036fb97e2ff71070ed9e036801c35dbbfa04d4c1b614218130462657043",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-4",
+    "expected_class": "unsigned",
+    "family": "table",
+    "id": "holdout-table-4",
+    "malicious": false,
+    "path": "holdout-table-4.pdf",
+    "sha256": "ce299c6665edbc5b9c21360313dad51605d35ee6af391261b90665a390cdee01",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-0",
+    "expected_class": "unsigned",
+    "family": "scan_printed",
+    "id": "holdout-scan_printed-0",
+    "malicious": false,
+    "path": "holdout-scan_printed-0.pdf",
+    "sha256": "d8b51ba7acd603ffa12eca83efca51615fe950db0d5bdcd4278172ec9b2bab7d",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-1",
+    "expected_class": "unsigned",
+    "family": "scan_printed",
+    "id": "holdout-scan_printed-1",
+    "malicious": false,
+    "path": "holdout-scan_printed-1.pdf",
+    "sha256": "7df4c88d9bb790044d6e07c58796439861a7a82241dd49aea14d7ee37ace5cd9",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-2",
+    "expected_class": "unsigned",
+    "family": "scan_printed",
+    "id": "holdout-scan_printed-2",
+    "malicious": false,
+    "path": "holdout-scan_printed-2.pdf",
+    "sha256": "5aff43b7eff9008058906551c7fc30a4dc04dc088b0893389e528b2e8f7e0f7b",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-3",
+    "expected_class": "unsigned",
+    "family": "scan_printed",
+    "id": "holdout-scan_printed-3",
+    "malicious": false,
+    "path": "holdout-scan_printed-3.pdf",
+    "sha256": "640c622bca124a53dc912bb58454bddad1acac41bef5d66a82653640577a82d5",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-4",
+    "expected_class": "unsigned",
+    "family": "scan_printed",
+    "id": "holdout-scan_printed-4",
+    "malicious": false,
+    "path": "holdout-scan_printed-4.pdf",
+    "sha256": "3c77b89d206390deb6e47b1247d98d44e520161401a29a517100cd69fc63fa6e",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-0",
+    "expected_class": "unsigned",
+    "family": "blank",
+    "id": "holdout-blank-0",
+    "malicious": false,
+    "path": "holdout-blank-0.pdf",
+    "sha256": "e396a488f0349c1fb86744d65c50bbe5f8551cfe6849689dbca4c931026e40bf",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-1",
+    "expected_class": "unsigned",
+    "family": "blank",
+    "id": "holdout-blank-1",
+    "malicious": false,
+    "path": "holdout-blank-1.pdf",
+    "sha256": "ba9b22c1147ffc4b996e02d9cbef0a9b43ec24acf748d4c7355e48845873da54",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-2",
+    "expected_class": "unsigned",
+    "family": "blank",
+    "id": "holdout-blank-2",
+    "malicious": false,
+    "path": "holdout-blank-2.pdf",
+    "sha256": "b468e6c0230c2f93df01ec62ff704a90a84d6cedc3d86b4c5c235114cbde69fe",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-3",
+    "expected_class": "unsigned",
+    "family": "blank",
+    "id": "holdout-blank-3",
+    "malicious": false,
+    "path": "holdout-blank-3.pdf",
+    "sha256": "99c37981857939b4971185889b657fdac1cf9c805e211e72a4b47729ea1fed0a",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-4",
+    "expected_class": "unsigned",
+    "family": "blank",
+    "id": "holdout-blank-4",
+    "malicious": false,
+    "path": "holdout-blank-4.pdf",
+    "sha256": "717164b249bca8661a3873235de69b6379d9a3c0f0fa234dc752ebf8457d59b2",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-0",
+    "expected_class": "unsigned",
+    "family": "diagram",
+    "id": "holdout-diagram-0",
+    "malicious": false,
+    "path": "holdout-diagram-0.pdf",
+    "sha256": "03a74faf03d4eac03ba5c7bbb7a542c38e2769e4f6c4a2f17e979dd31cbdcd6d",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-1",
+    "expected_class": "unsigned",
+    "family": "diagram",
+    "id": "holdout-diagram-1",
+    "malicious": false,
+    "path": "holdout-diagram-1.pdf",
+    "sha256": "56c46ec01a4d97a5e27f2020998e2fa6a2634f70b321170d53713bf60245bf60",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-2",
+    "expected_class": "unsigned",
+    "family": "diagram",
+    "id": "holdout-diagram-2",
+    "malicious": false,
+    "path": "holdout-diagram-2.pdf",
+    "sha256": "c2b272789815408bbc853b9ea1a9e725dc33108ffadd926c8334c9fb41a08c2e",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-3",
+    "expected_class": "unsigned",
+    "family": "diagram",
+    "id": "holdout-diagram-3",
+    "malicious": false,
+    "path": "holdout-diagram-3.pdf",
+    "sha256": "b74f568992d073c40369dc16b2e6099b72122264d98e823b0d2dcedb49727989",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  },
+  {
+    "base_id": "holdout-4",
+    "expected_class": "unsigned",
+    "family": "diagram",
+    "id": "holdout-diagram-4",
+    "malicious": false,
+    "path": "holdout-diagram-4.pdf",
+    "sha256": "d7234d87b8fa15270843e13ad0be8d31c95d81b3c1f5e791d4790e474285d35c",
+    "signature_rois": [],
+    "split": "holdout",
+    "supported": true
+  }
+]

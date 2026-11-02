@@ -1,0 +1,6 @@
+ARG WORKER_IMAGE=signguard-worker:phase3
+FROM ${WORKER_IMAGE}
+COPY --chown=65532:65532 app.py ./app.py
+ENV SIGNGUARD_REQUIRE_AUTH=true SIGNGUARD_BACKEND=broker
+HEALTHCHECK --interval=30s --timeout=3s CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8501/_stcore/health',timeout=2)"
+ENTRYPOINT ["streamlit", "run", "app.py", "--server.address=0.0.0.0", "--server.maxUploadSize=25", "--server.maxMessageSize=50", "--browser.gatherUsageStats=false"]

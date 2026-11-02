@@ -1,0 +1,6 @@
+FROM docker:28-cli AS cli
+FROM signguard-worker:phase3
+COPY --from=cli /usr/local/bin/docker /usr/local/bin/docker
+ENV SIGNGUARD_BROKER_HOST=0.0.0.0
+HEALTHCHECK --interval=30s --timeout=3s CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/health',timeout=2)"
+ENTRYPOINT ["python", "-I", "-m", "signguard.broker"]

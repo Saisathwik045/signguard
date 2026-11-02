@@ -1,0 +1,7 @@
+{
+  "Pillow": "13.0.0",
+  "numpy": "2.5.4",
+  "pyHanko": "0.35.2",
+  "PyMuPDF": "1.28.2",
+  "opencv-python-headless": "4.14.0.94"
+}

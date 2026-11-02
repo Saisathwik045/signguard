@@ -1,4 +1,89 @@
-# Project status — Phase 2
+# Project status — Phase 3
+
+Started from merged main `481a939` on `feature/phase3-reliability-hardening`, in the existing
+Codex Cloud environment. Verified on 2026-11-02 (Asia/Calcutta). No public deployment performed.
+
+## Implemented
+
+- Multiscale/local-contrast ink detection with connected-component and line-regularity evidence;
+  regular graphics are separated with rejection reasons. Faint candidates are recovered without
+  changing the ORB match thresholds. Identity explicitly abstains; visual reuse never proves forgery.
+- Backward-compatible legacy class plus a separately named refined classification, schema v3,
+  ByteRange bounds/order validation, explicit offline trust/revocation state, suspicious active-object
+  findings, and optional bounded independent Poppler render/signature checks.
+- 360-input reproducible split benchmark: development/regression/holdout, 120 each; 345 valid PDFs
+  and 15 malformed PDF inputs; distinct template/base IDs and document hashes across splits. Detector
+  source sealed before first holdout. Initial and post-security-upgrade holdout outcomes are separate.
+- JSON, CSV, source/template/input hashes, sealed corpus ZIP, standalone PNG/SVG charts, execution
+  timing and explicitly qualified native-inclusive RSS measurements. No external real-world dataset.
+- One-request worker, closed bounded protocol, sanitized environment, process-group deadlines,
+  OS rlimits, disposable Docker non-root/no-network/read-only/no-capability configuration, cgroup
+  memory limits, and bounded concurrency/queue. UI production mode refuses subprocess fallback.
+- Private broker, generic errors/content-free security events, service-token authentication,
+  OIDC verified-email allowlist integration, prepared Compose/Docker definitions and build-only CI/CD.
+- Pillow 13 and pip upgrades fixed the advisories discovered by dependency scanning. Runtime and
+  development audit now reports no known vulnerabilities; Bandit has no medium/high findings.
+
+## Tests and evidence actually executed
+
+- **60 passed**, including Docker tests, in one Codex Cloud run (`SIGNGUARD_DOCKER_TESTS=1 pytest -q`).
+  JUnit evidence: `evaluation/phase3/cloud-tests.xml`. This preserves all 31 previous tests.
+- Non-Docker run: 58 passed, 2 explicitly skipped container tests; separate worker suite: 17 passed.
+- Existing 150-input benchmark replay, all 360 expanded inputs, and post-upgrade revalidation ran.
+  `ruff check .`, `pip check`, compileall and whitespace checks passed.
+- Poppler independently accepted an untampered synthetic signature and detected byte tampering;
+  page-count/first-page render comparison passed its diagnostic tolerance.
+- Actual adversarial tests: OS CPU/address-space/output limits, wall timeout and descendant killing,
+  temporary cleanup, credential stripping, busy-slot rejection, production fallback rejection,
+  broker URL validation, Docker UID/read-only/network tests and a cgroup OOM allocation.
+- All three images built in cloud. Worker analysis and UI/controller health succeeded with no
+  public ports. Controller denied missing service credentials (403) and empty authorized input (413).
+  Controller health used no Docker socket; full Compose/OIDC analysis routing is not yet verified.
+  Image IDs and control/measurement/health evidence are in `evaluation/phase3/`.
+- Building all images exhausted the 7.9 GiB cloud root disk. Removing only disposable images/cache
+  recovered space. Source, templates, benchmark evidence and user work were preserved.
+
+## Results and known failures
+
+Unchanged Phase 2 replay: supported alert accuracy 92.31% → 100%; all-case accuracy 86.67% → 93.33%;
+refined broad accuracy 80% → 93.33%; localization precision/recall 57.14%/80% → 100%/100% on the
+known regression inputs. Labels and populations were not changed; broad class uses the explicit new
+refined field while the original image-presence class is retained. This replay is not a holdout.
+
+Expanded holdout (120 inputs): supported alerts 30 TP, 75 TN, 0 FP, 0 FN (105 supported inputs).
+All-case accuracy 95.83%, precision 100%, recall 85.71%, F1 92.31%. Five ambiguous unauthorized-reuse
+cases produce no alert; five encrypted and five malformed inputs error explicitly. Their negative
+intent/no-alert coding is not successful analysis. Supported/all-case populations and errors are separate.
+
+Holdout localization: 50 TP, 15 FP, 0 FN; precision 76.92%, recall 100%, F1 86.96%. Remaining false
+proposals: five stamps, five scanned printed headers and five extra text regions on low-resolution
+scans. Broad accuracy is 83.33% on all inputs. All split confusion matrices, unsupported/inconclusive
+rates, per-class metrics and timing/RSS are retained. See RESULTS.md for exact measured evidence.
+
+The first holdout used Pillow 12.3.0; advisory-driven upgrades required subsequent revalidation on
+identical sealed bytes. Detector source still matches the original seal; no tuning followed holdout
+results. Revalidation is not a second untouched holdout. Synthetic generation concepts remain shared;
+this does not establish real-world handwriting identity or comprehensive shadow-attack accuracy.
+
+## Deployment readiness and remaining work
+
+**Not ready for unrestricted public upload deployment.** Tested worker limits are distinct from a
+production security attestation. Still required: actual OIDC/provider/tenant/TLS testing, dedicated
+restricted/rootless worker daemon authority, distributed/per-user quotas and staging/load tests,
+OS/base-image CVE review, retention and audit-anchor policy, hosting/domain authorization and secrets.
+The controller's Docker socket is privileged and must remain on a dedicated trusted boundary.
+
+SECURITY.md distinguishes implemented/tested controls from documented gates. DEPLOYMENT.md supplies
+cloud-only build, private architecture, secret templates, health checks and rollback requirements.
+Published pull request: https://github.com/Saisathwik045/signguard/pull/3
+GitHub Actions run 41399149839 passed on Python 3.11/3.12 and in the isolated-worker security job,
+including dependency/static scans, Poppler checks, regression/benchmark smoke and container tests.
+Later export/health-documentation changes and stricter smoke gating are checked in the final task report.
+The exact changed-file inventory is in `evaluation/phase3/FILE_INVENTORY.txt`.
+
+---
+
+# Phase 2 historical record
 
 Implemented from merged `origin/main` commit `9cd579e` in the existing Codex Cloud environment,
 on branch `feature/phase2-forensic-evaluation`. Phase 1 was preserved; its 14 tests still pass.

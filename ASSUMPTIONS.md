@@ -1,4 +1,40 @@
-# Assumptions, detection limits and deployment gate
+# Phase 3 assumptions and remaining limits
+
+The original Phase 2 assumptions are retained below as history. Current details and verified versus
+unverified security controls are in SECURITY.md and DEPLOYMENT.md.
+
+- Multiscale/local-contrast ink proposals and connected-component/line regularity reduce the known
+  repeated-logo and faint-signature failures, but cannot reliably distinguish all stamps, scanned
+  text, diagrams, handwriting-like logos or very faint marks. Rejected regular graphics are retained
+  in JSON with reasons. No heuristic score is a calibrated signature probability.
+- The legacy `classification` field remains compatible; `refined_classification` removes image-only
+  inference from the new broad-class metric. Metric populations and ground truth are unchanged.
+- Identity always abstains and authorization remains inconclusive from visual matching. Similar
+  legitimate signatures cannot be declared unauthorized forgeries without external provenance.
+- ByteRange ordering/bounds, pyHanko coverage/CMS checks and explicit offline trust states are separate.
+  Revocation is not established from absent offline evidence. Active-object modifications, intermediate
+  revisions, page/annotation differences and narrow metadata-only updates have separate findings.
+  Poppler is an optional independent diagnostic, not a second root of trust; first-page rendering is
+  approximate and not full cross-renderer attack coverage.
+- The 360-input evaluation separates base/template IDs and document hashes across development,
+  regression and synthetic holdout. Generator logic and attack concepts are still shared. No external
+  legally validated real-signature dataset was obtained. Results must not be marketed as field accuracy.
+- Detector source was frozen before the first holdout. A subsequent security-driven Pillow upgrade
+  required revalidation on the same preserved inputs. The initial outcomes are retained; a second run
+  on those inputs is not a new untouched holdout. No labels/populations/thresholds were changed to hide errors.
+- Unsupported/malformed inputs and no-evidence/ambiguous cases remain explicitly reported. In all-case
+  metrics, errors are coded no-alert: this can count a negative-intent unsupported input as TN, which
+  is not a successful analysis. Both error rates and supported/all-case denominators are shown.
+- All prior application limits remain; modified-object inspection is additionally bounded at 4096
+  refs/revision and 64 reported object types. EOF reconstruction searches a bounded 64 KiB after a
+  parsed xref section. Resource budgets can make otherwise valid inputs unsupported.
+- Disposable Docker controls were exercised, including cgroup memory exhaustion. The subprocess mode
+  has only rlimits and is not isolation. Actual OIDC/TLS/tenant enforcement, restricted production
+  daemon authority, OS-image scanning and adversarial deployment load tests remain unverified.
+
+---
+
+# Phase 2 historical assumptions
 
 ## Evidence semantics
 

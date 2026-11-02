@@ -14,11 +14,20 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
           cache: pip
+      - run: python -m pip install 'pip>=26.2,<27'
       - run: pip install -c requirements-cloud.txt -e '.[dev]'
+      - run: sudo apt-get update && sudo apt-get install -y poppler-utils
       - run: ruff check .
       - run: pytest -q
       - run: python scripts/generate_samples.py
       - run: python -m benchmarks.evaluate --per-family 2 --output benchmark-output --check
+      - run: python -m benchmarks.phase3 --output phase3-output --variants 1 --seal
+      - run: python -m benchmarks.phase3 --output phase3-output --split regression
+      - run: python -c "import json; s = json.load(open('phase3-output/regression-summary.json')); assert not s['unexpected_errors']; assert s['supported_alert']['fn'] == 0"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: phase3-smoke-${{ matrix.python }}
+          path: phase3-output/
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -28,3 +37,25 @@ jobs:
         with:
           name: synthetic-pdfs-${{ matrix.python }}
           path: samples/
+
+  isolated-worker:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'pip>=26.2,<27'
+      - run: pip install -c requirements-cloud.txt -e '.[dev]'
+      - run: docker build -f deploy/Dockerfile.worker -t signguard-worker:phase3 .
+      - run: SIGNGUARD_DOCKER_TESTS=1 pytest -q tests/test_phase3_security.py
+      - run: bandit -r src -ll -f json -o bandit.json
+      - run: pip-audit --skip-editable --format json --output dependency-audit.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: security-verification
+          path: |
+            bandit.json
+            dependency-audit.json

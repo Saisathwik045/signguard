@@ -1,0 +1,154 @@
+{
+  "all_alert": {
+    "accuracy": 0.9583333333333334,
+    "axes": "rows actual [negative, positive]; columns predicted",
+    "confusion_matrix": [
+      [
+        85,
+        0
+      ],
+      [
+        5,
+        30
+      ]
+    ],
+    "f1": 0.9230769230769231,
+    "fn": 5,
+    "fp": 0,
+    "n": 120,
+    "precision": 1.0,
+    "recall": 0.8571428571428571,
+    "tn": 85,
+    "tp": 30
+  },
+  "classification": {
+    "accuracy": 0.8333333333333334,
+    "confusion_matrix": {
+      "cryptographic": {
+        "cryptographic": 35
+      },
+      "unsigned": {
+        "unsigned": 25,
+        "unsupported_error": 10,
+        "visual_candidate": 10
+      },
+      "visual_candidate": {
+        "visual_candidate": 40
+      }
+    },
+    "per_class": {
+      "cryptographic": {
+        "accuracy": 1.0,
+        "axes": "rows actual [negative, positive]; columns predicted",
+        "confusion_matrix": [
+          [
+            85,
+            0
+          ],
+          [
+            0,
+            35
+          ]
+        ],
+        "f1": 1.0,
+        "fn": 0,
+        "fp": 0,
+        "n": 120,
+        "precision": 1.0,
+        "recall": 1.0,
+        "tn": 85,
+        "tp": 35
+      },
+      "unsigned": {
+        "accuracy": 0.8333333333333334,
+        "axes": "rows actual [negative, positive]; columns predicted",
+        "confusion_matrix": [
+          [
+            75,
+            0
+          ],
+          [
+            20,
+            25
+          ]
+        ],
+        "f1": 0.7142857142857143,
+        "fn": 20,
+        "fp": 0,
+        "n": 120,
+        "precision": 1.0,
+        "recall": 0.5555555555555556,
+        "tn": 75,
+        "tp": 25
+      },
+      "visual_candidate": {
+        "accuracy": 0.9166666666666666,
+        "axes": "rows actual [negative, positive]; columns predicted",
+        "confusion_matrix": [
+          [
+            70,
+            10
+          ],
+          [
+            0,
+            40
+          ]
+        ],
+        "f1": 0.8888888888888888,
+        "fn": 0,
+        "fp": 10,
+        "n": 120,
+        "precision": 0.8,
+        "recall": 1.0,
+        "tn": 70,
+        "tp": 40
+      }
+    }
+  },
+  "false_negatives": [],
+  "false_positives": [],
+  "inconclusive_rate": 0.6666666666666666,
+  "localization": {
+    "f1": 0.8695652173913043,
+    "fn": 0,
+    "fp": 15,
+    "precision": 0.7692307692307693,
+    "recall": 1.0,
+    "tp": 50
+  },
+  "memory_limitation": "Cumulative process RSS including native libraries, not isolated per-document peaks",
+  "n": 120,
+  "process_high_water_rss_mib": 146.8125,
+  "runtime_error_rate": 0.08333333333333333,
+  "seconds": {
+    "median": 0.03604910749993451,
+    "p95": 0.27730371429995554,
+    "total": 11.197536023001248
+  },
+  "supported_alert": {
+    "accuracy": 1.0,
+    "axes": "rows actual [negative, positive]; columns predicted",
+    "confusion_matrix": [
+      [
+        75,
+        0
+      ],
+      [
+        0,
+        30
+      ]
+    ],
+    "f1": 1.0,
+    "false_negative_rate": 0.0,
+    "false_positive_rate": 0.0,
+    "fn": 0,
+    "fp": 0,
+    "n": 105,
+    "precision": 1.0,
+    "recall": 1.0,
+    "tn": 75,
+    "tp": 30
+  },
+  "unexpected_errors": [],
+  "unsupported_rate": 0.125
+}

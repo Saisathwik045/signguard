@@ -225,3 +225,6 @@ samples/
 audit.jsonl
 .ruff_cache/
 benchmark-output/
+phase3-output/
+.env
+.streamlit/secrets.toml

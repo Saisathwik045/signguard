@@ -1,0 +1,6 @@
+# Configure only in a trusted cloud host/secret manager. Never commit populated values.
+SIGNGUARD_BROKER_TOKEN=
+SIGNGUARD_ALLOWED_EMAILS=
+SIGNGUARD_OIDC_SECRETS=/secure/path/secrets.toml
+DOCKER_SOCKET_GID=
+SIGNGUARD_WORKER_IMAGE=signguard-worker:phase3

@@ -1,161 +1,92 @@
-# Phase 2 evaluation results
+# Phase 3 results
 
-Measured in Codex Cloud on 2026-11-02 (Asia/Calcutta). This is a small synthetic
-engineering benchmark, not evidence of performance on real signatures or all PDF attacks.
+Measured in Codex Cloud on 2026-11-02 (Asia/Calcutta).
 
-Corpus: **150 PDFs, 140 unique SHA-256 hashes**, 15 families × 10 variants.
-Ten visual-signature and unsigned-forgery cases intentionally have identical bytes but different
-construction intent. Their ambiguity is reported as unsupported, not removed to improve the score.
+## Direct replay of unchanged Phase 2 inputs
 
-## Alert evaluation
+The labels and supported/all-case populations are unchanged. The 150-input replay is a regression
+population already inspected during development, not a holdout. Broad classification now uses
+the explicitly named `refined_classification`; the legacy image-presence field is retained.
 
-An alert means `review_required` or `tampering_detected`. `inconclusive` means no alert;
-it does not mean genuine. Cryptographic byte failures are stronger evidence than a review alert.
+| Metric | Phase 2 | Phase 3 replay |
+| --- | ---: | ---: |
+| Supported alert accuracy | 92.31% | 100.00% |
+| All-case alert accuracy | 86.67% | 93.33% |
+| Broad classification accuracy | 80.00% | 93.33% |
+| Localization precision | 57.14% | 100.00% |
+| Localization recall | 80.00% | 100.00% |
+| Localization F1 | 66.67% | 100.00% |
 
-| Population | N | TP | TN | FP | FN | Accuracy | Precision | Recall | F1 |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Supported alert cases | 130 | 50 | 70 | 10 | 0 | 92.31% | 83.33% | 100.00% | 90.91% |
-| All cases, including unsupported | 150 | 50 | 80 | 10 | 10 | 86.67% | 83.33% | 83.33% | 83.33% |
+The ten logo alerts and thirty false proposals from Phase 2 are eliminated on that same corpus;
+the ten faint regions are recovered, and all ten controlled copied-signature cases still alert.
+Ten single unauthorized-reuse cases remain visually ambiguous and produce no alert. Ten encrypted
+PDFs remain unsupported. Unsupported cases were not relabeled or removed.
 
-Confusion matrices use actual rows `[negative, positive]` and predicted columns `[negative, positive]`.
+## Expanded split evaluation
 
-```json
-{
-  "alert_supported": [
-    [
-      70,
-      10
-    ],
-    [
-      0,
-      50
-    ]
-  ],
-  "alert_all_cases_including_unsupported": [
-    [
-      80,
-      10
-    ],
-    [
-      10,
-      50
-    ]
-  ]
-}
-```
+360 inputs (345 valid synthetic PDFs plus 15 deliberately malformed PDF inputs), three splits
+of 120 inputs, 24 families, and five variants per family. Template IDs and PDF hashes are disjoint
+across splits. Within-split visual/unauthorized-intent ambiguity is deliberately retained.
+Source PDFs/layout IDs differ across splits; generator families and attack concepts are shared.
+This is a separate synthetic holdout, not an independent external dataset or field-accuracy estimate.
 
-## Outcomes by construction family
+| Split | Supported N | Accuracy | Precision | Recall | F1 | FPR | FNR | All-case accuracy |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| development | 105 | 100.00% | 100.00% | 100.00% | 100.00% | 0.00% | 0.00% | 95.83% |
+| regression | 105 | 100.00% | 100.00% | 100.00% | 100.00% | 0.00% | 0.00% | 95.83% |
+| holdout | 105 | 100.00% | 100.00% | 100.00% | 100.00% | 0.00% | 0.00% | 95.83% |
 
-| Family | PDFs | Alerts | Analysis errors | Included in supported alert metrics |
-| --- | ---: | ---: | ---: | --- |
-| appended_content | 10 | 10 | 0 | True |
-| benign_metadata | 10 | 0 | 0 | True |
-| copied_signature | 10 | 10 | 0 | True |
-| encrypted | 10 | 0 | 10 | False |
-| faint_signature | 10 | 0 | 0 | True |
-| genuine_signed | 10 | 0 | 0 | True |
-| negative_logo | 10 | 0 | 0 | True |
-| negative_repeated_logos | 10 | 10 | 0 | True |
-| negative_rules | 10 | 0 | 0 | True |
-| shadow_overlay | 10 | 10 | 0 | True |
-| shadow_reveal | 10 | 10 | 0 | True |
-| tampered_bytes | 10 | 10 | 0 | True |
-| unsigned | 10 | 0 | 0 | True |
-| unsigned_forgery | 10 | 0 | 0 | False |
-| visual_signature | 10 | 0 | 0 | True |
+| Split | Localization TP/FP/FN | Precision | Recall | F1 | Broad class accuracy | Unsupported | Inconclusive |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| development | 50/15/0 | 76.92% | 100.00% | 86.96% | 83.33% | 12.50% | 66.67% |
+| regression | 50/15/0 | 76.92% | 100.00% | 86.96% | 83.33% | 12.50% | 66.67% |
+| holdout | 50/15/0 | 76.92% | 100.00% | 86.96% | 83.33% | 12.50% | 66.67% |
 
-Unexpected errors among supported cases: **0**.
+The holdout has 15 false proposals: five stamps, five scanned printed headers, and five extra
+text-like regions on low-resolution scans. These remain counted as false proposals. Supported
+alert false positives/negatives are zero in this synthetic holdout, with 30 TP and 75 TN. On all
+120 inputs, five ambiguous reuse cases count as FN; ten malformed/encrypted negative-intent cases
+error explicitly and are coded no-alert, not successful negative analyses. All-case recall is
+85.71%; all-case F1 is 92.31%.
+No unexpected supported-case exceptions occurred. Identity/authorization decisions explicitly abstain.
 
-The ten repeated-logo cases are false alerts: geometry can establish repetition but cannot
-establish unauthorized copying. There are no supported alert false negatives in this corpus.
-Ten single reused signatures without reference/history are unsupported and produce no alert;
-they count as false negatives in the all-case matrix. Ten encrypted PDFs raise explicit
-unsupported-input errors. Their negative intent and no-alert coding produce all-case TNs,
-which must not be mistaken for successful analysis. Supported/all-case scores are both shown.
+Full binary and broad-class confusion matrices and per-class precision/recall/F1 are in the split
+summary JSON. Per-case outcomes, errors, ROI boxes, timings and classifications are in JSON and CSV.
 
-## Broad document classification
+## Freeze and security-upgrade chronology
 
-Accuracy: **80.00%**; macro F1: **79.05%** on all 150 cases.
+The four detector source files were sealed before holdout results were opened; no detector
+thresholds or rules were changed after seeing holdout results. The initial holdout ran with
+Pillow 12.3.0. Dependency scanning then required Pillow 13.0.0 and pip upgrades. Initial holdout
+outcomes are preserved separately, and final results are post-upgrade revalidation of those same
+sealed PDF bytes. Revalidation is not another untouched holdout. Corpus ZIP and seal permit exact
+input reproduction even if encoding libraries change. No external dataset was acquired.
 
-This measures `cryptographic`, `visual_candidate`, and `unsigned`, not forged-vs-genuine identity.
-For compatibility with Phase 1, embedded images still produce a broad `visual_candidate` class;
-`classification_basis=image_presence_only` distinguishes it from localized non-text ink.
-The broad class therefore overcalls logo PDFs, including faint images with no localized ROI.
+## Timing and memory
 
-| Class | Precision | Recall | F1 |
-| --- | ---: | ---: | ---: |
-| cryptographic | 100.00% | 100.00% | 100.00% |
-| unsigned | 100.00% | 40.00% | 57.14% |
-| visual_candidate | 66.67% | 100.00% | 80.00% |
+| Split | Total analysis seconds | Median seconds | P95 seconds | Process high-water RSS MiB |
+| --- | ---: | ---: | ---: | ---: |
+| development | 10.745 | 0.0346 | 0.2582 | 146.61 |
+| regression | 10.983 | 0.0377 | 0.2731 | 146.64 |
+| holdout | 10.336 | 0.0370 | 0.2562 | 146.76 |
 
-Classification confusion matrix (actual class → predicted class counts):
+Timings exclude PDF generation and worker/container cold start. RSS is cumulative process high-water
+RSS including native libraries, not isolated per-input peaks. `worker-controls.json` separately
+records a disposable worker's measured analysis time and process peak RSS. Values depend on hardware.
 
-```json
-{
-  "cryptographic": {
-    "cryptographic": 60
-  },
-  "unsigned": {
-    "unsigned": 20,
-    "unsupported_error": 10,
-    "visual_candidate": 20
-  },
-  "visual_candidate": {
-    "visual_candidate": 40
-  }
-}
-```
+![Synthetic benchmark comparison](evaluation/phase3/comparison.png)
 
-## Candidate localization
-
-One-to-one region matching at IoU ≥ 0.3: **40 TP, 30 FP, 10 FN**.
-Precision **57.14%**, recall **80.00%**, F1 **66.67%**.
-The ten faint signatures are missed; 30 logo regions are false proposals. These are measured
-as errors even though proposals explicitly carry uncertainty. No localization TN is defined
-for the effectively infinite set of possible page regions.
-
-## Reproduction and provenance
-
-In the existing cloud checkout, with dependencies installed:
+## Cloud reproduction
 
 ```sh
-python -m benchmarks.evaluate --output benchmark-output --check
+python -m pip install -c requirements-cloud.txt -e '.[dev]'
+python -m zipfile -e evaluation/phase3/corpus.zip phase3-output
+python -m benchmarks.phase3 --output phase3-output --split holdout
 pytest -q
-ruff check .
 ```
 
-Compare `benchmark-output/summary.json` and `outcomes.json` with `evaluation/`. The full manifest
-is stored in `evaluation/manifest.json`. PDF hashes, source hashes, template manifest hash and
-exact library versions are recorded. `python scripts/render_results.py` regenerates this document
-from the checked-in summary. Templates are immutable synthetic public signed/encrypted inputs;
-private signing keys were discarded. Do not regenerate templates during reproduction.
-
-Within the pinned Python 3.12 environment, two independently generated full corpora were tested
-for identical manifests and PDF hashes. Cross-version PDF bytes and detection results are not
-guaranteed identical; the Actions matrix runs regression tests and a 30-document smoke corpus.
-
-Environment used for the measured full run:
-
-```json
-{
-  "Pillow": "12.3.0",
-  "PyMuPDF": "1.28.2",
-  "numpy": "2.5.4",
-  "opencv-python-headless": "4.14.0.94",
-  "pyHanko": "0.35.2",
-  "python": "3.12.14"
-}
-```
-
-## Evaluation limits
-
-Variants within a family are correlated, with only ten base signed templates and one synthetic
-stroke generator. These are not 150 independent real-world samples. No external dataset, human
-handwriting identity evaluation, trained classifier, or untouched third-party holdout is claimed.
-Independent regression fixtures use literal PDF syntax, curves, rotations, annotations, restoration
-history and transformed texture. They improve correctness coverage but are development tests,
-not an unbiased estimate of field accuracy. Thresholds were chosen as conservative geometric
-rules before full evaluation; measured logo/faint failures were retained rather than tuned away.
-ELA is descriptive only, especially after rendering. ORB does not determine authorization.
-Controlled shadow tests cover hidden-content reveal and visual overlay, not every shadow-attack
-family, cross-renderer discrepancy, certificate policy, redaction attack or hidden active content.
+For a newly generated corpus, choose a new output directory and run `--seal` before any `--split`.
+Do not run `--create-templates` during reproduction: it creates new randomized signing/encryption
+templates and defines a new corpus version. Public synthetic templates contain no private keys.
+Runtime versions are stored in `evaluation/phase3/environment.json`. This evaluation is not a
+certificate of safety, comprehensive attack coverage, or evidence of human handwriting identity.

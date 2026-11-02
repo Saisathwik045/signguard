@@ -1,0 +1,11 @@
+{
+  "built": true,
+  "healthcheck": "passed",
+  "service_token_denial": "403",
+  "empty_input_denial": "413",
+  "network": "none",
+  "public_port_published": false,
+  "docker_socket_mounted": false,
+  "end_to_end_compose_analysis": "not_tested",
+  "image_id": "sha256:863338df75ef146e28c452aa9ce6aecff625edd3686002ca0948174caa033185"
+}

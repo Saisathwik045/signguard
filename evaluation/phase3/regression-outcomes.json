@@ -1,0 +1,4642 @@
+[
+  {
+    "alert": false,
+    "base_id": "regression-0",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "signed",
+    "findings": [
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE"
+    ],
+    "id": "regression-signed-0",
+    "malicious": false,
+    "path": "regression-signed-0.pdf",
+    "process_high_water_rss_mib": 137.1875,
+    "seconds": 0.6075385859999187,
+    "sha256": "4bff19486c9fcd0eba7fd0ef58570b9b12b91bb5d84b737b8ce4d6f9e891db9d",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-1",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "signed",
+    "findings": [
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE"
+    ],
+    "id": "regression-signed-1",
+    "malicious": false,
+    "path": "regression-signed-1.pdf",
+    "process_high_water_rss_mib": 140.2265625,
+    "seconds": 0.19028176699998767,
+    "sha256": "7f98ed27f883ce2186529882a8b1e97d979db607b1225dd75e8ce1f200fb3196",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-2",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "signed",
+    "findings": [
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE"
+    ],
+    "id": "regression-signed-2",
+    "malicious": false,
+    "path": "regression-signed-2.pdf",
+    "process_high_water_rss_mib": 141.1875,
+    "seconds": 0.18917498999985582,
+    "sha256": "9f72624aad8f604238f4efaf80d114948213e80cc37a9d9bb39b3052c56faaee",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-3",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "signed",
+    "findings": [
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE"
+    ],
+    "id": "regression-signed-3",
+    "malicious": false,
+    "path": "regression-signed-3.pdf",
+    "process_high_water_rss_mib": 142.20703125,
+    "seconds": 0.18642932099987775,
+    "sha256": "5a9409a96281696abae9710d9661055ed25e5b97ffc1c4e08edff31f4ab656e9",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-4",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "signed",
+    "findings": [
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE"
+    ],
+    "id": "regression-signed-4",
+    "malicious": false,
+    "path": "regression-signed-4.pdf",
+    "process_high_water_rss_mib": 143.203125,
+    "seconds": 0.19804631000010886,
+    "sha256": "4695d9a38dcf1b6d40797a15e37780dd2797dd2a1a46ab83c279fb20e88ab1e0",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-0",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "byte_tamper",
+    "findings": [
+      "CRYPTOGRAPHIC_FAILURE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE"
+    ],
+    "id": "regression-byte_tamper-0",
+    "malicious": true,
+    "path": "regression-byte_tamper-0.pdf",
+    "process_high_water_rss_mib": 143.203125,
+    "seconds": 0.16531810400010727,
+    "sha256": "17f995d63840d7590a1697bcb6c67373e60778d46bb34f565eb33e0988145790",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "tampering_detected"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-1",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "byte_tamper",
+    "findings": [
+      "CRYPTOGRAPHIC_FAILURE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE"
+    ],
+    "id": "regression-byte_tamper-1",
+    "malicious": true,
+    "path": "regression-byte_tamper-1.pdf",
+    "process_high_water_rss_mib": 143.203125,
+    "seconds": 0.1725885759999528,
+    "sha256": "b9f3610d421821ba5b7d107a9a95fbc94f0aa80c8e803abf83d03b7a110101c6",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "tampering_detected"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-2",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "byte_tamper",
+    "findings": [
+      "CRYPTOGRAPHIC_FAILURE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE"
+    ],
+    "id": "regression-byte_tamper-2",
+    "malicious": true,
+    "path": "regression-byte_tamper-2.pdf",
+    "process_high_water_rss_mib": 143.203125,
+    "seconds": 0.1877792469999804,
+    "sha256": "64bec743371b5920c6a21d9cd49c377b836924e9fc6de612189b3340ecc3b764",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "tampering_detected"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-3",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "byte_tamper",
+    "findings": [
+      "CRYPTOGRAPHIC_FAILURE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE"
+    ],
+    "id": "regression-byte_tamper-3",
+    "malicious": true,
+    "path": "regression-byte_tamper-3.pdf",
+    "process_high_water_rss_mib": 143.203125,
+    "seconds": 0.197063726000124,
+    "sha256": "62a8b0219262d56ce60f993915913aa7d7f57b0055de2c2c5cfaa8e81c8f637d",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "tampering_detected"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-4",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "byte_tamper",
+    "findings": [
+      "CRYPTOGRAPHIC_FAILURE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE"
+    ],
+    "id": "regression-byte_tamper-4",
+    "malicious": true,
+    "path": "regression-byte_tamper-4.pdf",
+    "process_high_water_rss_mib": 143.28515625,
+    "seconds": 0.19054002699999728,
+    "sha256": "662658e41de145d7beb990aca851f17d8d137c7df922871c1ae56da9f755a64a",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "tampering_detected"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-0",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "reveal",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "regression-reveal-0",
+    "malicious": true,
+    "path": "regression-reveal-0.pdf",
+    "process_high_water_rss_mib": 143.28515625,
+    "seconds": 0.23149123100006364,
+    "sha256": "d5c72acfab71561f5e3ce6090bf48844c8a8ab61578b6bfd96d479f520102164",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-1",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "reveal",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "regression-reveal-1",
+    "malicious": true,
+    "path": "regression-reveal-1.pdf",
+    "process_high_water_rss_mib": 143.28515625,
+    "seconds": 0.24446004100013852,
+    "sha256": "50e840dd05daa41434d625288dd8b80fc2e030e478888123d03723bf3386224b",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-2",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "reveal",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "regression-reveal-2",
+    "malicious": true,
+    "path": "regression-reveal-2.pdf",
+    "process_high_water_rss_mib": 143.28515625,
+    "seconds": 0.2578586820000055,
+    "sha256": "c5f36a21a9b5aefc04b0847453c4cc5998069c271b2bcf61d1031045626fe92e",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-3",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "reveal",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "regression-reveal-3",
+    "malicious": true,
+    "path": "regression-reveal-3.pdf",
+    "process_high_water_rss_mib": 143.33984375,
+    "seconds": 0.2726907400001437,
+    "sha256": "ad0355f877877e8a884e6ecedfafe0c420f082857f19f45e8d5a6731f7bdf511",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-4",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "reveal",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "regression-reveal-4",
+    "malicious": true,
+    "path": "regression-reveal-4.pdf",
+    "process_high_water_rss_mib": 144.3203125,
+    "seconds": 0.28037522699992223,
+    "sha256": "214193481684fc6475aa019a09765fd6de8baeb3a8aa6d2ccb74dbf899159108",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-0",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "overlay",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "regression-overlay-0",
+    "malicious": true,
+    "path": "regression-overlay-0.pdf",
+    "process_high_water_rss_mib": 144.3203125,
+    "seconds": 0.23389494399998512,
+    "sha256": "b018b393b2785ddb798d783a0a7fec8b1ef817666789097310491f8b98039980",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-1",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "overlay",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "regression-overlay-1",
+    "malicious": true,
+    "path": "regression-overlay-1.pdf",
+    "process_high_water_rss_mib": 144.3203125,
+    "seconds": 0.2508042229999319,
+    "sha256": "f0605855cf42448f2615ebb9b656d1d21d9f7910be102cea8f8cf8b26f1ae3f8",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-2",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "overlay",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "regression-overlay-2",
+    "malicious": true,
+    "path": "regression-overlay-2.pdf",
+    "process_high_water_rss_mib": 144.3203125,
+    "seconds": 0.2531156439999904,
+    "sha256": "9e4b8e4c305c20cd1cf6d97af61a79936924efb0624a02755a668fbd2d0677a0",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-3",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "overlay",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "regression-overlay-3",
+    "malicious": true,
+    "path": "regression-overlay-3.pdf",
+    "process_high_water_rss_mib": 144.3203125,
+    "seconds": 0.26193578900006287,
+    "sha256": "5b950f245229f16717519448f214b66580642ea6e7a0369543d79309e2a46b18",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-4",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "overlay",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "regression-overlay-4",
+    "malicious": true,
+    "path": "regression-overlay-4.pdf",
+    "process_high_water_rss_mib": 144.76171875,
+    "seconds": 0.3129765959999986,
+    "sha256": "13f2742cb78e92f15a63b2be821a85e6a48c37d7f8dcb8edfe4b8d072089882e",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-0",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "annotation",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "ANNOTATION_UPDATE"
+    ],
+    "id": "regression-annotation-0",
+    "malicious": true,
+    "path": "regression-annotation-0.pdf",
+    "process_high_water_rss_mib": 144.76171875,
+    "seconds": 0.24213658899998336,
+    "sha256": "7e01984ebfd4a53b088f53545f6f461263aa823f9f68ba61ad686d682a344aec",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-1",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "annotation",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "ANNOTATION_UPDATE"
+    ],
+    "id": "regression-annotation-1",
+    "malicious": true,
+    "path": "regression-annotation-1.pdf",
+    "process_high_water_rss_mib": 144.76171875,
+    "seconds": 0.24119537699993998,
+    "sha256": "15af2fa47d8d9d908e01cd7db57dfaad2c043bdffc5a86ed02723ae34cb02cd5",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-2",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "annotation",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "ANNOTATION_UPDATE"
+    ],
+    "id": "regression-annotation-2",
+    "malicious": true,
+    "path": "regression-annotation-2.pdf",
+    "process_high_water_rss_mib": 144.76171875,
+    "seconds": 0.25854881600002955,
+    "sha256": "f290edb9ed0e2a766415ab5a73d4ba636056154436b643686519138fb8a90d73",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-3",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "annotation",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "ANNOTATION_UPDATE"
+    ],
+    "id": "regression-annotation-3",
+    "malicious": true,
+    "path": "regression-annotation-3.pdf",
+    "process_high_water_rss_mib": 145.04296875,
+    "seconds": 0.29732435000005353,
+    "sha256": "fd0bfe9af7eb1581116e3b13302870c01c5dbb4fd7b80a6ec4efb48b4a5bb145",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-4",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "annotation",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "ANNOTATION_UPDATE"
+    ],
+    "id": "regression-annotation-4",
+    "malicious": true,
+    "path": "regression-annotation-4.pdf",
+    "process_high_water_rss_mib": 146.1640625,
+    "seconds": 0.29324365900015437,
+    "sha256": "f1738e5951997bd4300957e9669e952d884bcd35436e2cc6436ce7005384da5d",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-0",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "page_replace",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "regression-page_replace-0",
+    "malicious": true,
+    "path": "regression-page_replace-0.pdf",
+    "process_high_water_rss_mib": 146.1640625,
+    "seconds": 0.11839295999993737,
+    "sha256": "6633cf5a3e23c650c048a4f731b308ce8c37f3a77e8a121dd9c583dc9935ff03",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-1",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "page_replace",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "regression-page_replace-1",
+    "malicious": true,
+    "path": "regression-page_replace-1.pdf",
+    "process_high_water_rss_mib": 146.1640625,
+    "seconds": 0.1085650259999511,
+    "sha256": "2a5e3834fb4d986cfcad9e481b6e7cfbf54b15a14e509f0444db6ad74558417c",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-2",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "page_replace",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "regression-page_replace-2",
+    "malicious": true,
+    "path": "regression-page_replace-2.pdf",
+    "process_high_water_rss_mib": 146.1640625,
+    "seconds": 0.1219467099999747,
+    "sha256": "6be72c6b39947f902f49195470d1bfe20aecebee461ca8bec036951c340a0f77",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-3",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "page_replace",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "regression-page_replace-3",
+    "malicious": true,
+    "path": "regression-page_replace-3.pdf",
+    "process_high_water_rss_mib": 146.1640625,
+    "seconds": 0.12431673299988688,
+    "sha256": "f852fb28b9daa2272b28392cef93324172aefcb0eaf374bc46019d3f59ce7bae",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-4",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "page_replace",
+    "findings": [
+      "REVISION_VISUAL_CHANGE",
+      "POSSIBLE_SHADOW_ATTACK",
+      "SIGNATURE_POLICY_CHANGE",
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "POST_SIGNATURE_CONTENT_CHANGE"
+    ],
+    "id": "regression-page_replace-4",
+    "malicious": true,
+    "path": "regression-page_replace-4.pdf",
+    "process_high_water_rss_mib": 146.546875,
+    "seconds": 0.13550905300007798,
+    "sha256": "26d2da34b86eef5c2321a9b9e2788c3b414667eadb6798a9c2a6fbff344e49af",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-0",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "metadata",
+    "findings": [
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "METADATA_ONLY_UPDATE"
+    ],
+    "id": "regression-metadata-0",
+    "malicious": false,
+    "path": "regression-metadata-0.pdf",
+    "process_high_water_rss_mib": 146.546875,
+    "seconds": 0.2376043369999934,
+    "sha256": "8388ca4ddcefcf6f9a475636e2a51a962f583370581902122990da5442bc4308",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-1",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "metadata",
+    "findings": [
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "METADATA_ONLY_UPDATE"
+    ],
+    "id": "regression-metadata-1",
+    "malicious": false,
+    "path": "regression-metadata-1.pdf",
+    "process_high_water_rss_mib": 146.546875,
+    "seconds": 0.234736010000006,
+    "sha256": "8259bcb4922bd19ec13946643b49ebe0a76ad89a889cb466454cf002379751ed",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-2",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "metadata",
+    "findings": [
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "METADATA_ONLY_UPDATE"
+    ],
+    "id": "regression-metadata-2",
+    "malicious": false,
+    "path": "regression-metadata-2.pdf",
+    "process_high_water_rss_mib": 146.546875,
+    "seconds": 0.2526543409999249,
+    "sha256": "e6dc830a0ab8387f5888fd80a4a0f84fd4fcbb345b3a924858c5b65554e54253",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-3",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "metadata",
+    "findings": [
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "METADATA_ONLY_UPDATE"
+    ],
+    "id": "regression-metadata-3",
+    "malicious": false,
+    "path": "regression-metadata-3.pdf",
+    "process_high_water_rss_mib": 146.546875,
+    "seconds": 0.26676230899988695,
+    "sha256": "5133d83caffd81c803e4d6045f0290d2c35263928342b70bc4b97fbcd10812d9",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-4",
+    "candidates": [],
+    "classification": "cryptographic",
+    "expected_class": "cryptographic",
+    "family": "metadata",
+    "findings": [
+      "CERTIFICATE_UNTRUSTED",
+      "NONVISUAL_UPDATE",
+      "METADATA_ONLY_UPDATE"
+    ],
+    "id": "regression-metadata-4",
+    "malicious": false,
+    "path": "regression-metadata-4.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.286095203000059,
+    "sha256": "cfbccca627bca9e55d434cb1329c6fc67b41d6948574f2128c5ca3a865c735b9",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-0",
+    "candidates": [
+      {
+        "bbox": [
+          74.67,
+          216.67,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.37564978563057044,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1113,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "visual",
+    "findings": [],
+    "id": "regression-visual-0",
+    "malicious": false,
+    "path": "regression-visual-0.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.04403270300008444,
+    "sha256": "f0366189c90212e71462cc4edb5fa4684dd94ec6d8732207441291db7b2fed12",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-1",
+    "candidates": [
+      {
+        "bbox": [
+          74.0,
+          216.0,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.4169478799775277,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1446,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "visual",
+    "findings": [],
+    "id": "regression-visual-1",
+    "malicious": false,
+    "path": "regression-visual-1.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.028949817000011535,
+    "sha256": "369fb0052093c59b9c7bbc23702f64e251c881f595a83301af1dcf2f710a9f7b",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-2",
+    "candidates": [
+      {
+        "bbox": [
+          74.67,
+          216.67,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.37564978563057044,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1113,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "visual",
+    "findings": [],
+    "id": "regression-visual-2",
+    "malicious": false,
+    "path": "regression-visual-2.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.02888805800012051,
+    "sha256": "a814f0c27f49332eb88b90404bd1804e040c4df2769c6313e786608152d711d8",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-3",
+    "candidates": [
+      {
+        "bbox": [
+          74.0,
+          216.0,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.4169478799775277,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1446,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "visual",
+    "findings": [],
+    "id": "regression-visual-3",
+    "malicious": false,
+    "path": "regression-visual-3.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.0347399330000826,
+    "sha256": "500cbd4839e952ddf9be9319b20d99b342472e2b478f65b2570d8516699ff70f",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-4",
+    "candidates": [
+      {
+        "bbox": [
+          74.67,
+          216.67,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.37564978563057044,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1113,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "visual",
+    "findings": [],
+    "id": "regression-visual-4",
+    "malicious": false,
+    "path": "regression-visual-4.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.0323157180000635,
+    "sha256": "f012196a01c9111a0216e62141ccfb07df62355ae0f61dc08eddcf3993c64d31",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-0",
+    "candidates": [
+      {
+        "bbox": [
+          74.67,
+          216.67,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.37564978563057044,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1113,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          74.67,
+          216.67,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.37564978563057044,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p2-c2",
+        "ink_density": 0.1113,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 2,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "copied",
+    "findings": [
+      "REPEATED_VISUAL_REGION"
+    ],
+    "id": "regression-copied-0",
+    "malicious": true,
+    "path": "regression-copied-0.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.0787954909999371,
+    "sha256": "a7d84638a8aafd750497a569c950d524541c79654b9700b52a262c06fab2052b",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-1",
+    "candidates": [
+      {
+        "bbox": [
+          74.0,
+          216.0,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.4169478799775277,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1446,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          74.0,
+          216.0,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.4169478799775277,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p2-c2",
+        "ink_density": 0.1446,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 2,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "copied",
+    "findings": [
+      "REPEATED_VISUAL_REGION"
+    ],
+    "id": "regression-copied-1",
+    "malicious": true,
+    "path": "regression-copied-1.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.06983798200008096,
+    "sha256": "f01e50f47717e52944501c5a6c2e40157b593a02c2035c2b80520df09bc9100d",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-2",
+    "candidates": [
+      {
+        "bbox": [
+          74.67,
+          216.67,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.37564978563057044,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1113,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          74.67,
+          216.67,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.37564978563057044,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p2-c2",
+        "ink_density": 0.1113,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 2,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "copied",
+    "findings": [
+      "REPEATED_VISUAL_REGION"
+    ],
+    "id": "regression-copied-2",
+    "malicious": true,
+    "path": "regression-copied-2.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.07830258700005288,
+    "sha256": "ead6bd1732ca589603e7759e8504e4e7713314bb7b3e7c57447e69cb228887c5",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-3",
+    "candidates": [
+      {
+        "bbox": [
+          74.0,
+          216.0,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.4169478799775277,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1446,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          74.0,
+          216.0,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.4169478799775277,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p2-c2",
+        "ink_density": 0.1446,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 2,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "copied",
+    "findings": [
+      "REPEATED_VISUAL_REGION"
+    ],
+    "id": "regression-copied-3",
+    "malicious": true,
+    "path": "regression-copied-3.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.08023321199993916,
+    "sha256": "8f907c8298d8b38d512e90ef49f30a09a67588f973468376b193f468ae6568ff",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": true,
+    "base_id": "regression-4",
+    "candidates": [
+      {
+        "bbox": [
+          74.67,
+          216.67,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.37564978563057044,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1113,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          74.67,
+          216.67,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.37564978563057044,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p2-c2",
+        "ink_density": 0.1113,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 2,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "copied",
+    "findings": [
+      "REPEATED_VISUAL_REGION"
+    ],
+    "id": "regression-copied-4",
+    "malicious": true,
+    "path": "regression-copied-4.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.07668118899982801,
+    "sha256": "32fa31a631adeb8ab7d10c59bd9e10750ae881c76682a4feabdc904a5fae69d0",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "review_required"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-0",
+    "candidates": [
+      {
+        "bbox": [
+          74.67,
+          216.67,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.4122662337078511,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.0958,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "faint",
+    "findings": [],
+    "id": "regression-faint-0",
+    "malicious": false,
+    "path": "regression-faint-0.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.03178669700014325,
+    "sha256": "0d8aed000196317f3d698a198b736519b29a5d894afb130f7cb737d878b30aa3",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-1",
+    "candidates": [
+      {
+        "bbox": [
+          74.0,
+          216.0,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.39579835144204695,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1289,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "faint",
+    "findings": [],
+    "id": "regression-faint-1",
+    "malicious": false,
+    "path": "regression-faint-1.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.03039781600000424,
+    "sha256": "fe4e6f5ff5f2ea96a5ec30d99ae173c49f83b2c3a66927ea8d426e6cd385789d",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-2",
+    "candidates": [
+      {
+        "bbox": [
+          74.67,
+          216.67,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.3692077466591525,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.0923,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "faint",
+    "findings": [],
+    "id": "regression-faint-2",
+    "malicious": false,
+    "path": "regression-faint-2.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.029183998000007705,
+    "sha256": "9a0b9873af2342a9342845c332a53398dac0f752be69fd3841cc2b9d032c928b",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-3",
+    "candidates": [
+      {
+        "bbox": [
+          74.0,
+          216.0,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.363035686119341,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1255,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "faint",
+    "findings": [],
+    "id": "regression-faint-3",
+    "malicious": false,
+    "path": "regression-faint-3.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.03277028000002247,
+    "sha256": "ae09c9fe910641a1e719c481092ac7ee97a2dbe2befb82550fdb0678e3a67252",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-4",
+    "candidates": [
+      {
+        "bbox": [
+          74.67,
+          217.33,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.5163164919189148,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.0877,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "faint",
+    "findings": [],
+    "id": "regression-faint-4",
+    "malicious": false,
+    "path": "regression-faint-4.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.032632145999969,
+    "sha256": "1281965ca927f5f3733f672265c0186c176aff67c492b6d229951f4f40b7f141",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-0",
+    "candidates": [
+      {
+        "bbox": [
+          20.67,
+          26.67,
+          194.67,
+          47.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 1.0,
+          "components": 9,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.3636,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          74.67,
+          217.33,
+          336.0,
+          276.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.8388370988328432,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c2",
+        "ink_density": 0.1523,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "scan_lowres",
+    "findings": [],
+    "id": "regression-scan_lowres-0",
+    "malicious": false,
+    "path": "regression-scan_lowres-0.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.04201787400006651,
+    "sha256": "f7cdd4e2645c73b5e645b34bf4baeb881214f86d6630c2d800cb0bd9aa11b41e",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-1",
+    "candidates": [
+      {
+        "bbox": [
+          20.67,
+          26.67,
+          194.0,
+          47.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 1.0,
+          "components": 9,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.3559,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          72.67,
+          216.0,
+          335.33,
+          276.0
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.9069087869269311,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c2",
+        "ink_density": 0.186,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "scan_lowres",
+    "findings": [],
+    "id": "regression-scan_lowres-1",
+    "malicious": false,
+    "path": "regression-scan_lowres-1.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.042936564000001454,
+    "sha256": "294cbe62c10218286baad33fbe650f65ffef54f7e8136d34d6ea205b685b6c11",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-2",
+    "candidates": [
+      {
+        "bbox": [
+          20.67,
+          26.67,
+          194.67,
+          47.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 1.0,
+          "components": 10,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.3623,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          74.67,
+          217.33,
+          336.0,
+          276.0
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.8202754852330101,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c2",
+        "ink_density": 0.1568,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "scan_lowres",
+    "findings": [],
+    "id": "regression-scan_lowres-2",
+    "malicious": false,
+    "path": "regression-scan_lowres-2.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.03899833599984959,
+    "sha256": "d97fbf9cd6472a5538f065de7ac293ed669d30fce8b6d3c7538f1f1a67a1827c",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-3",
+    "candidates": [
+      {
+        "bbox": [
+          20.67,
+          26.67,
+          194.67,
+          47.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 1.0,
+          "components": 10,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.3627,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          72.67,
+          216.0,
+          336.0,
+          276.0
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 1.0,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c2",
+        "ink_density": 0.1858,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "scan_lowres",
+    "findings": [],
+    "id": "regression-scan_lowres-3",
+    "malicious": false,
+    "path": "regression-scan_lowres-3.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.04588557900001433,
+    "sha256": "2688e4eb922d5e2d009895769298185ab1b93e1eb062cbbd3a20323cdeeef6fa",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-4",
+    "candidates": [
+      {
+        "bbox": [
+          20.67,
+          26.67,
+          194.67,
+          46.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 1.0,
+          "components": 9,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.3815,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          74.67,
+          217.33,
+          336.0,
+          276.0
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.7970712428069637,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c2",
+        "ink_density": 0.1556,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "scan_lowres",
+    "findings": [],
+    "id": "regression-scan_lowres-4",
+    "malicious": false,
+    "path": "regression-scan_lowres-4.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.04006712399996104,
+    "sha256": "2d55d764a10575cf9364a43a8fa073d2ca7744d75ab6950bf84769e81b256d1f",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-0",
+    "candidates": [
+      {
+        "bbox": [
+          72.0,
+          212.67,
+          338.0,
+          277.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.38329234217279684,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1081,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "jpeg",
+    "findings": [],
+    "id": "regression-jpeg-0",
+    "malicious": false,
+    "path": "regression-jpeg-0.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.03339582200010227,
+    "sha256": "0d1e52304abcc149f17cb491a46b1e57ad1c1f2727b79e49d93d989bcad527a5",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-1",
+    "candidates": [
+      {
+        "bbox": [
+          73.33,
+          213.33,
+          336.0,
+          277.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.3619059516548116,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1357,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "jpeg",
+    "findings": [],
+    "id": "regression-jpeg-1",
+    "malicious": false,
+    "path": "regression-jpeg-1.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.04410506300018824,
+    "sha256": "4b47f3407ac0a96ad84195c8968585562843a8798da19e44e2a53be6c705e008",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-2",
+    "candidates": [
+      {
+        "bbox": [
+          72.0,
+          216.0,
+          337.33,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.40044095579222583,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1118,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "jpeg",
+    "findings": [],
+    "id": "regression-jpeg-2",
+    "malicious": false,
+    "path": "regression-jpeg-2.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.0316378719999193,
+    "sha256": "14fd40cff7b2ae668e14bca14138b65216dc74b421088a59faa9d60eb8c402e9",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-3",
+    "candidates": [
+      {
+        "bbox": [
+          73.33,
+          216.0,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.41594189295072626,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1457,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "jpeg",
+    "findings": [],
+    "id": "regression-jpeg-3",
+    "malicious": false,
+    "path": "regression-jpeg-3.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.0368981949998215,
+    "sha256": "03761d5e2f873e21574d738ebb7fdc565d7b3c984fc61e3d1fb26a491beee80f",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-4",
+    "candidates": [
+      {
+        "bbox": [
+          74.0,
+          216.67,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.4164221913122475,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1119,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "jpeg",
+    "findings": [],
+    "id": "regression-jpeg-4",
+    "malicious": false,
+    "path": "regression-jpeg-4.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.038658917000020665,
+    "sha256": "71ca3928583b7d8e0bd631e3150e64c99101e23d9295991589f7ad84a0e55dde",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-0",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "repeated_logo",
+    "findings": [],
+    "id": "regression-repeated_logo-0",
+    "malicious": false,
+    "path": "regression-repeated_logo-0.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.038453931000049124,
+    "sha256": "11a55873c01031c1187dbdc8cebf246e90a7d324f91fb4ede89af9c472944b21",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-1",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "repeated_logo",
+    "findings": [],
+    "id": "regression-repeated_logo-1",
+    "malicious": false,
+    "path": "regression-repeated_logo-1.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.04495033900002454,
+    "sha256": "7a2dd8fb521bb70fc61eb78890376b1e03ed8d7e8c5940bf5b8a513845a0e06a",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-2",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "repeated_logo",
+    "findings": [],
+    "id": "regression-repeated_logo-2",
+    "malicious": false,
+    "path": "regression-repeated_logo-2.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.04027188000009119,
+    "sha256": "7f3569f9b0e73838827c15c9388d2f6908cf475bc007f06a2d4cd7fd72690c15",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-3",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "repeated_logo",
+    "findings": [],
+    "id": "regression-repeated_logo-3",
+    "malicious": false,
+    "path": "regression-repeated_logo-3.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.045606872999996995,
+    "sha256": "db86b36e86cbf9cbb13e225a7e55fa52c89e8d4c9caf85604894ce2a17868268",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-4",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "repeated_logo",
+    "findings": [],
+    "id": "regression-repeated_logo-4",
+    "malicious": false,
+    "path": "regression-repeated_logo-4.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.041377401999852736,
+    "sha256": "6097d9066ebf51e76c0e8fae475b2a665ea1b2588718a8b68ef9cf2e4e5c8d8d",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-0",
+    "candidates": [
+      {
+        "bbox": [
+          81.33,
+          206.67,
+          322.0,
+          282.0
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.22027640205901214,
+          "components": 2,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1117,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "unsigned",
+    "family": "stamp",
+    "findings": [],
+    "id": "regression-stamp-0",
+    "malicious": false,
+    "path": "regression-stamp-0.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.026680560999921,
+    "sha256": "fb15ed850481f0b7baff0cc01516e51fd1a478af6ec7db2663602b1fd7b29e48",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-1",
+    "candidates": [
+      {
+        "bbox": [
+          81.33,
+          206.67,
+          322.0,
+          282.0
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.22027640205901214,
+          "components": 2,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1117,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "unsigned",
+    "family": "stamp",
+    "findings": [],
+    "id": "regression-stamp-1",
+    "malicious": false,
+    "path": "regression-stamp-1.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.032466387999875224,
+    "sha256": "65b540f41e22f4def3bfc8dfadcf89fc31c25274c93c4d1276f0376a60e50427",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-2",
+    "candidates": [
+      {
+        "bbox": [
+          81.33,
+          206.67,
+          322.0,
+          282.0
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.22027640205901214,
+          "components": 2,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1117,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "unsigned",
+    "family": "stamp",
+    "findings": [],
+    "id": "regression-stamp-2",
+    "malicious": false,
+    "path": "regression-stamp-2.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.03166742600001271,
+    "sha256": "2fea776def98e70e13b916c35cb600730deb82700489e7e34176a920fda436de",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-3",
+    "candidates": [
+      {
+        "bbox": [
+          81.33,
+          206.67,
+          322.0,
+          282.0
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.22027640205901214,
+          "components": 2,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1117,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "unsigned",
+    "family": "stamp",
+    "findings": [],
+    "id": "regression-stamp-3",
+    "malicious": false,
+    "path": "regression-stamp-3.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.03161502600005406,
+    "sha256": "d0db5c76595e421054940c59f3a6ae6e47568cbcae6236c6fc4128d33ab18008",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-4",
+    "candidates": [
+      {
+        "bbox": [
+          81.33,
+          206.67,
+          322.0,
+          282.0
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.22027640205901214,
+          "components": 2,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1117,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "unsigned",
+    "family": "stamp",
+    "findings": [],
+    "id": "regression-stamp-4",
+    "malicious": false,
+    "path": "regression-stamp-4.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.03078409299996565,
+    "sha256": "cadad4710616abd81bd85fe1b55aa5248c351933a79b033bd1d969fc95b084bc",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-0",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "printed_name",
+    "findings": [],
+    "id": "regression-printed_name-0",
+    "malicious": false,
+    "path": "regression-printed_name-0.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.020014328999877762,
+    "sha256": "17d9206989909f8ffd63b52ba52162b1257c6a862dfc27d5c6c60a61a7554e40",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-1",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "printed_name",
+    "findings": [],
+    "id": "regression-printed_name-1",
+    "malicious": false,
+    "path": "regression-printed_name-1.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.018046568000045227,
+    "sha256": "1929a7f870a1b3b1021f2563073d2dffad651f275e38d52e58f0afdd8d2805c4",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-2",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "printed_name",
+    "findings": [],
+    "id": "regression-printed_name-2",
+    "malicious": false,
+    "path": "regression-printed_name-2.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.017234146999953737,
+    "sha256": "1644f695205b1f8715e072aa8c29ca16b16bce30b054e30e4ac5aa3e0675be8d",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-3",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "printed_name",
+    "findings": [],
+    "id": "regression-printed_name-3",
+    "malicious": false,
+    "path": "regression-printed_name-3.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.01743533099988781,
+    "sha256": "1663da50ca44b301115ee7a14b39d4c6d0465ccb3c0e99dff79ca5b8ec96f14f",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-4",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "printed_name",
+    "findings": [],
+    "id": "regression-printed_name-4",
+    "malicious": false,
+    "path": "regression-printed_name-4.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.01836022099996626,
+    "sha256": "5453de4c3189a5fa2d4c9c9a09f05f977d037e002b834861f7debde275319839",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-0",
+    "candidates": [
+      {
+        "bbox": [
+          135.33,
+          124.67,
+          395.33,
+          183.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.343687788608078,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1104,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "rotated",
+    "findings": [],
+    "id": "regression-rotated-0",
+    "malicious": false,
+    "path": "regression-rotated-0.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.03286124200008089,
+    "sha256": "4a0a1381d0d65e855911357f8415b95f1e97a710c912ec784c8dee08c4d66bd4",
+    "signature_rois": [
+      {
+        "bbox": [
+          125.0,
+          109.0,
+          405.0,
+          200.0
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-1",
+    "candidates": [
+      {
+        "bbox": [
+          142.67,
+          134.0,
+          402.67,
+          193.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.4104657675971718,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1463,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "rotated",
+    "findings": [],
+    "id": "regression-rotated-1",
+    "malicious": false,
+    "path": "regression-rotated-1.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.031620173999954204,
+    "sha256": "49e540515bb7863aaa1fdb74aa6490398777638ea1cf148801b753406e11900c",
+    "signature_rois": [
+      {
+        "bbox": [
+          132.0,
+          118.0,
+          412.0,
+          209.0
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-2",
+    "candidates": [
+      {
+        "bbox": [
+          149.33,
+          142.67,
+          409.33,
+          201.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.343687788608078,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1104,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "rotated",
+    "findings": [],
+    "id": "regression-rotated-2",
+    "malicious": false,
+    "path": "regression-rotated-2.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.02833305800004382,
+    "sha256": "9232c313e9359d9345ad0de7005a97141609a74bbaf94b7cc85ccf924f732f9f",
+    "signature_rois": [
+      {
+        "bbox": [
+          139.0,
+          127.0,
+          419.0,
+          218.0
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-3",
+    "candidates": [
+      {
+        "bbox": [
+          156.67,
+          152.0,
+          416.67,
+          211.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.4104657675971718,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1463,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "rotated",
+    "findings": [],
+    "id": "regression-rotated-3",
+    "malicious": false,
+    "path": "regression-rotated-3.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.0327853999999661,
+    "sha256": "185eca5ff0bb654ae259b4690eda94753ab291cb713d3bd78b400ec0c516d9e8",
+    "signature_rois": [
+      {
+        "bbox": [
+          146.0,
+          136.0,
+          426.0,
+          227.0
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-4",
+    "candidates": [
+      {
+        "bbox": [
+          163.33,
+          160.67,
+          423.33,
+          219.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.343687788608078,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1104,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "rotated",
+    "findings": [],
+    "id": "regression-rotated-4",
+    "malicious": false,
+    "path": "regression-rotated-4.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.03445487399994818,
+    "sha256": "605e90d285d196a6224e7263de63c9f85e6576e29e4b7cc815aef39a9f6d682b",
+    "signature_rois": [
+      {
+        "bbox": [
+          153.0,
+          145.0,
+          433.0,
+          236.0
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-0",
+    "candidates": [
+      {
+        "bbox": [
+          74.67,
+          216.67,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.37564978563057044,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1113,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          74.0,
+          216.0,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.4169478799775277,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p2-c2",
+        "ink_density": 0.1446,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 2,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "multiple",
+    "findings": [],
+    "id": "regression-multiple-0",
+    "malicious": false,
+    "path": "regression-multiple-0.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.07149094900000819,
+    "sha256": "2821d2df27a14c7dea6e157d14fefff632f58083b4b4570b64f95c1a6f3ba438",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-1",
+    "candidates": [
+      {
+        "bbox": [
+          74.0,
+          216.0,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.4169478799775277,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1446,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          74.67,
+          216.67,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.37564978563057044,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p2-c2",
+        "ink_density": 0.1113,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 2,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "multiple",
+    "findings": [],
+    "id": "regression-multiple-1",
+    "malicious": false,
+    "path": "regression-multiple-1.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.07610635099990759,
+    "sha256": "657e19b7a448d21c80694e7bc2f454a3d12a74ca4f7131e44f166dee9ee183fd",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-2",
+    "candidates": [
+      {
+        "bbox": [
+          74.67,
+          216.67,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.37564978563057044,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1113,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          74.0,
+          216.0,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.4169478799775277,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p2-c2",
+        "ink_density": 0.1446,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 2,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "multiple",
+    "findings": [],
+    "id": "regression-multiple-2",
+    "malicious": false,
+    "path": "regression-multiple-2.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.07260115300005054,
+    "sha256": "85ce1dcee29ec2224e8b7f4b17d1b5cc5f865c58a553caabc83cb57d0687a95a",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-3",
+    "candidates": [
+      {
+        "bbox": [
+          74.0,
+          216.0,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.4169478799775277,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1446,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          74.67,
+          216.67,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.37564978563057044,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p2-c2",
+        "ink_density": 0.1113,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 2,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "multiple",
+    "findings": [],
+    "id": "regression-multiple-3",
+    "malicious": false,
+    "path": "regression-multiple-3.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.08294285500005572,
+    "sha256": "1cbdf7414f2861dc96fb36d9e01f1d0809c905571d57a72df7293078f381d6bc",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-4",
+    "candidates": [
+      {
+        "bbox": [
+          74.67,
+          216.67,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.37564978563057044,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1113,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      },
+      {
+        "bbox": [
+          74.0,
+          216.0,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.4169478799775277,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p2-c2",
+        "ink_density": 0.1446,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 2,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "multiple",
+    "findings": [],
+    "id": "regression-multiple-4",
+    "malicious": false,
+    "path": "regression-multiple-4.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.07382785499999045,
+    "sha256": "bfd927dab5df03019c3268977e7ab3958c54dca56365db56c6126db6eb13fb56",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      },
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 2
+      }
+    ],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-0",
+    "candidates": [],
+    "classification": "unsupported_error",
+    "error": "FileDataError",
+    "expected_class": "unsigned",
+    "family": "malformed",
+    "id": "regression-malformed-0",
+    "malicious": false,
+    "path": "regression-malformed-0.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.00020847699988735258,
+    "sha256": "32c32c80fc0c1104125da98029788a14119e8ce57051e122962fcc6d6a16b07a",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": false
+  },
+  {
+    "alert": false,
+    "base_id": "regression-1",
+    "candidates": [],
+    "classification": "unsupported_error",
+    "error": "FileDataError",
+    "expected_class": "unsigned",
+    "family": "malformed",
+    "id": "regression-malformed-1",
+    "malicious": false,
+    "path": "regression-malformed-1.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 5.1661000043168315e-05,
+    "sha256": "b1e9d6f84e2686bd5b31e229790194655b8abaa239b5883070eaf4f300c217d0",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": false
+  },
+  {
+    "alert": false,
+    "base_id": "regression-2",
+    "candidates": [],
+    "classification": "unsupported_error",
+    "error": "FileDataError",
+    "expected_class": "unsigned",
+    "family": "malformed",
+    "id": "regression-malformed-2",
+    "malicious": false,
+    "path": "regression-malformed-2.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 3.908400003638235e-05,
+    "sha256": "a47537dd1f7f25182cf7b862b7ecef0ff37925fc1859c482c9fecfe2fb242edc",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": false
+  },
+  {
+    "alert": false,
+    "base_id": "regression-3",
+    "candidates": [],
+    "classification": "unsupported_error",
+    "error": "FileDataError",
+    "expected_class": "unsigned",
+    "family": "malformed",
+    "id": "regression-malformed-3",
+    "malicious": false,
+    "path": "regression-malformed-3.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 3.36939999669994e-05,
+    "sha256": "c623df10c5e4b53b16495966965cf366aae8f88f973efef237dad92c289e2068",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": false
+  },
+  {
+    "alert": false,
+    "base_id": "regression-4",
+    "candidates": [],
+    "classification": "unsupported_error",
+    "error": "FileDataError",
+    "expected_class": "unsigned",
+    "family": "malformed",
+    "id": "regression-malformed-4",
+    "malicious": false,
+    "path": "regression-malformed-4.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.0005434810000224388,
+    "sha256": "2388b881a4af28ce7277b0061a6530b547b262a7af7d8e9918da80b680c9f7c8",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": false
+  },
+  {
+    "alert": false,
+    "base_id": "regression-0",
+    "candidates": [],
+    "classification": "unsupported_error",
+    "error": "ValueError",
+    "expected_class": "unsigned",
+    "family": "encrypted",
+    "id": "regression-encrypted-0",
+    "malicious": false,
+    "path": "regression-encrypted-0.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.03217044400003033,
+    "sha256": "864cfac64ab0863d639afa6ffbbd2640c2f8d38728f05b88629a0bb8ca0c59c5",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": false
+  },
+  {
+    "alert": false,
+    "base_id": "regression-1",
+    "candidates": [],
+    "classification": "unsupported_error",
+    "error": "ValueError",
+    "expected_class": "unsigned",
+    "family": "encrypted",
+    "id": "regression-encrypted-1",
+    "malicious": false,
+    "path": "regression-encrypted-1.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.029683603000194125,
+    "sha256": "7f74128c345cf5d38e6c6e75c0833fb7a9c6ddcc9e739aa0ba14b408f2bf810e",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": false
+  },
+  {
+    "alert": false,
+    "base_id": "regression-2",
+    "candidates": [],
+    "classification": "unsupported_error",
+    "error": "ValueError",
+    "expected_class": "unsigned",
+    "family": "encrypted",
+    "id": "regression-encrypted-2",
+    "malicious": false,
+    "path": "regression-encrypted-2.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.0337033739999697,
+    "sha256": "2d81b830123d0af35b9b9168c47f36b4127e5cdd9e00512279bbfedb20c8e074",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": false
+  },
+  {
+    "alert": false,
+    "base_id": "regression-3",
+    "candidates": [],
+    "classification": "unsupported_error",
+    "error": "ValueError",
+    "expected_class": "unsigned",
+    "family": "encrypted",
+    "id": "regression-encrypted-3",
+    "malicious": false,
+    "path": "regression-encrypted-3.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.03849612299995897,
+    "sha256": "c809c1ec16627accd53571c76e2a4e68af4e0367e771a399494a04fa4f88449b",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": false
+  },
+  {
+    "alert": false,
+    "base_id": "regression-4",
+    "candidates": [],
+    "classification": "unsupported_error",
+    "error": "ValueError",
+    "expected_class": "unsigned",
+    "family": "encrypted",
+    "id": "regression-encrypted-4",
+    "malicious": false,
+    "path": "regression-encrypted-4.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.03413684500014824,
+    "sha256": "61bbbfb031a2352512f0b3caccd82845f831c492e90bae48c2e69bf2fc54453a",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": false
+  },
+  {
+    "alert": false,
+    "base_id": "regression-0",
+    "candidates": [
+      {
+        "bbox": [
+          74.67,
+          216.67,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.37564978563057044,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1113,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "ambiguous_reuse",
+    "findings": [],
+    "id": "regression-ambiguous_reuse-0",
+    "malicious": true,
+    "path": "regression-ambiguous_reuse-0.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.027156149999882473,
+    "sha256": "f0366189c90212e71462cc4edb5fa4684dd94ec6d8732207441291db7b2fed12",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": false,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-1",
+    "candidates": [
+      {
+        "bbox": [
+          74.0,
+          216.0,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.4169478799775277,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1446,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "ambiguous_reuse",
+    "findings": [],
+    "id": "regression-ambiguous_reuse-1",
+    "malicious": true,
+    "path": "regression-ambiguous_reuse-1.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.03903087100002267,
+    "sha256": "369fb0052093c59b9c7bbc23702f64e251c881f595a83301af1dcf2f710a9f7b",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": false,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-2",
+    "candidates": [
+      {
+        "bbox": [
+          74.67,
+          216.67,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.37564978563057044,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1113,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "ambiguous_reuse",
+    "findings": [],
+    "id": "regression-ambiguous_reuse-2",
+    "malicious": true,
+    "path": "regression-ambiguous_reuse-2.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.029804218999970544,
+    "sha256": "a814f0c27f49332eb88b90404bd1804e040c4df2769c6313e786608152d711d8",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": false,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-3",
+    "candidates": [
+      {
+        "bbox": [
+          74.0,
+          216.0,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.4169478799775277,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1446,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "ambiguous_reuse",
+    "findings": [],
+    "id": "regression-ambiguous_reuse-3",
+    "malicious": true,
+    "path": "regression-ambiguous_reuse-3.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.03220104699994408,
+    "sha256": "500cbd4839e952ddf9be9319b20d99b342472e2b478f65b2570d8516699ff70f",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": false,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-4",
+    "candidates": [
+      {
+        "bbox": [
+          74.67,
+          216.67,
+          334.67,
+          275.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 0.37564978563057044,
+          "components": 1,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.1113,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "visual_candidate",
+    "family": "ambiguous_reuse",
+    "findings": [],
+    "id": "regression-ambiguous_reuse-4",
+    "malicious": true,
+    "path": "regression-ambiguous_reuse-4.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.03292312700000366,
+    "sha256": "f012196a01c9111a0216e62141ccfb07df62355ae0f61dc08eddcf3993c64d31",
+    "signature_rois": [
+      {
+        "bbox": [
+          65,
+          200,
+          345,
+          291
+        ],
+        "page": 1
+      }
+    ],
+    "split": "regression",
+    "supported": false,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-0",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "table",
+    "findings": [],
+    "id": "regression-table-0",
+    "malicious": false,
+    "path": "regression-table-0.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.017367935000038415,
+    "sha256": "9a774f52e028ad3e6285c58a86a34b3cf97104f5e6a0bdeb8397e58c59b215a9",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-1",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "table",
+    "findings": [],
+    "id": "regression-table-1",
+    "malicious": false,
+    "path": "regression-table-1.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.022368290000031266,
+    "sha256": "0e30d4ab88121192ebcda180c06c31358073a1dcec92631ceea823e79c31578c",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-2",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "table",
+    "findings": [],
+    "id": "regression-table-2",
+    "malicious": false,
+    "path": "regression-table-2.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.02021626800001286,
+    "sha256": "e2b55c33d8ccbe7000650d1b27d3f6d04cff0ba5a3a52828aa8fb11eaa823154",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-3",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "table",
+    "findings": [],
+    "id": "regression-table-3",
+    "malicious": false,
+    "path": "regression-table-3.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.01925597299987203,
+    "sha256": "51e0e7c4d660855c03682468fc1ab5dc3500766cb80385e08c4223bbc7c33b7b",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-4",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "table",
+    "findings": [],
+    "id": "regression-table-4",
+    "malicious": false,
+    "path": "regression-table-4.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.023318306999954075,
+    "sha256": "fae97499a20011721ac0902b9d9b3a705fbe0d6a138bc70b18174a50882eaca0",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-0",
+    "candidates": [
+      {
+        "bbox": [
+          20.67,
+          26.67,
+          194.67,
+          47.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 1.0,
+          "components": 9,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.3636,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "unsigned",
+    "family": "scan_printed",
+    "findings": [],
+    "id": "regression-scan_printed-0",
+    "malicious": false,
+    "path": "regression-scan_printed-0.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.02098879200002557,
+    "sha256": "82b3122234f89dcd88cd22fe0833bdd5e8cf48d830abd2ddc3bc75ea16ad1410",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-1",
+    "candidates": [
+      {
+        "bbox": [
+          20.67,
+          26.67,
+          194.0,
+          47.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 1.0,
+          "components": 9,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.3559,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "unsigned",
+    "family": "scan_printed",
+    "findings": [],
+    "id": "regression-scan_printed-1",
+    "malicious": false,
+    "path": "regression-scan_printed-1.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.02697247400010383,
+    "sha256": "f3814026b68c3a921a01d4bc663b7842f2320b697388fa6f5297498849f91d36",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-2",
+    "candidates": [
+      {
+        "bbox": [
+          20.67,
+          26.67,
+          194.67,
+          47.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 1.0,
+          "components": 10,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.3623,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "unsigned",
+    "family": "scan_printed",
+    "findings": [],
+    "id": "regression-scan_printed-2",
+    "malicious": false,
+    "path": "regression-scan_printed-2.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.02415895600006479,
+    "sha256": "8d50f1103b309d2e2de187e7344f1aa5f5362ecaa5e13000ceaf0b2174ab7394",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-3",
+    "candidates": [
+      {
+        "bbox": [
+          20.67,
+          26.67,
+          194.67,
+          47.33
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 1.0,
+          "components": 10,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.3627,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "unsigned",
+    "family": "scan_printed",
+    "findings": [],
+    "id": "regression-scan_printed-3",
+    "malicious": false,
+    "path": "regression-scan_printed-3.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.028170083000077284,
+    "sha256": "fdb9f99f85baebcc8e0e34440f6c840bfa616348c160a7c3eab74a9442c8132a",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-4",
+    "candidates": [
+      {
+        "bbox": [
+          20.67,
+          26.67,
+          194.67,
+          46.67
+        ],
+        "contrast_method": "absolute_and_local_multiscale",
+        "coordinate_space": "rotated_page_points",
+        "features": {
+          "axis_aligned_line_fraction": 1.0,
+          "components": 9,
+          "graphic_like": false,
+          "regular_components": false
+        },
+        "id": "p1-c1",
+        "ink_density": 0.3815,
+        "limitations": [
+          "May be a logo, diagram, scanned text or decoration",
+          "Not evidence of authorship or forgery"
+        ],
+        "page": 1,
+        "source": "nontext_ink",
+        "uncertainty": "unverified_signature_candidate"
+      }
+    ],
+    "classification": "visual_candidate",
+    "expected_class": "unsigned",
+    "family": "scan_printed",
+    "findings": [],
+    "id": "regression-scan_printed-4",
+    "malicious": false,
+    "path": "regression-scan_printed-4.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.028904397999895082,
+    "sha256": "def4ebb4e72021e90f8bc0fbc05e2cebe51aaab8fdc61111bc7061b4bd08eb18",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-0",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "blank",
+    "findings": [],
+    "id": "regression-blank-0",
+    "malicious": false,
+    "path": "regression-blank-0.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.020059293000031175,
+    "sha256": "909713dec909cf7b0593ed2d3f1c38ed251dbe3635496daa4990c7b59b572e6d",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-1",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "blank",
+    "findings": [],
+    "id": "regression-blank-1",
+    "malicious": false,
+    "path": "regression-blank-1.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.017129561999809084,
+    "sha256": "20398172db30b935eef9fdddbe1bf5c08490bddc3a6e5b07e635394eba8f3d73",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-2",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "blank",
+    "findings": [],
+    "id": "regression-blank-2",
+    "malicious": false,
+    "path": "regression-blank-2.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.023798286000101143,
+    "sha256": "faeff37693b4149dca5f8b8042212761ea79287ca7771a22f89a7c938c78ea34",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-3",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "blank",
+    "findings": [],
+    "id": "regression-blank-3",
+    "malicious": false,
+    "path": "regression-blank-3.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.021386855999935506,
+    "sha256": "c3618954529ab6367ee5c732becf49e7bac699f9c0ada72834cb925988e83a0c",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-4",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "blank",
+    "findings": [],
+    "id": "regression-blank-4",
+    "malicious": false,
+    "path": "regression-blank-4.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.02178960600008395,
+    "sha256": "daed6af1d0f66520fbac328b9280d3439f3080af2826e89136cb60d16dd6c2b5",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-0",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "diagram",
+    "findings": [],
+    "id": "regression-diagram-0",
+    "malicious": false,
+    "path": "regression-diagram-0.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.02076094699987152,
+    "sha256": "92153fe9731ec1f1726338dc95dc2138ba9477838306a3ba443b110f1d91c4cb",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-1",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "diagram",
+    "findings": [],
+    "id": "regression-diagram-1",
+    "malicious": false,
+    "path": "regression-diagram-1.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.020033657999874777,
+    "sha256": "095fcc2672b0a74a9fe1d14caaa65cd8996b4c986da3526d7502d6d905e6bd67",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-2",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "diagram",
+    "findings": [],
+    "id": "regression-diagram-2",
+    "malicious": false,
+    "path": "regression-diagram-2.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.022761398999818994,
+    "sha256": "0fc7c47bc94d88c872625b15166a0dd994da9c43541107cdcced1a7072e92e03",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-3",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "diagram",
+    "findings": [],
+    "id": "regression-diagram-3",
+    "malicious": false,
+    "path": "regression-diagram-3.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.023800121000022045,
+    "sha256": "56f7bfdfd6f95d9526a443097c208181c5549b238f1e3ed6ad9d50beeff8fdd1",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  },
+  {
+    "alert": false,
+    "base_id": "regression-4",
+    "candidates": [],
+    "classification": "unsigned",
+    "expected_class": "unsigned",
+    "family": "diagram",
+    "findings": [],
+    "id": "regression-diagram-4",
+    "malicious": false,
+    "path": "regression-diagram-4.pdf",
+    "process_high_water_rss_mib": 146.64453125,
+    "seconds": 0.02995042099996681,
+    "sha256": "053becd9b97d86ef5ca8ad59d2e14c7329810fc66ae24763b42c414b5c10d0ea",
+    "signature_rois": [],
+    "split": "regression",
+    "supported": true,
+    "verdict": "inconclusive"
+  }
+]

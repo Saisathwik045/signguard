@@ -43,7 +43,8 @@ def evaluate(output, per_family=10):
                        "malicious": case["malicious"], "supported": case["supported_alert_evaluation"],
                        "unsupported_reason": case["unsupported_reason"],
                        "expected_class": case["expected_class"],
-                       "predicted_class": report["structure"]["classification"],
+                       "predicted_class": report["structure"].get("refined_classification", report["structure"]["classification"]),
+                       "predicted_legacy_class": report["structure"]["classification"],
                        "predicted_alert": report["assessment"]["alert"],
                        "verdict": report["assessment"]["verdict"],
                        "findings": [f["code"] for f in report["assessment"]["findings"]],
@@ -112,6 +113,7 @@ def evaluate(output, per_family=10):
                "false_positives": [o["id"] for o in supported if not o["malicious"] and o["predicted_alert"]],
                "false_negatives": [o["id"] for o in supported if o["malicious"] and not o["predicted_alert"]],
                "by_family": by_family,
+               "classification_definition": "Uses refined_classification when available; legacy image-presence class retained per outcome. Labels/populations unchanged.",
                "metric_definition": "Alert=review_required or tampering_detected; inconclusive is no alert, not genuine. "
                                     "Expected unsupported cases excluded from supported metrics, included in all-case metrics. "
                                     "Unexpected errors count as no alert; positives then count as false negatives. "
