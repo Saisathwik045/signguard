@@ -36,8 +36,10 @@ Codex Cloud environment. Verified on 2026-11-02 (Asia/Calcutta). No public deplo
 - Actual adversarial tests: OS CPU/address-space/output limits, wall timeout and descendant killing,
   temporary cleanup, credential stripping, busy-slot rejection, production fallback rejection,
   broker URL validation, Docker UID/read-only/network tests and a cgroup OOM allocation.
-- Worker and UI images built in cloud; worker input analysis and UI health succeeded without public
-  ports. Worker controls/measurement and UI image ID evidence are in `evaluation/phase3/`.
+- All three images built in cloud. Worker analysis and UI/controller health succeeded with no
+  public ports. Controller denied missing service credentials (403) and empty authorized input (413).
+  Controller health used no Docker socket; full Compose/OIDC analysis routing is not yet verified.
+  Image IDs and control/measurement/health evidence are in `evaluation/phase3/`.
 - Building all images exhausted the 7.9 GiB cloud root disk. Removing only disposable images/cache
   recovered space. Source, templates, benchmark evidence and user work were preserved.
 
@@ -73,7 +75,11 @@ The controller's Docker socket is privileged and must remain on a dedicated trus
 
 SECURITY.md distinguishes implemented/tested controls from documented gates. DEPLOYMENT.md supplies
 cloud-only build, private architecture, secret templates, health checks and rollback requirements.
-GitHub workflow outcomes and the feature pull request are recorded in the final task report.
+Published pull request: https://github.com/Saisathwik045/signguard/pull/3
+GitHub Actions run 41399149839 passed on Python 3.11/3.12 and in the isolated-worker security job,
+including dependency/static scans, Poppler checks, regression/benchmark smoke and container tests.
+Later export/health-documentation changes and stricter smoke gating are checked in the final task report.
+The exact changed-file inventory is in `evaluation/phase3/FILE_INVENTORY.txt`.
 
 ---
 

@@ -25,6 +25,9 @@ destination.mkdir(exist_ok=True)
 for split in ("development", "regression", "holdout"):
     for suffix in ("summary.json", "outcomes.json", "outcomes.csv"):
         shutil.copyfile(args.source / f"{split}-{suffix}", destination / f"{split}-{suffix}")
+        if suffix.endswith("csv"):
+            path = destination / f"{split}-{suffix}"
+            path.write_text(path.read_text())
 shutil.copyfile(args.source / "seal.json", destination / "seal.json")
 shutil.copyfile(args.source / "pdfs/manifest.json", destination / "manifest.json")
 shutil.copyfile(args.legacy / "summary.json", destination / "phase2-replay-summary.json")
@@ -60,6 +63,8 @@ axes[1].set(title="Candidate localization F1", ylim=(0, 1.1), ylabel="Fraction")
 fig.suptitle("Synthetic engineering evaluation; not real-world signature accuracy")
 fig.savefig(destination / "comparison.png", dpi=180)
 fig.savefig(destination / "comparison.svg")
+svg = destination / "comparison.svg"
+svg.write_text("\n".join(line.rstrip() for line in svg.read_text().splitlines())+"\n")
 plt.close(fig)
 lines = ["# Phase 3 results", "", "Measured in Codex Cloud on 2026-11-02 (Asia/Calcutta).", "",
          "## Direct replay of unchanged Phase 2 inputs", "",

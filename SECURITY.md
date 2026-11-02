@@ -23,6 +23,8 @@ separate properties. **No public deployment is approved by this work.**
 - Private controller uses constant-time service-token comparison, a single active analysis, backlog
   four, socket read deadlines, bounded input/output and no user-selectable image/command. Health
   is liveness only and does not attest that the worker daemon or identity provider is ready.
+  The controller image built and passed local health plus missing-token/empty-input denial probes;
+  end-to-end Compose routing with a restricted daemon and real identity provider remains untested.
 - UI production gate requires Streamlit OIDC login, boolean `email_verified=true` and an explicit
   email allowlist. Broker credentials remain in UI/controller only, not workers. Identity-claim
   authorization is unit tested; actual OIDC login/logout and tenant integration remain unverified.

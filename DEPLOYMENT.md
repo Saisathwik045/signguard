@@ -48,7 +48,9 @@ In managed Codex Cloud, use its existing Docker proxy settings and build-secret 
 copy session credentials/CA secrets into image layers or disable TLS verification. The cloud's VFS
 storage driver can duplicate large image layers: this session hit its 7.9 GiB root disk limit while
 building all candidates. Disposable build-cache cleanup recovered space; completed and incomplete
-image verification is recorded in PROJECT_STATUS.md. This capacity problem did not change source
+image verification is recorded in PROJECT_STATUS.md. All three images subsequently built; UI/controller
+liveness and private controller denial probes passed, but full Compose/OIDC routing remains unverified.
+This capacity problem did not change detector source
 code, input labels, detector thresholds or measured outcomes.
 
 ## Release gates and rollback
