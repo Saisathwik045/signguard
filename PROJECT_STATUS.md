@@ -45,6 +45,21 @@ was reduced after the cloud VFS disk filled. A descendant-kill test now waits a 
 for asynchronous SIGKILL delivery instead of racing the scheduler. Slow-worker quota tests use an
 explicit longer window and invalid-request admission, preserving deployed defaults.
 
+## Codespace resumption verification — 2026-11-02
+
+The resumed `feature/codespace-private-readiness` worktree was clean and had no active build, scan,
+or test process. A cached worker image and earlier scan reports were present. The worker image was
+rebuilt successfully as `signguard-worker:phase3` (manifest
+`sha256:90fce9b77e24c327fe9977b6bba23f4e8de39dce2e92b56a20633ece2a5dcee2`), then scanned with the
+workflow-pinned Trivy image. The raw current-image report is
+`evaluation/phase4/os-scan-codespace-2026-11-02.json`: Debian 12.15 has 2 CRITICAL and 36 HIGH
+findings, all without a published fixed version. These remain release blockers.
+
+`ruff check .` passed. Bandit reported 0 MEDIUM/HIGH and 14 LOW findings; pip-audit found no known
+vulnerabilities across 88 installed dependencies. The Docker isolation suite passed 17 tests, and
+the full regression suite passed 67 tests with 14 expected skips and one Starlette deprecation
+warning. No upload service was started and no ports were opened.
+
 The Codex browser run uses a non-root host UI process because the 7.9 GiB VFS disk cannot keep all
 runtime images live together. That process shares the trusted test UID/filesystem and is NOT proof of
 UI sandboxing. Controller and PDF workers are containers. CI uses containers for all tiers and must
