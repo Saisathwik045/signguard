@@ -1,0 +1,39 @@
+{
+  "base_main": "1afd8536efcaf88430335123127b68a6c31e2137",
+  "recovered_original_commits": [
+    "e8a4410",
+    "dda26f0",
+    "a3c82d3",
+    "2a89352"
+  ],
+  "nonbrowser_tests": {
+    "passed": 84,
+    "browser_skipped": 12
+  },
+  "synthetic_browser": {
+    "passed_tests": 1,
+    "examples": 5,
+    "screenshots": 5,
+    "scope": "Codex Cloud loopback process; GitHub Actions separately verifies container UI"
+  },
+  "os_worker": {
+    "critical": 2,
+    "high": 36,
+    "report": "os-final-worker.json"
+  },
+  "installed_python_audit": {
+    "dependencies": 21,
+    "known_vulnerabilities": 0
+  },
+  "external_url": null,
+  "external_ingress_enabled": false,
+  "worker_image_id": "sha256:976add9a3c886c519c2333f248d300eb27bd0961ea0f14201038055502dc8437",
+  "notes": [
+    "No inaccessible/unpushed work assumed recovered",
+    "Docker/dependency changes absent from the four original commits",
+    "All forensic detector sources byte-identical to merged main",
+    "OS updates did not remove high/critical findings",
+    "Container probe verified five bundled reports and absence of parser/backend modules",
+    "Cloud VFS disk failures and slow container creation fixed/handled before successful reruns"
+  ]
+}

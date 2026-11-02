@@ -69,12 +69,14 @@ def test_production_refuses_subprocess_fallback(monkeypatch):
 
 
 @pytest.mark.skipif(os.environ.get("SIGNGUARD_DOCKER_TESTS") != "1", reason="Requires explicit cloud Docker job")
-def test_container_runtime_controls():
+def test_container_runtime_controls(monkeypatch):
+    monkeypatch.setenv("AWS_SECRET_ACCESS_KEY", "synthetic-host-secret-must-not-leak")
     from signguard.container_runner import container_command
     from signguard.supervisor import Limits
     image = os.environ.get("SIGNGUARD_WORKER_IMAGE", "signguard-worker:phase3")
     command = container_command(image, "signguard-probe-tests")
     probe = '''import os,socket,json,resource
+from pathlib import Path
 assert os.getuid()==65532
 try:
  open('/forbidden','w').write('x')
@@ -83,6 +85,14 @@ except OSError: pass
 s=socket.socket();s.settimeout(.2)
 assert s.connect_ex(('1.1.1.1',443))!=0
 assert not any(k.startswith(('AWS_','AZURE_','GOOGLE_')) for k in os.environ)
+assert Path('/sys/fs/cgroup/memory.max').read_text().strip() == '1073741824'
+assert Path('/sys/fs/cgroup/pids.max').read_text().strip() == '32'
+assert Path('/sys/fs/cgroup/cpu.max').read_text().split()[0] != 'max'
+fs = os.statvfs('/tmp')
+assert fs.f_blocks*fs.f_frsize <= 64*1024*1024
+status=Path('/proc/self/status').read_text()
+assert 'CapEff:\\t0000000000000000' in status
+assert 'NoNewPrivs:\\t1' in status
 print(json.dumps({'uid':os.getuid(),'root_readonly':True,'external_network_blocked':True,
 'cpu_limit':resource.getrlimit(resource.RLIMIT_CPU)[0]}))'''
     output, _ = run_limited(command[:-1]+["--entrypoint", "python", command[-1], "-c", probe],
@@ -91,6 +101,27 @@ print(json.dumps({'uid':os.getuid(),'root_readonly':True,'external_network_block
     from signguard.container_runner import analyze_container
     report = analyze_container(encode_request(unsigned()))
     assert report["execution_controls"]["network_isolation"]
+
+
+@pytest.mark.skipif(os.environ.get("SIGNGUARD_DOCKER_TESTS") != "1", reason="Requires explicit cloud Docker job")
+def test_real_worker_failure_removes_container(monkeypatch):
+    import subprocess
+
+    from signguard import container_runner
+    names = []
+    original = container_runner.container_command
+
+    def recording_command(image, name):
+        names.append(name)
+        return original(image, name)
+
+    monkeypatch.setattr(container_runner, "container_command", recording_command)
+    with pytest.raises(RuntimeError):
+        container_runner.analyze_container(b'{"unexpected":"rejected"}')
+    assert len(names) == 1
+    result = subprocess.run(["docker", "--host=unix:///var/run/docker.sock", "inspect", names[0]],
+                            capture_output=True, check=False)
+    assert result.returncode != 0, "Failed worker was not removed"
 
 
 @pytest.mark.parametrize("address", ["file:///tmp/report", "http://public.example", "http://a:b@controller", "http://controller?q=secret"])

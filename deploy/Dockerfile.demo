@@ -1,0 +1,20 @@
+# syntax=docker/dockerfile:1
+FROM scratch AS catalogue
+COPY src/signguard/demo.py /bundle/signguard/
+COPY src/signguard/demo_assets /bundle/signguard/demo_assets/
+COPY synthetic_demo.py /bundle/
+
+FROM python:3.12-slim-bookworm
+WORKDIR /opt/signguard
+COPY requirements-cloud.txt ./
+# Copy the small catalogue before dependencies to avoid duplicating large VFS layers.
+COPY --from=catalogue --chown=65532:65532 /bundle/ ./
+RUN --mount=type=secret,id=proxy_ca \
+    if [ -f /run/secrets/proxy_ca ]; then export PIP_CERT=/run/secrets/proxy_ca; fi; \
+    apt-get update && apt-get -y upgrade && rm -rf /var/lib/apt/lists/* && \
+    pip install --no-cache-dir 'pip>=26.2,<27' && \
+    pip install --no-cache-dir -c requirements-cloud.txt 'streamlit>=1.45,<2'
+# No PDF/image analysis libraries, broker client, executor, credentials or Docker socket.
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 HOME=/tmp
+USER 65532:65532
+ENTRYPOINT ["streamlit", "run", "synthetic_demo.py", "--server.address=0.0.0.0", "--server.maxUploadSize=1", "--server.maxMessageSize=5", "--browser.gatherUsageStats=false"]

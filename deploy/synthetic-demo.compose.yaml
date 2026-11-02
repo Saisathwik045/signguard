@@ -1,0 +1,17 @@
+# Cloud-only build candidate, loopback by default. Not a deployment or ingress attestation.
+services:
+  synthetic-demo:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.demo
+    image: signguard-demo:synthetic
+    ports: ["127.0.0.1:8501:8501"]
+    user: "65532:65532"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 512m
+    cpus: 1
+    pids_limit: 64
+    tmpfs: ["/tmp:rw,noexec,nosuid,size=32m"]
+    # No worker/broker authority, privileged mounts, credentials or upload application.

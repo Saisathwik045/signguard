@@ -3,6 +3,29 @@
 SignGuard parses hostile PDFs with native libraries. Forensic accuracy and safe execution are
 separate properties. **No public deployment is approved by this work.**
 
+## Current Codex recovery and synthetic viewer boundary
+
+The exact final worker ID is recorded in `evaluation/cloud-recovery/final-image.json`; the fresh
+`os-final-worker.json` metadata was checked against that ID. The unfiltered OS scan reports
+**2 CRITICAL and 36 HIGH** findings despite available package upgrades. The separate installed-image
+Python audit reports no known vulnerabilities. Old Codespaces/Phase 4 scans are provenance, not
+proof of current security. No ignored/unfixed vulnerability filter clears the release gate.
+
+`synthetic_demo.py` only selects five fixed package-resource IDs. It rejects all other IDs and
+verifies PDF/report digests before presenting automatically generated isolated-worker results.
+It never invokes a parser, worker, shell, network fetch or controller. Missing/inconsistent bundles
+stop with an error. The demo image contains Streamlit and its dependencies plus the catalogue;
+it omits forensic parser libraries, broker/executor modules and credentials. No upload, URL or path
+widget exists. This reduces the demo's attack surface; it does not waive image or external-route gates.
+The underlying Streamlit framework still serves HTTP/WebSockets and must be patched and protected
+before any externally reachable deployment. Synthetic input provenance is not safe-hosting proof.
+
+Generation is an administrator/CI operation on checked synthetic fixtures using a trusted image ID.
+The displayed execution controls describe that generation run, not a live analysis at viewing time.
+Reports do not invent controller audit receipts. Production upload authentication, restricted RPC,
+resource limits and fail-closed behavior remain unchanged. Synthetic Compose binds cloud loopback
+only and grants no daemon/socket access. No service has been exposed to untrusted users.
+
 ## Controls implemented and exercised in Codex Cloud
 
 - One-request worker protocol with closed field names, strict base64 decoding, 25 MiB primary PDF,

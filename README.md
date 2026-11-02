@@ -1,7 +1,23 @@
 # SignGuard
 
 Python and Streamlit tooling for offline PDF signature integrity and visual tampering triage.
-Phase 3 extends the merged implementation with reliability and worker hardening; the upload application remains undeployed.
+Phases 1–4 are preserved. Development and verification run in Codex Cloud and GitHub Actions;
+no local setup or Codespaces session is required. The upload application remains undeployed.
+
+## Synthetic-only demonstration and recovered work
+
+`synthetic_demo.py` is a separate read-only Streamlit viewer with five bundled synthetic PDFs:
+signed, tampered, shadow-modified, visual-only and unsigned. Every report is automatically generated
+by the actual disposable Docker worker; the viewer validates fixture/report hashes and displays
+classification, explanations, current/signed evidence images and JSON/PDF downloads. It has no
+upload, URL or path input and no analysis backend. CI regenerates all reports and drives real Chromium.
+See [DEMO_GUIDE.md](DEMO_GUIDE.md) for cloud artifacts and the exact demonstration scope.
+
+All four published Codespaces commits through `2a89352` were recovered onto merged main `1afd853`.
+The fresh final worker scan still has **2 CRITICAL and 36 HIGH OS findings**; the installed Python
+dependency audit found no known vulnerabilities. This is not release approval. No external demo
+URL has been deployed or verified. [PROJECT_STATUS.md](PROJECT_STATUS.md) records recovery and
+[SECURITY.md](SECURITY.md) distinguishes the synthetic viewer from the production upload service.
 
 ## Phase 3 additions
 

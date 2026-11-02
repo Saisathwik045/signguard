@@ -1,4 +1,54 @@
-# Project status — Phase 4
+# Project status — Codex Cloud integration and synthetic demo
+
+## Current recovery — 2026-11-02 UTC
+
+Integration branch `feature/cloud-synthetic-demo` starts at merged main `1afd853` (PR #4 merged).
+All four Codespaces commits were reviewed and cherry-picked, preserving their original authors:
+
+| Published commit | Recovered integration commit | Scope |
+| --- | --- | --- |
+| `e8a4410` | `fa9a53a` | Virtual environment and interpreter configuration |
+| `dda26f0` | `33bb6a9` | Historical worker checks and raw scan evidence |
+| `a3c82d3` | `499b11d` | Explicit worker-image selection, CI and readiness evidence |
+| `2a89352` | `86f805b` | Deployment assessment and historical final-image scan |
+
+The branch was initially unavailable, then was published and successfully fetched. No unpushed
+Codespaces files or runtime-only image changes can be recovered or inferred. These four commits
+contain no Dockerfile/dependency version changes. The inherited dependency constraints are retained;
+major newer parser releases were not adopted without a compatibility/security reason. Notification-based
+port forwarding was changed back to `ignore`; private visibility defaults and venv settings remain.
+Codespaces is optional historical configuration, not a required development platform.
+
+The worker Dockerfile now applies available OS updates and copies runtime modules without bundling
+demo PDFs/reports. Final worker ID: `sha256:976add9a3c886c519c2333f248d300eb27bd0961ea0f14201038055502dc8437`.
+Fresh pinned Trivy evidence matches this ID: **2 CRITICAL, 36 HIGH**, so external admission is blocked.
+Installed-image Python dependency audit is clean. `evaluation/cloud-recovery/` contains fresh raw
+scan, image identity, audit, JUnit and release-admission evidence; recovered Codespaces scans are
+historical only. Scanner disk failures were resolved using a bounded ephemeral database mount;
+failed attempts were not counted as successful scans.
+
+The new `synthetic_demo.py` has no arbitrary input and no live analysis/privileged backend. Five trusted
+bundled PDFs are analyzed automatically by disposable workers during generation/CI. Hash-checked
+reports include actual images, current/signed comparison and downloadable JSON/PDF triage reports.
+Bundled synthetic fixtures are explicitly requested for this demo; no private key or real document
+is stored. Production `app.py`, authentication, broker and release gates remain separate.
+
+Final-image regression run: **84 passed**, 12 explicit browser cases skipped, one existing Starlette
+deprecation warning. This includes actual memory enforcement, non-root/read-only/network checks,
+CPU/PID/memory/tmpfs settings, credential isolation and failed-worker cleanup. Real Chromium demo
+and authenticated-stack verification are recorded separately with their JUnit/artifacts and CI runs.
+The real Codex Chromium scenario passed all five demo examples, ten report downloads and actual image
+decoding, producing five screenshots. It uses the cloud-process viewer; Actions verifies the container
+browser path separately. A real container probe verified five bundles and absence of parser/backend
+modules. Slow VFS container creation exposed a harness cleanup race; creation is now awaited before
+health polling and cleanup. The exact final worker was archived/restored to test within the disk cap.
+No benchmark detector was changed or tuned; prior measured results remain historical evidence.
+
+No external URL or ingress exists. Remaining upload-service release requirements are remediation of
+the OS findings, an authorized private runtime/TLS route and signed-in/out browser probes, production
+OIDC/tenant policy, restricted executor authority, durable audit anchoring and deployment operations.
+
+## Historical Phase 4 implementation record
 
 Started from merged main `24d12ac`; PR #3 was confirmed merged and its checks passed.
 Feature branch: `feature/phase4-private-integration`. All execution is remote. No paid infrastructure,
