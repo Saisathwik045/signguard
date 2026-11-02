@@ -72,7 +72,8 @@ def test_production_refuses_subprocess_fallback(monkeypatch):
 def test_container_runtime_controls():
     from signguard.container_runner import container_command
     from signguard.supervisor import Limits
-    command = container_command("signguard-worker:phase3", "signguard-probe-tests")
+    image = os.environ.get("SIGNGUARD_WORKER_IMAGE", "signguard-worker:phase3")
+    command = container_command(image, "signguard-probe-tests")
     probe = '''import os,socket,json,resource
 assert os.getuid()==65532
 try:
@@ -105,7 +106,8 @@ def test_broker_url_validation(monkeypatch, address):
 @pytest.mark.skipif(os.environ.get("SIGNGUARD_DOCKER_TESTS") != "1", reason="Requires explicit cloud Docker job")
 def test_container_cgroup_memory_enforced():
     from signguard.container_runner import container_command
-    command = container_command("signguard-worker:phase3", "signguard-memory-tests")
+    image = os.environ.get("SIGNGUARD_WORKER_IMAGE", "signguard-worker:phase3")
+    command = container_command(image, "signguard-memory-tests")
     probe = "a=bytearray(2*1024*1024*1024)"
     with pytest.raises(RuntimeError):
         run_limited(command[:-1]+["--entrypoint", "python", command[-1], "-c", probe],

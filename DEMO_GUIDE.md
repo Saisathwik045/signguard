@@ -21,14 +21,20 @@ fixture PDFs and route scope metadata. The repository also includes example evid
 
 ## Private live preview status
 
-No private live URL has been issued. The current Codex environment blocks CONNECT to
-`api.github.com`, has no verified Codespaces/hosting identity binding, and exposes no supported
-private port-forwarding capability. Repository connector access does not grant Codespaces access.
-No paid environment was provisioned and no development endpoint was opened to the Internet.
+No private live URL has been issued. This Codespace has no confirmed port forward or listener on
+8501. GitHub CLI is not authenticated, and the Codespaces ports API returned HTTP 404 for the
+available environment token, so port visibility and a browser URL cannot be verified or managed.
+The devcontainer now requests notification-based forwarding with PRIVATE visibility for 8501;
+controller port 8080 remains ignored. No public port or development endpoint was opened.
 
-A browser-authorized existing private Codespace or staging host is required. The `.devcontainer`
-configuration prepares Python and Docker-in-Docker but forwards no ports automatically. Do not
-interpret it as a verified Codespaces deployment: this task could not create/attach a Codespace.
+The preview was not started: the exact rebuilt deployable `signguard-worker:phase4` image
+(`sha256:f411b4c2e269c1dcf334f2082e00b9654de48427c7b91bdb46ac580d2e87602d`, Debian 12.15) scans
+with Trivy 0.76.1 findings of 2 CRITICAL and 41 HIGH. See
+`evaluation/phase4/os-scan-worker-phase4-2026-11-02.json`; the earlier Codespace preview scan is
+for `signguard-worker:phase3` and is not evidence for the final deployable tag. This Codespace also
+has no restricted executor account/service/socket or the executor and audit mount configuration
+required by the private stack. The `SIGNGUARD_*` preview and broker secrets are unset. Do not
+replace the executor boundary with direct Docker access or bypass these blockers.
 
 For a browser-only next step, the owner may open GitHub's Codespaces creation wizard for this branch,
 using an existing/free-quota environment only, and attach that environment to Codex. No local terminal,
@@ -36,13 +42,15 @@ Python or Docker is needed. Do not approve paid provisioning as part of this wor
 
 ## Before enabling a preview port
 
-Complete a new scan and all release gates. The initial Debian 12 image scan contains unresolved high
-and critical findings; external ingress is blocked. `python -m signguard.release_gate EVIDENCE_DIR`
+Complete a clean image scan and all release gates. The exact deployable Debian 12 image scan
+contains unresolved high and critical findings; external ingress is blocked. `python -m signguard.release_gate EVIDENCE_DIR`
 rejects missing/failed controls, invalid test/scan artifacts and unverified private HTTPS routing.
 The false-by-default `deploy/release.example.json` is not a release attestation.
 
 A Codespaces route must be explicitly PRIVATE, protected by GitHub account authentication and TLS,
-and verified with both signed-in and signed-out browser probes. Application preview login is an
+and verified with both signed-in and signed-out browser probes. The devcontainer's PRIVATE
+visibility is a forwarding default, not evidence that a port was actually forwarded or verified.
+Application preview login is an
 additional single-owner credential gate with a 15-minute session lifetime and bounded attempts.
 It is not a replacement for production OIDC identity/tenant controls. Never paste preview credentials
 into commits, screenshots, workflow logs or public issues. Real OIDC remains the default production mode.
@@ -71,7 +79,7 @@ private gateway must protect uploads, WebSockets and downloads before any untrus
 OIDC registration. It still binds only loopback and needs the privileged host executor, private audit
 permissions and release-gate clearance. A real externally reachable route has not been verified.
 The alternative Debian 13 scan still had 45 high findings; it was not adopted to hide the baseline's
-36 high and 2 critical findings. No vulnerability exceptions or release gates were waived.
+41 high and 2 critical findings. No vulnerability exceptions or release gates were waived.
 
 ## Verified remote evidence
 
