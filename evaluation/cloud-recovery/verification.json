@@ -35,5 +35,34 @@
     "OS updates did not remove high/critical findings",
     "Container probe verified five bundled reports and absence of parser/backend modules",
     "Cloud VFS disk failures and slow container creation fixed/handled before successful reruns"
-  ]
+  ],
+  "github_actions": {
+    "verified_implementation_commit": "dfcba8bc07c01b576f62254ba79f8f926aa2727d",
+    "all_completed_success": true,
+    "cloud_tests": 41495818019,
+    "private_staging_integration": 41495817821,
+    "synthetic_only_cloud_demo": 41495817951,
+    "distinct_cases_passed": 96,
+    "authenticated_browser": {
+      "passed": 11,
+      "seconds": 58.17
+    },
+    "synthetic_container_browser": {
+      "passed": 1,
+      "examples": 5,
+      "seconds": 5.95
+    },
+    "synthetic_focused_checks": 31,
+    "synthetic_artifact_id": 13166068310,
+    "synthetic_artifact_sha256": "771d7ba7a1434247177cd11277de311b98b3ade758a862eae85b5da2c672c69b",
+    "worker_and_viewer_os_aggregate": {
+      "critical": 4,
+      "high": 72
+    },
+    "production_stack_os_aggregate": {
+      "critical": 6,
+      "high": 108
+    },
+    "external_admission": "BLOCKED"
+  }
 }

@@ -41,6 +41,13 @@ startup/cleanup race; the harness now awaits creation before polling health and 
 
 ![Actual shadow-modification demonstration](evaluation/cloud-recovery/screenshots/shadow_modified.png)
 
+Verified implementation run: [Synthetic-only cloud demo 41495817951](https://github.com/Saisathwik045/signguard/actions/runs/41495817951)
+passed the full container-hosted browser scenario and retained
+[27 evidence files](https://github.com/Saisathwik045/signguard/actions/runs/41495817951/artifacts/13166068310),
+including freshly generated fixture reports, screenshots, JUnit and worker/viewer scans. The
+[authenticated upload integration](https://github.com/Saisathwik045/signguard/actions/runs/41495817821)
+also passed all 11 browser cases. These are completed cloud tests, not a deployed preview URL.
+
 ## Historical authenticated upload integration
 
 ## What has actually run

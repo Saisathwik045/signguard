@@ -29,6 +29,18 @@ curated integration examples, not independent statistical evaluation or improved
 The viewer serves automatically generated snapshots and has no upload/URL/path interface.
 No external URL, TLS route or hosted release is claimed by these tests.
 
+Implementation commit `dfcba8b` also passed GitHub Actions runs
+[41495818019](https://github.com/Saisathwik045/signguard/actions/runs/41495818019) (Python 3.11/3.12,
+benchmark smoke, isolated-worker/static/dependency checks),
+[41495817821](https://github.com/Saisathwik045/signguard/actions/runs/41495817821) (11 authenticated
+container-stack browser tests in 58.17 seconds and all three image scans), and
+[41495817951](https://github.com/Saisathwik045/signguard/actions/runs/41495817951) (31 focused checks,
+one five-example **container-hosted** browser test in 5.95 seconds, worker/viewer scans and installed
+dependency audit). Across overlapping suites, **96 distinct tests passed**. Fresh scans still block
+admission: worker+viewer combined 4 CRITICAL/72 HIGH; worker+production UI+controller combined
+6 CRITICAL/108 HIGH. These are aggregate image-package findings, not unique CVEs or the single
+Codex worker count above. Functional workflow success is not security release approval.
+
 ## Historical Phase 3 results
 
 Measured in Codex Cloud on 2026-11-02 (Asia/Calcutta).

@@ -44,6 +44,16 @@ modules. Slow VFS container creation exposed a harness cleanup race; creation is
 health polling and cleanup. The exact final worker was archived/restored to test within the disk cap.
 No benchmark detector was changed or tuned; prior measured results remain historical evidence.
 
+Implementation commit `dfcba8b` passed all three PR workflows: Cloud tests [41495818019](https://github.com/Saisathwik045/signguard/actions/runs/41495818019),
+Private staging integration [41495817821](https://github.com/Saisathwik045/signguard/actions/runs/41495817821),
+and Synthetic-only cloud demo [41495817951](https://github.com/Saisathwik045/signguard/actions/runs/41495817951).
+That verifies **96 distinct test cases** across the overlapping suites: 84 regression/isolation,
+11 authenticated browser, and one five-example synthetic browser scenario. The synthetic workflow
+passed 31 focused unit/isolation checks and its real **container-hosted** browser test (5.95 seconds),
+then retained 27 evidence files. Fresh aggregate scans still blocked admission: 76 high/critical
+findings across worker+viewer images; 114 across worker+production UI+controller. These aggregate
+counts must not be confused with the exact Codex worker's 38 findings. No image gate was waived.
+
 No external URL or ingress exists. Remaining upload-service release requirements are remediation of
 the OS findings, an authorized private runtime/TLS route and signed-in/out browser probes, production
 OIDC/tenant policy, restricted executor authority, durable audit anchoring and deployment operations.
