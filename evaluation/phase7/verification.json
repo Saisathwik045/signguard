@@ -1,7 +1,7 @@
 {
   "phase6_merged_main": "988f84e2520cb4f1b08084cc163add82fdcbfd7b",
   "regression": {
-    "passed": 91,
+    "passed": 92,
     "failed": 0,
     "explicit_skips": 16
   },
@@ -20,5 +20,6 @@
     "failed": 0,
     "status": 403,
     "actions_run": 41608991009
-  }
+  },
+  "service_access_origin": "Must match registered private-site.json origin; never supplied to localhost or redirects"
 }

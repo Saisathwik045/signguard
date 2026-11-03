@@ -7,6 +7,8 @@ import urllib.request
 from pathlib import Path
 from urllib.parse import urlsplit
 
+SITE_CONFIG = Path(__file__).resolve().parents[1] / "deploy/private-site.json"
+
 
 class NoRedirect(urllib.request.HTTPRedirectHandler):
     def redirect_request(self, req, fp, code, msg, headers, newurl):
@@ -18,6 +20,8 @@ def probe(origin, token, output, anonymous_only=False):
     if (address.scheme != "https" or not address.hostname or address.path not in {"", "/"}
             or address.username or address.password or address.query or address.fragment):
         raise ValueError("An exact HTTPS origin is required")
+    if origin.rstrip("/") != json.loads(SITE_CONFIG.read_text())["origin"]:
+        raise ValueError("Origin does not match the registered private Site")
     opener = urllib.request.build_opener(NoRedirect())
     checks = []
     for path in ("/", "/health.json", "/catalogue.json", "/reports/genuine_signed.json", "/app.js"):

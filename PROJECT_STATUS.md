@@ -9,7 +9,7 @@ Native Sites confirms publication at `https://signguard-private-synthetic.knitde
 Its policy has one allowed owner, no groups/external visitors. No audience change, billing enablement,
 paid infrastructure, custom domain, upload route or backend attachment was performed.
 
-Local cloud artifact verification: 91 regression tests passed, 16 explicit Docker/other-browser
+Local cloud artifact verification: 92 regression tests passed, 16 explicit Docker/other-browser
 cases skipped, one existing Starlette warning. Two focused static/browser checks passed, verifying
 all five actual classifications, decoded current/signed images and ten exact report downloads.
 Native source push/package/archive/private publication succeeded. All Site credentials remained

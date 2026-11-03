@@ -26,6 +26,9 @@ def site(tmp_path_factory):
         if (address.scheme != "https" or not address.hostname or address.path not in {"", "/"}
                 or address.username or address.password or address.query or address.fragment):
             raise ValueError("Hosted QA requires an exact HTTPS origin")
+        registered = json.loads((Path(__file__).resolve().parents[2] / "deploy/private-site.json").read_text())
+        if url.rstrip("/") != registered["origin"]:
+            raise ValueError("Hosted QA origin does not match the registered private Site")
         yield url.rstrip("/"), True
         return
     root = tmp_path_factory.mktemp("private-site")

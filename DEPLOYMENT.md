@@ -1,4 +1,4 @@
-# Private cloud deployment preparation — not deployed
+# Cloud deployment — private synthetic presentation published
 
 ## Phase 7: private static presentation published; upload service not deployed
 

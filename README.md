@@ -15,7 +15,7 @@ The hosted presentation is static HTML/JS over the existing verified synthetic r
 all five cases, real evidence images, classifications and JSON/PDF downloads, without Python parsing,
 an upload endpoint, URL/path input or worker credentials. The existing Python/Streamlit apps and
 isolated backend remain available and unchanged. Sites is not a production PDF-worker host.
-Cloud browser QA of the artifact and full regression passed (91 passed, 16 explicit Docker/other
+Cloud browser QA of the artifact and full regression passed (92 passed, 16 explicit Docker/other
 browser skips). [HOSTING_COMPARISON.md](HOSTING_COMPARISON.md) records current provider terms.
 
 ## Phase 6 container remediation

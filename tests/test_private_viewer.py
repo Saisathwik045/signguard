@@ -7,6 +7,8 @@ from scripts.build_private_viewer import build
 from scripts.probe_private_site import probe
 from signguard.demo import CASES, load_case
 
+SITE = "https://signguard-private-synthetic.knitdeck.chatgpt.site"
+
 
 def test_static_artifact_has_only_allowlisted_assets(tmp_path):
     root = build(tmp_path)
@@ -26,7 +28,7 @@ def test_proxy_denial_cannot_be_reported_as_site_authentication(monkeypatch, tmp
             raise urllib.error.URLError("Tunnel connection failed: 403 Forbidden")
     monkeypatch.setattr("urllib.request.build_opener", lambda *args: BlockedProxy())
     with pytest.raises(urllib.error.URLError):
-        probe("https://example.test", "", tmp_path, anonymous_only=True)
+        probe(SITE, "", tmp_path, anonymous_only=True)
     assert not (tmp_path / "anonymous-route-proof.json").exists()
 
 
@@ -45,4 +47,9 @@ def test_public_response_cannot_pass_private_route_gate(monkeypatch, tmp_path):
             return PublicResponse()
     monkeypatch.setattr("urllib.request.build_opener", lambda *args: PublicSite())
     with pytest.raises(ValueError, match="not denied"):
-        probe("https://example.test", "", tmp_path, anonymous_only=True)
+        probe(SITE, "", tmp_path, anonymous_only=True)
+
+
+def test_service_access_cannot_be_sent_to_a_different_origin(tmp_path):
+    with pytest.raises(ValueError, match="registered private Site"):
+        probe("https://another-origin.test", "synthetic-test-credential", tmp_path)
