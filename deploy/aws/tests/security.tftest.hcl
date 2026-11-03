@@ -27,3 +27,15 @@ run "approved_still_has_no_ingress" {
     error_message = "Encrypted disks and no unlimited CPU-credit billing are mandatory."
   }
 }
+
+run "maintenance_exposes_only_ca_and_authenticated_https" {
+  command = plan
+  variables {
+    spending_authorized   = true
+    allow_private_ingress = true
+  }
+  assert {
+    condition     = length(aws_vpc_security_group_ingress_rule.maintenance) == 2 && aws_vpc_security_group_ingress_rule.maintenance[0].from_port == 80 && aws_vpc_security_group_ingress_rule.maintenance[1].from_port == 443
+    error_message = "Maintenance must never expose SSH, controller or raw Streamlit ports."
+  }
+}

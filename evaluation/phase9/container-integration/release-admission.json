@@ -1,0 +1,15 @@
+{
+  "os_gate_passed": true,
+  "blocking_findings": 0,
+  "severity_counts": {
+    "MEDIUM": 151,
+    "LOW": 26
+  },
+  "external_ingress_enabled": false,
+  "reports": [
+    "os-worker.json",
+    "os-ui.json",
+    "os-controller.json"
+  ],
+  "note": "Functional CI success is not release approval; complete private-route/auth/TLS evidence is also mandatory"
+}

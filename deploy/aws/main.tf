@@ -68,14 +68,14 @@ resource "aws_security_group" "staging" {
   name_prefix = "signguard-staging-"
   description = "No SSH/controller/Streamlit ingress. HTTPS maintenance only after separate review."
   vpc_id      = aws_vpc.staging[0].id
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-    description = "Host bootstrap, registry, OAuth, SSM and CA egress; PDF worker network is none."
-  }
-  ingress = []
+  # Rules are managed exclusively by standalone resources to avoid conflicting ownership.
+}
+resource "aws_vpc_security_group_egress_rule" "host" {
+  count             = local.enabled
+  security_group_id = aws_security_group.staging[0].id
+  cidr_ipv4         = "0.0.0.0/0"
+  ip_protocol       = "-1"
+  description       = "Host updates, registry, OAuth, SSM and CA; PDF worker network remains none."
 }
 resource "aws_vpc_security_group_ingress_rule" "maintenance" {
   count             = var.spending_authorized && var.allow_private_ingress ? 2 : 0
