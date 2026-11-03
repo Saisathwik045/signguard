@@ -1,5 +1,51 @@
 # Project status — Codex Cloud integration and synthetic demo
 
+## Phase 7 — owner-private presentation deployment
+
+Started from merged PR #6/main `988f84e`. Confirmed the final Phase 6 image/scan evidence and retained
+all existing implementation and security gates. `feature/phase7-private-viewer` adds an independent
+buildless viewer over the five existing worker-generated report snapshots, not another analysis engine.
+Native Sites confirms publication at `https://signguard-private-synthetic.knitdeck.chatgpt.site`.
+Its policy has one allowed owner, no groups/external visitors. No audience change, billing enablement,
+paid infrastructure, custom domain, upload route or backend attachment was performed.
+
+Local cloud artifact verification: 92 regression tests passed, 16 explicit Docker/other-browser
+cases skipped, one existing Starlette warning. Two focused static/browser checks passed, verifying
+all five actual classifications, decoded current/signed images and ten exact report downloads.
+Native source push/package/archive/private publication succeeded. All Site credentials remained
+in process memory/hidden stdin; none belong in GitHub or deployment artifacts.
+
+The actual hosted authorized probe was attempted and blocked before reaching the Site:
+`CONNECT tunnel failed: 403 Forbidden`. This is a Codex egress denial, not evidence that the Site
+denied an unauthorized request. Hosted application/browser/interactive owner SSO checks are therefore
+**unverified**, not passed. A secret-free Actions job independently probes the actual HTTPS origin's
+anonymous access barrier. Protected hosted health/browser validation is prepared but requires a
+runtime-bound service credential in the private-synthetic GitHub environment.
+
+Minimum remaining access for cloud hosted QA: allow outbound HTTPS to exactly
+`signguard-private-synthetic.knitdeck.chatgpt.site` in this Codex Cloud environment. No local commands,
+Codespaces, account purchase, domain registration or token pasted into chat is required.
+
+CI builds/checksums/packages the artifact and captures browser screenshots, while all prior regression,
+container and security workflows remain active. Publication is a native Sites operation using a fresh
+short-lived source credential and an owner-only access check; unattended GitHub-to-Sites publication
+is not falsely claimed without a supported identity binding. Saved version/source/deployment IDs in
+`deploy/private-site.json` identify the saved artifact/version for future rollback after hosted QA.
+Version 2 fixes JSON download serialization so downloaded bytes match the worker SHA-256; version 1
+is retained as historical, not the preferred integrity baseline. Rollback has not been exercised.
+
+The production upload app remains disabled externally, with its original private TLS, production
+identity/authorization, restricted executor, audit and operational release gates intact.
+
+Implementation head `9c51854` passed all four Actions workflows: Cloud tests `41608991016`, Private
+staging integration `41608991424`, Synthetic-only cloud demo `41608991267`, and Private synthetic
+viewer validation `41608991009`. The latter's actual HTTPS probes received HTTP 403 on all five
+anonymous routes; full proof is in `evaluation/phase7/anonymous-route-proof.json`. Its protected
+authorized-hosted job was correctly skipped without the environment binding. This must not be
+reported as a passed signed-in hosted browser test. Existing container/browser/security regressions
+and the new artifact browser checks passed; the Codex networking grant remains the only immediate
+access change needed to complete the deployed viewer's authorized QA.
+
 ## Phase 6 — final container remediation
 
 Started from merged PR #5/main `d17addf`, on `feature/phase6-container-remediation`; no earlier phase

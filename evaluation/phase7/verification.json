@@ -1,0 +1,25 @@
+{
+  "phase6_merged_main": "988f84e2520cb4f1b08084cc163add82fdcbfd7b",
+  "regression": {
+    "passed": 92,
+    "failed": 0,
+    "explicit_skips": 16
+  },
+  "artifact_browser": {
+    "passed": true,
+    "examples": 5,
+    "json_downloads": 5,
+    "pdf_downloads": 5
+  },
+  "native_publication": "succeeded",
+  "hosted_authorized_probe": "blocked_by_codex_HTTPS_CONNECT_403",
+  "hosted_browser_pass_claimed": false,
+  "production_upload_enabled": false,
+  "anonymous_live_https_probes": {
+    "passed": 5,
+    "failed": 0,
+    "status": 403,
+    "actions_run": 41608991009
+  },
+  "service_access_origin": "Must match registered private-site.json origin; never supplied to localhost or redirects"
+}

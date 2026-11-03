@@ -1,5 +1,35 @@
 # Security model and verified controls
 
+## Phase 7 private synthetic presentation boundary
+
+Only an independent static presentation tier is published. It contains allowlisted synthetic report
+JSON and static HTML/CSS/JS, no Python/parser code, arbitrary URL/path inputs, upload controls,
+controller/executor socket, cloud credential, backend route or server-side write operation. Reports
+and downloads are the actual Phase 6 worker outputs. SHA-256 verification fails closed on report
+changes; rendering uses textContent, not report-supplied HTML. The page CSP allows same-origin
+scripts/fetches and bundled data PNGs, denies forms/object embedding and loads no third-party assets.
+Blob download URLs are revoked after use. There are no user temporary files to retain or delete.
+
+Sites owns HTTPS/authentication/session handling before static asset access. The native policy is
+owner-only (one owner, no groups/external visitors); no audience expansion or auth-bypass endpoint
+was introduced. Platform service access returned by the native connection is used only for intended
+QA and must be bound to the exact origin. It is never stored in source, browser JS, traces or screenshots.
+An automated service-auth browser probe is not equivalent to an interactive owner SSO/cookie test.
+The artifact has ten bounded static assets, five cases and no dynamic execution/resource queue;
+provider resource/quota limits apply. This is not a claim of container/worker isolation on Sites.
+
+Native publication succeeded, but Codex's network policy blocks HTTPS to the deployed hostname.
+GitHub Actions independently verified real TLS and anonymous HTTP 403 denial at the homepage,
+health, catalogue, JavaScript and report routes (run `41608991009`). The proof is retained in
+`evaluation/phase7/anonymous-route-proof.json`. Session/cookie/header behavior, authorized health and
+authenticated page/report access remain explicitly unverified. No proxy, policy or authentication
+bypass was attempted. Protected hosted validation distinguishes service access from interactive SSO;
+it was skipped without its protected identity binding. CI never falls back to public access or embeds a credential.
+
+The existing Streamlit/Docker worker/controller architecture, resource limits and production gates
+are unchanged. Production uploads remain externally disabled. A private view of synthetic snapshots
+does not approve handling untrusted PDFs or substitute for a qualified production hosting assessment.
+
 ## Current Phase 6 image assessment — 3 November 2026
 
 The fresh rebuilt baseline (Debian 12.15, image `3b48b51bce27`) still had 2 CRITICAL/36 HIGH OS

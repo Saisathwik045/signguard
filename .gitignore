@@ -234,3 +234,5 @@ demo-artifacts/
 evaluation/cloud-recovery/trivy-cache/
 evaluation/cloud-recovery/*.log
 evaluation/phase6/*.log
+site-artifacts/
+private-site-build/

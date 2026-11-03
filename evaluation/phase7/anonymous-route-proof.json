@@ -1,0 +1,35 @@
+{
+  "origin": "https://signguard-private-synthetic.knitdeck.chatgpt.site",
+  "tls_verification_enabled": true,
+  "anonymous_checks": [
+    {
+      "path": "/",
+      "anonymous_status": 403,
+      "denied": true
+    },
+    {
+      "path": "/health.json",
+      "anonymous_status": 403,
+      "denied": true
+    },
+    {
+      "path": "/catalogue.json",
+      "anonymous_status": 403,
+      "denied": true
+    },
+    {
+      "path": "/reports/genuine_signed.json",
+      "anonymous_status": 403,
+      "denied": true
+    },
+    {
+      "path": "/app.js",
+      "anonymous_status": 403,
+      "denied": true
+    }
+  ],
+  "authorized_browser_verified": false,
+  "scope": "Anonymous access barrier only",
+  "github_actions_run": 41608991009,
+  "commit_sha": "9c51854edfe7ba4e05d0005bf94147df13a93488"
+}
