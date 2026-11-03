@@ -1,5 +1,25 @@
 # Security model and verified controls
 
+## Phase 7 closeout verification boundary — 3 November 2026
+
+The owner reports opening the private viewer; this is not independent automated SSO/session evidence.
+Native metadata still permits exactly one owner, no groups and no external visitors. No deployment,
+audience, cloud network or production-upload restriction was changed. Fresh local cloud browser tests
+verify fail-closed report hash checks, stale-response selection isolation and exact JSON/PDF downloads
+in addition to all five evidence displays. See [DEPLOYMENT_VERIFICATION.md](DEPLOYMENT_VERIFICATION.md).
+
+The report SHA-256 values detect mismatches against the shipped catalogue; they do not authenticate
+a maliciously replaced catalogue and report together. Native source/version provenance and protected
+publication remain the deployment trust root. A matching local artifact is not proof of live bytes.
+The existing anonymous HTTPS probes establish denial for the five tested routes, not all possible
+paths, interactive sign-in, cookie attributes or logout invalidation. Current image security evidence
+is retained from Phase 6 and successful CI; no fresh container scan is claimed for this docs/test change.
+
+The upload-enabled service requires a separately qualified runtime and release evidence. Sites
+static hosting must receive no parser, executor authority, upload route or PDF credentials. The next
+phase requirements, threat boundaries and acceptance gates are in [NEXT_PHASE_PLAN.md](NEXT_PHASE_PLAN.md).
+No production readiness or permission to enable untrusted ingress is implied by this closeout.
+
 ## Phase 7 private synthetic presentation boundary
 
 Only an independent static presentation tier is published. It contains allowlisted synthetic report

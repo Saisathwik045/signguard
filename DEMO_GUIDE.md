@@ -1,5 +1,18 @@
 # SignGuard synthetic-only and private demonstrations
 
+## Verified scope and owner observation — 3 November 2026
+
+The owner confirms opening the deployed private viewer successfully at
+https://signguard-private-synthetic.knitdeck.chatgpt.site. This is a user-reported browser observation;
+independent automated authenticated hosted testing remains unverified under the current Codex policy.
+No network setting needs to be changed for the completed artifact checks. All five examples, evidence
+images and ten exact downloads passed fresh cloud artifact-browser testing; corrupted report bytes
+fail closed, and late responses cannot replace a newer selected report.
+
+See [DEPLOYMENT_VERIFICATION.md](DEPLOYMENT_VERIFICATION.md) for the checklist separating observations,
+control-plane metadata, actual anonymous HTTPS probes and loopback automation. No uploads, URL/path
+inputs or analysis backend were added. Historical statements below refer to earlier phases only.
+
 ## Phase 7 private browser link
 
 [Open SignGuard Private Synthetic Lab](https://signguard-private-synthetic.knitdeck.chatgpt.site)
@@ -50,8 +63,8 @@ the fixed trusted fixtures can be regenerated with `--generate`. These are CI/cl
 operations, not local user setup. No private signing key or user document is bundled. Five examples
 are an integration demonstration, not a new accuracy benchmark or evidence that all attacks are detected.
 
-**No external demo URL has been deployed or verified.** Cloud loopback browser tests and GitHub
-artifacts are the available demonstration. Codespaces is not required. Before any external route,
+**Historical Phase 5 scope:** no external demo URL existed then. The private Phase 7 URL above
+is now published; authenticated hosted automation remains unverified. Codespaces is not required. Before any external route,
 resolve the relevant image findings and verify private hosting, TLS and access controls.
 
 The Codex Chromium run passed all five example navigations, real PNG decoding, report selection,

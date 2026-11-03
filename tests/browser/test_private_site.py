@@ -106,3 +106,63 @@ def test_five_real_reports_and_downloads(site):
     (artifacts / "browser-evidence.json").write_text(json.dumps({"origin": origin, "hosted": hosted,
         "authorization_scope": "Origin-bound platform service bearer, not interactive owner SSO" if hosted else "Cloud loopback static fixture server",
         "uploads_enabled": False, "outbound_origins_allowed": [origin], "cases": evidence}, indent=2)+"\n")
+
+
+def test_artifact_integrity_failure_and_stale_selection(site):
+    """Exercise adverse responses locally; never inject faults into the hosted deployment."""
+    from playwright.sync_api import expect, sync_playwright
+
+    origin, hosted = site
+    if hosted:
+        pytest.skip("Fault injection is restricted to the cloud artifact server")
+    with sync_playwright() as p:
+        browser = p.chromium.launch(executable_path=os.environ.get("SIGNGUARD_CHROMIUM_PATH"))
+        try:
+            page = browser.new_page(accept_downloads=True)
+            page.goto(origin)
+            expect(page.locator("#result")).to_be_visible()
+            raw = (Path(__file__).resolve().parents[2] /
+                   "src/signguard/demo_assets/tampered.json").read_bytes()
+            page.route("**/reports/tampered.json", lambda route: route.fulfill(
+                status=200, content_type="application/json", body=raw+b"\n"))
+            page.locator('#cases button[data-id="tampered"]').click()
+            expect(page.locator("#error")).to_be_visible()
+            expect(page.locator("#result")).to_be_hidden()
+            assert page.evaluate("activeReport === null && activeRaw === null && activeId === null")
+            page.unroute("**/reports/tampered.json")
+            page.evaluate("""() => {
+                const originalFetch = window.fetch.bind(window);
+                window.fetch = async (...args) => {
+                    const response = await originalFetch(...args);
+                    if (String(args[0]).endsWith('/tampered.json')) {
+                        await new Promise(resolve => { window.releaseOldSelection = resolve; });
+                    }
+                    return response;
+                };
+            }""")
+            page.locator('#cases button[data-id="tampered"]').click()
+            page.wait_for_function("typeof window.releaseOldSelection === 'function'")
+            page.locator('#cases button[data-id="unsigned"]').click()
+            expect(page.locator("#classification")).to_have_text("unsigned")
+            expect(page.locator("#result")).to_be_visible()
+            # Resolve the older fetch, then wait for its async digest to complete.
+            page.evaluate("""async () => {
+                const digest = crypto.subtle.digest.bind(crypto.subtle);
+                const completed = new Promise(resolve => {
+                    crypto.subtle.digest = async (...args) => {
+                        const result = await digest(...args);
+                        setTimeout(resolve, 0);
+                        return result;
+                    };
+                });
+                window.releaseOldSelection();
+                await completed;
+            }""")
+            expect(page.locator("#classification")).to_have_text("unsigned")
+            with page.expect_download() as download:
+                page.get_by_role("button", name="Download JSON", exact=True).click()
+            assert download.value.suggested_filename == "signguard-unsigned.json"
+            _, provenance = load_case("unsigned")
+            assert hashlib.sha256(Path(download.value.path()).read_bytes()).hexdigest() == provenance["report_sha256"]
+        finally:
+            browser.close()

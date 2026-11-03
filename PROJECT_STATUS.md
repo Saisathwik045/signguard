@@ -1,5 +1,30 @@
 # Project status — Codex Cloud integration and synthetic demo
 
+## Phase 7 closeout — 3 November 2026
+
+PR #7 is merged: current main `0c8f74c46d4519fa0f81c6c1de45c14dfe989b3d`.
+All four workflows on its implementation head `6db5970` were independently rechecked through
+GitHub: Cloud tests 41612159740, Private staging integration 41612159739, Synthetic-only cloud
+demo 41612159741, Private synthetic viewer validation 41612159748: all success. The protected
+hosted-validation job was skipped; it is not a successful hosted browser check. The commit-workflow
+connector returns PR-associated runs only; no new claim about merge-commit runs is inferred.
+
+The owner reports successfully opening the actual private URL in their browser. That observation
+confirms their access, not automated login, all examples, downloads or session-revocation behavior.
+Native hosting metadata was rechecked: active version 2, same URL, one owner, no groups or external
+visitors. No republish, access-policy change or network-policy change was made. Rebuilding the static
+artifact produced a byte-for-byte match to retained Site source commit `4c56398` (all ten assets).
+This establishes retained-source integrity, not an independently fetched authenticated live response.
+
+Fresh combined cloud regression: **93 passed, 0 failed, 16 explicit Docker/other-browser skips**,
+with one existing Starlette warning. Six focused checks also passed, including both browser scenarios,
+all five reports, image decoding, exact JSON/PDF downloads, tampered-report rejection, stale-selection
+protection and recovery. No application/deployed asset changed. Detailed evidence and residual
+limits: [DEPLOYMENT_VERIFICATION.md](DEPLOYMENT_VERIFICATION.md).
+Next phase: [NEXT_PHASE_PLAN.md](NEXT_PHASE_PLAN.md). Live upload ingress remains disabled.
+Phase 7 implementation is delivered; independent authenticated hosted QA and rollback rehearsal
+remain open verification items, not prerequisites to preserving the current private snapshots.
+
 ## Phase 7 — owner-private presentation deployment
 
 Started from merged PR #6/main `988f84e`. Confirmed the final Phase 6 image/scan evidence and retained
