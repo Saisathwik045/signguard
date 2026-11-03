@@ -12,6 +12,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 from .audit import append_event
 from .executor import execute_private
+from .input_policy import InputRejected, decode_request
 from .supervisor import MAX_OUTPUT, MAX_REQUEST
 
 _LOGGER = logging.getLogger(__name__)
@@ -46,6 +47,8 @@ class Handler(BaseHTTPRequestHandler):
         self.send_response(status)
         self.send_header("Content-Type", "application/json")
         self.send_header("Content-Length", str(len(body)))
+        self.send_header("Cache-Control", "no-store")
+        self.send_header("X-Content-Type-Options", "nosniff")
         self.end_headers()
         self.wfile.write(body)
 
@@ -54,10 +57,12 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         token = os.environ.get("SIGNGUARD_BROKER_TOKEN", "")
-        if len(token) < 32 or not hmac.compare_digest(self.headers.get("Authorization", ""), "Bearer "+token):
+        if len(token) < 32 or not hmac.compare_digest(self.headers.get("Authorization", "").encode(), ("Bearer "+token).encode()):
             self.reply(403, {"error": "forbidden"})
             return
-        if self.path != "/analyze" or self.headers.get("Transfer-Encoding"):
+        if (self.path != "/analyze" or self.headers.get("Transfer-Encoding")
+                or len(self.headers.get_all("Content-Length", [])) != 1
+                or self.headers.get_content_type() != "application/json"):
             self.reply(400, {"error": "invalid_request"})
             return
         try:
@@ -67,7 +72,10 @@ class Handler(BaseHTTPRequestHandler):
         if not 0 < length <= MAX_REQUEST:
             self.reply(413, {"error": "input_limit"})
             return
-        principal = self.headers.get("X-SignGuard-Principal", "private-session")[:256]
+        principal = self.headers.get("X-SignGuard-Principal", "")
+        if not principal or len(principal) > 256 or not principal.isprintable() or principal.strip() != principal:
+            self.reply(400, {"error": "invalid_principal"})
+            return
         if not quota_allowed(principal):
             self.reply(429, {"error": "quota"})
             return
@@ -77,28 +85,45 @@ class Handler(BaseHTTPRequestHandler):
         request_id = secrets.token_hex(12)
         self.connection.settimeout(10)
         error_class = None
+        status = "failed"
+        audit_path = os.environ.get("SIGNGUARD_AUDIT_PATH")
+        event = {"request_id": request_id, "principal_sha256": hashlib.sha256(principal.encode()).hexdigest()}
         try:
-            payload = self.rfile.read(length)
-            if len(payload) != length:
-                raise ValueError("Truncated request")
-            report = execute_private(payload)
-            audit_path = os.environ.get("SIGNGUARD_AUDIT_PATH")
             if not audit_path:
                 raise RuntimeError("Audit sink required")
+            # Admission must be durable before invoking any executor.
+            append_event(audit_path, {**event, "status": "admitted"})
+            payload = self.rfile.read(length)
+            if len(payload) != length:
+                raise InputRejected("invalid_request", "Truncated request")
+            decoded = decode_request(payload)
+            event["input_sha256"] = hashlib.sha256(decoded["pdf"]).hexdigest()
+            del decoded
+            report = execute_private(payload)
+            report["request_id"] = request_id
             digest = hashlib.sha256(json.dumps(report, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
-            head = append_event(audit_path, {"request_id": request_id, "status": "completed",
+            status = "unsupported" if report["assessment"]["analysis_status"] == "unsupported" else "completed"
+            head = append_event(audit_path, {**event, "status": status,
                                            "report_digest": digest, "verdict": report["assessment"]["verdict"]})
             report["audit_receipt"] = {"head": head, "report_digest": digest,
-                                        "anchoring": "controller_local_head_not_externally_anchored"}
+                                      "anchoring": "controller_local_head_not_externally_anchored"}
             self.reply(200, report)
-            status = "completed"
-        except Exception as exc:  # noqa: BLE001 -- never expose parser or host details across service boundary
+        except Exception as exc:  # noqa: BLE001 -- no parser/host details cross the boundary
             error_class = type(exc).__name__
-            self.reply(422, {"error": "analysis_failed_or_unsupported", "request_id": request_id})
-            status = "failed"
+            status = "rejected" if isinstance(exc, InputRejected) else "failed"
+            code = exc.code if isinstance(exc, InputRejected) else "analysis_failed_or_unsupported"
+            response_status = 400 if isinstance(exc, InputRejected) else 422
+            try:
+                if not audit_path:
+                    raise RuntimeError("Audit sink required")
+                append_event(audit_path, {**event, "status": status, "error_code": code})
+            except Exception:  # noqa: BLE001 -- audit failure forbids releasing results
+                status, code, response_status = "audit_failed", "audit_unavailable", 503
+            self.reply(response_status, {"error": code, "request_id": request_id})
         finally:
             _JOB.release()
         _LOGGER.info(json.dumps({"event": "analysis", "request_id": request_id, "status": status, "error_class": error_class}))
+
 
 
 class BoundedHTTPServer(ThreadingHTTPServer):

@@ -236,3 +236,6 @@ evaluation/cloud-recovery/*.log
 evaluation/phase6/*.log
 site-artifacts/
 private-site-build/
+
+# Phase 8 generated cloud evidence (curated copies live under evaluation/)
+phase8-browser/

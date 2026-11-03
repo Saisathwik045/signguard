@@ -17,10 +17,12 @@ jobs:
       - run: docker build -f deploy/Dockerfile.worker -t signguard-worker:phase4 -t signguard-worker:phase3 .
       - run: docker build -f deploy/Dockerfile.ui -t signguard-ui:phase4 .
       - run: docker build -f deploy/Dockerfile.controller -t signguard-controller:phase4 .
-      - name: Drive authenticated browser flow
+      - name: Drive Phase 8 authenticated live upload flow
         run: |
           trap 'test ! -f browser-artifacts/http-errors.jsonl || cat browser-artifacts/http-errors.jsonl' EXIT
           SIGNGUARD_BROWSER_TESTS=1 pytest -x -q tests/browser/test_live_flow.py --junitxml=browser-artifacts/browser-junit.xml
+      - name: Verify report, worker identity and audit evidence
+        run: python scripts/verify_live_evidence.py browser-artifacts
       - name: Scan OS images and record release admission
         run: |
           mkdir -p browser-artifacts/os-cache

@@ -11,6 +11,8 @@ import time
 from dataclasses import dataclass
 from pathlib import Path
 
+from .input_policy import validate_inputs
+
 MAX_INPUT = 60*1024*1024
 MAX_REQUEST = 82*1024*1024
 MAX_OUTPUT = 5*1024*1024
@@ -69,12 +71,7 @@ def run_limited(command, payload=b"", limits=_DEFAULT_LIMITS):
 
 def encode_request(pdf, **optional):
     values = {"pdf": pdf, **{k: v for k, v in optional.items() if v is not None}}
-    if set(values) - {"pdf", "baseline", "signature_image", "reference_image"}:
-        raise ValueError("Unknown analysis option")
-    if any(not isinstance(v, bytes) for v in values.values()) or sum(map(len, values.values())) > MAX_INPUT:
-        raise ValueError("Invalid or oversized input")
-    if not pdf.startswith(b"%PDF-") or len(pdf) > 25*1024*1024:
-        raise ValueError("Expected PDF upload, at most 25 MiB")
+    validate_inputs(values)
     return json.dumps({k: base64.b64encode(v).decode("ascii") for k, v in values.items()}).encode()
 
 

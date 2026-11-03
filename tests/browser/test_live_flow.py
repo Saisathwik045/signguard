@@ -122,16 +122,32 @@ def test_02_upload_evidence_and_downloads(cloud_stack, signed_in, family, verdic
     # Download reruns must preserve the verdict, rather than clearing the result.
     expect(page.get_by_role("heading", name=verdict, exact=True)).to_be_visible()
     assert stack.command("ps", "-a", "--filter", "name=signguard-job-", "--format", "{{.Names}}").stdout.strip() == ""
+    if family == "unsigned":
+        page.locator('input[type="file"]').nth(0).set_input_files(str(fixtures / "genuine_signed-00.pdf"))
+        expect(page.get_by_role("button", name="Download JSON report")).to_have_count(0)
 
 
-def test_03_unsupported_input(cloud_stack, signed_in):
+@pytest.mark.parametrize("kind", ["encrypted", "malformed"])
+def test_03_unsupported_input(cloud_stack, signed_in, kind):
     from playwright.sync_api import expect
     _, _, artifacts, fixtures = cloud_stack
-    signed_in.locator('input[type="file"]').nth(0).set_input_files(str(fixtures / "encrypted-00.pdf"))
+    if kind == "encrypted":
+        signed_in.locator('input[type="file"]').nth(0).set_input_files(str(fixtures / "encrypted-00.pdf"))
+    else:
+        signed_in.locator('input[type="file"]').nth(0).set_input_files({"name": "malformed.pdf",
+            "mimeType": "application/pdf", "buffer": b"%PDF-1.7\nnot-a-valid-PDF"})
     signed_in.get_by_role("button", name="Analyze", exact=True).click()
-    expect(signed_in.get_by_text("Analysis could not complete:", exact=False)).to_be_visible(timeout=100000)
-    expect(signed_in.get_by_role("button", name="Download JSON report")).to_have_count(0)
-    signed_in.screenshot(path=str(artifacts / "04-unsupported.png"), full_page=True)
+    expect(signed_in.get_by_role("heading", name="Unsupported document", exact=True)).to_be_visible(timeout=100000)
+    with signed_in.expect_download() as item:
+        signed_in.get_by_role("button", name="Download JSON report", exact=True).click()
+    item.value.save_as(str(artifacts / f"{kind}-report.json"))
+    report = json.loads(Path(item.value.path()).read_text())
+    assert report["assessment"]["analysis_status"] == "unsupported"
+    assert report["assessment"]["authenticity_established"] is False
+    assert report["input_error"]["code"] == ("encrypted_pdf" if kind == "encrypted" else "malformed_pdf")
+    assert report["execution_controls"]["isolation"] == "docker_disposable"
+    expect(signed_in.get_by_role("button", name="Download PDF report")).to_have_count(0)
+    signed_in.screenshot(path=str(artifacts / f"04-{kind}.png"), full_page=True)
 
 
 def test_04_oversized_upload(cloud_stack, signed_in):
@@ -169,7 +185,7 @@ def test_06_private_controller_denial_load_and_audit(cloud_stack):
 
     def request(token, payload_override=None):
         value = urllib.request.Request(stack.control_url+"/analyze", data=payload if payload_override is None else payload_override,
-            headers={"Authorization": "Bearer "+token, "X-SignGuard-Principal": "load-probe"})
+            headers={"Authorization": "Bearer "+token, "X-SignGuard-Principal": "load-probe", "Content-Type": "application/json"})
         try:
             with opener.open(value, timeout=100) as response:
                 return response.status
@@ -191,6 +207,17 @@ def test_06_private_controller_denial_load_and_audit(cloud_stack):
     (artifacts / "integration-results.json").write_text(json.dumps({"burst_and_quota_statuses": statuses,
         "audit_events": count, "audit_head": head, "audit_external_anchor": False,
         "worker_containers_remaining": stack.command("ps", "-a", "--filter", "name=signguard-job-", "--format", "{{.Names}}").stdout.strip()}, indent=2)+"\n")
+
+
+def test_06b_renamed_nonpdf_is_rejected(cloud_stack, signed_in):
+    from playwright.sync_api import expect
+    _, _, artifacts, _ = cloud_stack
+    signed_in.locator('input[type="file"]').nth(0).set_input_files({"name": "renamed.pdf",
+        "mimeType": "application/pdf", "buffer": b"This is not a PDF despite its name."})
+    signed_in.get_by_role("button", name="Analyze", exact=True).click()
+    expect(signed_in.get_by_text("Upload rejected:", exact=False)).to_be_visible()
+    expect(signed_in.get_by_role("button", name="Download JSON report")).to_have_count(0)
+    signed_in.screenshot(path=str(artifacts / "06b-renamed-nonpdf.png"), full_page=True)
 
 
 def test_07_broker_outage_fails_closed(cloud_stack, signed_in):

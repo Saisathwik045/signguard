@@ -1,6 +1,7 @@
 """Trusted controller for disposable containers. Never expose its Docker socket to the UI."""
 import json
 import os
+import re
 import secrets
 import shutil
 import subprocess
@@ -23,13 +24,20 @@ def container_command(image, name):
 
 def analyze_container(payload, image=None):
     image = image or os.environ.get("SIGNGUARD_WORKER_IMAGE", "signguard-worker:phase3")
+    inspected = subprocess.run([(shutil.which("docker") or "/usr/bin/docker"), "--host=unix:///var/run/docker.sock",
+                                "image", "inspect", "--format", "{{.Id}}", image],
+                               capture_output=True, text=True, timeout=10, check=True)
+    image_id = inspected.stdout.strip()
+    if not re.fullmatch(r"sha256:[0-9a-f]{64}", image_id):
+        raise ValueError("Worker image identity unavailable")
     name = "signguard-job-"+secrets.token_hex(12)
     try:
         # Docker daemon uses the container cgroup limits; supervisor also bounds CLI/output/wall time.
-        result, controls = run_limited(container_command(image, name), payload, Limits(cpu=60, memory=8*1024*1024*1024))
+        result, controls = run_limited(container_command(image_id, name), payload, Limits(cpu=60, memory=8*1024*1024*1024))
         report = json.loads(result)
         report["execution_controls"] = {**controls, "isolation": "docker_disposable",
-                                        "network_isolation": True, "filesystem_isolation": True}
+                                        "network_isolation": True, "filesystem_isolation": True,
+                                        "worker_image_id": image_id}
         return report
     finally:
         subprocess.run([(shutil.which("docker") or "/usr/bin/docker"), "--host=unix:///var/run/docker.sock", "rm", "-f", name],

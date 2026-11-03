@@ -150,9 +150,28 @@ async def websocket_proxy(websocket):
             await websocket.close()
 
 
+class PrivateResponseHeaders:
+    """Keep authenticated documents/reports out of shared browser/proxy caches."""
+    def __init__(self, app):
+        self.application = app
+
+    async def __call__(self, scope, receive, send):
+        async def protected_send(message):
+            if message["type"] == "http.response.start":
+                headers = [(key, value) for key, value in message.get("headers", [])
+                           if key.lower() not in {b"cache-control", b"x-content-type-options", b"x-frame-options", b"referrer-policy"}]
+                headers += [(b"cache-control", b"no-store"), (b"x-content-type-options", b"nosniff"),
+                            (b"x-frame-options", b"DENY"), (b"referrer-policy", b"no-referrer")]
+                message = {**message, "headers": headers}
+            await send(message)
+        await self.application(scope, receive, protected_send)
+
+
 app = Starlette(routes=[Route("/auth/login", login, methods=["GET", "POST"]), Route("/auth/logout", logout),
                         WebSocketRoute("/{path:path}", websocket_proxy),
                         Route("/{path:path}", proxy, methods=["GET", "POST", "PUT", "DELETE", "HEAD"])])
+
+app.add_middleware(PrivateResponseHeaders)
 
 
 def main():
