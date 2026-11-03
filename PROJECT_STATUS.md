@@ -36,6 +36,15 @@ publication has no older version to roll back to; rollback has not been exercise
 The production upload app remains disabled externally, with its original private TLS, production
 identity/authorization, restricted executor, audit and operational release gates intact.
 
+Implementation head `9c51854` passed all four Actions workflows: Cloud tests `41608991016`, Private
+staging integration `41608991424`, Synthetic-only cloud demo `41608991267`, and Private synthetic
+viewer validation `41608991009`. The latter's actual HTTPS probes received HTTP 403 on all five
+anonymous routes; full proof is in `evaluation/phase7/anonymous-route-proof.json`. Its protected
+authorized-hosted job was correctly skipped without the environment binding. This must not be
+reported as a passed signed-in hosted browser test. Existing container/browser/security regressions
+and the new artifact browser checks passed; the Codex networking grant remains the only immediate
+access change needed to complete the deployed viewer's authorized QA.
+
 ## Phase 6 — final container remediation
 
 Started from merged PR #5/main `d17addf`, on `feature/phase6-container-remediation`; no earlier phase

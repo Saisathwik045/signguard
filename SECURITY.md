@@ -19,10 +19,12 @@ The artifact has ten bounded static assets, five cases and no dynamic execution/
 provider resource/quota limits apply. This is not a claim of container/worker isolation on Sites.
 
 Native publication succeeded, but Codex's network policy blocks HTTPS to the deployed hostname.
-Until the actual hosted tests run, session/cookie/header behavior, anonymous route denial, health and
-authenticated page/report access are explicitly unverified. No proxy, policy or authentication bypass
-was attempted. Github's secret-free anonymous route job and protected hosted validation distinguish
-real endpoint tests from localhost QA. CI never falls back to public access or embeds a credential.
+GitHub Actions independently verified real TLS and anonymous HTTP 403 denial at the homepage,
+health, catalogue, JavaScript and report routes (run `41608991009`). The proof is retained in
+`evaluation/phase7/anonymous-route-proof.json`. Session/cookie/header behavior, authorized health and
+authenticated page/report access remain explicitly unverified. No proxy, policy or authentication
+bypass was attempted. Protected hosted validation distinguishes service access from interactive SSO;
+it was skipped without its protected identity binding. CI never falls back to public access or embeds a credential.
 
 The existing Streamlit/Docker worker/controller architecture, resource limits and production gates
 are unchanged. Production uploads remain externally disabled. A private view of synthetic snapshots

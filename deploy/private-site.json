@@ -13,5 +13,11 @@
   "hosted_authorized_browser_status": "blocked_by_codex_network_policy",
   "production_upload_enabled": false,
   "backend_attached": false,
-  "credentials_in_repository": false
+  "credentials_in_repository": false,
+  "anonymous_live_https_probes": {
+    "passed": 5,
+    "failed": 0,
+    "status": 403,
+    "actions_run": 41608991009
+  }
 }

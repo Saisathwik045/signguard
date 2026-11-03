@@ -14,5 +14,11 @@
   "native_publication": "succeeded",
   "hosted_authorized_probe": "blocked_by_codex_HTTPS_CONNECT_403",
   "hosted_browser_pass_claimed": false,
-  "production_upload_enabled": false
+  "production_upload_enabled": false,
+  "anonymous_live_https_probes": {
+    "passed": 5,
+    "failed": 0,
+    "status": 403,
+    "actions_run": 41608991009
+  }
 }

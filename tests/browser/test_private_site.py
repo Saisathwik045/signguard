@@ -45,7 +45,7 @@ def site(tmp_path_factory):
 def test_five_real_reports_and_downloads(site):
     from playwright.sync_api import expect, sync_playwright
     origin, hosted = site
-    token = os.environ.get("SIGNGUARD_SITE_BEARER", "")
+    token = os.environ.get("SIGNGUARD_SITE_BEARER", "") if hosted else ""
     if hosted and not token:
         pytest.fail("Hosted authorized QA requires protected service access")
     artifacts = Path(os.environ.get("SIGNGUARD_SITE_ARTIFACTS", "site-artifacts"))

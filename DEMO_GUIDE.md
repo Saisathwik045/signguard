@@ -17,6 +17,8 @@ success. The minimum remaining browser-based configuration is adding
 `signguard-private-synthetic.knitdeck.chatgpt.site` to Codex Cloud's allowed outbound hosts.
 
 An independent Actions job tests anonymous access to the actual hosted page/assets/report routes.
+That real HTTPS probe passed in [run 41608991009](https://github.com/Saisathwik045/signguard/actions/runs/41608991009):
+the homepage, health, catalogue, script and report routes all denied anonymous requests with HTTP 403.
 Protected hosted health/browser tests are prepared; service-credential automation is distinguished
 from interactive owner SSO. No account purchase, local setup or Codespaces is needed.
 
