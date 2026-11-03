@@ -268,3 +268,9 @@ is required for the dedicated controller group to connect; the parent is `0750`,
 absent, and production group membership is restricted. Changing it to owner-only breaks the tested
 UID boundary. This is a documented context-specific permission finding, not a global scanner skip
 or an OS-vulnerability waiver. The unsuppressed finding is retained in reviewed scan evidence.
+
+### Phase 9 authentication and authority scope
+
+Prepared staging uses GitHub OAuth2 authorization-code flow with S256 PKCE and one immutable owner ID, not a claimed OIDC login or a forwarded username. OAuth state/verifiers are one-use server-side records; sessions are opaque hashed records with a 15-minute TTL and revocation. Secure/HttpOnly host-only cookies, persisted login throttling and fail-closed database errors are tested. Actual provider login, certificate issuance/renewal, origin/WebSocket behavior and owner/non-owner authorization require deployed testing. This does not qualify multi-user production isolation.
+
+The UI alone needs outbound identity-provider access; the controller uses an internal network and fixed Unix executor RPC. Workers have no network or cloud identity. The dedicated executor must have no sudo/rootful Docker group, and the rootless daemon must enforce cgroup v2. Root SSM release authority is explicitly privileged and restricted to a protected GitHub environment/main; malicious approved release code remains a trusted-host risk. Production ingress remains blocked. [The checklist](deploy/aws/VERIFICATION.md) includes host patch scans, retained-audit restoration, periodic-anchor loss window acceptance and rollback rehearsal. No sync-to-S3 guarantee is claimed.

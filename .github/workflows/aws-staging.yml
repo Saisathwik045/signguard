@@ -121,6 +121,7 @@ jobs:
     timeout-minutes: 35
     permissions:
       contents: read
+      actions: read
       id-token: write
     env:
       AWS_ACCOUNT_ID: ${{ vars.AWS_ACCOUNT_ID }}
@@ -146,6 +147,17 @@ jobs:
           terraform_wrapper: false
       - run: terraform -chdir=deploy/aws init -backend-config="bucket=signguard-staging-state-$AWS_ACCOUNT_ID" -backend-config="key=terraform/staging.tfstate" -backend-config=region=us-east-1 -backend-config=encrypt=true -backend-config=use_lockfile=true
       - run: terraform -chdir=deploy/aws output -json > /tmp/aws-outputs.json
+      - name: Require successful exact-commit regression, browser and isolation workflows
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api "repos/Saisathwik045/signguard/actions/runs?head_sha=$GITHUB_SHA&per_page=100" > /tmp/required-runs.json
+          python - <<'PY'
+          import json
+          required={'Cloud tests','Private staging integration','Private synthetic viewer validation','Synthetic-only cloud demo','Rootless worker qualification'}
+          passed={r['name'] for r in json.load(open('/tmp/required-runs.json'))['workflow_runs'] if r['conclusion']=='success'}
+          assert required <= passed, 'Required exact-commit workflows not yet successful: '+str(sorted(required-passed))
+          PY
       - name: Build the existing service images
         run: |
           docker build -f deploy/Dockerfile.worker -t signguard-worker:aws .
@@ -162,6 +174,8 @@ jobs:
           python scripts/verify_image_scan.py aws-release/worker/full-scan.json aws-release/worker/inventory.json --baseline evaluation/phase6/baseline-full-scan.json --output aws-release/worker/identity-admission.json
       - name: Publish immutable references and stage maintenance through SSM
         run: python -m scripts.aws_delivery /tmp/aws-outputs.json aws-release --stage
+      - name: Verify actual maintenance HTTPS and anonymous access denial
+        run: python -m scripts.smoke_aws_staging aws-release/delivery.json aws-release/hosted-anonymous-smoke.json
       - name: Remove temporary registry access
         if: always()
         run: docker logout "$AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com" >/dev/null 2>&1 || true

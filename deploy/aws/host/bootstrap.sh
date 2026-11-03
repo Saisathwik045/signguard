@@ -22,7 +22,8 @@ loginctl enable-linger signguard-executor
 systemctl start user@1001.service
 runuser -u signguard-executor -- env XDG_RUNTIME_DIR=/run/user/1001 dockerd-rootless-setuptool.sh install --force
 install -d -m 0750 -o 1001 -g 1500 /run/signguard
-install -d -m 0700 /etc/signguard /opt/signguard/releases /var/lib/signguard-edge
+install -d -m 0700 /etc/signguard /var/lib/signguard-edge
+install -d -m 0750 -g 1500 /opt/signguard/releases
 # Block metadata access from non-root host users. Container bridges are additionally blocked by IMDS hop=1.
 iptables -I OUTPUT -d 169.254.169.254/32 -m owner ! --uid-owner 0 -j REJECT
 iptables -I DOCKER-USER -d 169.254.169.254/32 -j REJECT

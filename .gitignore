@@ -239,3 +239,10 @@ private-site-build/
 
 # Phase 8 generated cloud evidence (curated copies live under evaluation/)
 phase8-browser/
+
+# Terraform providers/state/plans are never source artifacts.
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+**/rendered/

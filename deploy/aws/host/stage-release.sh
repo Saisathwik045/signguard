@@ -41,6 +41,9 @@ chmod 0644 /etc/signguard/executor.env
 install -m 0644 deploy/aws/host/signguard-executor.service /etc/systemd/system/
 test -f /etc/letsencrypt/live/signguard/fullchain.pem
 openssl x509 -checkend 86400 -noout -in /etc/letsencrypt/live/signguard/fullchain.pem
+# The executor may read reviewed source/venv, never write it or read root-only service secrets.
+chgrp -R 1500 "$release_directory"
+chmod -R g+rX "$release_directory"
 ln -sfn "$release_directory" /opt/signguard/current
 systemctl daemon-reload
 systemctl enable signguard-executor
@@ -48,7 +51,7 @@ systemctl restart signguard-executor
 "$release_directory/executor-venv"/bin/python scripts/aws_host_preflight.py /var/lib/signguard/host-preflight.json
 runuser -u signguard-executor -- env SIGNGUARD_DOCKER_SOCKET=unix:///run/user/1001/docker.sock "$release_directory/executor-venv"/bin/python scripts/check_rootless_worker.py "$worker_ref" /run/signguard/rootless-preflight.json
 docker compose -f deploy/aws/rendered/compose.yaml config --quiet
-docker compose -f deploy/aws/rendered/compose.yaml up -d
+docker compose -f deploy/aws/rendered/compose.yaml up -d --wait --wait-timeout 90
 # This deployment remains authenticated MAINTENANCE ONLY. It never enables uploads.
 
 account_id=$(python3 -c 'import json;print(json.load(open("release.json"))["account_id"])')

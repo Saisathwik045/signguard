@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuites>
+  <testsuite name="tests/security.tftest.hcl" tests="2" skipped="0" failures="0" errors="0">
+    <testcase name="default_is_no_resources" classname="tests/security.tftest.hcl" time="0.029880928" timestamp="2026-11-03T17:52:56Z"></testcase>
+    <testcase name="approved_still_has_no_ingress" classname="tests/security.tftest.hcl" time="0.035028821" timestamp="2026-11-03T17:52:56Z"></testcase>
+  </testsuite>
+</testsuites>

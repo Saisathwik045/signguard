@@ -106,3 +106,10 @@ def test_ssm_delivery_rejects_injected_paths_before_shell():
     instance,script=commands(delivery)
     assert instance.startswith('i-') and 'sha256sum -c -' in script and 'mount-audit.sh' in script
     assert 'secret' not in json.dumps(delivery).lower()
+
+
+def test_hosted_smoke_refuses_http_private_hosts_and_redirect_targets():
+    from scripts.smoke_aws_staging import address
+    for value in ['http://8.8.8.8','https://127.0.0.1','https://8.8.8.8/path','https://8.8.8.8@evil.test','https://8.8.8.8:443']:
+        with pytest.raises(ValueError):address(value)
+    assert address('https://8.8.8.8')=='8.8.8.8'
