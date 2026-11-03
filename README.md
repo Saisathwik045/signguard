@@ -1,5 +1,20 @@
 # SignGuard
 
+## Phase 7 private synthetic viewer
+
+An owner-private, read-only viewer has been published through connected Sites at
+[SignGuard Private Synthetic Lab](https://signguard-private-synthetic.knitdeck.chatgpt.site).
+The platform confirms publication and an owner-only access policy. **Authorized hosted browser
+verification is still blocked by Codex Cloud's outbound-host policy**; publication is not being
+presented as a completed signed-in browser test. See [DEMO_GUIDE.md](DEMO_GUIDE.md) for exact scope.
+
+The hosted presentation is static HTML/JS over the existing verified synthetic reports. It preserves
+all five cases, real evidence images, classifications and JSON/PDF downloads, without Python parsing,
+an upload endpoint, URL/path input or worker credentials. The existing Python/Streamlit apps and
+isolated backend remain available and unchanged. Sites is not a production PDF-worker host.
+Cloud browser QA of the artifact and full regression passed (91 passed, 16 explicit Docker/other
+browser skips). [HOSTING_COMPARISON.md](HOSTING_COMPARISON.md) records current provider terms.
+
 ## Phase 6 container remediation
 
 The final worker now uses digest-pinned Ubuntu 26.04 LTS and maintained native Python 3.14,

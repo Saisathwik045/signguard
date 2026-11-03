@@ -23,7 +23,8 @@ def site(tmp_path_factory):
     url = os.environ.get("SIGNGUARD_SITE_URL")
     if url:
         address = urlsplit(url)
-        if address.scheme != "https" or not address.hostname or address.path not in {"", "/"}:
+        if (address.scheme != "https" or not address.hostname or address.path not in {"", "/"}
+                or address.username or address.password or address.query or address.fragment):
             raise ValueError("Hosted QA requires an exact HTTPS origin")
         yield url.rstrip("/"), True
         return

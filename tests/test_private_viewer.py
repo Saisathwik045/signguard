@@ -1,6 +1,10 @@
 import json
+import urllib.error
+
+import pytest
 
 from scripts.build_private_viewer import build
+from scripts.probe_private_site import probe
 from signguard.demo import CASES, load_case
 
 
@@ -14,3 +18,31 @@ def test_static_artifact_has_only_allowlisted_assets(tmp_path):
         assert json.loads((root / "reports" / (case_id+".json")).read_text()) == load_case(case_id)[0]
     health = json.loads((root / "health.json").read_text())
     assert health["cases"] == 5 and not health["uploads"] and not health["backend"]
+
+
+def test_proxy_denial_cannot_be_reported_as_site_authentication(monkeypatch, tmp_path):
+    class BlockedProxy:
+        def open(self, *args, **kwargs):
+            raise urllib.error.URLError("Tunnel connection failed: 403 Forbidden")
+    monkeypatch.setattr("urllib.request.build_opener", lambda *args: BlockedProxy())
+    with pytest.raises(urllib.error.URLError):
+        probe("https://example.test", "", tmp_path, anonymous_only=True)
+    assert not (tmp_path / "anonymous-route-proof.json").exists()
+
+
+def test_public_response_cannot_pass_private_route_gate(monkeypatch, tmp_path):
+    class PublicResponse:
+        status = 200
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *args):
+            pass
+
+    class PublicSite:
+        def open(self, *args, **kwargs):
+            return PublicResponse()
+    monkeypatch.setattr("urllib.request.build_opener", lambda *args: PublicSite())
+    with pytest.raises(ValueError, match="not denied"):
+        probe("https://example.test", "", tmp_path, anonymous_only=True)

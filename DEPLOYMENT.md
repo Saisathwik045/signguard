@@ -1,5 +1,39 @@
 # Private cloud deployment preparation — not deployed
 
+## Phase 7: private static presentation published; upload service not deployed
+
+The connected Sites service is selected **only** for the independent synthetic presentation tier.
+It does not host Python/Streamlit or the privileged worker architecture. The original synthetic
+Streamlit and production Docker definitions are preserved. Current official provider terms and
+why no paid/provider account was provisioned are recorded in [HOSTING_COMPARISON.md](HOSTING_COMPARISON.md).
+
+Native publication succeeded at `https://signguard-private-synthetic.knitdeck.chatgpt.site`, with an
+owner-only access policy. Exact IDs/source provenance are in `deploy/private-site.json`. Deployed
+assets are produced by `scripts/build_private_viewer.py` from validated bundled reports only.
+No parser, daemon, process launch, file write or backend token is shipped. Client loads are bounded
+by five fixed reports (each capped at 1 MiB at build time), no external dependencies/origins, and
+platform limits. Authentication/TLS/cookies are managed by Sites, not a new application password store.
+
+The packaged Site source is a separate native source repository containing only the static artifact,
+checksums and the provider hosting manifest. The standard Sites helper was not installed/readable in
+this cloud executor; `scripts/site_source.py` implements the same push/commit/archive provenance
+invariants using hidden-stdin credentials, in-memory Git headers and git archive of the pushed commit.
+No credentials are persisted. Publication uses the native owner-private tool after source synchronization.
+
+CI automatically validates/builds/checksums/packages the viewer and retains browser evidence. An
+anonymous hosted probe requires no secrets. Optional hosted validation requires the protected
+`private-synthetic` environment variables `SIGNGUARD_SITE_URL` and secret `SIGNGUARD_SITE_BEARER`.
+Missing access fails closed. Publication still requires the native Sites connection and fresh source
+credential; this is not an unattended CD claim using an expiring token stored in GitHub.
+
+Health endpoint: `/health.json`, behind the same private gate. Expected mode `synthetic-only`, five
+cases, uploads/backend false. Authorized health and hosted browser tests remain blocked in Codex
+until the exact hostname is allowed by its outbound policy. No insecure networking workaround is
+permitted. On a bad release, redeploy the prior known-good saved version through the native private
+deployment tool, preserve owner-only policy, and rerun health/anonymous/authorized browser probes.
+Version 1 is the first saved release and the rollback target for future updates; no earlier rollback
+or rollback drill is claimed. No production upload ingress is approved.
+
 ## Phase 6 image configuration
 
 All service Dockerfiles now use the digest-pinned maintained Ubuntu 26.04 runtime. The worker has

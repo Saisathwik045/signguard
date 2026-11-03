@@ -1,5 +1,25 @@
 # SignGuard synthetic-only and private demonstrations
 
+## Phase 7 private browser link
+
+[Open SignGuard Private Synthetic Lab](https://signguard-private-synthetic.knitdeck.chatgpt.site)
+
+Sites confirms the private publication succeeded. Sign in with the owner ChatGPT account; no other
+users/groups/external visitors are allowed by the current policy. This is a static presentation of
+the five actual synthetic reports, not the Streamlit upload application or a live PDF-processing backend.
+Select a document on the left to inspect its classification, explanation, current/signed evidence,
+revision data and actual JSON/PDF downloads. There is no upload, URL or path entry.
+
+The artifact passed real cloud Chromium tests for all five examples and exact downloads. The
+**hosted authorized browser test is not yet verified**: this Codex environment denies HTTPS CONNECT
+to the Site hostname. Do not interpret publication success or localhost screenshots as hosted-browser
+success. The minimum remaining browser-based configuration is adding
+`signguard-private-synthetic.knitdeck.chatgpt.site` to Codex Cloud's allowed outbound hosts.
+
+An independent Actions job tests anonymous access to the actual hosted page/assets/report routes.
+Protected hosted health/browser tests are prepared; service-credential automation is distinguished
+from interactive owner SSO. No account purchase, local setup or Codespaces is needed.
+
 ## Current synthetic-only viewer
 
 The separate `synthetic_demo.py` offers exactly five bundled examples through a dropdown. No

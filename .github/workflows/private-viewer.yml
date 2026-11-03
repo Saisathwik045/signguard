@@ -63,5 +63,21 @@ jobs:
           name: private-viewer-hosted-validation
           path: site-artifacts/hosted/
           retention-days: 7
+  anonymous-live-routes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Probe the real HTTPS origin without credentials
+        run: python scripts/probe_private_site.py https://signguard-private-synthetic.knitdeck.chatgpt.site site-artifacts/live --anonymous-only
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: live-anonymous-access-proof
+          path: site-artifacts/live/
+          retention-days: 7
 # No public/publish fallback, paid provisioning or repository-stored deployment credentials.
 # Native Sites publication uses a fresh repository-scoped credential and owner-only access check.

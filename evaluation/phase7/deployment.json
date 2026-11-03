@@ -1,0 +1,21 @@
+{
+  "id": "appgdep_6ae9a2828efc8191a261162ffae70040",
+  "project_id": "appgprj_6ae99f65f3bc8191adee5065f74d7edf",
+  "title": "SignGuard — Private Synthetic Demonstration",
+  "version_id": "appgprj_6ae99f65f3bc8191adee5065f74d7edf~appgver_08da667abe748191916581e0251f0aa4",
+  "type": "publish",
+  "status": "succeeded",
+  "url": "https://signguard-private-synthetic.knitdeck.chatgpt.site",
+  "has_mcp": false,
+  "screenshot_asset_pointer": null,
+  "provider_deployment_id": "site---6ae99f65f3bc8191adee5065f74d7edf",
+  "failure_message": null,
+  "env_set_revision": 0,
+  "updated_at": "2026-11-03T08:59:58.306832+00:00",
+  "allowed_owner_count": 1,
+  "allowed_group_count": 0,
+  "external_visitors": 0,
+  "hosted_authorized_browser": "blocked_by_codex_https_egress_policy",
+  "interactive_owner_sso": "not_automated",
+  "source_commit": "41d5fd4140a1b5aab8612e8069609a5ce93c1097"
+}

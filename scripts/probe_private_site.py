@@ -13,9 +13,10 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
         return None
 
 
-def probe(origin, token, output):
+def probe(origin, token, output, anonymous_only=False):
     address = urlsplit(origin)
-    if address.scheme != "https" or not address.hostname or address.path not in {"", "/"}:
+    if (address.scheme != "https" or not address.hostname or address.path not in {"", "/"}
+            or address.username or address.password or address.query or address.fragment):
         raise ValueError("An exact HTTPS origin is required")
     opener = urllib.request.build_opener(NoRedirect())
     checks = []
@@ -29,6 +30,12 @@ def probe(origin, token, output):
         if status not in {301, 302, 303, 307, 308, 401, 403}:
             raise ValueError(f"Anonymous application access was not denied: {path}, status={status}")
         checks.append({"path": path, "anonymous_status": status, "denied": True})
+    if anonymous_only:
+        output.mkdir(parents=True, exist_ok=True)
+        result = {"origin": origin, "tls_verification_enabled": True, "anonymous_checks": checks,
+                  "authorized_browser_verified": False, "scope": "Anonymous access barrier only"}
+        (output / "anonymous-route-proof.json").write_text(json.dumps(result, indent=2)+"\n")
+        return result
     if not token:
         raise ValueError("Protected service access is unavailable")
     request = urllib.request.Request(origin.rstrip("/")+"/health.json",
@@ -48,5 +55,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("origin")
     parser.add_argument("output", type=Path)
+    parser.add_argument("--anonymous-only", action="store_true")
     args = parser.parse_args()
-    print(json.dumps(probe(args.origin, os.environ.get("SIGNGUARD_SITE_BEARER", ""), args.output), indent=2))
+    print(json.dumps(probe(args.origin, os.environ.get("SIGNGUARD_SITE_BEARER", ""), args.output,
+                           anonymous_only=args.anonymous_only), indent=2))

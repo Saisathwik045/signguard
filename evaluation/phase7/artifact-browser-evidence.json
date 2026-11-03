@@ -1,0 +1,36 @@
+{
+  "origin": "http://127.0.0.1:33439",
+  "hosted": false,
+  "authorization_scope": "Cloud loopback static fixture server",
+  "uploads_enabled": false,
+  "outbound_origins_allowed": [
+    "http://127.0.0.1:33439"
+  ],
+  "cases": [
+    {
+      "case": "genuine_signed",
+      "pdf_sha256": "5ff630b9a436b620f99382a22ffcd07f2e83dea445bfa9ef19d3681d05ce1e04",
+      "download_pdf_sha256": "0f36ef5a94cb061ed84d796e85ab46503515fb9b542fcccc06dd1318bf2eaae8"
+    },
+    {
+      "case": "tampered",
+      "pdf_sha256": "cd5a0709335c9f03dd032a1a11e97c78512725c37df9fc610f375492cc2c3711",
+      "download_pdf_sha256": "cbf7c3b9cca27b6e6522c8cf7ed0c56054f5557c9fb3478f260f7a5f9c590387"
+    },
+    {
+      "case": "shadow_modified",
+      "pdf_sha256": "273d38921f72b1cfdcae009ac83bbd8d9246c589fe6e0f8593e22a7d01ab8daa",
+      "download_pdf_sha256": "09e0cf1a15fc53d82b12951a8021ce188ac6584da392f13912124109a9b13bb5"
+    },
+    {
+      "case": "visual_only",
+      "pdf_sha256": "23ded928d6fa6a70afe162b308f54b5722884460d30bdb957cf59055b6318013",
+      "download_pdf_sha256": "a42b1bd8b5b6631cd13aba80a76b79e311d4e675946bc8d5ab3ea48c817e4f0e"
+    },
+    {
+      "case": "unsigned",
+      "pdf_sha256": "85a0c3a1c7439ebf5699864ffb755b0f738626553c4ff076f0f3eecb43e4779b",
+      "download_pdf_sha256": "fce74982268bea9828bb28596d42b9ecfafc529179a458cd36209caf5dcca685"
+    }
+  ]
+}
