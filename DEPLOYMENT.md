@@ -1,5 +1,27 @@
 # Private cloud deployment preparation — not deployed
 
+## Phase 6 image configuration
+
+All service Dockerfiles now use the digest-pinned maintained Ubuntu 26.04 runtime. The worker has
+native Python 3.14, unchanged forensic library pins and Poppler; it contains no pip/compiler/bootstrap
+tools. UI requirements are installed in a separate stage and copied into the worker-derived runtime.
+The controller still has no Docker CLI/socket, and the synthetic viewer still has no forensic parser,
+upload input or execution authority. Existing non-root/read-only/network/cgroup/tmpfs restrictions remain.
+
+The exact Codex final worker `sha256:99179020dfe24c921cbd75603df7cfae4afa490ae621c9d2cd54967cc3a84a28`
+passed the full image gate (0 CRITICAL/HIGH) and installed dependency audit (0 advisories).
+`scripts/scan_image.sh` performs unfiltered full-image scanning; `scripts/image_inventory.py` audits
+without restoring pip; `scripts/verify_image_scan.py` requires exact image identity and rejects even
+lower-severity reappearance of original CVEs. CI strictly enforces findings and scans actual built
+worker/UI/controller/demo images. Digest pinning plus recorded inventories identify tested artifacts;
+APT security repositories can change between rebuilds, so new builds always require fresh scans/tests.
+
+No production route was enabled. Clearing the image gate does not prove private TLS, external
+authentication/authorization, dedicated/rootless executor hosting, durable audit storage or operational
+isolation. Those gates remain mandatory and false by default. Do not deploy from a candidate scan.
+
+## Historical deployment notes
+
 ## Separate synthetic-only build candidate
 
 `deploy/Dockerfile.demo` packages only the Streamlit viewer and verified synthetic catalogue.

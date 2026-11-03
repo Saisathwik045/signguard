@@ -1,11 +1,17 @@
 # syntax=docker/dockerfile:1
 ARG WORKER_IMAGE=signguard-worker:phase4
-FROM ${WORKER_IMAGE}
+FROM ${WORKER_IMAGE} AS ui-build
 USER 0
 COPY --chown=65532:65532 app.py ./app.py
 RUN --mount=type=secret,id=proxy_ca \
+    set -e; apt-get update; apt-get install -y --no-install-recommends python3-venv; \
+    python3 -m venv --upgrade /opt/venv; \
     if [ -f /run/secrets/proxy_ca ]; then export PIP_CERT=/run/secrets/proxy_ca; fi; \
-    pip install --no-cache-dir -c requirements-cloud.txt '.[ui]'
+    python -m pip install --no-cache-dir 'pip>=26.2,<27'; \
+    python -m pip install --no-cache-dir -c requirements-cloud.txt '.[ui]'; \
+    python -m pip uninstall -y pip
+FROM ${WORKER_IMAGE}
+COPY --from=ui-build /opt /opt
 USER 65532:65532
 ENV SIGNGUARD_REQUIRE_AUTH=true SIGNGUARD_BACKEND=broker
 HEALTHCHECK --interval=30s --timeout=3s CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8501/_stcore/health',timeout=2)"

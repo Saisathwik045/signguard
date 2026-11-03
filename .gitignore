@@ -233,3 +233,4 @@ browser-artifacts/
 demo-artifacts/
 evaluation/cloud-recovery/trivy-cache/
 evaluation/cloud-recovery/*.log
+evaluation/phase6/*.log

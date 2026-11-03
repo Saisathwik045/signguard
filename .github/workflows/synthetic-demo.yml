@@ -37,11 +37,12 @@ jobs:
           mkdir -p demo-artifacts/os-cache
           for target in signguard-worker:phase4 signguard-demo:synthetic; do
             report="$(echo "$target" | tr ':/' '--')"
-            docker run --rm --user "$(id -u):$(id -g)" --group-add "$(stat -c %g /var/run/docker.sock)" --cap-drop=ALL --security-opt=no-new-privileges --memory=3g -v /var/run/docker.sock:/var/run/docker.sock:ro -v "$PWD/demo-artifacts:/out" aquasec/trivy@sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c image --cache-dir /out/os-cache --db-repository ghcr.io/aquasecurity/trivy-db:2 --scanners vuln --pkg-types os --format json --output "/out/os-$report.json" "$target"
+            docker run --rm --user "$(id -u):$(id -g)" --group-add "$(stat -c %g /var/run/docker.sock)" --cap-drop=ALL --security-opt=no-new-privileges --memory=6g -v /var/run/docker.sock:/var/run/docker.sock:ro -v "$PWD/demo-artifacts:/out" aquasec/trivy@sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c image --cache-dir /out/os-cache --db-repository ghcr.io/aquasecurity/trivy-db:2 --scanners vuln --list-all-pkgs --ignorefile /dev/null --format json --output "/out/os-$report.json" "$target"
           done
-          docker run --rm --network=none --read-only --cap-drop=ALL --entrypoint=python signguard-worker:phase4 -m pip freeze --all | sed '/^signguard[ =@]/Id' > demo-artifacts/installed-worker.txt
-          pip-audit --no-deps --disable-pip -r demo-artifacts/installed-worker.txt --format json --output demo-artifacts/dependency-audit.json
-          python scripts/check_os_release.py demo-artifacts/os-signguard-worker-phase4.json demo-artifacts/os-signguard-demo-synthetic.json --output demo-artifacts/release-admission.json
+          python scripts/image_inventory.py signguard-worker:phase4 demo-artifacts/worker
+          pip-audit --no-deps --disable-pip -r demo-artifacts/worker/installed-python.txt --format json --output demo-artifacts/dependency-audit.json
+          python scripts/verify_image_scan.py demo-artifacts/os-signguard-worker-phase4.json demo-artifacts/worker/inventory.json --baseline evaluation/phase6/baseline-full-scan.json --output demo-artifacts/worker-admission.json
+          python scripts/check_os_release.py demo-artifacts/os-signguard-worker-phase4.json demo-artifacts/os-signguard-demo-synthetic.json --output demo-artifacts/release-admission.json --enforce
       - uses: actions/upload-artifact@v4
         if: always()
         with:

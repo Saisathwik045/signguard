@@ -1,5 +1,32 @@
 # Project status — Codex Cloud integration and synthetic demo
 
+## Phase 6 — final container remediation
+
+Started from merged PR #5/main `d17addf`, on `feature/phase6-container-remediation`; no earlier phase
+was restarted. Rebuilt and fully scanned the original final Dockerfile, preserving complete evidence.
+Replaced the unfixed Debian runtime with digest-pinned Ubuntu 26.04 LTS/native Python 3.14 and
+retained the pinned forensic dependencies. Added Poppler to the actual worker and removed pip,
+venv bootstrap packages and unnecessary build tooling. UI dependency installation now uses a separate
+build stage; controller/demo images use the maintained base as well. The forensic detector sources
+and prior benchmark measurements remain unchanged.
+
+Actual Codex final image `99179020dfe2`: fresh full scan **0 CRITICAL/0 HIGH**, with 56 MEDIUM/11 LOW
+still reported. The 20 installed Python distributions have 0 known vulnerabilities. The full scan ID
+matches the inventory image ID and no original high/critical CVE remains, including at lower severity.
+See `evaluation/phase6/final/` and the complete baseline/CVE disposition in `evaluation/phase6/`.
+
+Codex full regression with Docker enabled: **91 passed, 0 failed, 12 browser cases reserved**.
+The five synthetic reports were regenerated using this exact final image; the real cloud-process
+Chromium scenario passed all selections, evidence decoding and JSON/PDF downloads. Container-hosted
+browser tests and full scans of all resulting service images are enforced separately by Actions.
+The CI matrix preserves Python 3.11/3.12 and adds 3.14; security admission now fails on findings,
+not merely records them. No filters/waivers were added. No external URL or ingress exists.
+
+Production remains **BLOCKED** by private hosting/TLS, production identity/tenant authorization,
+restricted executor authority, external audit anchoring/retention and deployment operations.
+
+## Historical Phase 5 record
+
 ## Current recovery — 2026-11-02 UTC
 
 Integration branch `feature/cloud-synthetic-demo` starts at merged main `1afd853` (PR #4 merged).

@@ -25,9 +25,9 @@ jobs:
         run: |
           mkdir -p browser-artifacts/os-cache
           for target in worker ui controller; do
-            docker run --rm --user "$(id -u):$(id -g)" --group-add "$(stat -c %g /var/run/docker.sock)" --cap-drop=ALL --security-opt=no-new-privileges --memory=3g -v /var/run/docker.sock:/var/run/docker.sock:ro -v "$PWD/browser-artifacts:/out" aquasec/trivy@sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c image --cache-dir /out/os-cache --db-repository ghcr.io/aquasecurity/trivy-db:2 --scanners vuln --pkg-types os --format json --output "/out/os-$target.json" "signguard-$target:phase4"
+            docker run --rm --user "$(id -u):$(id -g)" --group-add "$(stat -c %g /var/run/docker.sock)" --cap-drop=ALL --security-opt=no-new-privileges --memory=6g -v /var/run/docker.sock:/var/run/docker.sock:ro -v "$PWD/browser-artifacts:/out" aquasec/trivy@sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c image --cache-dir /out/os-cache --db-repository ghcr.io/aquasecurity/trivy-db:2 --scanners vuln --list-all-pkgs --ignorefile /dev/null --format json --output "/out/os-$target.json" "signguard-$target:phase4"
           done
-          python scripts/check_os_release.py browser-artifacts/os-worker.json browser-artifacts/os-ui.json browser-artifacts/os-controller.json --output browser-artifacts/release-admission.json
+          python scripts/check_os_release.py browser-artifacts/os-worker.json browser-artifacts/os-ui.json browser-artifacts/os-controller.json --output browser-artifacts/release-admission.json --enforce
           rm -rf browser-artifacts/os-cache
       - uses: actions/upload-artifact@v4
         if: always()
