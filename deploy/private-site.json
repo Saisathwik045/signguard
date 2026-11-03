@@ -6,9 +6,9 @@
   "allowed_owner_count": 1,
   "allowed_group_count": 0,
   "external_visitors": 0,
-  "site_source_commit": "41d5fd4140a1b5aab8612e8069609a5ce93c1097",
-  "deployment_id": "appgdep_6ae9a2828efc8191a261162ffae70040",
-  "saved_version_id": "appgprj_6ae99f65f3bc8191adee5065f74d7edf~appgver_08da667abe748191916581e0251f0aa4",
+  "site_source_commit": "4c56398c75506e592237bb4a8fe358c8b72372e6",
+  "deployment_id": "appgdep_6ae9a9c7ee548191b6519405eb6b0566",
+  "saved_version_id": "appgprj_6ae99f65f3bc8191adee5065f74d7edf~appgver_b98f792f1b548191bc38bbabe41d587e",
   "native_publication_status": "succeeded",
   "hosted_authorized_browser_status": "blocked_by_codex_network_policy",
   "production_upload_enabled": false,
@@ -19,5 +19,7 @@
     "failed": 0,
     "status": 403,
     "actions_run": 41608991009
-  }
+  },
+  "site_version": 2,
+  "report_download_integrity": "exact JSON and PDF bytes verified in cloud artifact browser"
 }

@@ -30,8 +30,9 @@ CI builds/checksums/packages the artifact and captures browser screenshots, whil
 container and security workflows remain active. Publication is a native Sites operation using a fresh
 short-lived source credential and an owner-only access check; unattended GitHub-to-Sites publication
 is not falsely claimed without a supported identity binding. Saved version/source/deployment IDs in
-`deploy/private-site.json` provide a known-good rollback target for future updates. The initial
-publication has no older version to roll back to; rollback has not been exercised.
+`deploy/private-site.json` identify the saved artifact/version for future rollback after hosted QA.
+Version 2 fixes JSON download serialization so downloaded bytes match the worker SHA-256; version 1
+is retained as historical, not the preferred integrity baseline. Rollback has not been exercised.
 
 The production upload app remains disabled externally, with its original private TLS, production
 identity/authorization, restricted executor, audit and operational release gates intact.

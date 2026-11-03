@@ -31,8 +31,22 @@ cases, uploads/backend false. Authorized health and hosted browser tests remain 
 until the exact hostname is allowed by its outbound policy. No insecure networking workaround is
 permitted. On a bad release, redeploy the prior known-good saved version through the native private
 deployment tool, preserve owner-only policy, and rerun health/anonymous/authorized browser probes.
-Version 1 is the first saved release and the rollback target for future updates; no earlier rollback
-or rollback drill is claimed. No production upload ingress is approved.
+Version 2 preserves exact worker JSON bytes on download, so its SHA-256 matches the displayed
+provenance. Version 1 remains historical but reserializes JSON and is not the preferred integrity
+baseline. After hosted QA, version 2 is the rollback baseline for future releases; no rollback drill
+or successful interactive login is claimed. No production upload ingress is approved.
+
+### Exact outbound-host change (authorized, not applied by this task)
+
+This executor exposes network-policy inspection, not mutation. The active enforced configuration
+still has no custom allowed hosts. In the browser, open Settings → Codex Cloud → Environments,
+choose signguard's … → Edit, retain restricted/public-internet-off mode and the existing package
+manager allowance, and add `signguard-private-synthetic.knitdeck.chatgpt.site` under Additional allowed
+domains. Save and republish once. New tasks use the updated environment; existing tasks keep their
+state. This is one policy update, not a project rebuild. See the
+[official guide](https://learn.chatgpt.com/docs/environments/cloud-environments#connect-to-services).
+Only HTTPS origins matching `deploy/private-site.json` are accepted by QA, with TLS verification on.
+Neither this grant nor service-auth QA is represented as a completed interactive owner SSO test.
 
 ## Phase 6 image configuration
 
