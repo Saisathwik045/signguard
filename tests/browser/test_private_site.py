@@ -77,7 +77,7 @@ def test_five_real_reports_and_downloads(site):
         for case_id in CASES:
             page.locator(f'#cases button[data-id="{case_id}"]').click()
             expect(page.locator("#shown")).to_contain_text("Evidence verified")
-            expected, _ = load_case(case_id)
+            expected, provenance = load_case(case_id)
             expect(page.locator("#classification")).to_have_text(expected["structure"]["refined_classification"])
             expect(page.locator("#verdict")).to_have_text(expected["assessment"]["verdict"].replace("_", " ").title())
             # The UI changes classification/verdict before enabling the current report downloads.
@@ -90,7 +90,9 @@ def test_five_real_reports_and_downloads(site):
                 expect(page.get_by_alt_text("Signed revision snapshot, page 1")).to_be_visible()
             with page.expect_download() as value:
                 page.get_by_role("button", name="Download JSON", exact=True).click()
-            report = json.loads(Path(value.value.path()).read_text())
+            raw_report = Path(value.value.path()).read_bytes()
+            assert hashlib.sha256(raw_report).hexdigest() == provenance["report_sha256"]
+            report = json.loads(raw_report)
             assert report["sha256"] == expected["sha256"]
             with page.expect_download() as value:
                 page.get_by_role("button", name="Download PDF", exact=True).click()
