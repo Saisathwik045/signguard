@@ -1,0 +1,25 @@
+[Unit]
+Description=SignGuard rootless restricted PDF executor
+After=user@1001.service
+Requires=user@1001.service
+[Service]
+User=signguard-executor
+Group=signguard-control
+WorkingDirectory=/opt/signguard/current
+Environment=SIGNGUARD_EXECUTOR_SOCKET=/run/signguard/executor.sock
+Environment=SIGNGUARD_DOCKER_SOCKET=unix:///run/user/1001/docker.sock
+EnvironmentFile=/etc/signguard/executor.env
+RuntimeDirectory=signguard
+RuntimeDirectoryMode=0750
+ExecStart=/opt/signguard/executor-venv/bin/python -m signguard.executor
+UMask=0007
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=read-only
+PrivateTmp=true
+ReadWritePaths=/run/signguard /run/user/1001
+MemoryMax=256M
+TasksMax=64
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target

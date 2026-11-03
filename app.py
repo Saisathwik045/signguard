@@ -82,6 +82,10 @@ if os.environ.get("SIGNGUARD_REQUIRE_AUTH") == "true":
             st.logout()
         st.rerun()
 
+if os.environ.get("SIGNGUARD_LIVE_UPLOADS_ENABLED", "true") != "true":
+    st.info("Private maintenance: live uploads are disabled pending verified release controls.")
+    st.stop()
+
 st.info("Visual matches cannot establish who signed or whether reuse was authorized. "
         "Certificate verification is offline with no UI trust roots configured.")
 st.subheader("Inspect a PDF")

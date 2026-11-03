@@ -1,0 +1,5 @@
+[Unit]
+Description=Renew SignGuard short-lived IP TLS certificate
+[Service]
+Type=oneshot
+ExecStart=/opt/signguard/certbot/bin/certbot renew --quiet --deploy-hook "/usr/bin/docker compose -f /opt/signguard/current/deploy/aws/rendered/compose.yaml restart caddy"

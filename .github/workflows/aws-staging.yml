@@ -1,0 +1,136 @@
+name: AWS staging preparation
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      operation:
+        type: choice
+        options: [plan, apply]
+        default: plan
+      spending_approved:
+        description: Explicit owner approval of approximately USD 40/month, variable usage extra
+        type: boolean
+        default: false
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -c requirements-cloud.txt -e '.[dev]' cfn-lint
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: '1.16.6'
+          terraform_wrapper: false
+      - run: terraform -chdir=deploy/aws fmt -recursive -check
+      - run: terraform -chdir=deploy/aws init -backend=false
+      - run: terraform -chdir=deploy/aws validate
+      - run: terraform -chdir=deploy/aws test
+      - run: cfn-lint deploy/aws/bootstrap.cfn.json
+      - run: bash -n deploy/aws/host/*.sh
+      - run: pytest -q tests/test_aws_deployment.py --junitxml=phase9-unit-junit.xml
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: aws-preparation-verification
+          path: phase9-unit-junit.xml
+          retention-days: 7
+  edge-images:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Scan actual pinned proxy images without exclusions
+        run: |
+          mkdir -p phase9-edge/os-cache
+          python - <<'PY' > /tmp/signguard-edge-images.txt
+          import json
+          d=json.load(open('deploy/aws/edge-images.json'))
+          for role in ['caddy','oauth']: print(role+' '+d[role])
+          PY
+          while read -r role image; do
+            docker pull "$image"
+            docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro -v "$PWD/phase9-edge:/out" aquasec/trivy@sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c image --cache-dir /out/os-cache --db-repository ghcr.io/aquasecurity/trivy-db:2 --scanners vuln --list-all-pkgs --ignorefile /dev/null --format json --output "/out/$role.json" "$image"
+          done < /tmp/signguard-edge-images.txt
+          python scripts/check_os_release.py phase9-edge/caddy.json phase9-edge/oauth.json --output phase9-edge/admission.json --enforce
+          rm -rf phase9-edge/os-cache
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: aws-edge-image-security
+          path: |
+            phase9-edge/
+            !phase9-edge/os-cache/**
+          retention-days: 7
+  authorized-infrastructure:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    needs: [validate, edge-images]
+    environment: aws-staging
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      id-token: write
+    env:
+      TF_VAR_account_id: ${{ vars.AWS_ACCOUNT_ID }}
+      TF_VAR_ami_id: ${{ vars.AWS_AMI_ID }}
+      TF_VAR_instance_profile: signguard-staging-runtime
+      TF_VAR_spending_authorized: ${{ inputs.spending_approved }}
+      TF_VAR_allow_private_ingress: 'false'
+      AWS_REGION: us-east-1
+      TF_IN_AUTOMATION: 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Refuse absent account, unapproved apply or an unreviewed AMI
+        env:
+          OPERATION: ${{ inputs.operation }}
+          APPROVED: ${{ inputs.spending_approved }}
+        run: |
+          python - <<'PY'
+          import os,re
+          assert re.fullmatch('[0-9]{12}',os.environ['TF_VAR_account_id'])
+          assert re.fullmatch('ami-[0-9a-f]+',os.environ['TF_VAR_ami_id'])
+          assert os.environ['OPERATION'] != 'apply' or os.environ['APPROVED']=='true'
+          PY
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_DEPLOYMENT_ROLE_ARN }}
+          aws-region: us-east-1
+          allowed-account-ids: ${{ vars.AWS_ACCOUNT_ID }}
+      - name: Verify pinned AMI publisher and architecture
+        run: |
+          aws ec2 describe-images --image-ids "$TF_VAR_ami_id" --output json > /tmp/ami.json
+          python - <<'PY'
+          import json
+          image=json.load(open('/tmp/ami.json'))['Images'][0]
+          assert image['OwnerId']=='099720109477' and image['Architecture']=='x86_64'
+          assert image['State']=='available' and 'ubuntu' in image['Name'].lower() and '24.04' in image['Name']
+          PY
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: '1.16.6'
+          terraform_wrapper: false
+      - run: terraform -chdir=deploy/aws init -backend-config="bucket=signguard-staging-state-$TF_VAR_account_id" -backend-config="key=terraform/staging.tfstate" -backend-config=region=us-east-1 -backend-config=encrypt=true -backend-config=use_lockfile=true
+      - run: terraform -chdir=deploy/aws plan -out=reviewed.tfplan
+      - name: Apply only after protected environment review and explicit billing approval
+        if: inputs.operation == 'apply' && inputs.spending_approved
+        run: terraform -chdir=deploy/aws apply reviewed.tfplan
+      - name: Record prospective outputs without claiming deployment
+        if: inputs.operation == 'apply' && inputs.spending_approved
+        run: terraform -chdir=deploy/aws output -json > prospective-infrastructure.json
+      - uses: actions/upload-artifact@v4
+        if: success() && inputs.operation == 'apply'
+        with:
+          name: prospective-aws-infrastructure
+          path: prospective-infrastructure.json
+          retention-days: 7
+# No automatic apply, no public upload ingress, no credentials in source or Terraform values.
