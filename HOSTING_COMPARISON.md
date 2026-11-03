@@ -1,3 +1,25 @@
+# Phase 9 full-architecture hosting comparison — 3 November 2026
+
+No new provider account, paid resource, domain or upload endpoint was enabled. Prices are public list estimates, not an account quote or spend cap.
+
+| Provider/plan | Published terms and expected cost | Complete architecture fit |
+| --- | --- | --- |
+| **AWS EC2 t3a.medium, us-east-1 — recommended** | 2 vCPU/4 GiB at $0.0376/hour: $27.45/730 hours; 100 GiB total gp3 $8; one public IPv4 $3.65; one secret ~$0.40; small ECR/S3 usage. **About $40/month plus variable requests/storage/transfer/taxes**. CPU credits use standard mode. | Normal x86 Linux VM supports a distinct rootless Docker daemon, cgroup v2 limits and fixed restricted RPC. Instance roles, short-lived GitHub OIDC, SSM without SSH, private encrypted audit storage and Secrets Manager avoid manual credential distribution. Actual host qualification still required. |
+| AWS Lightsail 4 GiB | $24/month Linux bundle, 80 GiB disk, public IPv4 and 4 TB transfer allowance; storage/other services extra. | VM can run Docker, but the prepared instance-role/SSM/OIDC deployment fits EC2 more directly. Not selected. |
+| DigitalOcean Basic 4 GiB/2 vCPU | $24/month, 80 GiB SSD; transfer/storage conditions apply. | Technically suitable Linux VM; would need separately prepared identity, secrets, deployment and durable audit integration. Not selected. |
+| Oracle Always Free Ampere A1 | Current resource page lists 1,500 OCPU-hours/9,000 GiB-hours monthly (about 2 OCPU/12 GiB continuously); other Oracle documentation still lists older larger allowances. Account entitlement, capacity and idle reclamation apply. | An ARM VM may support isolation, but current images/native dependencies are qualified on x86, not A1. No account/capacity/ARM proof exists. **No verified free option for this complete tested stack**; this is not a claim free hosting is impossible in principle. |
+| Cloud Run free request allowance | 180,000 vCPU-seconds, 360,000 GiB-seconds and two million requests/month; excess bills. | Frontend possible; the required disposable Docker execution needs a separate backend. Free allowance does not provide this architecture by itself. |
+| Render Free | 750 instance-hours/workspace/month; idle sleep after 15 minutes. | No established separate privileged/rootless daemon host or durable host state for this design. |
+| Existing connected Sites | Existing owner-private HTTPS static synthetic viewer. Account prices/quotas not exposed. | Preserved presentation only; cannot execute the Python/worker stack. |
+
+Published sources checked: [EC2 T3/T3a](https://aws.amazon.com/ec2/instance-types/t3/), [EBS](https://aws.amazon.com/ebs/pricing/), [IPv4](https://aws.amazon.com/vpc/pricing/), [Secrets Manager](https://aws.amazon.com/secrets-manager/pricing/), [Systems Manager](https://aws.amazon.com/systems-manager/pricing/), [Lightsail bundles](https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-bundles.html), [DigitalOcean](https://www.digitalocean.com/pricing/droplets), [Oracle resource allowances](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm), [Oracle conditions](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier.htm), [Cloud Run](https://cloud.google.com/run/pricing), [Render](https://render.com/docs/free).
+
+AWS is selected for the smallest maintainable **prepared** deployment, not the lowest headline VM price. No ALB, NAT gateway, Kubernetes or managed database is required. HTTPS can use [Let's Encrypt short-lived IP certificates](https://letsencrypt.org/2026/03/11/shorter-certs-certbot) without buying a domain. Actual issuance and renewal remain deployment gates. See [AWS runbook](deploy/aws/README.md).
+
+---
+
+Historical Phase 7 decision follows; its statement that production hosting is unselected is superseded by the Phase 9 recommendation above.
+
 # Phase 7 hosting decision — 3 November 2026
 
 Prices/limits below were checked against official sources on this date. They are not guarantees

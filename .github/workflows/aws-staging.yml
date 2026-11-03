@@ -91,7 +91,8 @@ jobs:
           import json
           image=json.load(open('/tmp/ami.json'))['Images'][0]
           assert image['OwnerId']=='099720109477' and image['Architecture']=='x86_64'
-          assert image['State']=='available' and 'ubuntu' in image['Name'].lower() and '24.04' in image['Name']
+          assert image['State']=='available' and image['Name'].startswith('ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-amd64-server-')
+          assert not image.get('ProductCodes'), 'Marketplace/Pro AMIs require separate cost review'
           PY
       - uses: hashicorp/setup-terraform@v3
         with:

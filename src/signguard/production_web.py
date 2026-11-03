@@ -158,7 +158,7 @@ def main():
         '--server.maxUploadSize=25','--server.maxMessageSize=50','--server.enableXsrfProtection=true',
         '--server.xsrfCookieSameSite=lax','--browser.gatherUsageStats=false','--browser.serverAddress='+urlsplit(origin()).hostname,'--browser.serverPort=443'])
     try:
-        uvicorn.run(application(),host='0.0.0.0',port=8501,ssl_certfile=str(certificate),ssl_keyfile=str(private_key),
+        uvicorn.run(application(),host=os.environ.get("SIGNGUARD_WEB_HOST", "127.0.0.1"),port=8501,ssl_certfile=str(certificate),ssl_keyfile=str(private_key),
                     ssl_ciphers="ECDHE+AESGCM:ECDHE+CHACHA20",
                     access_log=False,proxy_headers=False,limit_concurrency=32,timeout_keep_alive=5)
     finally:

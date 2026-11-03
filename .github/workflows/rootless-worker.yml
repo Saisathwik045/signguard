@@ -30,7 +30,7 @@ jobs:
           dockerd-rootless-setuptool.sh install --force
           echo "SIGNGUARD_DOCKER_SOCKET=unix://$XDG_RUNTIME_DIR/docker.sock" >> "$GITHUB_ENV"
       - name: Load the exact built worker into the separate daemon
-        run: docker save signguard-worker:rootless-qualification | docker --host="$SIGNGUARD_DOCKER_SOCKET" load
+        run: docker --host=unix:///var/run/docker.sock save signguard-worker:rootless-qualification | docker --host="$SIGNGUARD_DOCKER_SOCKET" load
       - name: Probe real rootless cgroups, UID, read-only root, networking and credential removal
         run: python scripts/check_rootless_worker.py signguard-worker:rootless-qualification rootless-evidence.json
       - uses: actions/upload-artifact@v4

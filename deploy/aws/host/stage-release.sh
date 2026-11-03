@@ -43,7 +43,8 @@ test -f /etc/letsencrypt/live/signguard/fullchain.pem
 openssl x509 -checkend 86400 -noout -in /etc/letsencrypt/live/signguard/fullchain.pem
 ln -sfn "$release_directory" /opt/signguard/current
 systemctl daemon-reload
-systemctl enable --now signguard-executor
+systemctl enable signguard-executor
+systemctl restart signguard-executor
 "$release_directory/executor-venv"/bin/python scripts/aws_host_preflight.py /var/lib/signguard/host-preflight.json
 runuser -u signguard-executor -- env SIGNGUARD_DOCKER_SOCKET=unix:///run/user/1001/docker.sock "$release_directory/executor-venv"/bin/python scripts/check_rootless_worker.py "$worker_ref" /run/signguard/rootless-preflight.json
 docker compose -f deploy/aws/rendered/compose.yaml config --quiet

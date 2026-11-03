@@ -30,17 +30,18 @@ def test_real_tls_gateway_denies_anonymous_and_spoofed_identity(tmp_path):
         openssl('x509','-req','-in',str(root/'server.csr'),'-CA',str(root/'ca.pem'),'-CAkey',str(root/'ca.key'),
                 '-CAcreateserial','-out',str(tls/'fullchain.pem'),'-days','1','-extfile',str(root/'extensions'))
         # Bind mounts deliberately grant only the actual container UID access to test material.
-        for p in [tls,auth,*tls.iterdir()]:
-            subprocess.run(['sudo','chown','65532:65532',str(p)],check=True)
+        material=[tls,auth,*tls.iterdir()]
         tls.chmod(0o750);auth.chmod(0o700)
         for p in tls.iterdir():p.chmod(0o640)
+        for p in material:
+            subprocess.run(['sudo','chown','65532:65532',str(p)],check=True)
         with socket.socket() as listener:
             listener.bind(('127.0.0.1',0));port=listener.getsockname()[1]
         command=[*docker,'run','-d','--name',name,'--read-only','--cap-drop=ALL','--security-opt=no-new-privileges',
             '--memory=1g','--pids-limit=64','--tmpfs=/tmp:rw,noexec,nosuid,size=64m',
             '--publish',f'127.0.0.1:{port}:8501','--mount',f'type=bind,src={tls},dst=/etc/signguard/tls,readonly',
             '--mount',f'type=bind,src={auth},dst=/var/lib/signguard/auth',
-            '--env=SIGNGUARD_PUBLIC_ORIGIN=https://8.8.8.8','--env=SIGNGUARD_REQUIRE_AUTH=true',
+            '--env=SIGNGUARD_WEB_HOST=0.0.0.0','--env=SIGNGUARD_PUBLIC_ORIGIN=https://8.8.8.8','--env=SIGNGUARD_REQUIRE_AUTH=true',
             '--env=SIGNGUARD_BACKEND=broker','--env=SIGNGUARD_GITHUB_OWNER_ID=12345',
             '--env=SIGNGUARD_SESSION_DATABASE=/var/lib/signguard/auth/session.sqlite3',
             '--env=SIGNGUARD_GATEWAY_TOKEN=synthetic-cloud-only-not-a-real-secret-12345',

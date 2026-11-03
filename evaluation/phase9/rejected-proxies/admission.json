@@ -1,0 +1,17 @@
+{
+  "os_gate_passed": false,
+  "blocking_findings": 17,
+  "severity_counts": {
+    "CRITICAL": 1,
+    "HIGH": 16,
+    "MEDIUM": 33,
+    "LOW": 46,
+    "UNKNOWN": 7
+  },
+  "external_ingress_enabled": false,
+  "reports": [
+    "caddy.json",
+    "oauth.json"
+  ],
+  "note": "Functional CI success is not release approval; complete private-route/auth/TLS evidence is also mandatory"
+}

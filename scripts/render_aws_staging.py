@@ -37,6 +37,7 @@ def render(release, target):
                    "/var/lib/signguard/audit/auth:/var/lib/signguard/auth"],
                "healthcheck": {"test": ["CMD", "python", "-c", "import urllib.request;urllib.request.urlopen('http://127.0.0.1:8502/_stcore/health',timeout=2)"], "interval":"30s", "timeout":"3s"},
                "environment": {
+                   "SIGNGUARD_WEB_HOST": "0.0.0.0",
                    "SIGNGUARD_PUBLIC_ORIGIN": "https://"+str(address),
                    "SIGNGUARD_SESSION_DATABASE": "/var/lib/signguard/auth/sessions.sqlite3",
                    "SIGNGUARD_GITHUB_OWNER_ID": "220234042",
