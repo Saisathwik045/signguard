@@ -1,5 +1,49 @@
 # Security model and verified controls
 
+## Current Phase 6 image assessment — 3 November 2026
+
+The fresh rebuilt baseline (Debian 12.15, image `3b48b51bce27`) still had 2 CRITICAL/36 HIGH OS
+package records across 13 CVEs, with no Debian fixes listed. The full scan also identified setuptools
+70.3.0 through pip's embedded build SBOM; it was absent from the actual installed distribution list.
+Both the complete original scan and fresh installed-dependency audit are retained, without deletion
+or alteration, in `evaluation/phase6/`. [CVE_ANALYSIS.md](evaluation/phase6/CVE_ANALYSIS.md) and its JSON
+record each CVE, severity, affected versions, available fix, final package replacement/absence,
+references, CVSS and qualified exploitability context. Runtime reachability was not independently
+proved and was never used to waive a finding.
+
+The selected runtime is official Ubuntu 26.04 LTS, pinned to
+`sha256:6a06111c3b0a8600feadb270aec771dc239bf407b25625f93f44ab00e11f4d3c`, with vendor-maintained Python
+3.14.4, Poppler and native libraries. Existing forensic Python versions are preserved. Chainguard
+registry access was denied by cloud policy; Alpine lacks compatible PyMuPDF/OpenCV musl wheels;
+Debian 12 and the previously evaluated Debian 13 retain known findings. Ubuntu was selected only
+after scanning the completed forensic runtime and exercising its real imports/tools, not from a base scan.
+Source-package backports/affectedness differ by vendor: numeric versions alone are not patch proof.
+
+Exact final image: `sha256:99179020dfe24c921cbd75603df7cfae4afa490ae621c9d2cd54967cc3a84a28`.
+Trivy 0.76.1, immutable scanner digest recorded in `scripts/scan_image.sh`, used DB v2 updated
+2026-11-03 07:14 UTC. Fresh full scan: **0 CRITICAL, 0 HIGH, 56 MEDIUM, 11 LOW**; 171 OS packages
+and language packages were analyzed. Installed Python audit: **20 distributions, 0 advisories**.
+The image ID is matched to the scan, and all original high/critical CVEs must disappear entirely,
+even if another distribution assigns them a lower severity. Complete evidence is in
+`evaluation/phase6/final/`; candidate evidence is explicitly separate.
+
+Pip's executable/module/vendor tree was genuinely uninstalled after installation in the same image
+layer, resolving its unnecessary build-SBOM finding and reducing runtime tooling. Venv bootstrap
+packages were purged; no compiler/make/pip remains. Installed-package metadata and all retained SBOMs
+remain intact. Scanning covers OS and language packages with no severity/unfixed filtering or ignore
+entries. CI now fails when any high/critical finding remains. The UI uses a separate dependency-build
+stage so it does not require an installer in the final worker. Controller and synthetic viewer bases
+were updated as well; their actual full-image scans remain mandatory in CI.
+
+91 Codex regression/isolation tests passed; 12 browser cases run separately. Tests include genuine
+signatures, shadow/revision changes, image forensics, actual Poppler/MuPDF execution in the final
+network-isolated worker, cgroup/rlimit controls and cleanup. Native Python 3.14 joins the retained
+3.11/3.12 CI matrix. Medium/low findings and all hosting/identity/kernel/audit limitations remain.
+**Image admission is not deployment approval.** External ingress stays disabled until the independent
+private TLS, identity, authorization, restricted executor and audit gates are verified.
+
+## Historical security records (superseded image counts)
+
 SignGuard parses hostile PDFs with native libraries. Forensic accuracy and safe execution are
 separate properties. **No public deployment is approved by this work.**
 

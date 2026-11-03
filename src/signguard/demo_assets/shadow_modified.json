@@ -432,7 +432,7 @@
     "verdict": "review_required"
   },
   "execution_controls": {
-    "elapsed_seconds": 10.44731447399954,
+    "elapsed_seconds": 26.151240969000355,
     "filesystem_isolation": true,
     "isolation": "docker_disposable",
     "network_isolation": true
@@ -782,7 +782,7 @@
     }
   ],
   "worker_measurements": {
-    "analysis_seconds": 0.3984198829994057,
-    "process_peak_rss_mib": 148.23046875
+    "analysis_seconds": 0.3939039959986985,
+    "process_peak_rss_mib": 155.1953125
   }
 }

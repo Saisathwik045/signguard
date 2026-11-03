@@ -68,7 +68,7 @@
     "verdict": "tampering_detected"
   },
   "execution_controls": {
-    "elapsed_seconds": 7.428316788000302,
+    "elapsed_seconds": 30.320683280000594,
     "filesystem_isolation": true,
     "isolation": "docker_disposable",
     "network_isolation": true
@@ -203,7 +203,7 @@
     }
   ],
   "worker_measurements": {
-    "analysis_seconds": 0.3249939600000289,
-    "process_peak_rss_mib": 145.90234375
+    "analysis_seconds": 1.201549036999495,
+    "process_peak_rss_mib": 153.40234375
   }
 }

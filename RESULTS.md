@@ -1,5 +1,35 @@
 # Results — preserved forensic evaluation and cloud integration
 
+## Phase 6 fresh image verification — 3 November 2026
+
+| Measure | Fresh Debian baseline | Actual final Ubuntu worker |
+| --- | ---: | ---: |
+| OS CRITICAL | 2 | 0 |
+| OS HIGH | 36 | 0 |
+| Full-scan language HIGH | 1 (pip build-SBOM setuptools) | 0 |
+| OS MEDIUM / LOW | 117 / 105 | 56 / 11 |
+| Installed Python dependency advisories | 0 | 0 |
+
+Final image: `sha256:99179020dfe24c921cbd75603df7cfae4afa490ae621c9d2cd54967cc3a84a28`.
+Scanner: Trivy 0.76.1, DB v2 updated 2026-11-03 07:14 UTC. Full original/candidate/final scans,
+image identity, installed package inventory and per-CVE analysis are retained in `evaluation/phase6/`.
+No OS/language scope exclusions, severity downgrades, unfixed filters, SBOM editing or exceptions
+were used. Pip was removed as an actual runtime package, including its embedded vendor tree.
+The verifier rejects a scan of a different image or any original high/critical CVE still present.
+
+Final-image regression/isolation run: **91 passed, 0 failed, 12 explicit browser cases skipped**,
+one existing Starlette deprecation warning. This includes the actual isolated Poppler/MuPDF probe.
+The regenerated five-example synthetic browser scenario passed in 24.75 seconds, using cloud Chromium
+with actual evidence PNG decoding and report downloads. The viewer in this Codex run is a cloud
+process; Actions separately verifies container-hosted synthetic and authenticated upload browsers.
+Python 3.14 compatibility is added to the existing CI matrix. Detector code and prior benchmark
+results are unchanged; these are security/integration results, not a new accuracy evaluation.
+
+Image gate: **PASS**. Production deployment: **BLOCKED** pending private TLS/routing, identity and
+authorization, restricted executor authority, durable audit and operational readiness. No external URL exists.
+
+## Historical results
+
 ## Codex recovery verification — 2026-11-02 UTC
 
 No detector or benchmark-score tuning was performed. All four Codespaces commits through `2a89352`

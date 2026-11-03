@@ -8,6 +8,7 @@ from pathlib import Path
 parser = argparse.ArgumentParser()
 parser.add_argument("reports", nargs="+", type=Path)
 parser.add_argument("--output", type=Path, required=True)
+parser.add_argument("--enforce", action="store_true", help="Fail CI when image findings block admission")
 args = parser.parse_args()
 findings = []
 for path in args.reports:
@@ -26,3 +27,5 @@ if os.environ.get("GITHUB_STEP_SUMMARY"):
         stream.write(f"\nRelease admission: **{'OS GATE PASSED; other gates required' if blocked == 0 else 'BLOCKED'}**. "
                      f"High/critical findings: {blocked}. No ingress was enabled.\n")
 print(json.dumps(result, indent=2))
+if args.enforce and blocked:
+    raise SystemExit("Image vulnerability admission failed")

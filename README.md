@@ -1,7 +1,21 @@
 # SignGuard
 
+## Phase 6 container remediation
+
+The final worker now uses digest-pinned Ubuntu 26.04 LTS and maintained native Python 3.14,
+with the existing pinned pyHanko/PyMuPDF/OpenCV stack and Poppler. Available OS updates are applied;
+pip and venv bootstrap packages are removed from the runtime. No package databases or SBOMs are hidden.
+The exact Codex-built image `sha256:99179020dfe24c921cbd75603df7cfae4afa490ae621c9d2cd54967cc3a84a28`
+has **0 CRITICAL, 0 HIGH** findings in a fresh full OS/language scan, and **0** installed Python
+dependency vulnerabilities. Its 56 MEDIUM/11 LOW findings remain visible. Full evidence, the original
+scan and the disposition of every original high/critical CVE are in [evaluation/phase6](evaluation/phase6/).
+
+The image security gate passes; **production deployment remains BLOCKED** pending verified private
+TLS/routing, production identity/authorization, restricted executor hosting and durable audit controls.
+No external URL or public upload service was opened. Earlier vulnerability counts below are historical.
+
 Python and Streamlit tooling for offline PDF signature integrity and visual tampering triage.
-Phases 1–4 are preserved. Development and verification run in Codex Cloud and GitHub Actions;
+Phases 1–5 are preserved. Development and verification run in Codex Cloud and GitHub Actions;
 no local setup or Codespaces session is required. The upload application remains undeployed.
 
 ## Synthetic-only demonstration and recovered work
@@ -14,7 +28,7 @@ upload, URL or path input and no analysis backend. CI regenerates all reports an
 See [DEMO_GUIDE.md](DEMO_GUIDE.md) for cloud artifacts and the exact demonstration scope.
 
 All four published Codespaces commits through `2a89352` were recovered onto merged main `1afd853`.
-The fresh final worker scan still has **2 CRITICAL and 36 HIGH OS findings**; the installed Python
+The historical Phase 5 worker scan had **2 CRITICAL and 36 HIGH OS findings**, superseded by Phase 6 above; its installed Python
 dependency audit found no known vulnerabilities. This is not release approval. No external demo
 URL has been deployed or verified. [PROJECT_STATUS.md](PROJECT_STATUS.md) records recovery and
 [SECURITY.md](SECURITY.md) distinguishes the synthetic viewer from the production upload service.
