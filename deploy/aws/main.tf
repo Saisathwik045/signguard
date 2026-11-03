@@ -75,17 +75,18 @@ resource "aws_security_group" "staging" {
     cidr_blocks = ["0.0.0.0/0"]
     description = "Host bootstrap, registry, OAuth, SSM and CA egress; PDF worker network is none."
   }
-  dynamic "ingress" {
-    for_each = var.allow_private_ingress ? [80, 443] : []
-    content {
-      from_port   = ingress.value
-      to_port     = ingress.value
-      protocol    = "tcp"
-      cidr_blocks = ["0.0.0.0/0"]
-      description = "ACME-only HTTP and authenticated HTTPS; uploads disabled independently."
-    }
-  }
+  ingress = []
 }
+resource "aws_vpc_security_group_ingress_rule" "maintenance" {
+  count             = var.spending_authorized && var.allow_private_ingress ? 2 : 0
+  security_group_id = aws_security_group.staging[0].id
+  cidr_ipv4         = "0.0.0.0/0"
+  ip_protocol       = "tcp"
+  from_port         = [80, 443][count.index]
+  to_port           = [80, 443][count.index]
+  description       = "Reviewed ACME challenge or authenticated HTTPS maintenance; uploads remain disabled."
+}
+
 resource "aws_instance" "staging" {
   count                       = local.enabled
   ami                         = var.ami_id

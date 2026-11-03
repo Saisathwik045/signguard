@@ -25,7 +25,8 @@ def test_generated_maintenance_has_no_daemon_access_or_uploads(tmp_path):
     assert 'ports' not in services['controller']
     assert all('/var/run/docker.sock' not in str(value) and '/run/user/1001' not in str(value)
                for value in services.values())
-    assert services['ui']['ports']==['127.0.0.1:8501:8501']
+    assert 'ports' not in services['ui'] and 'ports' not in services['oauth']
+    assert services['ui']['networks']==['control']
     assert services['controller']['environment']['SIGNGUARD_QUOTA_DATABASE'].endswith('.sqlite3')
     assert 'cookie' not in (tmp_path/'release.json').read_text().lower()
     caddy=(tmp_path/'Caddyfile').read_text()
@@ -87,3 +88,9 @@ def test_bootstrap_oidc_has_environment_bound_subject_and_no_compute():
     assert condition['StringEquals']['token.actions.githubusercontent.com:sub']=='repo:Saisathwik045/signguard:environment:aws-staging'
     runtime=template['Resources']['RuntimeRole']['Properties']['Policies'][0]['PolicyDocument']['Statement']
     assert not any('s3:DeleteObject' in str(item) or 's3:BypassGovernanceRetention' in str(item) for item in runtime)
+
+
+def test_all_host_shell_scripts_parse():
+    import subprocess
+    for path in Path('deploy/aws/host').glob('*.sh'):
+        subprocess.run(['bash','-n',str(path)],check=True)

@@ -15,7 +15,7 @@ run "approved_still_has_no_ingress" {
   command = plan
   variables { spending_authorized = true }
   assert {
-    condition     = length(aws_security_group.staging[0].ingress) == 0
+    condition     = length(aws_vpc_security_group_ingress_rule.maintenance) == 0
     error_message = "Spending approval does not approve external ingress."
   }
   assert {

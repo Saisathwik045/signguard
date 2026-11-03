@@ -11,7 +11,7 @@ Environment=SIGNGUARD_DOCKER_SOCKET=unix:///run/user/1001/docker.sock
 EnvironmentFile=/etc/signguard/executor.env
 RuntimeDirectory=signguard
 RuntimeDirectoryMode=0750
-ExecStart=/opt/signguard/executor-venv/bin/python -m signguard.executor
+ExecStart=/opt/signguard/current/executor-venv/bin/python -m signguard.executor
 UMask=0007
 NoNewPrivileges=true
 ProtectSystem=strict

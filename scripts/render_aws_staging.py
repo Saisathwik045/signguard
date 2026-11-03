@@ -32,18 +32,18 @@ def render(release, target):
                 "security_opt": ["no-new-privileges:true"], "pids_limit": 64, "cpus": 1,
                 "tmpfs": ["/tmp:size=64m,noexec,nosuid,nodev"], "restart": "unless-stopped"}
     services = {
-        "ui": {**defaults, "image": release['images']['ui'], "mem_limit": "1g", "ports": ["127.0.0.1:8501:8501"],
+        "ui": {**defaults, "image": release['images']['ui'], "mem_limit": "1g", "networks": ["control"],
                "env_file": ["/etc/signguard/ui.env"], "environment": {
                    "SIGNGUARD_REQUIRE_AUTH": "true", "SIGNGUARD_AUTH_MODE": "gateway",
                    "SIGNGUARD_BACKEND": "broker", "SIGNGUARD_BROKER_URL": "http://controller:8080",
                    "SIGNGUARD_LIVE_UPLOADS_ENABLED": "false"}},
         "controller": {**defaults, "image": release['images']['controller'], "mem_limit": "512m",
-            "group_add": ["1500"], "env_file": ["/etc/signguard/controller.env"], "environment": {
+            "networks": ["control"], "group_add": ["1500"], "env_file": ["/etc/signguard/controller.env"], "environment": {
                 "SIGNGUARD_EXECUTOR_SOCKET": "/run/signguard/executor.sock",
                 "SIGNGUARD_AUDIT_PATH": "/var/lib/signguard/audit.jsonl",
                 "SIGNGUARD_QUOTA_DATABASE": "/var/lib/signguard/quota.sqlite3"}, "volumes": [
                     "/run/signguard:/run/signguard:ro", "/var/lib/signguard/audit:/var/lib/signguard"]},
-        "oauth": {**defaults, "image": edge['oauth'], "mem_limit": "256m", "ports": ["127.0.0.1:4180:4180"],
+        "oauth": {**defaults, "image": edge['oauth'], "mem_limit": "256m", "networks": ["edge", "control"],
                   "env_file": ["/etc/signguard/oauth.env"],
                   "command": ["--config=/etc/signguard/oauth.cfg"],
                   "volumes": ["/etc/signguard/oauth.cfg:/etc/signguard/oauth.cfg:ro"],
@@ -53,12 +53,12 @@ def render(release, target):
     services['oauth']['command'] += ["--upstream=http://ui:8501"]
     services['caddy'] = {"image": edge['caddy'], "read_only": True, "cap_drop": ["ALL"],
         "security_opt": ["no-new-privileges:true"], "mem_limit": "128m", "pids_limit": 32, "cpus": .5,
-        "ports": ["80:80", "443:443"], "env_file": ["/etc/signguard/edge.env"],
+        "networks": ["edge"], "ports": ["80:80", "443:443"], "env_file": ["/etc/signguard/edge.env"],
         "tmpfs": ["/tmp:size=16m,noexec,nosuid,nodev"], "volumes": [
             str(target.resolve()/"Caddyfile")+":/etc/caddy/Caddyfile:ro", "/etc/letsencrypt:/etc/letsencrypt:ro",
             "/var/lib/signguard-edge/acme:/srv/acme:ro", "/var/lib/signguard-edge/caddy:/data"],
         "restart": "unless-stopped"}
-    (target/'compose.yaml').write_text(yaml.safe_dump({"services": services}, sort_keys=False))
+    (target/'compose.yaml').write_text(yaml.safe_dump({"services": services, "networks": {"control": {"internal": True}, "edge": {}}}, sort_keys=False))
     ip = str(address)
     (target/'Caddyfile').write_text('''{
     admin off

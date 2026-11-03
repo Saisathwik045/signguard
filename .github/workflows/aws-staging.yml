@@ -6,7 +6,7 @@ on:
     inputs:
       operation:
         type: choice
-        options: [plan, apply]
+        options: [plan, apply, publish-stage]
         default: plan
       spending_approved:
         description: Explicit owner approval of approximately USD 40/month, variable usage extra
@@ -33,7 +33,7 @@ jobs:
       - run: terraform -chdir=deploy/aws validate
       - run: terraform -chdir=deploy/aws test
       - run: cfn-lint deploy/aws/bootstrap.cfn.json
-      - run: bash -n deploy/aws/host/*.sh
+      - run: for script in deploy/aws/host/*.sh; do bash -n "$script"; done
       - run: pytest -q tests/test_aws_deployment.py --junitxml=phase9-unit-junit.xml
       - uses: actions/upload-artifact@v4
         if: always()
@@ -59,8 +59,17 @@ jobs:
           PY
           while read -r role image; do
             docker pull "$image"
-            docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro -v "$PWD/phase9-edge:/out" aquasec/trivy@sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c image --cache-dir /out/os-cache --db-repository ghcr.io/aquasecurity/trivy-db:2 --scanners vuln --list-all-pkgs --ignorefile /dev/null --format json --output "/out/$role.json" "$image"
+            docker run --rm --user "$(id -u):$(id -g)" --group-add "$(stat -c %g /var/run/docker.sock)" -v /var/run/docker.sock:/var/run/docker.sock:ro -v "$PWD/phase9-edge:/out" aquasec/trivy@sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c image --cache-dir /out/os-cache --db-repository ghcr.io/aquasecurity/trivy-db:2 --scanners vuln --list-all-pkgs --ignorefile /dev/null --format json --output "/out/$role.json" "$image"
           done < /tmp/signguard-edge-images.txt
+          python - <<'PY_SUMMARY'
+          import json
+          for role in ['caddy','oauth']:
+            d=json.load(open('phase9-edge/'+role+'.json'))
+            for section in d.get('Results',[]):
+              for v in section.get('Vulnerabilities',[]):
+                if v['Severity'] in {'HIGH','CRITICAL'}:
+                  print(role,v['VulnerabilityID'],v['Severity'],v['PkgName'],v.get('InstalledVersion'),v.get('FixedVersion'))
+          PY_SUMMARY
           python scripts/check_os_release.py phase9-edge/caddy.json phase9-edge/oauth.json --output phase9-edge/admission.json --enforce
           rm -rf phase9-edge/os-cache
       - uses: actions/upload-artifact@v4
@@ -72,7 +81,7 @@ jobs:
             !phase9-edge/os-cache/**
           retention-days: 7
   authorized-infrastructure:
-    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && inputs.operation != 'publish-stage'
     needs: [validate, edge-images]
     environment: aws-staging
     runs-on: ubuntu-latest

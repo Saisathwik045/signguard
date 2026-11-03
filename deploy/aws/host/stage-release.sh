@@ -6,14 +6,14 @@ secret_arn="$2"
 region=us-east-1
 cd "$release_directory"
 # The source bundle MUST have been verified against the protected workflow's SHA-256 before this step.
-python3 -m venv /opt/signguard/executor-venv
-/opt/signguard/executor-venv/bin/pip install --no-deps . PyYAML
+python3 -m venv "$release_directory/executor-venv"
+"$release_directory/executor-venv"/bin/pip install --no-deps . 'PyYAML==6.0.3'
 # Abort until the persistent audit volume is mounted by a reviewed operator workflow.
 mountpoint -q /var/lib/signguard/audit
 install -d -m 0770 -o 65532 -g 65532 /var/lib/signguard/audit
 aws secretsmanager get-secret-value --region "$region" --secret-id "$secret_arn" --query SecretString --output text \
- | /opt/signguard/executor-venv/bin/python scripts/write_aws_runtime_secrets.py /etc/signguard
-/opt/signguard/executor-venv/bin/python scripts/render_aws_staging.py release.json deploy/aws/rendered
+ | "$release_directory/executor-venv"/bin/python scripts/write_aws_runtime_secrets.py /etc/signguard
+"$release_directory/executor-venv"/bin/python scripts/render_aws_staging.py release.json deploy/aws/rendered
 install -m 0644 deploy/aws/host/oauth.cfg /etc/signguard/oauth.cfg
 public_ip=$(python3 -c 'import json; print(json.load(open("release.json"))["public_ipv4"])')
 printf '\nOAUTH2_PROXY_REDIRECT_URL=https://%s/oauth2/callback\n' "$public_ip" >> /etc/signguard/oauth.env
@@ -40,13 +40,12 @@ rm -rf "$executor_tmp"
 printf 'SIGNGUARD_WORKER_IMAGE=%s\n' "$worker_ref" > /etc/signguard/executor.env
 chmod 0644 /etc/signguard/executor.env
 install -m 0644 deploy/aws/host/signguard-executor.service /etc/systemd/system/
+test -f /etc/letsencrypt/live/signguard/fullchain.pem
+openssl x509 -checkend 86400 -noout -in /etc/letsencrypt/live/signguard/fullchain.pem
 ln -sfn "$release_directory" /opt/signguard/current
 systemctl daemon-reload
 systemctl enable --now signguard-executor
-/opt/signguard/executor-venv/bin/python scripts/aws_host_preflight.py /var/lib/signguard/host-preflight.json
-# TLS must already be issued, with key material copied into the edge-only mount. No self-signed fallback.
-test -f /etc/letsencrypt/live/signguard/fullchain.pem
-openssl x509 -checkend 86400 -noout -in /etc/letsencrypt/live/signguard/fullchain.pem
+"$release_directory/executor-venv"/bin/python scripts/aws_host_preflight.py /var/lib/signguard/host-preflight.json
 docker compose -f deploy/aws/rendered/compose.yaml config --quiet
 docker compose -f deploy/aws/rendered/compose.yaml up -d
 # This deployment remains authenticated MAINTENANCE ONLY. It never enables uploads.
