@@ -1,5 +1,17 @@
 # Results — preserved forensic evaluation and cloud integration
 
+## Phase 9 infrastructure qualification — 3 November 2026
+
+Started from merged Phase 8 main `b668a70`; no benchmark tuning or synthetic Site changes. Added AWS plan-only infrastructure tests, single-owner GitHub OAuth2/PKCE/session tests, persistent quota tests, rootless-daemon qualification and a real container TLS denial test. No AWS account credentials or spending authorization were available; no apply, public IP, real OAuth session, public certificate, actual AWS worker or rollback was tested.
+
+A first local regression run had 131 passes, 21 explicit skips and one Poppler timeout: the managed filesystem did not permit its default Fontconfig cache. Verification is rerun with `XDG_CACHE_HOME` under `/tmp`, without relaxing PDF timeout/isolation. An earlier run before the added opt-in TLS test passed 132 tests with 20 explicit skips. With a writable temporary Fontconfig cache, the complete local suite passed **133 passed, 0 failed, 21 explicitly skipped** (Docker/browser jobs run separately), with two upstream deprecation warnings. New AWS/authentication contracts include 25 tests, including the hosted-smoke input-validation case. Actual rootless daemon qualification passed in [run 41690028592](https://github.com/Saisathwik045/signguard/actions/runs/41690028592); evidence is retained under `evaluation/phase9/rootless-evidence.json`. Final CI evidence is recorded separately; counts are not pooled across matrix repeats.
+
+Two additional proxy candidates were rejected after **unsuppressed scans found one critical and 16 high findings combined** (including an unpatched Go JOSE finding). Full raw evidence is retained in `evaluation/phase9/rejected-proxies/`. Those images were never deployed. The final preparation reuses the existing scanned Python UI image for Authlib authentication and direct TLS instead of introducing those services; existing worker/controller/OS scan gates remain mandatory. Candidate findings are not final-image scan results.
+
+[Container integration run 41690028541](https://github.com/Saisathwik045/signguard/actions/runs/41690028541) passed the 13 existing live-analysis browser cases and the new TLS gateway case. The latter negotiated TLS 1.3 with an explicitly trusted ephemeral CA and denied anonymous/spoofed HTTP requests; it did not execute actual GitHub login or contact an AWS endpoint. Fresh scans of the three actual CI service images reported **0 critical, 0 high** findings (151 medium/26 low combined); the worker Python dependency audit reported zero known findings. These are CI image results, not a scan of an unprovisioned AWS host. Curated JSON/JUnit evidence is retained under `evaluation/phase9/container-integration/`; raw scans/screenshots are in that run's authenticated-browser-evidence artifact.
+
+See [AWS verification checklist](deploy/aws/VERIFICATION.md), [operations and rollback runbook](deploy/aws/README.md) and [hosting comparison](HOSTING_COMPARISON.md). Infrastructure mock tests, local gateway mocks and cloud-loopback browser checks do not satisfy actual AWS release gates. Production/live-upload readiness remains **BLOCKED**.
+
 ## Phase 8 engineering evaluation — 3 November 2026
 
 This phase measures integration/security behavior, not new classification accuracy. Prior benchmark

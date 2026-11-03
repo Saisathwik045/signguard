@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="1" time="1.555" timestamp="2026-11-03T18:07:14.928457+00:00" hostname="runnervm48cm3"><testcase classname="tests.browser.test_cloud_tls" name="test_real_tls_gateway_denies_anonymous_and_spoofed_identity" time="1.527" /></testsuite></testsuites>

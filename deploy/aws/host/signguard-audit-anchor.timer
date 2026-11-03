@@ -1,0 +1,8 @@
+[Unit]
+Description=Periodic audit anchoring; bounded unanchored window is a release-review item
+[Timer]
+OnBootSec=60
+OnUnitActiveSec=60
+Persistent=true
+[Install]
+WantedBy=timers.target

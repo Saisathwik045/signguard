@@ -5,6 +5,7 @@ import json
 import logging
 import os
 import secrets
+import sqlite3
 import threading
 import time
 from collections import OrderedDict, deque
@@ -23,6 +24,14 @@ _QUOTA_LOCK = threading.Lock()
 
 def quota_allowed(principal):
     key = hashlib.sha256(principal.encode()).hexdigest()
+    persistent = os.environ.get("SIGNGUARD_QUOTA_DATABASE")
+    if persistent:
+        from .persistent_quota import allowed
+        try:
+            return allowed(persistent, key, int(os.environ.get("SIGNGUARD_REQUESTS_PER_MINUTE", "10")),
+                           float(os.environ.get("SIGNGUARD_QUOTA_WINDOW_SECONDS", "60")))
+        except (OSError, ValueError, sqlite3.Error):
+            return False  # Fail closed on storage failure; never reset to memory.
     with _QUOTA_LOCK:
         now = time.monotonic()
         if key not in _QUOTAS and len(_QUOTAS) >= 1000:

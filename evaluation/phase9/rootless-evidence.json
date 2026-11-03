@@ -1,0 +1,12 @@
+{
+  "rootless_daemon_verified": true,
+  "worker": {
+    "nonroot": true,
+    "read_only": true,
+    "network_none": true,
+    "cgroup_limits": true,
+    "credentials_absent": true
+  },
+  "socket": "unix:///run/user/1001/docker.sock",
+  "production_ready": false
+}

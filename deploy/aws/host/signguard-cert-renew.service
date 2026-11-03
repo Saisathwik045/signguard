@@ -1,0 +1,5 @@
+[Unit]
+Description=Renew SignGuard short-lived IP TLS certificate
+[Service]
+Type=oneshot
+ExecStart=/opt/signguard/certbot/bin/certbot renew --quiet --deploy-hook "/usr/bin/bash /opt/signguard/current/deploy/aws/host/reload-tls.sh"

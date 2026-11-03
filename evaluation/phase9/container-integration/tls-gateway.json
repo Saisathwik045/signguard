@@ -1,0 +1,35 @@
+{
+  "scope": "cloud_loopback_with_ephemeral_test_CA",
+  "tls_protocol": "TLSv1.3",
+  "certificate_validation_enabled": true,
+  "anonymous_denials": [
+    {
+      "method": "GET",
+      "path": "/",
+      "status": 303
+    },
+    {
+      "method": "GET",
+      "path": "/media/report.json",
+      "status": 403
+    },
+    {
+      "method": "GET",
+      "path": "/_stcore/health",
+      "status": 403
+    },
+    {
+      "method": "POST",
+      "path": "/_stcore/upload_file/session/id",
+      "status": 403
+    },
+    {
+      "method": "GET",
+      "path": "/auth/callback?code=fake&state=forged",
+      "status": 403
+    }
+  ],
+  "real_github_login_verified": false,
+  "public_aws_tls_verified": false,
+  "uploads_enabled": false
+}
