@@ -1,5 +1,4 @@
 """Real browser smoke test of the synthetic viewer, without external ingress."""
-import contextlib
 import json
 import os
 import subprocess
@@ -56,40 +55,44 @@ def test_synthetic_demo_real_browser(tmp_path):
             with sync_playwright() as playwright:
                 browser = playwright.chromium.launch(executable_path=os.environ.get("SIGNGUARD_CHROMIUM_PATH"))
                 page = browser.new_page(accept_downloads=True, viewport={"width": 1440, "height": 1800})
-                page.goto(url)
-                for case_id, label in CASES.items():
-                    page.get_by_role("combobox").click()
-                    page.get_by_role("combobox").fill(label)
-                    page.get_by_role("option", name=label, exact=True).click()
-                    expect(page.get_by_text("Report shown: "+label, exact=True)).to_be_visible()
-                    expect(page.get_by_role("button", name="Download JSON report")).to_be_visible()
-                    expect(page.get_by_test_id("stImage").first).to_be_visible()
-                    assert page.locator('input[type="file"]').count() == 0
-                    with page.expect_download() as download:
-                        page.get_by_role("button", name="Download JSON report").click()
-                    report = json.loads(Path(download.value.path()).read_text())
-                    assert download.value.suggested_filename == f"signguard-demo-{case_id}.json"
-                    assert report["sha256"] == load_case(case_id)[0]["sha256"]
-                    assert report["execution_controls"]["isolation"] == "docker_disposable"
-                    with page.expect_download() as download:
-                        page.get_by_role("button", name="Download PDF report").click()
-                    assert Path(download.value.path()).read_bytes().startswith(b"%PDF-")
-                    page.get_by_role("heading", name="SignGuard synthetic demonstration", exact=True).scroll_into_view_if_needed()
-                    page.wait_for_function("""() => {
-                        const images = [...document.querySelectorAll('[data-testid="stImage"] img')];
-                        return images.length > 0 && images.every(i => i.complete && i.naturalWidth > 0);
-                    }""")
-                    page.screenshot(path=str(artifacts / (case_id+".png")), full_page=True)
+                errors = []
+                page.on("pageerror", lambda error: errors.append(str(error)) if len(errors) < 100 else None)
+                page.on("console", lambda message: errors.append(message.text) if message.type == "error" and len(errors) < 100 else None)
+                try:
+                    page.goto(url)
+                    expect(page.get_by_role("heading", name="SignGuard synthetic demonstration", exact=True)).to_be_visible(timeout=60000)
+                    for case_id, label in CASES.items():
+                        page.get_by_role("combobox").click()
+                        page.get_by_role("combobox").fill(label)
+                        page.get_by_role("option", name=label, exact=True).click()
+                        expect(page.get_by_text("Report shown: "+label, exact=True)).to_be_visible()
+                        expect(page.get_by_role("button", name="Download JSON report")).to_be_visible()
+                        expect(page.get_by_test_id("stImage").first).to_be_visible()
+                        assert page.locator('input[type="file"]').count() == 0
+                        with page.expect_download() as download:
+                            page.get_by_role("button", name="Download JSON report").click()
+                        report = json.loads(Path(download.value.path()).read_text())
+                        assert download.value.suggested_filename == f"signguard-demo-{case_id}.json"
+                        assert report["sha256"] == load_case(case_id)[0]["sha256"]
+                        assert report["execution_controls"]["isolation"] == "docker_disposable"
+                        with page.expect_download() as download:
+                            page.get_by_role("button", name="Download PDF report").click()
+                        assert Path(download.value.path()).read_bytes().startswith(b"%PDF-")
+                        page.get_by_role("heading", name="SignGuard synthetic demonstration", exact=True).scroll_into_view_if_needed()
+                        page.wait_for_function("""() => {
+                            const images = [...document.querySelectorAll('[data-testid="stImage"] img')];
+                            return images.length > 0 && images.every(i => i.complete && i.naturalWidth > 0);
+                        }""")
+                        page.screenshot(path=str(artifacts / (case_id+".png")), full_page=True)
+                except Exception:
+                    page.screenshot(path=str(artifacts / "failure.png"), full_page=True)
+                    (artifacts / "failure-page.txt").write_text(page.locator("body").inner_text())
+                    (artifacts / "failure-browser-errors.json").write_text(json.dumps(errors))
+                    raise
                 browser.close()
             (artifacts / "scope.json").write_text(json.dumps({"scope": "cloud_loopback_only",
                 "deployed_external_url": None, "cases": list(CASES), "uploads_enabled": False,
                 "runtime": "nonroot_readonly_container" if container else "cloud_process"}, indent=2)+"\n")
-        except Exception:
-            with contextlib.suppress(Exception):
-                if "page" in locals() and not page.is_closed():
-                    page.screenshot(path=str(artifacts / "failure.png"), full_page=True)
-                    (artifacts / "failure-page.txt").write_text(page.locator("body").inner_text())
-            raise
         finally:
             if process.poll() is None:
                 process.terminate()
