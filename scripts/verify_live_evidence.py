@@ -46,6 +46,10 @@ def verify(directory):
             if not report["visual_evidence"] or any(not base64.b64decode(item["base64"], validate=True).startswith(
                     b"\x89PNG\r\n\x1a\n") for item in report["visual_evidence"]):
                 raise ValueError("Missing PNG evidence")
+            for index in range(len(report["visual_evidence"])):
+                screenshot = directory / f"03-{family}-evidence-{index}.png"
+                if not screenshot.read_bytes().startswith(b"\x89PNG\r\n\x1a\n"):
+                    raise ValueError("Missing real browser evidence screenshot")
         elif report["assessment"]["analysis_status"] != "unsupported":
             raise ValueError("Unsupported fixture classified as supported")
         reports.append({"family": family, "analysis_status": report["assessment"]["analysis_status"],

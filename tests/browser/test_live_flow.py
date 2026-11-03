@@ -109,6 +109,12 @@ def test_02_upload_evidence_and_downloads(cloud_stack, signed_in, family, verdic
         assert any(v["label"] == "Signed revision snapshot" for v in report["visual_evidence"])
     for evidence in report["visual_evidence"]:
         assert base64.b64decode(evidence["base64"]).startswith(b"\x89PNG")
+    page.wait_for_function("""() => {
+        const images = [...document.querySelectorAll('[data-testid="stImage"] img')];
+        return images.length && images.every(i => i.complete && i.naturalWidth > 0);
+    }""")
+    for index in range(len(report["visual_evidence"])):
+        page.get_by_test_id("stImage").nth(index).screenshot(path=str(artifacts / f"03-{family}-evidence-{index}.png"))
     receipt = report.pop("audit_receipt")
     assert hashlib.sha256(json.dumps(report, sort_keys=True, separators=(",", ":")).encode()).hexdigest() == receipt["report_digest"]
     with page.expect_download() as download:

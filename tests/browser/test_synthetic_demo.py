@@ -1,4 +1,5 @@
 """Real browser smoke test of the synthetic viewer, without external ingress."""
+import contextlib
 import json
 import os
 import subprocess
@@ -84,9 +85,10 @@ def test_synthetic_demo_real_browser(tmp_path):
                 "deployed_external_url": None, "cases": list(CASES), "uploads_enabled": False,
                 "runtime": "nonroot_readonly_container" if container else "cloud_process"}, indent=2)+"\n")
         except Exception:
-            if "page" in locals() and not page.is_closed():
-                page.screenshot(path=str(artifacts / "failure.png"), full_page=True)
-                (artifacts / "failure-page.txt").write_text(page.locator("body").inner_text())
+            with contextlib.suppress(Exception):
+                if "page" in locals() and not page.is_closed():
+                    page.screenshot(path=str(artifacts / "failure.png"), full_page=True)
+                    (artifacts / "failure-page.txt").write_text(page.locator("body").inner_text())
             raise
         finally:
             if process.poll() is None:
