@@ -1,0 +1,12 @@
+{
+  "app.js": "e15fcab15715f17fc36ca493644fa64aecb6af52fd98aac6bc8eaa390d59be76",
+  "catalogue.json": "94e18e69fd18adf8b8ae7024757c8d853a1ba9aaab7e3b46667cd068cc5f0e1a",
+  "health.json": "23af464de5c1da9b4ba1ec577da231ad9e00015299e867c5f03b65207176b3ba",
+  "index.html": "0f66f8fff77161717ecbeb31b0923aed9007c80620412eb2764c5c5475d43ac4",
+  "reports/genuine_signed.json": "39a89d54c8fdd3ac0c10bcd1a6ffb119f1893b164831a764ad4099f66db90df5",
+  "reports/shadow_modified.json": "7d910c4d08eeee713ff4f1a4a63b8239f7d69a5b52bc1afd581e35819ef05233",
+  "reports/tampered.json": "e5bbe1084ba9bdd581be43b76ab09b5b8b77846758dde4afa2a82cab5f5056d0",
+  "reports/unsigned.json": "bd2aebb96c979ab890341a2e34a48983293483aef008b96ff27c5719d25824fb",
+  "reports/visual_only.json": "a151d47febe2c8b0915d54c8f56ccf06c3d3923caec0e59fdf66ac522af91574",
+  "styles.css": "547acf7a7f9cc68bd894ed2affaa58489df9173467ad680bdb2d7e2eee6378a1"
+}

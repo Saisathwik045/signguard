@@ -1,5 +1,24 @@
 # Cloud deployment — private synthetic presentation published
 
+## Phase 7 closeout and immutable viewer — 3 November 2026
+
+PR #7 is merged into main `0c8f74c`. The current private Site remains active at version 2 with unchanged
+owner-only policy. The owner reports successful browser access. Native metadata and retained source
+were checked without redeployment; regenerated static files match native source commit `4c56398`
+byte-for-byte. The control-plane deployment/version/archive identifiers remain in `deploy/private-site.json`.
+Authenticated live bytes, interactive SSO and a rollback drill remain independently unverified.
+
+All four PR-head workflows were rechecked successfully; hosted-validation was skipped. Automated
+artifact evidence and the exact verification checklist are linked in
+[DEPLOYMENT_VERIFICATION.md](DEPLOYMENT_VERIFICATION.md). No current network-policy change is required
+or made for this closeout. Earlier browser allowlist instructions below are optional future hosted-QA
+preparation, not a requirement to use the viewer or a request to repeat environment setup.
+
+[NEXT_PHASE_PLAN.md](NEXT_PHASE_PLAN.md) specifies a separate private upload staging architecture,
+provider qualification, identity and resource controls, staged delivery and rollback gates. This is a
+technical plan only: no billable infrastructure, domains, live upload backend or production secrets
+were provisioned. Preserve the existing private snapshot Site as an independent service.
+
 ## Phase 7: private static presentation published; upload service not deployed
 
 The connected Sites service is selected **only** for the independent synthetic presentation tier.

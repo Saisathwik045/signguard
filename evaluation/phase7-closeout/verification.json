@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-03",
+  "repository_base": "0c8f74c46d4519fa0f81c6c1de45c14dfe989b3d",
+  "site": {
+    "id": "appgprj_6ae99f65f3bc8191adee5065f74d7edf",
+    "status": "active",
+    "version": 2,
+    "url": "https://signguard-private-synthetic.knitdeck.chatgpt.site",
+    "owner_count": 1,
+    "group_count": 0,
+    "external_visitors": 0,
+    "revision": 1
+  },
+  "observations": {
+    "owner_browser_visit": "User reports successfully opening the URL; not independently reproduced",
+    "authenticated_hosted_browser": "Not executed: unchanged outbound policy",
+    "deployed_asset_fetch": "Not executed; regenerated artifact matches retained deployed source only"
+  },
+  "ci": {
+    "workflow_runs": [
+      {
+        "id": 41612159740,
+        "name": "Cloud tests",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 49,
+        "jobs_url": "https://api.github.com/repos/Saisathwik045/signguard/actions/runs/41612159740/jobs",
+        "logs_url": "https://api.github.com/repos/Saisathwik045/signguard/actions/runs/41612159740/logs",
+        "workflow_id": 403785873
+      },
+      {
+        "id": 41612159748,
+        "name": "Private synthetic viewer validation",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 10,
+        "jobs_url": "https://api.github.com/repos/Saisathwik045/signguard/actions/runs/41612159748/jobs",
+        "logs_url": "https://api.github.com/repos/Saisathwik045/signguard/actions/runs/41612159748/logs",
+        "workflow_id": 405492921
+      },
+      {
+        "id": 41612159741,
+        "name": "Synthetic-only cloud demo",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 18,
+        "jobs_url": "https://api.github.com/repos/Saisathwik045/signguard/actions/runs/41612159741/jobs",
+        "logs_url": "https://api.github.com/repos/Saisathwik045/signguard/actions/runs/41612159741/logs",
+        "workflow_id": 404823799
+      },
+      {
+        "id": 41612159739,
+        "name": "Private staging integration",
+        "status": "completed",
+        "conclusion": "success",
+        "run_number": 30,
+        "jobs_url": "https://api.github.com/repos/Saisathwik045/signguard/actions/runs/41612159739/jobs",
+        "logs_url": "https://api.github.com/repos/Saisathwik045/signguard/actions/runs/41612159739/logs",
+        "workflow_id": 404273250
+      }
+    ]
+  }
+}
