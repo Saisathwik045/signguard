@@ -1,5 +1,19 @@
 # SignGuard
 
+## Live PDF analysis — Phase 8
+
+The authenticated upload application now performs bounded admission → private controller → restricted
+executor RPC → disposable worker → explainable findings and downloadable reports. It reuses pyHanko,
+revision/shadow comparisons, automatic visual candidates, ELA/ORB and fusion; no detector scores were
+tuned. The UI shows validity separately from certificate trust and identity, highlights evidence and
+supports current/signed comparisons. Encrypted/malformed inputs return unsupported JSON, not authenticity.
+
+Live uploads are **not externally deployed**. Real browser validation runs on a loopback cloud container
+stack; production identity, HTTPS, restricted-host, shared-quota, durable-audit and operations gates remain.
+The [private synthetic viewer](https://signguard-private-synthetic.knitdeck.chatgpt.site) is preserved,
+read-only and unchanged. See [RESULTS.md](RESULTS.md), [SECURITY.md](SECURITY.md) and
+[DEPLOYMENT.md](DEPLOYMENT.md) for verified scope and remaining requirements.
+
 ## Phase 7 private synthetic viewer
 
 An owner-private, read-only viewer has been published through connected Sites at

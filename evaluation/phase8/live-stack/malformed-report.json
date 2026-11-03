@@ -1,0 +1,66 @@
+{
+  "schema_version": 3,
+  "sha256": "57e149f618d33e042a2574c405e09268be508ed3463146a783c3ba814c961904",
+  "structure": {
+    "classification": "unsupported",
+    "refined_classification": "unsupported",
+    "signatures": []
+  },
+  "revision_analysis": [],
+  "visual_comparisons": [],
+  "visual_evidence": [],
+  "image_forensics": {
+    "automatic": {
+      "localization": {
+        "candidates": [],
+        "limitations": [
+          "The PDF cannot be opened safely."
+        ]
+      }
+    }
+  },
+  "assessment": {
+    "analysis_status": "unsupported",
+    "verdict": "inconclusive",
+    "alert": false,
+    "authenticity_established": false,
+    "identity_decision": "abstain",
+    "authorization_decision": "inconclusive",
+    "unsupported_checks": [
+      "malformed_pdf"
+    ],
+    "reasons": [
+      "The PDF cannot be opened safely."
+    ],
+    "findings": [
+      {
+        "code": "MALFORMED_PDF",
+        "severity": "info",
+        "evidence": "input_validation",
+        "explanation": "The PDF cannot be opened safely."
+      }
+    ]
+  },
+  "input_error": {
+    "code": "malformed_pdf",
+    "message": "The PDF cannot be opened safely."
+  },
+  "worker_measurements": {
+    "analysis_seconds": 0.00033561899999767775,
+    "process_peak_rss_mib": 143.71484375
+  },
+  "execution_controls": {
+    "elapsed_seconds": 0.716121749000024,
+    "isolation": "docker_disposable",
+    "network_isolation": true,
+    "filesystem_isolation": true,
+    "worker_image_id": "sha256:d91db7534d7763daecc25e5532628d7c028362edf2b415de39bdace21045d6f9",
+    "executor_boundary": "restricted_unix_rpc"
+  },
+  "request_id": "3a9386e4d770369bc4fb6713",
+  "audit_receipt": {
+    "head": "38301d14376555a8744d7a1857498a8ca17a01429b89d1ed1fdd6cb875ee8dfc",
+    "report_digest": "e0564f07d12890be547c1be7fa0052095271ac101fa39d0aea61ba9a463e9a57",
+    "anchoring": "controller_local_head_not_externally_anchored"
+  }
+}

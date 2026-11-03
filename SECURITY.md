@@ -1,5 +1,36 @@
 # Security model and verified controls
 
+## Phase 8 live upload controls and remaining gates
+
+Upload boundaries now share strict parser-free request validation (25 MiB per PDF, 5 MiB per optional
+PNG/JPEG image, 60 MiB total, bounded base64 encoding, no duplicate/unknown fields). Controller rejects
+wrong content types, ambiguous length/transfer encoding and missing/oversized principals. Internal
+principal headers are accepted only with the private service credential; they are not a substitute
+for signed production identity. Authentication still precedes Streamlit upload/media/WebSocket routes
+in the private-preview gateway. Responses carry no-store/nosniff/frame-denial headers.
+
+Only a disposable worker parses inputs. Existing non-root/no-network/read-only/capability/PID/CPU/
+memory/tmpfs/wall/output limits and finally cleanup remain in place. Worker image references resolve
+to a local immutable image ID before execution; reports/audit bind that identity. OOM tests now inspect
+Docker's OOMKilled state: a container setup failure cannot count as cgroup enforcement. No unsafe
+production parsing fallback was added. Rlimits-only development tests remain explicitly separate.
+
+Expected encrypted/malformed/budget failures yield safe unsupported JSON with authenticity_established
+false. Other internal failures stay generic. No password/decryption support was added. Admission is
+written to the fsynced hash chain before work; completed, unsupported, invalid and failed analyses are
+recorded with pseudonymous principal and input/report hashes. Audit failure fails closed. The UI checks
+the returned report digest and required isolation fields. A digest is integrity evidence, not a keyed
+signature or independent proof of a trustworthy controller. A local chain still needs external anchoring.
+
+The all-container cloud browser stack passed authentication, raw-media denial after logout, concurrent
+requests, quotas, isolated analysis and report receipt checks. Its HTTP loopback preview credential is
+not production OIDC or hosted HTTPS evidence. Single-process quotas/sessions are not distributed abuse
+controls and reset on restart. Current static Sites identity does not authorize a privileged runtime.
+Do not expose live uploads until real private TLS/all-route identity/authorization, dedicated executor
+qualification, shared quotas, secrets management, durable audit/retention and operational gates pass.
+Security scans of real CI images remain unsuppressed and enforced; see RESULTS.md for exact evidence.
+The existing deployed synthetic Site stays static/read-only with no new processing endpoint.
+
 ## Phase 7 closeout verification boundary — 3 November 2026
 
 The owner reports opening the private viewer; this is not independent automated SSO/session evidence.

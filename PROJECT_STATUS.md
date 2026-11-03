@@ -1,5 +1,51 @@
 # Project status — Codex Cloud integration and synthetic demo
 
+## Phase 8 — live analysis integration implemented; external ingress blocked
+
+Started from latest merged main `e119dd6` (PR #8 merged). Reused all existing forensic modules,
+benchmarks, auth gateway, controller, executor RPC and disposable worker; no detector tuning or
+rebuilding prior phases. Deployed synthetic Site version 2 and its owner-only audience remain unchanged.
+
+Shared parser-free admission now validates primary/baseline PDF headers and sizes, optional PNG/JPEG
+signatures, encoded field lengths, total bytes, duplicate JSON keys and allowed fields. UI, controller,
+executor and worker independently enforce it; all PDF/image decoding stays inside the worker. Encrypted,
+malformed and explicit budget failures return structured unsupported/inconclusive outcomes with no
+identity assertion. Supported analysis preserves cryptographic verification, revision/shadow checks,
+automatic localization, ELA/ORB, fusion, highlighted PNGs and generated PDF reports.
+
+Controller admission is fsynced before worker dispatch; completed/unsupported/rejected/failed outcomes
+record request ID, hashed principal, input/report digests and verdict without document bytes or parser
+errors. Audit failure prevents dispatch/result release. Client verifies report receipt and required
+isolation evidence. Runtime selection resolves the configured worker to its local immutable image ID
+before launch and binds it into the report. This is observed execution evidence, not remote attestation.
+
+The live Streamlit UI now has consistent dark/teal styling, progress, crypto validity/trust fields,
+coverage/identity metrics, current/signed visual evidence, uncertainty, structured findings and JSON/PDF
+downloads. Optional manual crops remain optional. Input changes clear prior report state. Unsupported
+PDFs have downloadable JSON reasons, no fabricated PDF/evidence or authenticity determination.
+
+Real all-container browser validation passed 13 tests in Actions run `41667811959`: five supported
+families, encrypted/malformed, oversized and renamed inputs, unauthorized access, logout/direct-media
+denial, burst/quota behavior, audit integrity and broker outage. Seven returned JSON reports and five
+PDF downloads were bound to actual worker identity and audit receipts. Fresh worker/UI/controller
+scans found 0 CRITICAL/HIGH. This is cloud loopback HTTP with a single-owner preview gateway, not
+production OIDC, hosted TLS or a user-accessible private upload URL. Final execution evidence is in
+[evaluation/phase8](evaluation/phase8/); see RESULTS.md for per-run results and limitations.
+
+Codex regression: 108 passed, 0 failed, 20 explicit Docker/browser skips. Preliminary local Docker
+attempts exhausted the 7.9 GiB VFS disk and are not counted as successful isolation tests. Initial synthetic-container smoke timeouts are
+retained as failed attempts; later container smoke
+passed. Bounded widget readiness and failure diagnostics were added. All four implementation workflows
+passed on `9e9392d`; 128 distinct named tests passed across the overlapping suites, including 25
+isolation/security checks and 13 live browser cases. Nineteen live screenshots are retained. No deployed
+Site or audience change occurred.
+
+No authorized container hosting identity or deployment secrets are bound. The connected static Site
+cannot host Python/disposable workers. Live ingress remains disabled pending dedicated restricted
+executor hosting, production OIDC/all-route authorization, private TLS/routing, shared quotas, durable
+external audit anchoring/retention and operational release evidence. NEXT_PHASE_PLAN.md remains the
+design reference; the production deployment gates in SECURITY.md are still mandatory.
+
 ## Phase 7 closeout — 3 November 2026
 
 PR #7 is merged: current main `0c8f74c46d4519fa0f81c6c1de45c14dfe989b3d`.

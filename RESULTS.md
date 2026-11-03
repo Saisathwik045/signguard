@@ -1,5 +1,56 @@
 # Results — preserved forensic evaluation and cloud integration
 
+## Phase 8 engineering evaluation — 3 November 2026
+
+This phase measures integration/security behavior, not new classification accuracy. Prior benchmark
+scores and forensic thresholds remain unchanged. Inconclusive means no authenticity determination.
+
+| Evidence | Observed result | Scope |
+| --- | --- | --- |
+| Codex regression | 108 passed / 0 failed / 20 explicit skips | Existing and new unit/security/forensic tests; Docker and separately opted-in browsers skipped |
+| Focused Codex checks | 22 passed | Four private-viewer contracts, two artifact browser scenarios, 16 initial admission/audit cases; overlaps regression |
+| Codex synthetic Streamlit browser | 1 passed | Five examples and report downloads in a cloud process; not container/hosted isolation |
+| Actions live stack 41667811959 | 13 passed / 0 failed / 0 skipped | Actual container UI/controller, restricted RPC executor and disposable workers; cloud loopback HTTP |
+| Live evidence validation | 7 JSON outcomes, 5 PDF pairs, 26 chained audit events | Digest, request/input identity, image ID and receipt linkage verified |
+| Fresh CI scans, same live-stack run | Worker/UI/controller each 0 CRITICAL, 0 HIGH | Full unfiltered scan; MEDIUM/LOW remain |
+| Actual hosted live upload | Not deployed | No private hosting/TLS/OIDC/executor qualification available |
+
+The verified worker in that implementation live-stack run was
+`sha256:d91db7534d7763daecc25e5532628d7c028362edf2b415de39bdace21045d6f9`.
+Its full scan reports 56 MEDIUM/11 LOW; UI 56/11; controller 39/4. The combined 151 MEDIUM/26 LOW
+counts across three images are not a per-worker count. Complete scan JSON and exact identifiers
+are retained in the CI artifact and curated evidence. This is fresh Phase 8 evidence, not reused Phase 6
+scan approval. Final-head workflow conclusions are recorded in the PR; later builds require their own
+identity-bound scans. Installed worker dependencies are independently audited in the staging workflow.
+
+The implementation head `9e9392d` passed all four workflows: Cloud tests `41667811761`, staging
+`41667811959`, synthetic demo `41667811731` and private viewer `41667811758`. The exact browser worker's
+20 installed Python distributions have **0 advisories**. The isolated-worker suite passed **25/0/0**,
+including actual cgroup OOM confirmation. The test-case union across completed suites is **128 distinct
+passing cases** (not the sum of overlapping counts); `evaluation/phase8/test-coverage.json` lists them.
+Codex's single regression command still explicitly reports 20 skipped opt-in cases, covered by separate
+cloud jobs/scenarios. Nineteen actual live-browser screenshots are retained, including six individually
+captured forensic images. SHA-256 manifests, raw service scans, installed inventory/audit, JUnit,
+seven JSON reports and audit chain are in `evaluation/phase8/`. Hosted validation remains unverified.
+
+Coverage includes genuine signed (inconclusive/untrusted identity), tampered bytes (tampering detected),
+shadow reveal (review required), visual candidate and unsigned (inconclusive), encrypted/malformed
+(unsupported), renamed non-PDF and oversized rejection, unauthorized access, direct-media/logout
+denial, concurrent/bounded quota requests, audit integrity and worker-broker outage without fallback.
+
+Failed/incomplete attempts are retained honestly: the preliminary Codex live test had 1 pass/1 failure
+when its 7.9 GiB VFS disk filled; local Docker probes had 23 pass/2 failures under the same resource
+pressure and do not establish isolation/memory enforcement. One overlapping preliminary regression
+was interrupted. The initial separate synthetic-container workflow timed out before its selector
+appeared; a subsequent run also failed, leading to explicit bounded widget readiness and browser failure
+capture before teardown. The static hosted viewer was never changed. Both the synthetic-container workflow and all other
+workflows passed on implementation head `9e9392d`; the earlier failures remain historical failures.
+One existing Starlette test-client warning remains.
+
+No live-hosted TLS, production OIDC/session/tenant validation, rootless/dedicated executor qualification,
+distributed quotas, durable audit anchoring or rollback rehearsal is claimed. The tested single-owner
+preview gateway and hash-chain journal are useful integration evidence, not production readiness.
+
 ## Phase 6 fresh image verification — 3 November 2026
 
 | Measure | Fresh Debian baseline | Actual final Ubuntu worker |
