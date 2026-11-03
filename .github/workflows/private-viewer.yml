@@ -1,0 +1,67 @@
+name: Private synthetic viewer validation
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      hosted_smoke:
+        description: Validate the existing private HTTPS deployment using protected environment access
+        type: boolean
+        default: false
+permissions:
+  contents: read
+jobs:
+  build-test-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'pip>=26.2,<27'
+      - run: pip install -c requirements-cloud.txt -e '.[dev]'
+      - run: python -m playwright install --with-deps chromium
+      - run: node --check web/private-viewer/app.js
+      - run: python scripts/build_private_viewer.py --output private-site-build
+      - run: SIGNGUARD_PRIVATE_SITE_TESTS=1 pytest -q tests/test_private_viewer.py tests/browser/test_private_site.py --junitxml=site-artifacts/browser-junit.xml
+      - name: Verify fixed asset inventory and package artifact
+        run: |
+          python -c "import json,pathlib,hashlib; p=pathlib.Path('private-site-build'); m=json.loads((p/'artifact-checksums.json').read_text()); assert all(hashlib.sha256((p/'dist'/k).read_bytes()).hexdigest()==v for k,v in m.items())"
+          tar -czf private-site-build.tar.gz -C private-site-build dist artifact-checksums.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: private-viewer-build-and-browser-evidence
+          path: |
+            site-artifacts/
+            private-site-build.tar.gz
+          retention-days: 7
+  hosted-validation:
+    if: github.event_name == 'workflow_dispatch' && inputs.hosted_smoke
+    environment: private-synthetic
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      SIGNGUARD_SITE_URL: ${{ vars.SIGNGUARD_SITE_URL }}
+      SIGNGUARD_SITE_BEARER: ${{ secrets.SIGNGUARD_SITE_BEARER }}
+      SIGNGUARD_SITE_ARTIFACTS: site-artifacts/hosted
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -c requirements-cloud.txt -e '.[dev]'
+      - run: python -m playwright install --with-deps chromium
+      - name: Reject missing protected authorization
+        run: python -c "import os; assert os.environ['SIGNGUARD_SITE_URL'].startswith('https://') and os.environ['SIGNGUARD_SITE_BEARER'], 'Protected hosting access is not configured'"
+      - run: python scripts/probe_private_site.py "$SIGNGUARD_SITE_URL" site-artifacts/hosted
+      - run: SIGNGUARD_PRIVATE_SITE_TESTS=1 pytest -q tests/browser/test_private_site.py --junitxml=site-artifacts/hosted/browser-junit.xml
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: private-viewer-hosted-validation
+          path: site-artifacts/hosted/
+          retention-days: 7
+# No public/publish fallback, paid provisioning or repository-stored deployment credentials.
+# Native Sites publication uses a fresh repository-scoped credential and owner-only access check.

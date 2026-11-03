@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer"><meta name="robots" content="noindex,nofollow">
+<title>SignGuard — Private Synthetic Lab</title><link rel="stylesheet" href="/styles.css"><script src="/app.js" defer></script></head>
+<body><header><div class="brand"><span class="shield" aria-hidden="true">S</span><div><strong>SignGuard</strong><small>FORENSIC EVIDENCE LAB</small></div></div><span class="private">Private · Synthetic only</span></header>
+<main><section class="intro"><span class="eyebrow">SIGNATURE INTEGRITY / FIVE TRUSTED EXAMPLES</span><h1>Inspect the evidence.</h1><p>Explore real forensic findings from disposable, isolated PDF workers. This read-only demonstration uses bundled synthetic documents. It cannot accept or analyze your files.</p></section>
+<div class="workspace"><aside><h2>Example documents</h2><nav id="cases" aria-label="Synthetic examples"></nav><div class="scope"><strong>A snapshot, not a live analysis.</strong><p>Reports were generated automatically by SignGuard’s isolated worker. No upload, external URL or file-path input is available.</p></div></aside>
+<section class="report" aria-live="polite" aria-busy="true"><p id="error" role="alert" hidden></p><div id="loading">Loading verified examples…</div><div id="result" hidden>
+<div class="report-top"><div><span class="eyebrow">FORENSIC TRIAGE</span><h2 id="case-title"></h2></div><span id="verdict" class="verdict"></span></div>
+<div class="facts"><div><small>SIGNATURE CLASSIFICATION</small><strong id="classification"></strong></div><div><small>ANALYSIS STATUS</small><strong id="status"></strong></div><div><small>IDENTITY DECISION</small><strong>Not established</strong></div></div>
+<p class="caution">Mathematical validity does not establish trusted identity. Visual similarities alone do not establish forgery or unauthorized reuse.</p>
+<section><h3>Why this result?</h3><ul id="reasons"></ul></section>
+<section><div class="section-top"><h3>Visual evidence</h3><small>Blue: unverified candidate · Red: changed region</small></div><div id="evidence" class="evidence"></div></section>
+<section class="downloads"><div><h3>Keep the complete report</h3><p>Actual worker-generated JSON and PDF triage reports.</p></div><div><button id="json-download" type="button">Download JSON</button><button id="pdf-download" type="button">Download PDF</button></div></section>
+<details><summary>Revision comparisons and image forensics</summary><pre id="comparisons"></pre></details>
+<details><summary>Report provenance</summary><pre id="provenance"></pre></details>
+<p class="snapshot" id="shown"></p></div></section></div>
+<footer>Forensic triage, not proof of authenticity. The production upload application is disabled. No controller audit receipt is invented for these precomputed reports.</footer></main></body></html>
