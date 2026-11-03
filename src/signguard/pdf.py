@@ -10,6 +10,8 @@ from pyhanko.pdf_utils.reader import PdfFileReader
 from pyhanko.sign.validation import validate_pdf_signature
 from pyhanko_certvalidator import ValidationContext
 
+from .input_policy import InputRejected
+
 MAX_BYTES = 25 * 1024 * 1024
 MAX_PAGES = 50
 MAX_REVISIONS = 16
@@ -18,20 +20,26 @@ MAX_REVISIONS = 16
 def read_pdf(data):
     reader = PdfFileReader(BytesIO(data), strict=True)
     if reader.total_revisions > MAX_REVISIONS or len(reader.embedded_signatures) > 12:
-        raise ValueError("Revision/signature analysis budget exceeded")
+        raise InputRejected("revision_limit", "Revision/signature analysis budget exceeded")
     return reader
 
 
 def open_pdf(data):
     if not data.startswith(b"%PDF-") or len(data) > MAX_BYTES:
-        raise ValueError("Expected a PDF no larger than 25 MiB")
-    doc = pymupdf.open(stream=data, filetype="pdf")
-    if doc.needs_pass or not 0 < len(doc) <= MAX_PAGES:
+        raise InputRejected("invalid_pdf", "Expected a PDF no larger than 25 MiB")
+    try:
+        doc = pymupdf.open(stream=data, filetype="pdf")
+    except (pymupdf.FileDataError, RuntimeError) as exc:
+        raise InputRejected("malformed_pdf", "The PDF cannot be opened safely.") from exc
+    if doc.needs_pass:
         doc.close()
-        raise ValueError("Encrypted PDFs and documents outside 1–50 pages are unsupported")
+        raise InputRejected("encrypted_pdf", "Encrypted PDFs require decryption outside SignGuard; passwords are not accepted.")
+    if not 0 < len(doc) <= MAX_PAGES:
+        doc.close()
+        raise InputRejected("page_limit", "Documents must contain 1–50 pages.")
     if any(p.rect.width > 2000 or p.rect.height > 2000 for p in doc):
         doc.close()
-        raise ValueError("Page dimensions exceed rendering limits")
+        raise InputRejected("render_limit", "Page dimensions exceed rendering limits")
     return doc
 
 
@@ -43,7 +51,7 @@ def inspect_pdf(data, trust_roots=None):
         page_area = sum(p.rect.get_area() for p in doc)
     reader = read_pdf(data)
     if page_count*reader.total_revisions > 160 or page_area*reader.total_revisions > 30_000_000:
-        raise ValueError("Page/revision comparison budget exceeded")
+        raise InputRejected("render_limit", "Page/revision comparison budget exceeded")
     signatures = []
     context = ValidationContext(trust_roots=trust_roots or [], allow_fetching=False)
     for sig in reader.embedded_signatures:
@@ -187,7 +195,7 @@ def analyze_revisions(data):
         return findings
     with open_pdf(data) as doc:
         if len(doc)*reader.total_revisions > 160:
-            raise ValueError("Page/revision comparison budget exceeded")
+            raise InputRejected("render_limit", "Page/revision comparison budget exceeded")
     previous = revision_bytes(data, reader, 0)
     for revision in range(1, reader.total_revisions):
         current = revision_bytes(data, reader, revision)

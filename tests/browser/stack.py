@@ -118,7 +118,8 @@ class CloudStack:
             "ui_has_executor_socket": None if self.host_ui else False,
             "ui_filesystem_isolated": not self.host_ui,
             "host_ui_limitation": "Trusted test UID shares host filesystem" if self.host_ui else None,
-            "worker_image": "signguard-worker:phase4"}, indent=2)+"\n")
+            "worker_image": "signguard-worker:phase4",
+            "worker_image_id": self.command("image", "inspect", "signguard-worker:phase4", "--format", "{{.Id}}").stdout.strip()}, indent=2)+"\n")
         return self
 
     def wait_health(self, url):

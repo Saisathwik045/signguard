@@ -1,0 +1,15 @@
+{
+  "implementation_commit": "9e9392d1e654ca61cc75547e60c0aa5a38c23036",
+  "workflows": {
+    "cloud_tests": 41667811761,
+    "private_staging": 41667811959,
+    "synthetic_demo": 41667811731,
+    "private_viewer": 41667811758
+  },
+  "all_conclusions": "success",
+  "live_artifact_id": 13247126034,
+  "security_artifact_id": 13246518591,
+  "scope": "cloud_loopback_only",
+  "external_staging_url": null,
+  "hosted_authentication_verified": false
+}

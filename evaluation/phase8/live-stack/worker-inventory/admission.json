@@ -1,0 +1,13 @@
+{
+  "image_id": "sha256:d91db7534d7763daecc25e5532628d7c028362edf2b415de39bdace21045d6f9",
+  "image_gate_passed": true,
+  "severity_counts": {
+    "MEDIUM": 56,
+    "LOW": 11
+  },
+  "original_high_critical_cves_remaining": [],
+  "external_ingress_enabled": false,
+  "deployment_readiness": "BLOCKED",
+  "reason": "Private TLS/identity/executor/audit deployment gates remain",
+  "scan_sha256": "9b328b04ea5520b4680845068f1e6b87bf419a2d2e35ace9e913916d6f18e75f"
+}

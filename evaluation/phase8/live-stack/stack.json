@@ -1,0 +1,14 @@
+{
+  "url": "http://127.0.0.1:47757",
+  "scope": "cloud_loopback_only",
+  "quota_attempt_limit": 10,
+  "quota_window_seconds": 600,
+  "user_accessible_preview": false,
+  "ui_runtime": "container",
+  "controller_has_docker_socket": false,
+  "ui_has_executor_socket": false,
+  "ui_filesystem_isolated": true,
+  "host_ui_limitation": null,
+  "worker_image": "signguard-worker:phase4",
+  "worker_image_id": "sha256:d91db7534d7763daecc25e5532628d7c028362edf2b415de39bdace21045d6f9"
+}

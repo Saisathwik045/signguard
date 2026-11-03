@@ -1,0 +1,49 @@
+{
+  "browser_tests_passed": 13,
+  "reports_verified": [
+    {
+      "family": "genuine_signed",
+      "analysis_status": "completed",
+      "report_file_sha256": "1b4a5c82e8e7e9c0034d952c801becf545c2d73344d9806aaf54701b05d740c4"
+    },
+    {
+      "family": "tampered_bytes",
+      "analysis_status": "completed",
+      "report_file_sha256": "239ad2de5b58805df8ddf82da4eb85e490f32c83ba4df2fb9ef71e9d0dc010ab"
+    },
+    {
+      "family": "shadow_reveal",
+      "analysis_status": "completed",
+      "report_file_sha256": "8a34639a0217cbfbdd3e7ed23091597c5f549ec0b869979f385319ea8cbbfbcb"
+    },
+    {
+      "family": "visual_signature",
+      "analysis_status": "completed",
+      "report_file_sha256": "252d9d4953dc046888e574f173b3028b16e6293dbe7ca2dcad2ff848b2901349"
+    },
+    {
+      "family": "unsigned",
+      "analysis_status": "completed",
+      "report_file_sha256": "2bfb2abc4230adc5f7859b65861cc16de61684262a9fa577ddb60dde4cc148ab"
+    },
+    {
+      "family": "encrypted",
+      "analysis_status": "unsupported",
+      "report_file_sha256": "e0e85ea5a4f42c7b912f0cc55b50ef2ab4d01832cb834d5e8824daa0afd7a264"
+    },
+    {
+      "family": "malformed",
+      "analysis_status": "unsupported",
+      "report_file_sha256": "7febaf744b5b8f1e5a3c20272495287160eb102e43e07a51dfe9bf97a4e2f4df"
+    }
+  ],
+  "audit_events": 26,
+  "audit_head": "987bf3dfd285f4e579af44d365bb518292f120d931f2a628896f54431ee42d82",
+  "worker_image_id": "sha256:d91db7534d7763daecc25e5532628d7c028362edf2b415de39bdace21045d6f9",
+  "scope": "cloud_loopback_only",
+  "external_staging_verified": false,
+  "tls_verified": false,
+  "production_oidc_verified": false,
+  "ui_filesystem_isolated": true,
+  "production_ready": false
+}

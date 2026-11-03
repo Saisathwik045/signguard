@@ -136,13 +136,24 @@ def test_broker_url_validation(monkeypatch, address):
 
 @pytest.mark.skipif(os.environ.get("SIGNGUARD_DOCKER_TESTS") != "1", reason="Requires explicit cloud Docker job")
 def test_container_cgroup_memory_enforced():
+    import subprocess
+
     from signguard.container_runner import container_command
     image = os.environ.get("SIGNGUARD_WORKER_IMAGE", "signguard-worker:phase3")
-    command = container_command(image, "signguard-memory-tests")
+    name = "signguard-memory-tests"
+    command = container_command(image, name)
+    command.remove("--rm")  # Inspect the stopped container before cleanup to distinguish OOM from setup failure.
     probe = "a=bytearray(2*1024*1024*1024)"
-    with pytest.raises(RuntimeError):
-        run_limited(command[:-1]+["--entrypoint", "python", command[-1], "-c", probe],
-                    limits=Limits(memory=8*1024*1024*1024, wall=15))
+    try:
+        result = subprocess.run(command[:-1]+["--entrypoint", "python", image, "-c", probe],
+                                capture_output=True, timeout=30, check=False)
+        assert result.returncode == 137, "Memory probe did not terminate with SIGKILL"
+        state = json.loads(subprocess.check_output(["docker", "--host=unix:///var/run/docker.sock",
+                                                  "inspect", "--format", "{{json .State}}", name], text=True))
+        assert state["OOMKilled"] is True, "Runtime failure is not proof of cgroup memory enforcement"
+    finally:
+        subprocess.run(["docker", "--host=unix:///var/run/docker.sock", "rm", "-f", name],
+                       capture_output=True, check=False, timeout=10)
 
 
 def test_queue_has_no_unbounded_wait():

@@ -1,0 +1,23 @@
+{
+  "scope": "Codex Cloud constrained VFS runner",
+  "baseline_main": "e119dd6",
+  "unit_regression": {
+    "passed": 108,
+    "failed": 0,
+    "skipped": 20
+  },
+  "focused_prior_gateway_header_test": {
+    "passed": 22,
+    "failed": 0
+  },
+  "local_attempt_limitations": [
+    "One preliminary live run failed during disk exhaustion: 1 passed, 1 failed; not counted as successful live integration.",
+    "Local Docker probe attempt: 23 passed, 2 failed while disk-full conditions persisted; no memory/isolation success inferred from that attempt.",
+    "One overlapping preliminary regression was interrupted; no completed result claimed."
+  ],
+  "hosted_live_upload_url": null,
+  "production_ingress_enabled": false,
+  "hosting_identity_bound": false,
+  "codex_network_policy_changed": false,
+  "synthetic_site_changed": false
+}

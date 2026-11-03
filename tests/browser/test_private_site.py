@@ -141,7 +141,7 @@ def test_artifact_integrity_failure_and_stale_selection(site):
                 };
             }""")
             page.locator('#cases button[data-id="tampered"]').click()
-            page.wait_for_function("typeof window.releaseOldSelection === 'function'")
+            page.wait_for_function("() => typeof window.releaseOldSelection === 'function'")
             page.locator('#cases button[data-id="unsigned"]').click()
             expect(page.locator("#classification")).to_have_text("unsigned")
             expect(page.locator("#result")).to_be_visible()

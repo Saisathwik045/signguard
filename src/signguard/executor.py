@@ -8,6 +8,7 @@ import sys
 from pathlib import Path
 
 from .container_runner import analyze_container
+from .input_policy import decode_request
 from .supervisor import MAX_OUTPUT, MAX_REQUEST
 
 
@@ -49,12 +50,7 @@ class ExecutorHandler(socketserver.StreamRequestHandler):
         self.connection.settimeout(75)
         try:
             payload = receive(self.rfile, MAX_REQUEST)
-            values = json.loads(payload)
-            if not isinstance(values, dict) or "pdf" not in values or set(values)-{
-                    "pdf", "baseline", "signature_image", "reference_image"}:
-                raise ValueError("Invalid operation")
-            if any(not isinstance(value, str) for value in values.values()):
-                raise ValueError("Invalid value")
+            decode_request(payload)
             # No image, command, path, environment, Docker flag or mount is accepted by this RPC.
             report = analyze_container(payload)
             report["execution_controls"]["executor_boundary"] = "restricted_unix_rpc"

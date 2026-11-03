@@ -6,12 +6,14 @@ import cv2
 import numpy as np
 from PIL import Image, ImageChops, ImageOps, ImageStat
 
+from .input_policy import InputRejected
+
 _RANSAC_LOCK = Lock()
 
 def load_image(data):
     with Image.open(BytesIO(data)) as image:
         if image.width * image.height > 16_000_000:
-            raise ValueError("Image exceeds 16 megapixels")
+            raise InputRejected("image_limit", "Image exceeds 16 megapixels")
         image = ImageOps.exif_transpose(image).convert("RGBA")
         white = Image.new("RGBA", image.size, "white")
         return Image.alpha_composite(white, image).convert("RGB")

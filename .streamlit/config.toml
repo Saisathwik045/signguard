@@ -10,3 +10,10 @@ gatherUsageStats = false
 
 [client]
 showErrorDetails = false
+
+[theme]
+base = "dark"
+primaryColor = "#55d6bd"
+backgroundColor = "#0b1620"
+secondaryBackgroundColor = "#112331"
+textColor = "#e5edf3"

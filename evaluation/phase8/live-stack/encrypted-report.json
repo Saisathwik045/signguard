@@ -1,0 +1,66 @@
+{
+  "schema_version": 3,
+  "sha256": "b35650fb248c77d877a9d6ccbbb4cb4c207a447a2b8d03ce0fd767f2542b5555",
+  "structure": {
+    "classification": "unsupported",
+    "refined_classification": "unsupported",
+    "signatures": []
+  },
+  "revision_analysis": [],
+  "visual_comparisons": [],
+  "visual_evidence": [],
+  "image_forensics": {
+    "automatic": {
+      "localization": {
+        "candidates": [],
+        "limitations": [
+          "Encrypted PDFs require decryption outside SignGuard; passwords are not accepted."
+        ]
+      }
+    }
+  },
+  "assessment": {
+    "analysis_status": "unsupported",
+    "verdict": "inconclusive",
+    "alert": false,
+    "authenticity_established": false,
+    "identity_decision": "abstain",
+    "authorization_decision": "inconclusive",
+    "unsupported_checks": [
+      "encrypted_pdf"
+    ],
+    "reasons": [
+      "Encrypted PDFs require decryption outside SignGuard; passwords are not accepted."
+    ],
+    "findings": [
+      {
+        "code": "ENCRYPTED_PDF",
+        "severity": "info",
+        "evidence": "input_validation",
+        "explanation": "Encrypted PDFs require decryption outside SignGuard; passwords are not accepted."
+      }
+    ]
+  },
+  "input_error": {
+    "code": "encrypted_pdf",
+    "message": "Encrypted PDFs require decryption outside SignGuard; passwords are not accepted."
+  },
+  "worker_measurements": {
+    "analysis_seconds": 0.028591415999983383,
+    "process_peak_rss_mib": 143.78125
+  },
+  "execution_controls": {
+    "elapsed_seconds": 0.7666841980000072,
+    "isolation": "docker_disposable",
+    "network_isolation": true,
+    "filesystem_isolation": true,
+    "worker_image_id": "sha256:d91db7534d7763daecc25e5532628d7c028362edf2b415de39bdace21045d6f9",
+    "executor_boundary": "restricted_unix_rpc"
+  },
+  "request_id": "93f28043486effbe3584dfb7",
+  "audit_receipt": {
+    "head": "c0f43dcf136775f50c135ecbc8b96a7d9c80f93b8130a199c25fb851bb26cf44",
+    "report_digest": "efa65a20138ede8983d45bcc6a4a082dd58bc945e857beef2c7d6cccb44a0097",
+    "anchoring": "controller_local_head_not_externally_anchored"
+  }
+}

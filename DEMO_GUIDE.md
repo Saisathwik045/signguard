@@ -1,5 +1,28 @@
 # SignGuard synthetic-only and private demonstrations
 
+## Phase 8 live analysis evidence — cloud tests, not a deployed upload URL
+
+The live application offers PDF upload after authentication, optional baseline/signature images,
+isolated-analysis progress, crypto validity/trust details, highlighted candidate/change regions,
+current/signed images, clear limitations and JSON/PDF downloads. Unsupported encrypted/malformed PDFs
+have JSON reasons and no invented PDF evidence. Five supported examples still abstain on identity.
+
+Open the PR's **Private staging integration** Actions artifact `authenticated-browser-evidence` to see
+real cloud container-browser screenshots, seven JSON outcomes, five generated PDF downloads, audit
+chain, exact worker identity, JUnit and fresh scans. Each visible forensic image is separately captured
+so screenshots do not hide evidence below Streamlit's scroll container. `live-verification.json` records
+the tested scope; it explicitly reports external staging/TLS/production OIDC as false.
+
+The existing owner-private synthetic URL above remains the only deployed demonstration. No upload
+controls or backend were added to it. No local installation, local command or Codespaces is needed.
+See RESULTS.md for successful and failed runs; the preliminary Codex VFS disk exhaustion and separate
+synthetic-container startup failures are not represented as passed hosted tests.
+
+Actual live-container screenshot: [shadow analysis](evaluation/phase8/live-stack/03-shadow_reveal.png).
+Forensic captures: [current appearance](evaluation/phase8/live-stack/03-shadow_reveal-evidence-0.png)
+and [signed revision](evaluation/phase8/live-stack/03-shadow_reveal-evidence-1.png).
+These are cloud test-stack screenshots, not screenshots of an external upload deployment.
+
 ## Verified scope and owner observation — 3 November 2026
 
 The owner confirms opening the deployed private viewer successfully at

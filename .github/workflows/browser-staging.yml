@@ -17,10 +17,12 @@ jobs:
       - run: docker build -f deploy/Dockerfile.worker -t signguard-worker:phase4 -t signguard-worker:phase3 .
       - run: docker build -f deploy/Dockerfile.ui -t signguard-ui:phase4 .
       - run: docker build -f deploy/Dockerfile.controller -t signguard-controller:phase4 .
-      - name: Drive authenticated browser flow
+      - name: Drive Phase 8 authenticated live upload flow
         run: |
           trap 'test ! -f browser-artifacts/http-errors.jsonl || cat browser-artifacts/http-errors.jsonl' EXIT
           SIGNGUARD_BROWSER_TESTS=1 pytest -x -q tests/browser/test_live_flow.py --junitxml=browser-artifacts/browser-junit.xml
+      - name: Verify report, worker identity and audit evidence
+        run: python scripts/verify_live_evidence.py browser-artifacts
       - name: Scan OS images and record release admission
         run: |
           mkdir -p browser-artifacts/os-cache
@@ -28,6 +30,9 @@ jobs:
             docker run --rm --user "$(id -u):$(id -g)" --group-add "$(stat -c %g /var/run/docker.sock)" --cap-drop=ALL --security-opt=no-new-privileges --memory=6g -v /var/run/docker.sock:/var/run/docker.sock:ro -v "$PWD/browser-artifacts:/out" aquasec/trivy@sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c image --cache-dir /out/os-cache --db-repository ghcr.io/aquasecurity/trivy-db:2 --scanners vuln --list-all-pkgs --ignorefile /dev/null --format json --output "/out/os-$target.json" "signguard-$target:phase4"
           done
           python scripts/check_os_release.py browser-artifacts/os-worker.json browser-artifacts/os-ui.json browser-artifacts/os-controller.json --output browser-artifacts/release-admission.json --enforce
+          python scripts/image_inventory.py signguard-worker:phase4 browser-artifacts/worker-inventory
+          pip-audit --no-deps --disable-pip -r browser-artifacts/worker-inventory/installed-python.txt --format json --output browser-artifacts/worker-inventory/dependency-audit.json
+          python scripts/verify_image_scan.py browser-artifacts/os-worker.json browser-artifacts/worker-inventory/inventory.json --baseline evaluation/phase6/baseline-full-scan.json --output browser-artifacts/worker-inventory/admission.json
           rm -rf browser-artifacts/os-cache
       - uses: actions/upload-artifact@v4
         if: always()

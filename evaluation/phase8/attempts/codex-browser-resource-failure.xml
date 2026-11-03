@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="2" time="115.867" timestamp="2026-11-03T15:33:33.969794+00:00" hostname="cb6e911e812c"><testcase classname="tests.browser.test_live_flow" name="test_01_authorization_and_session_denial" time="6.841" /><testcase classname="tests.browser.test_live_flow" name="test_02_upload_evidence_and_downloads[genuine_signed-Inconclusive-cryptographic]" time="108.870"><failure message="AssertionError: Locator expected to be visible&#10;Actual value: None&#10;Error: element(s) not found &#10;Call log:&#10;  - Expect &quot;to_be_visible&quot; get_by_role(&quot;heading&quot;, name=&quot;Inconclusive&quot;, exact=True) with timeout 100000ms&#10;  - waiting for get_by_role(&quot;heading&quot;, name=&quot;Inconclusive&quot;, exact=True)&#10;&#10;Aria snapshot:&#10;- link &quot;Skip to main content&quot;:&#10;  - /url: &quot;#stMain&quot;&#10;- banner:&#10;  - button &quot;Deploy&quot;&#10;  - button &quot;Main menu&quot;&#10;- main:&#10;  - paragraph: SIGNGUARD / PRIVATE FORENSIC LAB&#10;[+29 more lines; full report in element text]">cloud_stack = (&lt;tests.browser.stack.CloudStack object at 0x7fed36762ae0&gt;, &lt;Browser type=&lt;BrowserType name=chromium executable_path=/....8037.57&gt;, PosixPath('/workspace/signguard/phase8-browser'), PosixPath('/workspace/signguard/phase8-browser/fixtures'))
+signed_in = &lt;Page url='http://127.0.0.1:35505/'&gt;, family = 'genuine_signed'
+verdict = 'Inconclusive', classification = 'cryptographic'
+
+    @pytest.mark.parametrize("family,verdict,classification", [
+        ("genuine_signed", "Inconclusive", "cryptographic"),
+        ("tampered_bytes", "Tampering Detected", "cryptographic"),
+        ("shadow_reveal", "Review Required", "cryptographic"),
+        ("visual_signature", "Inconclusive", "visual_candidate"),
+        ("unsigned", "Inconclusive", "unsigned"),
+    ])
+    def test_02_upload_evidence_and_downloads(cloud_stack, signed_in, family, verdict, classification):
+        from playwright.sync_api import expect
+        stack, _, artifacts, fixtures = cloud_stack
+        page = signed_in
+        page.locator('input[type="file"]').nth(0).set_input_files(str(fixtures / f"{family}-00.pdf"))
+        page.get_by_role("button", name="Analyze", exact=True).click()
+&gt;       expect(page.get_by_role("heading", name=verdict, exact=True)).to_be_visible(timeout=100000)
+E       AssertionError: Locator expected to be visible
+E       Actual value: None
+E       Error: element(s) not found 
+E       Call log:
+E         - Expect "to_be_visible" get_by_role("heading", name="Inconclusive", exact=True) with timeout 100000ms
+E         - waiting for get_by_role("heading", name="Inconclusive", exact=True)
+E       
+E       Aria snapshot:
+E       - link "Skip to main content":
+E         - /url: "#stMain"
+E       - banner:
+E         - button "Deploy"
+E         - button "Main menu"
+E       - main:
+E         - paragraph: SIGNGUARD / PRIVATE FORENSIC LAB
+E         - heading "Inspect the evidence." [level=1]:
+E           - text: Inspect the evidence.
+E           - link "Link to heading":
+E             - /url: "#inspect-the-evidence"
+E         - paragraph: Live PDF integrity analysis · isolated processing · explainable findings
+E         - paragraph:
+E           - link "Sign out":
+E             - /url: /auth/logout
+E         - status:
+E           - paragraph: Visual matches cannot establish who signed or whether reuse was authorized. Certificate verification is offline with no UI trust roots configured.
+E         - heading "Inspect a PDF" [level=3]:
+E           - text: Inspect a PDF
+E           - link "Link to heading":
+E             - /url: "#inspect-a-pdf"
+E         - paragraph: PDF bytes are validated before dispatch. Analysis runs in a disposable worker; optional crops are not required.
+E         - region "PDF to inspect (up to 25 MiB, 50 pages)":
+E           - button "file upload"
+E           - text: genuine...ned-00.pdf 6.4KB
+E           - button "Remove genuine_signed-00.pdf"
+E           - button "Add files": add icon
+E         - group:
+E           - paragraph: Optional comparison inputs
+E         - button "Analyze":
+E           - paragraph: Analyze
+E         - group:
+E           - paragraph: Analyzing in a disposable isolated worker…
+E           - paragraph: Validating input and requesting private analysis. The worker performs PDF and image parsing.
+E         - alert:
+E           - paragraph: "Analysis could not complete: unsupported input, worker limit, quota, or service configuration error."
+
+tests/browser/test_live_flow.py:90: AssertionError</failure></testcase></testsuite></testsuites>

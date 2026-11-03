@@ -1,6 +1,8 @@
 # Phase 8 technical plan: private live PDF analysis
 
-Status: design only, 3 November 2026. Preserve the Phase 7 snapshot Site and existing forensic
+Retained Phase 7 design reference, 3 November 2026. Phase 8 live integration is now implemented;
+see PROJECT_STATUS.md and RESULTS.md for executed tests and still-blocked deployment gates.
+This plan is not itself production release evidence. Preserve the Phase 7 snapshot Site and existing forensic
 implementation. No upload ingress, provider provisioning or billing is authorized by this plan.
 The starting point is merged PR #7; reuse `app.py`, `preview_web`, `broker`, `executor`,
 `container_runner`, `supervisor`, `release_gate` and existing container/browser tests.

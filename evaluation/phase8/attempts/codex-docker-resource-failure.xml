@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="25" time="7.458" timestamp="2026-11-03T15:39:55.315454+00:00" hostname="cb6e911e812c"><testcase classname="tests.test_phase3_security" name="test_real_limited_worker" time="0.979" /><testcase classname="tests.test_phase3_security" name="test_worker_does_not_inherit_credentials" time="0.066" /><testcase classname="tests.test_phase3_security" name="test_os_memory_limit" time="0.066" /><testcase classname="tests.test_phase3_security" name="test_os_cpu_limit" time="1.673" /><testcase classname="tests.test_phase3_security" name="test_wall_timeout_and_secure_cleanup" time="0.103" /><testcase classname="tests.test_phase3_security" name="test_os_output_limit" time="0.065" /><testcase classname="tests.test_phase3_security" name="test_upload_protocol_rejects_nonpdf_and_unknown_options" time="0.004" /><testcase classname="tests.test_phase3_security" name="test_authorization_requires_verified_allowlisted_identity" time="0.000" /><testcase classname="tests.test_phase3_security" name="test_production_refuses_subprocess_fallback" time="0.004" /><testcase classname="tests.test_phase3_security" name="test_container_runtime_controls" time="2.881"><failure message="RuntimeError: Worker failed or exceeded a resource/output limit">monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x7fbb72acc350&gt;
+
+    @pytest.mark.skipif(os.environ.get("SIGNGUARD_DOCKER_TESTS") != "1", reason="Requires explicit cloud Docker job")
+    def test_container_runtime_controls(monkeypatch):
+        monkeypatch.setenv("AWS_SECRET_ACCESS_KEY", "synthetic-host-secret-must-not-leak")
+        from signguard.container_runner import container_command
+        from signguard.supervisor import Limits
+        image = os.environ.get("SIGNGUARD_WORKER_IMAGE", "signguard-worker:phase3")
+        command = container_command(image, "signguard-probe-tests")
+        probe = '''import os,socket,json,resource
+    from pathlib import Path
+    assert os.getuid()==65532
+    try:
+     open('/forbidden','w').write('x')
+     raise AssertionError('Root filesystem writable')
+    except OSError: pass
+    s=socket.socket();s.settimeout(.2)
+    assert s.connect_ex(('1.1.1.1',443))!=0
+    assert not any(k.startswith(('AWS_','AZURE_','GOOGLE_')) for k in os.environ)
+    assert Path('/sys/fs/cgroup/memory.max').read_text().strip() == '1073741824'
+    assert Path('/sys/fs/cgroup/pids.max').read_text().strip() == '32'
+    assert Path('/sys/fs/cgroup/cpu.max').read_text().split()[0] != 'max'
+    fs = os.statvfs('/tmp')
+    assert fs.f_blocks*fs.f_frsize &lt;= 64*1024*1024
+    status=Path('/proc/self/status').read_text()
+    assert 'CapEff:\\t0000000000000000' in status
+    assert 'NoNewPrivs:\\t1' in status
+    print(json.dumps({'uid':os.getuid(),'root_readonly':True,'external_network_blocked':True,
+    'cpu_limit':resource.getrlimit(resource.RLIMIT_CPU)[0]}))'''
+&gt;       output, _ = run_limited(command[:-1]+["--entrypoint", "python", command[-1], "-c", probe],
+                                limits=Limits(memory=8*1024*1024*1024))
+
+tests/test_phase3_security.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+command = ['/usr/local/bin/docker', '--host=unix:///var/run/docker.sock', 'run', '--rm', '-i', '--name', ...]
+payload = b''
+limits = Limits(wall=60, cpu=30, memory=8589934592, output=5242880)
+
+    def run_limited(command, payload=b"", limits=_DEFAULT_LIMITS):
+        if len(payload) &gt; MAX_REQUEST:
+            raise ValueError("Request exceeds transport limit")
+        # No inherited proxy, home, credential, token or cloud identity variables.
+        environment = {"PATH": "/usr/local/bin:/usr/bin:/bin", "LANG": "C.UTF-8",
+                       "OPENBLAS_NUM_THREADS": "1", "OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"}
+        launcher = [sys.executable, "-I", "-m", "signguard.limits", str(limits.cpu), str(limits.memory),
+                    str(limits.output), *command]
+        started = time.monotonic()
+        with tempfile.TemporaryDirectory(prefix="signguard-") as directory:
+            os.chmod(directory, 0o700)
+            with (Path(directory)/"input").open("w+b") as source, (Path(directory)/"output").open("w+b") as output, (
+                Path(directory)/"error").open("w+b") as errors:
+                source.write(payload)
+                source.seek(0)
+                process = subprocess.Popen(launcher, stdin=source, stdout=output, stderr=errors,
+                                           env=environment, cwd=directory, start_new_session=True, close_fds=True)
+                timed_out = False
+                try:
+                    process.wait(timeout=limits.wall)
+                except subprocess.TimeoutExpired:
+                    timed_out = True
+                finally:
+                    # Also kill descendants after the parent exits (including inherited-output holders).
+                    try:
+                        os.killpg(process.pid, signal.SIGKILL)
+                    except ProcessLookupError:
+                        pass
+                    process.wait()
+                output.seek(0)
+                result = output.read(limits.output+1)
+                if timed_out:
+                    raise TimeoutError("Worker wall-clock limit exceeded")
+                if process.returncode != 0 or len(result) &gt; limits.output:
+&gt;                   raise RuntimeError("Worker failed or exceeded a resource/output limit")
+E                   RuntimeError: Worker failed or exceeded a resource/output limit
+
+src/signguard/supervisor.py:67: RuntimeError</failure></testcase><testcase classname="tests.test_phase3_security" name="test_real_worker_failure_removes_container" time="0.247" /><testcase classname="tests.test_phase3_security" name="test_broker_url_validation[file:///tmp/report]" time="0.007" /><testcase classname="tests.test_phase3_security" name="test_broker_url_validation[http://public.example]" time="0.004" /><testcase classname="tests.test_phase3_security" name="test_broker_url_validation[http://a:b@controller]" time="0.003" /><testcase classname="tests.test_phase3_security" name="test_broker_url_validation[http://controller?q=secret]" time="0.004" /><testcase classname="tests.test_phase3_security" name="test_container_cgroup_memory_enforced" time="0.065" /><testcase classname="tests.test_phase3_security" name="test_queue_has_no_unbounded_wait" time="0.007" /><testcase classname="tests.test_phase3_security" name="test_timeout_terminates_descendant_group" time="0.506" /><testcase classname="tests.test_phase6_security" name="test_clean_image_does_not_approve_deployment" time="0.000" /><testcase classname="tests.test_phase6_security" name="test_scan_for_another_image_is_rejected" time="0.001" /><testcase classname="tests.test_phase6_security" name="test_any_runtime_or_python_high_finding_blocks[CRITICAL]" time="0.001" /><testcase classname="tests.test_phase6_security" name="test_any_runtime_or_python_high_finding_blocks[HIGH]" time="0.001" /><testcase classname="tests.test_phase6_security" name="test_original_cve_cannot_pass_by_changing_distro_severity" time="0.000" /><testcase classname="tests.test_phase6_security" name="test_missing_os_inventory_is_not_a_zero_scan" time="0.001" /><testcase classname="tests.test_phase6_security" name="test_poppler_and_mupdf_inside_actual_isolated_worker" time="0.069"><failure message="RuntimeError: Worker failed or exceeded a resource/output limit">@pytest.mark.skipif(os.environ.get("SIGNGUARD_DOCKER_TESTS") != "1", reason="Explicit remote Docker job required")
+    def test_poppler_and_mupdf_inside_actual_isolated_worker():
+        from signguard.container_runner import container_command
+        from signguard.supervisor import Limits, run_limited
+        from tests.fixtures import unsigned
+        data = base64.b64encode(unsigned()).decode()
+        program = ("import base64,json,importlib.util; from signguard.independent import inspect_independently; "
+                   "assert importlib.util.find_spec('pip') is None; "
+                   f"r=inspect_independently(base64.b64decode('{data}')); print(json.dumps(r))")
+        image = os.environ.get("SIGNGUARD_WORKER_IMAGE", "signguard-worker:phase4")
+        command = container_command(image, "signguard-phase6-poppler")
+&gt;       output, _ = run_limited(command[:-1]+["--entrypoint", "python", image, "-c", program],
+                                limits=Limits(memory=8*1024*1024*1024))
+
+tests/test_phase6_security.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+command = ['/usr/local/bin/docker', '--host=unix:///var/run/docker.sock', 'run', '--rm', '-i', '--name', ...]
+payload = b''
+limits = Limits(wall=60, cpu=30, memory=8589934592, output=5242880)
+
+    def run_limited(command, payload=b"", limits=_DEFAULT_LIMITS):
+        if len(payload) &gt; MAX_REQUEST:
+            raise ValueError("Request exceeds transport limit")
+        # No inherited proxy, home, credential, token or cloud identity variables.
+        environment = {"PATH": "/usr/local/bin:/usr/bin:/bin", "LANG": "C.UTF-8",
+                       "OPENBLAS_NUM_THREADS": "1", "OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"}
+        launcher = [sys.executable, "-I", "-m", "signguard.limits", str(limits.cpu), str(limits.memory),
+                    str(limits.output), *command]
+        started = time.monotonic()
+        with tempfile.TemporaryDirectory(prefix="signguard-") as directory:
+            os.chmod(directory, 0o700)
+            with (Path(directory)/"input").open("w+b") as source, (Path(directory)/"output").open("w+b") as output, (
+                Path(directory)/"error").open("w+b") as errors:
+                source.write(payload)
+                source.seek(0)
+                process = subprocess.Popen(launcher, stdin=source, stdout=output, stderr=errors,
+                                           env=environment, cwd=directory, start_new_session=True, close_fds=True)
+                timed_out = False
+                try:
+                    process.wait(timeout=limits.wall)
+                except subprocess.TimeoutExpired:
+                    timed_out = True
+                finally:
+                    # Also kill descendants after the parent exits (including inherited-output holders).
+                    try:
+                        os.killpg(process.pid, signal.SIGKILL)
+                    except ProcessLookupError:
+                        pass
+                    process.wait()
+                output.seek(0)
+                result = output.read(limits.output+1)
+                if timed_out:
+                    raise TimeoutError("Worker wall-clock limit exceeded")
+                if process.returncode != 0 or len(result) &gt; limits.output:
+&gt;                   raise RuntimeError("Worker failed or exceeded a resource/output limit")
+E                   RuntimeError: Worker failed or exceeded a resource/output limit
+
+src/signguard/supervisor.py:67: RuntimeError</failure></testcase></testsuite></testsuites>

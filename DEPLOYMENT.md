@@ -1,5 +1,37 @@
 # Cloud deployment — private synthetic presentation published
 
+## Phase 8 deployment decision: live staging BLOCKED
+
+The implementation is tested through the cloud-only private-preview stack, not externally deployed.
+No actual user-accessible live-upload staging URL exists. The deployed owner-private synthetic Site
+is unchanged and must remain independent of parser/controller/executor services. It cannot host Python
+or a restricted disposable-worker runtime. This task's current cloud environment has no bound hosting
+identity or deployment secret; GitHub CI permission is not infrastructure provisioning authority.
+
+Existing `deploy/compose.yaml`, `private-preview.compose.yaml`, Dockerfiles, environment/secret examples
+and executor service remain preparation artifacts. The preview password gateway is for controlled tests;
+production OIDC and all-route gateway integration require real provider registration and verification.
+UI image now packages the tracked Streamlit theme/config. Controller has no Docker CLI/socket; only
+restricted Unix RPC to the trusted executor. That executor still has daemon authority and needs a
+qualified dedicated/rootless runtime. Production must configure immutable image references, not legacy
+phase tag defaults. Never publish the controller or raw Streamlit service around the gateway.
+
+Before authorized staging, supply an approved dedicated runtime account/identity (no paid provisioning
+without explicit approval), private TLS endpoint/routing, OIDC client/issuer/audience/redirect and user
+allowlist, secret-manager/CI workload identity, restricted executor host, shared quota service and durable
+audit sink/anchoring/retention. Validate actual cgroups, denied egress, no worker secrets, cleanup under
+cancellation/restart/disk pressure, signed-in/out media/WebSockets and cross-user denial. Run synthetic
+uploads and verify exact reports over real HTTPS before releasing a narrow allowlist. No current control
+is inferred from a Boolean in the prepared release template; `release_gate` defaults stay false.
+
+CI now checks downloaded live reports against the audit chain and actual worker image ID, captures
+real forensic-image screenshots and scans the actual built service images. Tests stay loopback-only.
+Rollback preparation remains: close submissions/ingress, drain/kill jobs, restore clean digests/config,
+verify audit continuity and auth/synthetic canaries, then reopen only after reviewed release evidence.
+Minimum external next step after code review: browser-authorize a qualified dedicated cloud runtime
+and register production OIDC. No laptop commands, Codespaces, token sharing or paid signup is required
+for the engineering already completed; no claim is made that these external requirements are configured.
+
 ## Phase 7 closeout and immutable viewer — 3 November 2026
 
 PR #7 is merged into main `0c8f74c`. The current private Site remains active at version 2 with unchanged

@@ -1,0 +1,26 @@
+{
+  "burst_and_quota_statuses": [
+    200,
+    429,
+    429,
+    429,
+    429,
+    429,
+    400,
+    400,
+    400,
+    400,
+    429,
+    429,
+    429,
+    429,
+    429,
+    429,
+    429,
+    429
+  ],
+  "audit_events": 26,
+  "audit_head": "987bf3dfd285f4e579af44d365bb518292f120d931f2a628896f54431ee42d82",
+  "audit_external_anchor": false,
+  "worker_containers_remaining": ""
+}
