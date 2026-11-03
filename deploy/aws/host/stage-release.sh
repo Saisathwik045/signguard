@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Invoked by an approved SSM command after release checksum and source validation.
 set -euo pipefail
+umask 077
 release_directory="$1"
 secret_arn="$2"
 region=us-east-1
@@ -10,13 +11,11 @@ python3 -m venv "$release_directory/executor-venv"
 "$release_directory/executor-venv"/bin/pip install --no-deps . 'PyYAML==6.0.3'
 # Abort until the persistent audit volume is mounted by a reviewed operator workflow.
 mountpoint -q /var/lib/signguard/audit
-install -d -m 0770 -o 65532 -g 65532 /var/lib/signguard/audit
+install -d -m 0770 -o 65532 -g 65532 /var/lib/signguard/audit/controller /var/lib/signguard/audit/auth
 aws secretsmanager get-secret-value --region "$region" --secret-id "$secret_arn" --query SecretString --output text \
  | "$release_directory/executor-venv"/bin/python scripts/write_aws_runtime_secrets.py /etc/signguard
 "$release_directory/executor-venv"/bin/python scripts/render_aws_staging.py release.json deploy/aws/rendered
-install -m 0644 deploy/aws/host/oauth.cfg /etc/signguard/oauth.cfg
 public_ip=$(python3 -c 'import json; print(json.load(open("release.json"))["public_ipv4"])')
-printf '\nOAUTH2_PROXY_REDIRECT_URL=https://%s/oauth2/callback\n' "$public_ip" >> /etc/signguard/oauth.env
 # Pull reviewed digests; temporary registry credentials are removed immediately after each pull.
 registry=$(python3 -c 'import json; r=json.load(open("release.json")); print(r["account_id"]+".dkr.ecr.us-east-1.amazonaws.com")')
 registry_tmp=$(mktemp -d)
@@ -46,6 +45,15 @@ ln -sfn "$release_directory" /opt/signguard/current
 systemctl daemon-reload
 systemctl enable --now signguard-executor
 "$release_directory/executor-venv"/bin/python scripts/aws_host_preflight.py /var/lib/signguard/host-preflight.json
+runuser -u signguard-executor -- env SIGNGUARD_DOCKER_SOCKET=unix:///run/user/1001/docker.sock "$release_directory/executor-venv"/bin/python scripts/check_rootless_worker.py "$worker_ref" /run/signguard/rootless-preflight.json
 docker compose -f deploy/aws/rendered/compose.yaml config --quiet
 docker compose -f deploy/aws/rendered/compose.yaml up -d
 # This deployment remains authenticated MAINTENANCE ONLY. It never enables uploads.
+
+account_id=$(python3 -c 'import json;print(json.load(open("release.json"))["account_id"])')
+printf 'SIGNGUARD_AUDIT_BUCKET=signguard-staging-audit-%s\n' "$account_id" > /etc/signguard/anchor.env
+for unit in signguard-cert-renew.service signguard-cert-renew.timer signguard-audit-anchor.service signguard-audit-anchor.timer; do
+  install -m 0644 "deploy/aws/host/$unit" /etc/systemd/system/
+done
+systemctl daemon-reload
+systemctl enable --now signguard-cert-renew.timer signguard-audit-anchor.timer

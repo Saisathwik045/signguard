@@ -1,0 +1,6 @@
+{
+  "checked_on": "2026-11-03",
+  "caddy": "caddy:2.11.7@sha256:36c24ad91a7ff7bc4c87fe22bfa8df3c4b18da0773d73fc12ee2c52b98c0bb7e",
+  "oauth": "quay.io/oauth2-proxy/oauth2-proxy:v7.15.5@sha256:8498b0d0ef0a7b29686414000a08aee467f02d0299c9ed1e006a8f33fc017916",
+  "decision": "Rejected: 1 critical and 16 high findings across the two candidate images; not deployed or suppressed."
+}

@@ -25,12 +25,11 @@ def write(values, target):
         state.write_text(json.dumps(generated))
         state.chmod(0o600)
     contents = {
-        'ui.env': {'SIGNGUARD_GATEWAY_TOKEN': generated['gateway'], 'SIGNGUARD_BROKER_TOKEN': generated['broker']},
+        'ui.env': {'SIGNGUARD_GATEWAY_TOKEN': generated['gateway'], 'SIGNGUARD_BROKER_TOKEN': generated['broker'],
+                   'SIGNGUARD_GITHUB_CLIENT_ID':values['oauth_client_id'],
+                   'SIGNGUARD_GITHUB_CLIENT_SECRET':values['oauth_client_secret']},
         'controller.env': {'SIGNGUARD_BROKER_TOKEN': generated['broker']},
-        'edge.env': {'SIGNGUARD_GATEWAY_TOKEN': generated['gateway']},
-        'oauth.env': {'OAUTH2_PROXY_CLIENT_ID': values['oauth_client_id'],
-                      'OAUTH2_PROXY_CLIENT_SECRET': values['oauth_client_secret'],
-                      'OAUTH2_PROXY_COOKIE_SECRET': generated['cookie']},
+
     }
     for name, content in contents.items():
         path = target/name

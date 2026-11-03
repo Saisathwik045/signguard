@@ -25,12 +25,12 @@ def test_generated_maintenance_has_no_daemon_access_or_uploads(tmp_path):
     assert 'ports' not in services['controller']
     assert all('/var/run/docker.sock' not in str(value) and '/run/user/1001' not in str(value)
                for value in services.values())
-    assert 'ports' not in services['ui'] and 'ports' not in services['oauth']
-    assert services['ui']['networks']==['control']
+    assert services['ui']['ports']==['443:8501']
+    assert services['ui']['networks']==['control','identity']
     assert services['controller']['environment']['SIGNGUARD_QUOTA_DATABASE'].endswith('.sqlite3')
     assert 'cookie' not in (tmp_path/'release.json').read_text().lower()
-    caddy=(tmp_path/'Caddyfile').read_text()
-    assert 'header_up -X-SignGuard-Gateway' in caddy and 'handle { respond "Unavailable" 503 }' in caddy
+    assert services['ui']['entrypoint']==['python','-m','signguard.production_web']
+    assert set(services)=={'ui','controller'}
 
 
 @pytest.mark.parametrize('field,value',[('public_ipv4','127.0.0.1'),('public_ipv4','https://attacker.test'),
@@ -77,7 +77,7 @@ def test_secret_generation_persists_and_is_never_in_source_or_release(tmp_path):
     before=(tmp_path/'ui.env').read_text()
     write(values,tmp_path)
     assert (tmp_path/'ui.env').read_text()==before
-    assert (tmp_path/'oauth.env').stat().st_mode & 0o777==0o600
+    assert (tmp_path/'ui.env').stat().st_mode & 0o777==0o600
     with pytest.raises(ValueError):write({**values,'extra':'untrusted'},tmp_path)
 
 
@@ -94,3 +94,15 @@ def test_all_host_shell_scripts_parse():
     import subprocess
     for path in Path('deploy/aws/host').glob('*.sh'):
         subprocess.run(['bash','-n',str(path)],check=True)
+
+
+def test_ssm_delivery_rejects_injected_paths_before_shell():
+    from scripts.aws_delivery import commands
+    delivery={'release':release(),'instance_id':'i-0123456789abcdef0','volume_id':'vol-0123456789abcdef0',
+              'source_key':'releases/untrusted;exit/source.tar.gz','source_sha256':'c'*64,
+              'state_bucket':'signguard-staging-state-123456789012','id':'a'*40+'-123-1'}
+    with pytest.raises(ValueError):commands(delivery)
+    delivery['source_key']='releases/'+delivery['id']+'/source.tar.gz'
+    instance,script=commands(delivery)
+    assert instance.startswith('i-') and 'sha256sum -c -' in script and 'mount-audit.sh' in script
+    assert 'secret' not in json.dumps(delivery).lower()

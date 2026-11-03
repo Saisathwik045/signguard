@@ -21,6 +21,8 @@ jobs:
         run: |
           trap 'test ! -f browser-artifacts/http-errors.jsonl || cat browser-artifacts/http-errors.jsonl' EXIT
           SIGNGUARD_BROWSER_TESTS=1 pytest -x -q tests/browser/test_live_flow.py --junitxml=browser-artifacts/browser-junit.xml
+      - name: Verify real HTTPS gateway denial with an ephemeral cloud test CA
+        run: SIGNGUARD_TLS_GATEWAY_TESTS=1 pytest -x -q tests/browser/test_cloud_tls.py --junitxml=browser-artifacts/tls-gateway-junit.xml
       - name: Verify report, worker identity and audit evidence
         run: python scripts/verify_live_evidence.py browser-artifacts
       - name: Scan OS images and record release admission

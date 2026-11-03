@@ -15,6 +15,9 @@ apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin do
 groupadd --system --gid 1500 signguard-control
 useradd --create-home --uid 1001 --gid 1500 --shell /bin/bash signguard-executor
 usermod --lock signguard-executor
+install -d /etc/systemd/system/user@.service.d
+printf '[Service]\nDelegate=cpu cpuset io memory pids\n' > /etc/systemd/system/user@.service.d/delegate.conf
+systemctl daemon-reload
 loginctl enable-linger signguard-executor
 systemctl start user@1001.service
 runuser -u signguard-executor -- env XDG_RUNTIME_DIR=/run/user/1001 dockerd-rootless-setuptool.sh install --force

@@ -67,7 +67,7 @@ def publish(outputs, destination):
     return delivery
 
 
-def commands(delivery):
+def commands(delivery, tls_email=None):
     # Strict fixed grammar before producing any host shell text. Values never contain secrets.
     release=delivery['release']
     import tempfile
@@ -91,11 +91,16 @@ def commands(delivery):
             'bash '+root+'/deploy/aws/host/mount-audit.sh '+volume,
             'bash '+root+'/deploy/aws/host/stage-release.sh '+root+' signguard/staging/runtime',
             'rm -f /var/tmp/signguard-source.tar.gz']
+    if tls_email:
+        if not re.fullmatch(r'[A-Za-z0-9_.+-]+@[A-Za-z0-9.-]+',tls_email):
+            raise ValueError('Invalid certificate contact')
+        script.insert(-2, 'if ! test -f /etc/letsencrypt/live/signguard/fullchain.pem; then bash '+root+
+                      '/deploy/aws/host/issue-tls.sh '+release['public_ipv4']+' '+shlex.quote(tls_email)+'; fi')
     return instance,"bash <<'SIGNGUARD_APPROVED_RELEASE'\n"+'\n'.join(script)+"\nSIGNGUARD_APPROVED_RELEASE"
 
 
 def stage(delivery):
-    instance,script=commands(delivery)
+    instance,script=commands(delivery,os.environ.get("SIGNGUARD_TLS_CONTACT_EMAIL"))
     info=aws('ec2','describe-instances','--instance-ids',instance)['Reservations'][0]['Instances'][0]
     if {t['Key']:t['Value'] for t in info['Tags']}.get('ManagedBy')!='signguard-deployment':
         raise ValueError('Refusing an unmanaged host')

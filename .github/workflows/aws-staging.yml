@@ -12,6 +12,10 @@ on:
         description: Explicit owner approval of approximately USD 40/month, variable usage extra
         type: boolean
         default: false
+      maintenance_ingress_approved:
+        description: Separately approve HTTP ACME and HTTPS authenticated maintenance; uploads stay disabled
+        type: boolean
+        default: false
 permissions:
   contents: read
 jobs:
@@ -31,58 +35,23 @@ jobs:
       - run: terraform -chdir=deploy/aws fmt -recursive -check
       - run: terraform -chdir=deploy/aws init -backend=false
       - run: terraform -chdir=deploy/aws validate
-      - run: terraform -chdir=deploy/aws test
+      - run: terraform -chdir=deploy/aws test -junit-xml=terraform-junit.xml
       - run: cfn-lint deploy/aws/bootstrap.cfn.json
       - run: for script in deploy/aws/host/*.sh; do bash -n "$script"; done
-      - run: pytest -q tests/test_aws_deployment.py --junitxml=phase9-unit-junit.xml
+      - run: pytest -q tests/test_aws_deployment.py tests/test_production_gateway.py --junitxml=phase9-unit-junit.xml
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: aws-preparation-verification
-          path: phase9-unit-junit.xml
-          retention-days: 7
-  edge-images:
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Scan actual pinned proxy images without exclusions
-        run: |
-          mkdir -p phase9-edge/os-cache
-          python - <<'PY' > /tmp/signguard-edge-images.txt
-          import json
-          d=json.load(open('deploy/aws/edge-images.json'))
-          for role in ['caddy','oauth']: print(role+' '+d[role])
-          PY
-          while read -r role image; do
-            docker pull "$image"
-            docker run --rm --user "$(id -u):$(id -g)" --group-add "$(stat -c %g /var/run/docker.sock)" -v /var/run/docker.sock:/var/run/docker.sock:ro -v "$PWD/phase9-edge:/out" aquasec/trivy@sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c image --cache-dir /out/os-cache --db-repository ghcr.io/aquasecurity/trivy-db:2 --scanners vuln --list-all-pkgs --ignorefile /dev/null --format json --output "/out/$role.json" "$image"
-          done < /tmp/signguard-edge-images.txt
-          python - <<'PY_SUMMARY'
-          import json
-          for role in ['caddy','oauth']:
-            d=json.load(open('phase9-edge/'+role+'.json'))
-            for section in d.get('Results',[]):
-              for v in section.get('Vulnerabilities',[]):
-                if v['Severity'] in {'HIGH','CRITICAL'}:
-                  print(role,v['VulnerabilityID'],v['Severity'],v['PkgName'],v.get('InstalledVersion'),v.get('FixedVersion'))
-          PY_SUMMARY
-          python scripts/check_os_release.py phase9-edge/caddy.json phase9-edge/oauth.json --output phase9-edge/admission.json --enforce
-          rm -rf phase9-edge/os-cache
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: aws-edge-image-security
+          include-hidden-files: true
           path: |
-            phase9-edge/
-            !phase9-edge/os-cache/**
+            phase9-unit-junit.xml
+            deploy/aws/terraform-junit.xml
+            deploy/aws/.terraform.lock.hcl
           retention-days: 7
   authorized-infrastructure:
     if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && inputs.operation != 'publish-stage'
-    needs: [validate, edge-images]
+    needs: [validate]
     environment: aws-staging
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -94,7 +63,7 @@ jobs:
       TF_VAR_ami_id: ${{ vars.AWS_AMI_ID }}
       TF_VAR_instance_profile: signguard-staging-runtime
       TF_VAR_spending_authorized: ${{ inputs.spending_approved }}
-      TF_VAR_allow_private_ingress: 'false'
+      TF_VAR_allow_private_ingress: ${{ inputs.maintenance_ingress_approved }}
       AWS_REGION: us-east-1
       TF_IN_AUTOMATION: 'true'
     steps:
@@ -143,3 +112,64 @@ jobs:
           path: prospective-infrastructure.json
           retention-days: 7
 # No automatic apply, no public upload ingress, no credentials in source or Terraform values.
+  publish-maintenance:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && inputs.operation == 'publish-stage' && inputs.spending_approved
+    needs: [validate]
+    environment: aws-staging
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    permissions:
+      contents: read
+      id-token: write
+    env:
+      AWS_ACCOUNT_ID: ${{ vars.AWS_ACCOUNT_ID }}
+      SIGNGUARD_TLS_CONTACT_EMAIL: ${{ vars.SIGNGUARD_TLS_CONTACT_EMAIL }}
+      AWS_REGION: us-east-1
+      TF_VAR_account_id: ${{ vars.AWS_ACCOUNT_ID }}
+      TF_VAR_ami_id: ${{ vars.AWS_AMI_ID }}
+      TF_VAR_instance_profile: signguard-staging-runtime
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -c requirements-cloud.txt -e '.[dev]'
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_DEPLOYMENT_ROLE_ARN }}
+          aws-region: us-east-1
+          allowed-account-ids: ${{ vars.AWS_ACCOUNT_ID }}
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: '1.16.6'
+          terraform_wrapper: false
+      - run: terraform -chdir=deploy/aws init -backend-config="bucket=signguard-staging-state-$AWS_ACCOUNT_ID" -backend-config="key=terraform/staging.tfstate" -backend-config=region=us-east-1 -backend-config=encrypt=true -backend-config=use_lockfile=true
+      - run: terraform -chdir=deploy/aws output -json > /tmp/aws-outputs.json
+      - name: Build the existing service images
+        run: |
+          docker build -f deploy/Dockerfile.worker -t signguard-worker:aws .
+          docker build -f deploy/Dockerfile.ui --build-arg WORKER_IMAGE=signguard-worker:aws -t signguard-ui:aws .
+          docker build -f deploy/Dockerfile.controller -t signguard-controller:aws .
+      - name: Scan every actual deployable service image and enforce existing gates
+        run: |
+          for role in worker ui controller; do
+            bash scripts/scan_image.sh "signguard-$role:aws" "aws-release/$role"
+          done
+          python scripts/check_os_release.py aws-release/worker/full-scan.json aws-release/ui/full-scan.json aws-release/controller/full-scan.json --output aws-release/admission.json --enforce
+          python scripts/image_inventory.py signguard-worker:aws aws-release/worker
+          pip-audit --no-deps --disable-pip -r aws-release/worker/installed-python.txt --format json --output aws-release/worker/dependency-audit.json
+          python scripts/verify_image_scan.py aws-release/worker/full-scan.json aws-release/worker/inventory.json --baseline evaluation/phase6/baseline-full-scan.json --output aws-release/worker/identity-admission.json
+      - name: Publish immutable references and stage maintenance through SSM
+        run: python -m scripts.aws_delivery /tmp/aws-outputs.json aws-release --stage
+      - name: Remove temporary registry access
+        if: always()
+        run: docker logout "$AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com" >/dev/null 2>&1 || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: aws-maintenance-release
+          path: |
+            aws-release/
+            !aws-release/source.tar.gz
+          retention-days: 7
+# Hosted sign-in/denial tests and release attestations are mandatory before a separate upload enablement change.

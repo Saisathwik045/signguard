@@ -13,15 +13,18 @@ jobs:
           python-version: '3.12'
       - run: pip install -c requirements-cloud.txt -e '.[dev]'
       - run: docker build -f deploy/Dockerfile.worker -t signguard-worker:rootless-qualification .
-      - name: Set up a distinct rootless daemon without rootful group inheritance
+      - name: Set up a distinct rootless daemon
         run: |
+          sudo install -d -m 0755 /etc/apt/keyrings
+          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo tee /etc/apt/keyrings/docker.asc >/dev/null
+          echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu noble stable" | sudo tee /etc/apt/sources.list.d/docker.list
           sudo apt-get update
           sudo apt-get install -y uidmap dbus-user-session docker-ce-rootless-extras
           sudo mkdir -p /etc/systemd/system/user@.service.d
           printf '[Service]\nDelegate=cpu cpuset io memory pids\n' | sudo tee /etc/systemd/system/user@.service.d/delegate.conf
           sudo systemctl daemon-reload
           sudo loginctl enable-linger "$(id -un)"
-          sudo systemctl start "user@$(id -u).service"
+          sudo systemctl restart "user@$(id -u).service"
           export XDG_RUNTIME_DIR="/run/user/$(id -u)"
           export DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/bus"
           dockerd-rootless-setuptool.sh install --force

@@ -197,3 +197,16 @@ output "prospective_https_origin" {
   description = "Prospective only: no claim of TLS, login, worker or deployment verification."
 }
 output "audit_volume_id" { value = try(aws_ebs_volume.audit[0].id, null) }
+
+resource "aws_s3_bucket_lifecycle_configuration" "audit" {
+  count      = local.enabled
+  bucket     = aws_s3_bucket.audit[0].id
+  depends_on = [aws_s3_bucket_versioning.audit]
+  rule {
+    id     = "bounded-audit-retention"
+    status = "Enabled"
+    filter { prefix = "anchors/" }
+    expiration { days = 30 }
+    noncurrent_version_expiration { noncurrent_days = 30 }
+  }
+}
