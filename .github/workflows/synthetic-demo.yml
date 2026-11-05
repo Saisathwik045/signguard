@@ -4,6 +4,7 @@ permissions:
   contents: read
 jobs:
   isolated-generation-browser-and-scan:
+    if: ${{ vars.SIGNGUARD_ZERO_SPEND_CONFIRMED == 'true' && github.event.repository.private == false }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -43,12 +44,4 @@ jobs:
           pip-audit --no-deps --disable-pip -r demo-artifacts/worker/installed-python.txt --format json --output demo-artifacts/dependency-audit.json
           python scripts/verify_image_scan.py demo-artifacts/os-signguard-worker-phase4.json demo-artifacts/worker/inventory.json --baseline evaluation/phase6/baseline-full-scan.json --output demo-artifacts/worker-admission.json
           python scripts/check_os_release.py demo-artifacts/os-signguard-worker-phase4.json demo-artifacts/os-signguard-demo-synthetic.json --output demo-artifacts/release-admission.json --enforce
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: synthetic-demo-security-and-browser-evidence
-          path: |
-            demo-artifacts/
-            !demo-artifacts/os-cache/**
-          retention-days: 7
 # Functional CI success does not approve image admission. No deployment, secrets or ingress action.

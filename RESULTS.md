@@ -1,5 +1,11 @@
 # Results — preserved forensic evaluation and cloud integration
 
+## Phase 10: strict ₹0 policy supersedes paid hosting
+
+PR #10 is merged; Phase 10 starts from main `ccc5995` and preserves the existing forensic stack and private synthetic Site. **No paid infrastructure is authorized.** Active AWS apply/publication actions are removed, the original workflow is archived, and delivery code refuses provider calls under the ₹0 policy. Remote Actions artifacts/cache uploads are disabled; all runner jobs require a confirmed account-level zero-spend control and public repository context. A confirmation variable is an owner attestation, not billing proof.
+
+The fallback is fixed synthetic evaluation using the existing isolated worker, with no private PDF input transport or fresh private-result storage. Native ARM compatibility CI and an offline Oracle eligibility check are prepared but not claimed as executed deployment. No new live-upload URL exists. See [FREE_CLOUD_ARCHITECTURE.md](FREE_CLOUD_ARCHITECTURE.md) and [COST_ANALYSIS.md](COST_ANALYSIS.md) for provider research, test limitations and exact browser-only budget steps. Earlier paid-hosting recommendations below are historical and are not authorization.
+
 ## Phase 9 infrastructure qualification — 3 November 2026
 
 Started from merged Phase 8 main `b668a70`; no benchmark tuning or synthetic Site changes. Added AWS plan-only infrastructure tests, single-owner GitHub OAuth2/PKCE/session tests, persistent quota tests, rootless-daemon qualification and a real container TLS denial test. No AWS account credentials or spending authorization were available; no apply, public IP, real OAuth session, public certificate, actual AWS worker or rollback was tested.
@@ -253,3 +259,11 @@ GitHub Actions run 41413174237 passed the full all-container UI/controller/execu
 including direct anonymous/post-logout download denial, screenshots, downloads and OS scan collection.
 Cloud tests run 41413174218 passed both Python versions and the isolated-worker/static/dependency job.
 OS release admission remained blocked despite successful functional CI. The private live URL is absent.
+
+### Phase 10 executed results
+
+The cloud local suite passed **162 tests, 0 failures/errors, 21 explicit opt-in Docker/browser skips**, with two upstream Authlib/Starlette deprecation warnings. This includes 29 new zero-cost, owner identity, bounded input/output, audit and Oracle eligibility contracts. Mocked worker contract tests are not actual disposable-worker runs. Ruff and the existing medium/high Bandit gate pass. A fresh `pip-audit --skip-editable` found **0 known vulnerabilities in the Codex development environment**; this is not a worker-image audit.
+
+The final worker image was **not rebuilt or freshly scanned**: roughly 0.46 GiB free workspace disk is below the safe build requirement, and GitHub jobs require account-level no-spend confirmation that the available API cannot verify. Current final-image critical/high counts are **unmeasured**, not zero. Phase 9 scan reports remain historical evidence. Chromium installation was attempted but denied by the enforced outbound host policy (HTTP 403); no browser QA success is claimed. New native ARM and owner-dispatched actual-worker jobs are prepared and gated, not executed results. Account gates do not disable scanners; they prevent starting a potentially metered job at all.
+
+Evidence: `evaluation/phase10/regression.xml`, `free-contracts.xml`, `dependency-audit.json`, `bandit.json`, `cost-policy.json`, `oracle-precheck.json`, `arm-wheel-metadata.json`, `base-manifest.json`, `status.json`. PyPI metadata confirms ARM64/pure wheel files for eight pinned key packages and the existing Ubuntu manifest includes ARM64; native installation, ABI compatibility, full stack execution, Oracle capacity and isolation remain unverified.

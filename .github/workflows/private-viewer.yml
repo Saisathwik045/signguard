@@ -12,6 +12,7 @@ permissions:
   contents: read
 jobs:
   build-test-package:
+    if: ${{ vars.SIGNGUARD_ZERO_SPEND_CONFIRMED == 'true' && github.event.repository.private == false }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -29,16 +30,8 @@ jobs:
         run: |
           python -c "import json,pathlib,hashlib; p=pathlib.Path('private-site-build'); m=json.loads((p/'artifact-checksums.json').read_text()); assert all(hashlib.sha256((p/'dist'/k).read_bytes()).hexdigest()==v for k,v in m.items())"
           tar -czf private-site-build.tar.gz -C private-site-build dist artifact-checksums.json
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: private-viewer-build-and-browser-evidence
-          path: |
-            site-artifacts/
-            private-site-build.tar.gz
-          retention-days: 7
   hosted-validation:
-    if: github.event_name == 'workflow_dispatch' && inputs.hosted_smoke
+    if: ${{ vars.SIGNGUARD_ZERO_SPEND_CONFIRMED == 'true' && github.event.repository.private == false && (github.event_name == 'workflow_dispatch' && inputs.hosted_smoke) }}
     environment: private-synthetic
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -57,13 +50,8 @@ jobs:
         run: python -c "import os; assert os.environ['SIGNGUARD_SITE_URL'].startswith('https://') and os.environ['SIGNGUARD_SITE_BEARER'], 'Protected hosting access is not configured'"
       - run: python scripts/probe_private_site.py "$SIGNGUARD_SITE_URL" site-artifacts/hosted
       - run: SIGNGUARD_PRIVATE_SITE_TESTS=1 pytest -q tests/browser/test_private_site.py --junitxml=site-artifacts/hosted/browser-junit.xml
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: private-viewer-hosted-validation
-          path: site-artifacts/hosted/
-          retention-days: 7
   anonymous-live-routes:
+    if: ${{ vars.SIGNGUARD_ZERO_SPEND_CONFIRMED == 'true' && github.event.repository.private == false }}
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -73,11 +61,5 @@ jobs:
           python-version: '3.12'
       - name: Probe the real HTTPS origin without credentials
         run: python scripts/probe_private_site.py https://signguard-private-synthetic.knitdeck.chatgpt.site site-artifacts/live --anonymous-only
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: live-anonymous-access-proof
-          path: site-artifacts/live/
-          retention-days: 7
 # No public/publish fallback, paid provisioning or repository-stored deployment credentials.
 # Native Sites publication uses a fresh repository-scoped credential and owner-only access check.

@@ -1,0 +1,16 @@
+{
+  "policy_passed": true,
+  "maximum_spend_inr": 0,
+  "workflows": [
+    "aws-staging.yml",
+    "browser-staging.yml",
+    "cloud-readiness.yml",
+    "free-cloud.yml",
+    "private-viewer.yml",
+    "rootless-worker.yml",
+    "synthetic-demo.yml",
+    "tests.yml"
+  ],
+  "billing_account_settings_verified": false,
+  "private_upload_available": false
+}

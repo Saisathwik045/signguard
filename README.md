@@ -1,5 +1,11 @@
 # SignGuard
 
+## Phase 10: strict ₹0 policy supersedes paid hosting
+
+PR #10 is merged; Phase 10 starts from main `ccc5995` and preserves the existing forensic stack and private synthetic Site. **No paid infrastructure is authorized.** Active AWS apply/publication actions are removed, the original workflow is archived, and delivery code refuses provider calls under the ₹0 policy. Remote Actions artifacts/cache uploads are disabled; all runner jobs require a confirmed account-level zero-spend control and public repository context. A confirmation variable is an owner attestation, not billing proof.
+
+The fallback is fixed synthetic evaluation using the existing isolated worker, with no private PDF input transport or fresh private-result storage. Native ARM compatibility CI and an offline Oracle eligibility check are prepared but not claimed as executed deployment. No new live-upload URL exists. See [FREE_CLOUD_ARCHITECTURE.md](FREE_CLOUD_ARCHITECTURE.md) and [COST_ANALYSIS.md](COST_ANALYSIS.md) for provider research, test limitations and exact browser-only budget steps. Earlier paid-hosting recommendations below are historical and are not authorization.
+
 ## Phase 9: AWS deployment preparation
 
 [PR #10](https://github.com/Saisathwik045/signguard/pull/10) prepares a single-host AWS staging deployment from merged Phase 8 main. It preserves the existing synthetic Site and live-analysis pipeline. Terraform has separate spending/maintenance-ingress gates, encrypted retained audit storage, OIDC/SSM deployment, immutable scanned image publication and a separate rootless worker daemon. The new HTTPS gateway reuses existing Authlib/ASGI, authorizes one immutable GitHub owner ID and persists bounded sessions/quotas. Uploads remain disabled in generated staging configuration.

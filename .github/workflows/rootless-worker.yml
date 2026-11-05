@@ -4,6 +4,7 @@ permissions:
   contents: read
 jobs:
   rootless:
+    if: ${{ vars.SIGNGUARD_ZERO_SPEND_CONFIRMED == 'true' && github.event.repository.private == false }}
     runs-on: ubuntu-24.04
     timeout-minutes: 25
     steps:
@@ -33,10 +34,4 @@ jobs:
         run: docker --host=unix:///var/run/docker.sock save signguard-worker:rootless-qualification | docker --host="$SIGNGUARD_DOCKER_SOCKET" load
       - name: Probe real rootless cgroups, UID, read-only root, networking and credential removal
         run: python scripts/check_rootless_worker.py signguard-worker:rootless-qualification rootless-evidence.json
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: rootless-worker-qualification
-          path: rootless-evidence.json
-          retention-days: 7
 # Passing a rootless CI probe does not attest a not-yet-provisioned EC2 host or approve ingress.
