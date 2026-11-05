@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "maximum_spend_inr": 0,
+  "paid_provisioning_allowed": false,
+  "live_private_input_transfer_available": false,
+  "remote_artifact_upload_allowed": false,
+  "ci_requires_owner_verified_zero_spend_block": true,
+  "synthetic_case_ids": ["genuine_signed", "tampered", "shadow_modified", "visual_only", "unsigned"]
+}

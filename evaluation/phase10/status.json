@@ -1,0 +1,32 @@
+{
+  "phase": 10,
+  "verified_date_ist": "2026-11-05",
+  "source_main": "ccc5995",
+  "budget_inr": 0,
+  "regression": {
+    "tests": 183,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 21
+  },
+  "python_audit_scope": "Codex development environment; not a final container-image audit",
+  "python_vulnerabilities": 0,
+  "fresh_final_image_scan": {
+    "executed": false,
+    "critical": null,
+    "high": null,
+    "blocker": "Insufficient local build disk; CI awaits verified account no-spend control"
+  },
+  "browser": {
+    "executed": false,
+    "dependency_install_attempted": true,
+    "blocker": "Chromium download explicitly denied by managed outbound policy (HTTP 403 Domain forbidden)"
+  },
+  "disk_free_bytes_observed": 491012096,
+  "ci_account_billing_verified": false,
+  "private_input_transfer_available": false,
+  "paid_resources_provisioned": false,
+  "live_upload_url": null,
+  "synthetic_site_modified": false,
+  "authenticated_hosted_browser_reverified": false
+}

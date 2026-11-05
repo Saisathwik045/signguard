@@ -1,0 +1,16 @@
+{
+  "provisioning_enabled": false,
+  "account_type": "UNVERIFIED",
+  "trial_expired": false,
+  "home_region_confirmed": false,
+  "always_free_eligibility_confirmed": false,
+  "capacity_available": false,
+  "arm64_runtime_qualified": false,
+  "existing_ocpus": 0,
+  "existing_memory_gib": 0,
+  "existing_block_storage_gib": 0,
+  "requested_ocpus": 1,
+  "requested_memory_gib": 6,
+  "requested_boot_storage_gib": 50,
+  "public_ingress_enabled": false
+}

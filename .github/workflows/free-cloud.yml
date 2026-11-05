@@ -1,0 +1,64 @@
+name: Zero-cost synthetic development
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      case:
+        description: Fixed trusted synthetic example; never a user document
+        type: choice
+        options: [genuine_signed, tampered, shadow_modified, visual_only, unsigned]
+        default: genuine_signed
+permissions:
+  contents: read
+concurrency:
+  group: zero-cost-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  policy:
+    if: ${{ vars.SIGNGUARD_ZERO_SPEND_CONFIRMED == 'true' && github.event.repository.private == false }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install PyYAML==6.0.3
+      - run: python scripts/free_cloud_policy.py
+      - run: python scripts/oracle_free_eligibility.py deploy/oracle/free-only.example.json
+  arm64-compatibility:
+    if: ${{ vars.SIGNGUARD_ZERO_SPEND_CONFIRMED == 'true' && github.event.repository.private == false }}
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -c requirements-cloud.txt -e '.[dev]'
+      - run: docker build -f deploy/Dockerfile.worker -t signguard-worker:phase3 -t signguard-worker:phase4 .
+      - run: SIGNGUARD_DOCKER_TESTS=1 pytest -q tests/test_phase3_security.py tests/test_phase6_security.py tests/test_phase3_forensics.py
+      - run: python -m scripts.build_synthetic_demo --analyze
+      - run: bash scripts/scan_image.sh signguard-worker:phase4 arm64-scan
+      - run: python scripts/image_inventory.py signguard-worker:phase4 arm64-scan
+      - run: python scripts/verify_image_scan.py arm64-scan/full-scan.json arm64-scan/inventory.json --output arm64-scan/admission.json
+      - run: pip-audit --no-deps --disable-pip -r arm64-scan/installed-python.txt --format json --output arm64-scan/dependency-audit.json
+  owner-synthetic-evaluation:
+    if: ${{ vars.SIGNGUARD_ZERO_SPEND_CONFIRMED == 'true' && github.event.repository.private == false && github.event_name == 'workflow_dispatch' && github.actor_id == '220234042' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -c requirements-cloud.txt -e '.[dev]'
+      - run: docker build -f deploy/Dockerfile.worker -t signguard-worker:phase3 .
+      - name: Analyze only the selected trusted bundled fixture
+        env:
+          SYNTHETIC_CASE: ${{ inputs.case }}
+        run: |
+          trap 'rm -rf zero-cost-output' EXIT
+          python -m scripts.zero_cost_demo --case "$SYNTHETIC_CASE"
+# No private input transport, hosted upload endpoint, remote artifacts, cache or cloud provisioning.

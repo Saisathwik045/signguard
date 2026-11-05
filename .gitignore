@@ -246,3 +246,7 @@ phase8-browser/
 *.tfstate.*
 *.tfplan
 **/rendered/
+
+# Phase 10 ephemeral synthetic evaluation / browser binaries (never private documents).
+zero-cost-output/
+.phase10-browsers/

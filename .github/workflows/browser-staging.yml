@@ -4,6 +4,7 @@ permissions:
   contents: read
 jobs:
   browser-isolated-stack:
+    if: ${{ vars.SIGNGUARD_ZERO_SPEND_CONFIRMED == 'true' && github.event.repository.private == false }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -36,15 +37,8 @@ jobs:
           pip-audit --no-deps --disable-pip -r browser-artifacts/worker-inventory/installed-python.txt --format json --output browser-artifacts/worker-inventory/dependency-audit.json
           python scripts/verify_image_scan.py browser-artifacts/os-worker.json browser-artifacts/worker-inventory/inventory.json --baseline evaluation/phase6/baseline-full-scan.json --output browser-artifacts/worker-inventory/admission.json
           rm -rf browser-artifacts/os-cache
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: authenticated-browser-evidence
-          path: |
-            browser-artifacts/
-            !browser-artifacts/os-cache/**
-          retention-days: 7
   release-gate-default-denial:
+    if: ${{ vars.SIGNGUARD_ZERO_SPEND_CONFIRMED == 'true' && github.event.repository.private == false }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

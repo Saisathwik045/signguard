@@ -11,6 +11,12 @@ import time
 from pathlib import Path
 
 
+def raise_if_zero_budget():
+    policy=json.loads((Path(__file__).resolve().parents[1]/'deploy/free/policy.json').read_text())
+    if policy['maximum_spend_inr']==0 or not policy['paid_provisioning_allowed']:
+        raise PermissionError('Phase 10 strict zero budget prohibits AWS publication and deployment')
+
+
 def run(arguments, *, data=None):
     return subprocess.check_output(arguments, input=data)
 
@@ -29,6 +35,7 @@ def validate_outputs(outputs):
 
 
 def publish(outputs, destination):
+    raise_if_zero_budget()
     account=aws('sts','get-caller-identity')['Account']
     if account!=os.environ['AWS_ACCOUNT_ID'] or not re.fullmatch(r'[0-9]{12}',account):
         raise ValueError('Wrong AWS account')
@@ -100,6 +107,7 @@ def commands(delivery, tls_email=None):
 
 
 def stage(delivery):
+    raise_if_zero_budget()
     instance,script=commands(delivery,os.environ.get("SIGNGUARD_TLS_CONTACT_EMAIL"))
     info=aws('ec2','describe-instances','--instance-ids',instance)['Reservations'][0]['Instances'][0]
     if {t['Key']:t['Value'] for t in info['Tags']}.get('ManagedBy')!='signguard-deployment':

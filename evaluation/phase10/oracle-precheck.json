@@ -1,0 +1,15 @@
+{
+  "eligibility_precheck_passed": false,
+  "blockers": [
+    "trial_expired is unverified",
+    "home_region_confirmed is unverified",
+    "always_free_eligibility_confirmed is unverified",
+    "capacity_available is unverified",
+    "arm64_runtime_qualified is unverified",
+    "Non-upgraded free account is unverified"
+  ],
+  "resource_creation_supported": false,
+  "billing_guaranteed": false,
+  "deployment_ready": false,
+  "limitations": "Account-wide usage, tenancy quotas, backups, traffic and current provider terms need authoritative verification"
+}
