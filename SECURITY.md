@@ -1,5 +1,21 @@
 # Security model and verified controls
 
+## Evidence workspace boundary — 21 November 2026
+
+`synthetic_demo.py` and its standalone allowlisted package import only presentation,
+fixed manifest-validated synthetic assets and the existing snapshot loader.
+They contain no PDF/image parser, broker credentials or document ingestion
+interface. Setting a live-upload environment variable does not add one.
+Snapshot processing controls describe their historical worker run, not the
+current Streamlit host; missing audit receipts are shown as unavailable.
+
+The full `app.py` preserves existing gateway/OIDC/private-preview authentication.
+Upload controls now default disabled and additionally require explicit broker
+selection and required authentication. An authenticated flag is not evidence
+that the actual host passes isolation, retention or release qualification.
+No unsafe development fallback, public ingress or paid-hosting exception is
+introduced. Existing worker and trust algorithms remain unchanged.
+
 ## Phase 10: strict ₹0 policy supersedes paid hosting
 
 PR #10 is merged; Phase 10 starts from main `ccc5995` and preserves the existing forensic stack and private synthetic Site. **No paid infrastructure is authorized.** Active AWS apply/publication actions are removed, the original workflow is archived, and delivery code refuses provider calls under the ₹0 policy. Remote Actions artifacts/cache uploads are disabled; all runner jobs require a confirmed account-level zero-spend control and public repository context. A confirmation variable is an owner attestation, not billing proof.

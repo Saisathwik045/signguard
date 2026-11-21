@@ -1,6 +1,8 @@
 # syntax=docker/dockerfile:1
 FROM scratch AS catalogue
 COPY src/signguard/demo.py /bundle/signguard/
+COPY src/signguard/dashboard.py /bundle/signguard/
+COPY src/signguard/dashboard_assets /bundle/signguard/dashboard_assets/
 COPY src/signguard/demo_assets /bundle/signguard/demo_assets/
 COPY synthetic_demo.py /bundle/
 

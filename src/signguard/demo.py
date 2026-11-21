@@ -30,5 +30,12 @@ def load_case(case_id):
             or not report["execution_controls"].get("network_isolation")
             or not report.get("visual_evidence") or not report.get("pdf_report")):
         raise ValueError("Synthetic report provenance is incomplete")
-    return report, {**entry, "worker_image_id": manifest["worker_image_id"],
+    return report, {**entry, "worker_image_id": manifest["worker_image_id"], "generated_at": manifest.get("generated_at"),
                     "scope": "Bundled synthetic inputs; precomputed isolated-worker analysis"}
+
+
+def load_downloads(case_id):
+    """Return verified fixture/report bytes without accepting arbitrary file paths."""
+    load_case(case_id)
+    root = files("signguard").joinpath("demo_assets")
+    return root.joinpath(case_id+".pdf").read_bytes(), root.joinpath(case_id+".json").read_bytes()

@@ -86,6 +86,7 @@ class CloudStack:
         if self.host_ui:
             ui_env = {"PATH": os.environ["PATH"], "LANG": "C.UTF-8", "OPENBLAS_NUM_THREADS": "1",
                       "SIGNGUARD_REQUIRE_AUTH": "true", "SIGNGUARD_AUTH_MODE": "gateway", "SIGNGUARD_GATEWAY_TOKEN": self.gateway_token,
+                      "SIGNGUARD_LIVE_UPLOADS_ENABLED": "true",  # explicit isolated synthetic test stack
                       "SIGNGUARD_COOKIE_SECURE": "false", "SIGNGUARD_WEB_PORT": str(self.port),
                       "SIGNGUARD_STREAMLIT_PORT": str(free_port()),
                       "SIGNGUARD_PREVIEW_PRIVATE_CONFIRMED": "true", "SIGNGUARD_BACKEND": "broker",
@@ -98,6 +99,7 @@ class CloudStack:
             self.command("run", "-d", "--name", self.ui, *common,
                          "--publish", f"127.0.0.1:{self.port}:8501",
                          "--env", "SIGNGUARD_REQUIRE_AUTH=true", "--env", "SIGNGUARD_AUTH_MODE=gateway",
+                         "--env", "SIGNGUARD_LIVE_UPLOADS_ENABLED=true",
                          "--env", "SIGNGUARD_GATEWAY_TOKEN="+self.gateway_token,
                          "--env", "SIGNGUARD_COOKIE_SECURE=false", "--env", "SIGNGUARD_WEB_HOST=0.0.0.0",
                          "--env", "SIGNGUARD_PREVIEW_PRIVATE_CONFIRMED=true", "--env", "SIGNGUARD_BACKEND=broker",

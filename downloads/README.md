@@ -7,15 +7,19 @@ private static viewer source, security configuration and historical evidence.
 For the separate lightweight Streamlit demonstration, open
 `signguard-streamlit-online.zip` in this folder and click **Download raw file**.
 Extract it to a separate directory. It contains the existing `synthetic_demo.py`,
-catalogue loader, five verified synthetic PDFs and precomputed reports, a minimal
+shared evidence workspace, catalogue loader, historical evaluation summaries,
+five verified synthetic PDFs and precomputed reports, a minimal
 Streamlit requirements file, configuration and deployment instructions.
 
 The package has no arbitrary document upload controls, forensic parser, worker,
 controller, credentials or live-analysis backend. JSON/PDF downloads and evidence
-images come from the verified snapshots. The viewer sources are unchanged copies.
+images come from the verified snapshots. The viewer includes the shared findings, evidence, cryptography, revision,
+report, evaluation and security presentation. Forensic algorithms and historical
+asset bytes are unchanged. The archive is reproducible with
+`scripts/package_dashboard.py`.
 
 ZIP SHA-256:
-`1c8a25d485232867cf430417496189f990fe147da16fe2bd45a0750fbf8d947e`
+`51f5cd01f4ada1a1728e88fe9c536a09032d914cb56457b487f932d0c6be6f4a`
 
 ## Hosting is a separate action
 
