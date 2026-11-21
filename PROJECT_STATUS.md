@@ -1,5 +1,28 @@
 # Project status — Codex Cloud integration and synthetic demo
 
+## Evidence workspace — 21 November 2026
+
+Implemented a shared parser-free presentation for the existing private inspection
+UI and standalone synthetic viewer. Five pages, six result tabs, exact-byte
+sample/JSON/PDF downloads, source-hashed historical evaluation, architecture and
+a seven-minute presentation guide now expose the project's existing work.
+The forensic engine, five fixture pairs, manifest and historical evaluation
+files remain unchanged.
+
+Validation for this change: 177 tests passed and 21 explicitly skipped in the
+standard suite; the separate loopback Chromium scenario passed all five cases,
+15 downloads, actual image decoding and every workspace page. Ruff and whitespace
+checks passed. Browser artifacts are verification output, not new evaluation
+results or hosted access qualification.
+
+Fresh arbitrary uploads remain blocked. The managed Docker daemon reports
+cgroup v2 with no cgroup driver, so the existing rootless/systemd worker
+qualification is unmet. No new worker build/scan, current all-container live-flow
+run, real-world dataset evaluation or authenticated hosted access test is claimed.
+Existing historical Phase 8 browser evidence remains historical and unchanged.
+The same private, zero-cost demonstration repository can consume the minimal
+package; this source change does not provision infrastructure or alter audience.
+
 ## Phase 10: strict ₹0 policy supersedes paid hosting
 
 PR #10 is merged; Phase 10 starts from main `ccc5995` and preserves the existing forensic stack and private synthetic Site. **No paid infrastructure is authorized.** Active AWS apply/publication actions are removed, the original workflow is archived, and delivery code refuses provider calls under the ₹0 policy. Remote Actions artifacts/cache uploads are disabled; all runner jobs require a confirmed account-level zero-spend control and public repository context. A confirmation variable is an owner attestation, not billing proof.

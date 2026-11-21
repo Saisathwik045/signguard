@@ -108,7 +108,8 @@ def test_streamlit_initial_render():
     from streamlit.testing.v1 import AppTest
     app = AppTest.from_file(Path(__file__).resolve().parents[1] / "app.py").run()
     assert not app.exception
-    assert app.button[0].disabled
+    assert not app.get("file_uploader")
+    assert any("live uploads are disabled" in item.value for item in app.info)
 
 
 def test_visual_candidate_classification():

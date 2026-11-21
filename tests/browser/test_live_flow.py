@@ -89,8 +89,10 @@ def test_02_upload_evidence_and_downloads(cloud_stack, signed_in, family, verdic
     page.get_by_role("button", name="Analyze", exact=True).click()
     expect(page.get_by_role("heading", name=verdict, exact=True)).to_be_visible(timeout=100000)
     expect(page.get_by_text("Classification: "+classification, exact=True)).to_be_visible()
+    page.get_by_role("tab", name="Visual evidence", exact=True).click()
     expect(page.locator('[data-testid="stImage"]').first).to_be_visible()
     page.screenshot(path=str(artifacts / f"03-{family}.png"), full_page=True)
+    page.get_by_role("tab", name="Reports", exact=True).click()
     with page.expect_download() as download:
         page.get_by_role("button", name="Download JSON report", exact=True).click()
     media_url = download.value.url
@@ -113,10 +115,12 @@ def test_02_upload_evidence_and_downloads(cloud_stack, signed_in, family, verdic
         const images = [...document.querySelectorAll('[data-testid="stImage"] img')];
         return images.length && images.every(i => i.complete && i.naturalWidth > 0);
     }""")
+    page.get_by_role("tab", name="Visual evidence", exact=True).click()
     for index in range(len(report["visual_evidence"])):
         page.get_by_test_id("stImage").nth(index).screenshot(path=str(artifacts / f"03-{family}-evidence-{index}.png"))
     receipt = report.pop("audit_receipt")
     assert hashlib.sha256(json.dumps(report, sort_keys=True, separators=(",", ":")).encode()).hexdigest() == receipt["report_digest"]
+    page.get_by_role("tab", name="Reports", exact=True).click()
     with page.expect_download() as download:
         page.get_by_role("button", name="Download PDF report", exact=True).click()
     pdf_path = artifacts / f"{family}-report.pdf"
@@ -144,6 +148,7 @@ def test_03_unsupported_input(cloud_stack, signed_in, kind):
             "mimeType": "application/pdf", "buffer": b"%PDF-1.7\nnot-a-valid-PDF"})
     signed_in.get_by_role("button", name="Analyze", exact=True).click()
     expect(signed_in.get_by_role("heading", name="Unsupported document", exact=True)).to_be_visible(timeout=100000)
+    signed_in.get_by_role("tab", name="Reports", exact=True).click()
     with signed_in.expect_download() as item:
         signed_in.get_by_role("button", name="Download JSON report", exact=True).click()
     item.value.save_as(str(artifacts / f"{kind}-report.json"))
@@ -172,6 +177,7 @@ def test_05_logout_clears_authorization(cloud_stack, signed_in):
     signed_in.locator('input[type="file"]').nth(0).set_input_files(str(fixtures / "unsigned-00.pdf"))
     signed_in.get_by_role("button", name="Analyze", exact=True).click()
     expect(signed_in.get_by_role("heading", name="Inconclusive", exact=True)).to_be_visible(timeout=100000)
+    signed_in.get_by_role("tab", name="Reports", exact=True).click()
     with signed_in.expect_download() as item:
         signed_in.get_by_role("button", name="Download JSON report", exact=True).click()
     url = item.value.url

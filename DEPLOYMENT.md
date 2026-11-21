@@ -1,5 +1,26 @@
 # Cloud deployment — private synthetic presentation published
 
+## Evidence workspace update — 21 November 2026
+
+Use the existing private synthetic Streamlit repository and `synthetic_demo.py`
+entrypoint for the improved saved-evidence presentation. Recreate its allowlisted
+package with `PYTHONPATH=src python -m scripts.package_dashboard --output /tmp/signguard-dashboard.zip`.
+It needs only the pinned Streamlit requirement and no secrets or backend. Verify
+the actual app's private viewing permissions separately; source privacy alone
+is not an authenticated browser acceptance test. No new deployment service,
+paid resources, audience expansion or upload endpoint is part of this update.
+
+The full private `app.py` now requires explicit `SIGNGUARD_LIVE_UPLOADS_ENABLED=true`,
+`SIGNGUARD_REQUIRE_AUTH=true` and `SIGNGUARD_BACKEND=broker` before showing inputs.
+Existing preview configurations without the explicit upload flag enter
+maintenance mode. Set it only after the existing host/authentication/isolation/
+audit/release gates pass. The opted-in loopback browser test stack sets these
+flags expressly for its synthetic fixtures.
+
+Current managed Docker has no cgroup driver and is not qualified for the worker.
+The presentation's loopback test is not a fresh live-backend qualification.
+See [DASHBOARD_GUIDE.md](DASHBOARD_GUIDE.md) for verified scope and blockers.
+
 ## Phase 10: strict ₹0 policy supersedes paid hosting
 
 PR #10 is merged; Phase 10 starts from main `ccc5995` and preserves the existing forensic stack and private synthetic Site. **No paid infrastructure is authorized.** Active AWS apply/publication actions are removed, the original workflow is archived, and delivery code refuses provider calls under the ₹0 policy. Remote Actions artifacts/cache uploads are disabled; all runner jobs require a confirmed account-level zero-spend control and public repository context. A confirmation variable is an owner attestation, not billing proof.

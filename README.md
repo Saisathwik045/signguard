@@ -1,5 +1,23 @@
 # SignGuard
 
+## Evidence workspace — 21 November 2026
+
+The existing Streamlit presentation now has five workspace pages: a five-case
+Demo gallery, Project overview, Evaluation, Architecture & security, and
+Presentation guide. Results have separate findings, visual evidence,
+cryptographic checks, revision history, reports and processing/audit views.
+Downloads preserve the original synthetic PDF, JSON and report PDF bytes.
+Evaluation displays the existing three Phase 3 summaries, including all-case
+false negatives and localization false positives; these are historical synthetic
+measurements, not new real-world accuracy results.
+
+The minimal online package has no arbitrary upload widget, parser or worker
+credentials. The full private `app.py` reuses existing authentication and broker
+integration; uploads now default off and require explicit authentication plus
+broker configuration. No forensic algorithms or historical assets changed.
+See [DASHBOARD_GUIDE.md](DASHBOARD_GUIDE.md) for operation and remaining release
+gates, and [downloads/README.md](downloads/README.md) for the reproducible package.
+
 ## Phase 10: strict ₹0 policy supersedes paid hosting
 
 PR #10 is merged; Phase 10 starts from main `ccc5995` and preserves the existing forensic stack and private synthetic Site. **No paid infrastructure is authorized.** Active AWS apply/publication actions are removed, the original workflow is archived, and delivery code refuses provider calls under the ₹0 policy. Remote Actions artifacts/cache uploads are disabled; all runner jobs require a confirmed account-level zero-spend control and public repository context. A confirmation variable is an owner attestation, not billing proof.

@@ -60,7 +60,7 @@ def test_streamlit_all_cases_have_no_ingestion_or_execution(monkeypatch):
         assert not app.exception
         assert not app.get("file_uploader")
         assert not app.text_input and not app.chat_input
-        assert len(app.get("download_button")) == 2
+        assert len(app.get("download_button")) == 3  # exact sample, JSON and worker PDF
         assert app.subheader[0].value == EXPECTED[case_id][1].replace("_", " ").title()
 
 
